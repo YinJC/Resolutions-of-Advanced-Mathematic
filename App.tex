@@ -1,0 +1,123 @@
+% !TEX root = ./HTNotes-Demo.tex
+\section{基本初等函数导数、微分公式}
+  \begin{center}
+    \begin{tabular}{r @{\qquad} c @{\qquad} l}
+    \toprule[1pt]
+      原函数 & 导数 & 微分\\
+    \midrule[0.5pt]
+      $y=\mathrm{C}$ & $y' = 0$ & $\rd y = 0$\\
+      $y=x^\mu$ & $y' = \mu x^{\mu - 1}$ & $\rd y = \mu x^{\mu - 1} \rd x$\\
+      $y = \sin x$ & $y' = \cos x \rd x$ & $\rd y = \cos x \rd x$\\
+      $y = \cos x$ & $y' = - \sin x \rd x$ & $\rd y = - \sin x \rd x$\\
+      $y = \tan x$ & $y' = \sec ^2 x$ & $\rd y = \sec ^2 x \rd x$\\
+      $y = \cot x$ & $y' = - \csc ^2 x \rd x$ & $\rd y = - \csc ^2 x \rd x$\\
+      $y = \sec x$ & $y' = \sec x \tan x$ & $\rd y = \sec x \tan x \rd x$\\
+      $y = \csc x$ & $y' = -\csc x \cot x$ & $\rd y = -\csc x \cot x \rd x$\\
+      $y = a^x$ & $y' = a^x \ln a$ & $\rd y = a^x \ln a \rd x$\\
+      $y = e^x$ & $y' = e^x$ & $\rd y = e^x \rd x$\\
+      $y = \log_a x$ & $y' = \frac{1}{x \ln a}$ & $\rd y = \frac{1}{x \ln a} \rd x$\\
+      $y = \ln x$ & $y' = \frac{1}{x}$ & $\rd y = \frac{1}{x} \rd x$\\
+      $y = \arcsin x$ & $y' = \frac{1}{\sqrt{1-x^2}}$ & $\rd y = \frac{1}{\sqrt{1-x^2}} \rd x$\\
+      $y = \arccos x$ & $y' = - \frac{1}{\sqrt{1-x^2}}$ & $\rd y = - \frac{1}{\sqrt{1-x^2}} \rd x$\\
+      $y = \arctan x$ & $y' = \frac{1}{1+x^2}$ & $\rd y = \frac{1}{1+x^2} \rd x$\\
+      $y = \mathrm{arccot\,} x$ & $y' = - \frac{1}{1+x^2}$ & $\rd y = - \frac{1}{1+x^2} \rd x$\\
+      $y = \mathrm{sh\,}x$ & $y' = \mathrm{ch\,} x$ & $\rd y = \mathrm{ch\,} x \rd x$\\
+      $y = \mathrm{ch\,}x$ & $y' = \mathrm{sh\,} x$ & $\rd y = \mathrm{sh\,} x \rd x$\\
+      $y = \mathrm{th\,} x$ & $y' = \frac{1}{\mathrm{ch}^2 \,x}$ & $\rd y = \frac{1}{\mathrm{ch}^2 \,x} \rd x $\\
+    \bottomrule[1pt]
+    \end{tabular}
+  \end{center}
+
+\newpage
+\section{基本导数、微分法则}
+  \begin{tabular}{r @{\qquad} c @{\qquad} l}
+  \toprule[1pt]
+    函数 & 导数法则 & 微分法则\\
+  \midrule[0.5pt]
+    $u(x) \pm v(x)$ & $\left[ u(x) \pm v(x) \right]' = u'(x) \pm v'(x)$ & $\rd (u \pm v) = \rd u \pm \rd v$\\
+    $u(x)v(x)$ & $\left[ u(x)v(x) \right]' = u'(x)v(x) + u(x)v(x)'$ & $\rd (uv) = v \rd u + u \rd v$\\
+    $\mathrm{C}u$ & $(\mathrm{C}u)' = \mathrm{C}u'$ & $\rd (\mathrm{C}u) = C\rd u$\\
+    $\frac{u(x)}{v(x)}$ & $\left( \frac{u(x)}{v(x)} \right)' = \frac{u'(x)v(x) - u(x)v(x)'}{v^2(x)}$ & $\rd \left( \frac{u}{v} \right) = \frac{v \rd u - u \rd v}{v^2(x)}$\\
+    $\frac{1}{v(x)}$ & $\left( \frac{1}{v(x)} \right)' = - \frac{v'(x)}{v^2(x)}$ & $\rd \left( \frac{1}{v} \right) = - \frac{\rd v}{v^2}$\\
+    $x=f(y)$ & $\left[ f^{-1}(y) \right]' = \frac{1}{f'(y)}$ & $\frac{\rd y}{\rd x} = \frac{1}{\frac{\rd x}{\rd y}}$\\
+  \bottomrule[1pt]
+  \end{tabular}
+
+\section{常见高阶导数}
+  \begin{tabular}{r @{\qquad} l @{\qquad} r @{\qquad} l}
+  \toprule[1pt]
+    函数 & 高阶导数 & 函数 & 高阶导数 \\
+  \midrule[0.5pt]
+    $e^x$ & $e^x$ & $\ln (1-x)$ & $- \frac{（n-1）\mathrm{!}}{(1-x)^n}$\\
+    $\sin x$ & $\sin (x + n \cdot \frac{\pi}{2})$ & $\frac{1}{x}$ & $(-1)^n \cdot \frac{n\mathrm{!}}{x^(n+1)}$\\
+    $\cos x$ & $\cos (x + n \cdot \frac{\pi}{2})$ & $\frac{1}{(1+x)}$ & $(-1)^n \cdot \frac{n\mathrm{!}}{(1+x)^(n+1)}$\\
+    $x^\alpha$ & $\alpha(\alpha-1)\cdots(\alpha-n+1)x^{\alpha-n}$ & $\frac{1}{(1-x)}$ & $- \frac{n\mathrm{!}}{(1-x)^(n+1)}$\\
+    $\ln (1+x)$ & $(-1)^n \cdot \frac{(n-1)\mathrm{!}}{(1+x)^n}$\\
+  \bottomrule[1pt]
+  \end{tabular}
+
+\section{微分中值定理}
+  \begin{description}
+    \item[Fermat~引理] 设函数~$f(x)$~在点~$x_0$~的某领域~$U(x_0)$~内有定义，并且在~$x_0$~处可导，如果对任意的~$x \in U(x_0)$，有~$f(x) \le f(x_0)$~(或~$f(x) \ge f(x_0)$~)，那么~$f'(x_0)=0$.
+    \item[Rolle~定理] 如果函数~$f(x)$~满足：\ding{192}~在闭区间~$[a, b]$~连续，\ding{193}~在开区间~$(a, b)$~可导，\ding{194}~$f(a)=f(b)$,那么在~$(a, b)$~内至少有一点~$\xi(a<\xi<b)$~使得~$f'(\xi)=0$.
+    \item[Lagrange~中值定理] 如果函数~$f(x)$~满足：\ding{192}~在闭区间~$[a, b]$~连续，\ding{193}~在开区间~$(a, b)$~可导，那么在~$(a, b)$~内至少有一点~$\xi(a<\xi<b)$~使等式~$f'(\xi)=\frac{f(b)-f(a)}{b-a}$~成立.
+    \item[Cauchy~中值定理] 如果函数~$f(x)$~及~$F(x)$~满足：\ding{192}~在闭区间~$[a, b]$~连续，\ding{193}~在开区间~$(a, b)$~可导，\ding{194}对~$\forall x \in (a, b)$，$F(x)\ne0$,那么在~$(a, b)$~内至少有一点~$\xi(a<\xi<b)$~使等式~$\frac{f'(\xi)}{F(\xi)}=\frac{f(b)-f(a)}{F(b)-F(a)}$~成立.
+  \end{description}
+
+\section{Taylor~公式}
+  \begin{enumerate}[label=\arabic*., leftmargin=2em ]
+  \item Taylor~公式
+    \begin{enumerate}[label=(\arabic*)]
+      \item Lagrange~型余项
+      $$f(x)=f(0)+f'(x_0)(x-x_0)+\dfrac{f''(x_0)}{2\text{!}}(x-x_0)^2+\cdots+\dfrac{f^{(n)}(x_0)}{n\text{!}}(x-x_0)^n+R_n$$
+      其中，$R_n=\dfrac{f^{(n+1)}(\xi)}{(n+1)\text{!}}(x-x_0)^{(n+1)}$.
+      \item Peano~型余项
+      $$f(x)=f(x_0)+f'(x_0)(x-x_0)+\dfrac{f''(x_0)}{2\text{!}}(x-x_0)^2+\cdots+\dfrac{f^{(n)}(x_0)}{n\text{!}}(x-x_0)^n+o(x^n)$$
+      \item 积分型余项
+      $$f(x)=f(x_0)+f'(x_0)(x-x_0)+\dfrac{f''(x_0)}{2\text{!}}(x-x_0)^2+\cdots+\dfrac{f^{(n)}(x_0)}{n\text{!}}(x-x_0)^n+R_n$$
+      其中，$R_n=\dfrac{1}{n\text{!}} \int_{x_0}^x (x-t)^n f^{(n+1)}(t)\rd t$.
+    \end{enumerate}
+  \item Maclaurin~公式(Peano~型余项)
+    $$f(x)=f(0)+f'(0)x+\dfrac{f''(0)}{2\text{!}}x^2+\cdots+\dfrac{f^{(n)}(0)}{n\text{!}}x^n+o(x^n)$$
+  \item 常用~Maclaurin~公式(Peano~型余项)
+    \begin{enumerate}[label=(\arabic*)]
+      \item $e^x = 1+x+\dfrac{1}{2\text{!}}x^2+\cdots+\dfrac{1}{n\text{!}}x^n+o(x^n)$
+      \item $\sin x = x-\dfrac{1}{3\text{!}}x^3+\dfrac{1}{5\text{!}}x^5+\cdots+\dfrac{(-1)^n x^(2n-1)}{(2n-1)\text{!}}x^n+o(x^{2n})$
+      \item $\cos x = 1-\dfrac{1}{2\text{!}}x^2+\dfrac{1}{4\text{!}}x^4+\cdots+\dfrac{(-1)^n x^2n}{(2n)\text{!}}x^n+o(x^{2n})$
+      \item $\ln (1+x) = 1-\dfrac{1}{2}x^2+\dfrac{1}{3}x^3+\cdots+\dfrac{(-1)^(n+1) x^n}{n}x^n+o(x^{(n+1)})$
+      \item $(1+x)^\alpha = 1+\alpha x+\cdots+\dfrac{\alpha(\alpha-1)\cdots(\alpha-n+1)x^{\alpha-n}}{n\text{!}}x^n+o(x^n)$
+      \item $\arctan x = -x+\dfrac{1}{3}x^3-\dfrac{1}{5}x^5+\cdots+\dfrac{(-1)^n x^(2n+1)}{(2n+1)}x^n+o(x^{2n+2})$
+      \item $\tan x = x+\dfrac{1}{3}x^3+\dfrac{2}{5}x^5+\dfrac{17}{315}x^7+o(x^7)$
+    \end{enumerate}
+  \end{enumerate}
+
+\section{基本积分表}
+\begin{tabenum}[(1)]
+  \tabenumitem $\displaystyle\int k \rd x = kx + \text{C}$ ;\quad
+  \tabenumitem $\displaystyle\int x^\alpha \rd x = \dfrac{1}{\alpha+1} x^{\alpha+1} + \text{C}\ (\alpha \ne -1)$;\\
+  \tabenumitem $\displaystyle\int \dfrac{1}{x} \rd x = \ln x + \text{C}$;
+  \tabenumitem $\displaystyle\int \dfrac{1}{1+x^2} \rd x = \tan x + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \dfrac{1}{\sqrt{1-x^2}} \rd x = \arcsin x + \text{C}$;
+  \tabenumitem $\displaystyle\int \cos x \rd x = \sin x + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \sin x \rd x = - \cos x + \text{C}$;
+  \tabenumitem $\displaystyle\int \sec^2 x \rd x = \tan x + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \csc^2 x \rd x = - \cot x + \text{C}$;
+  \tabenumitem $\displaystyle\int e^x x \rd x = e^x + \text{C}$;\\
+  \tabenumitem $\displaystyle\int a^x \rd x = \dfrac{a^x}{\ln a} + \text{C}$;
+  \tabenumitem $\displaystyle\int \text{sh\,} x \rd x = \text{ch\,} x + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \text{ch\,} x \rd x = \text{sh\,} x + \text{C}$;
+  \tabenumitem $\displaystyle\int \tan x \rd x = \ln \left| \cos x \right| + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \cot x \rd x = \ln \left| \sin x \right| + \text{C}$;
+  \tabenumitem $\displaystyle\int \sec x \rd x = x \ln \left|\sec x + \tan x \right| + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \csc x \rd x = x \ln \left|\csc x + \cot x \right| + \text{C}$;
+  \tabenumitem $\displaystyle\int \dfrac{1}{x^2 + a^2} \rd x = \dfrac{1}{a} \tan \dfrac{x}{a} + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \dfrac{1}{x^2 - a^2} \rd x = \dfrac{1}{2a} \ln \dfrac{x-a}{x+a} + \text{C}$;
+  \tabenumitem $\displaystyle\int \dfrac{1}{\sqrt{x^2 - a^2}} \rd x = \arcsin \dfrac{x}{a} + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \dfrac{1}{\sqrt{x^2 \pm a^2}} \rd x = \ln \left|x + \sqrt{x^2 \pm a^2} \right| + \text{C}$;
+  \tabenumitem $\displaystyle\int \sec x \tan x \rd x = \sec x + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \csc x \cot x \rd x = - \csc x + \text{C}$;
+  \tabenumitem $\displaystyle\int \ln x \rd x = x \ln x - x + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \dfrac{1}{\left( 1 \pm x^2 \right)^\frac{3}{2}} \rd x = \dfrac{x}{\sqrt{1 \pm x^2}} + \text{C}$;\\
+  \tabenumitem $\displaystyle\int \sqrt{x^2 \pm a^2} \rd x = \dfrac{1}{2} \left[x\sqrt{x^2 \pm a^2} \pm a^2\ln \left( \sqrt{x^2 \pm a^2} + x \right) \right] + \text{C}$;\hidewidth\skipitem\\
+  \tabenumitem $\displaystyle\int \dfrac{1}{\left( x^2 + a^2 \right)^2} \rd x = \dfrac{1}{2a^2} \left( \dfrac{x}{x^2 + a^2} + \dfrac{1}{a} \tan \dfrac{x}{a} \right) + \text{C}$;\hidewidth\skipitem\\
+\end{tabenum}
