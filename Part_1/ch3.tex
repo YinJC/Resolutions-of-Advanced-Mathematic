@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-% !TEX root = ./HTNotes-Demo.tex
+% !TEX root = ../HTNotes-Demo.tex
 \begin{flushright}
   \color{zhanqing!80}
   \ding{43} 习题见\autopageref{cha:3}
@@ -7,7 +7,6 @@
 
 \section{微分中值定理}
 \begin{flushright}
-  \color{zhanqing!80}
   \color{zhanqing!80}
   \ding{43} 教材见 181页 % 这里需要添加页数
 \end{flushright}
@@ -19,7 +18,7 @@ $\because f'(x) = 3{x^2} - 12x + 11$,显然$f'(x)$在$[2,3]$连续.
 
 $f'(2) = 12 - 24 + 11 =  - 1,f'(3) = 27 - 36 + 11 = 1$
 
-则由介值定理可知，在$[2,3]$区间上$f'(x)$必存在一点$\xi $使得$f'(\xi ) = 0$ 
+则由介值定理可知，在$[2,3]$区间上$f'(x)$必存在一点$\xi $使得$f'(\xi ) = 0$
 
 所以罗尔定理对$f(x)$在区间$[2,3]$上成立.
 
@@ -134,11 +133,8 @@ $F'(x) = \dfrac{{f'(x)g(x) - f(x)g'(x)}}{{{{[g(x)]}^2}}}$又$\left| {\begin{arra
 即$f(x) = Cg(x)$.
 
 
-
-
 \section{洛必达法则}
 \begin{flushright}
-  \color{zhanqing!80}
   \color{zhanqing!80}
   \ding{43} 教材见190 页 % 这里需要添加页数
 \end{flushright}
@@ -147,54 +143,57 @@ $F'(x) = \dfrac{{f'(x)g(x) - f(x)g'(x)}}{{{{[g(x)]}^2}}}$又$\left| {\begin{arra
 
 1,解析:
 
-(1)$\mathop {\lim }\limits_{x \to 0} \dfrac{{\tan x - x}}{{x - \sin x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{{{\sec }^2}x - 1}}{{1 - \cos x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{1 + \cos x}}{{{{\cos }^2}x}} = 2$
+(1)$\lim\limits_{x \to 0}  \dfrac{{\tan x - x}}{{x - \sin x}} = \lim\limits_{x \to 0}  \dfrac{{{{\sec }^2}x - 1}}{{1 - \cos x}} = \lim\limits_{x \to 0}  \dfrac{{1 + \cos x}}{{{{\cos }^2}x}} = 2$
 
-(2)$\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\ln \tan (ax)}}{{\ln \tan (bx)}}(a > 0,b > 0) = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\frac{1}{{\tan (ax)}} \cdot \frac{a}{{{{\cos }^2}(ax)}}}}{{\dfrac{1}{{\tan (bx)}} \cdot \frac{b}{{{{\cos }^2}(bx)}}}} = \dfrac{a}{b}\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\sin 2bx}}{{\sin 2ax}} = \dfrac{a}{b}\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\cos (2bx)}}{{\cos (2ax)}} \cdot \dfrac{{2b}}{{2a}} = 1$
+(2)$\lim\limits_{x \to 0^+}  \dfrac{{\ln \tan (ax)}}{{\ln \tan (bx)}}(a > 0,b > 0) = \lim\limits_{x \to 0^+}  \dfrac{{\frac{1}{{\tan (ax)}} \cdot \frac{a}{{{{\cos }^2}(ax)}}}}{{\dfrac{1}{{\tan (bx)}} \cdot \frac{b}{{{{\cos }^2}(bx)}}}} = \dfrac{a}{b}\lim\limits_{x \to 0^+}  \dfrac{{\sin 2bx}}{{\sin 2ax}} = \dfrac{a}{b}\lim\limits_{x \to 0^+}  \dfrac{{\cos (2bx)}}{{\cos (2ax)}} \cdot \dfrac{{2b}}{{2a}} = 1$
 
 $\left( 3 \right)\mathop {\lim }\limits_{x \to \frac{\pi }{2}} \dfrac{{\tan 3x}}{{\tan x}} = \mathop {\lim }\limits_{x \to \frac{\pi }{2}} \dfrac{{3{{\sec }^2}3x}}{{{{\sec }^2}x}} = 3\mathop {\lim }\limits_{x \to \frac{\pi }{2}} {(\dfrac{{\cos x}}{{\cos 3x}})^2} = 3{(\mathop {\lim }\limits_{x \to \frac{\pi }{2}} \dfrac{{\sin x}}{{3\sin 3x}})^2} = \dfrac{1}{3}$
 
 (4)$\mathop {\lim }\limits_{x \to a} \dfrac{{{x^m} - {a^m}}}{{{x^n} - {a^n}}}(a \ne 0) = \mathop {\lim }\limits_{x \to a} \dfrac{{m{x^{m - 1}}}}{{n{x^{n - 1}}}} = \dfrac{m}{n}{a^{m - n}}$
 
-(5)$\mathop {\lim }\limits_{x \to 0} \dfrac{{x - (1 + x)\ln (1 + x)}}{{{x^2}}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{1 - \ln (1 + x) - 1}}{{2x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{ - \frac{1}{{1 + x}}}}{2} =  - \dfrac{1}{2}$
+(5)$\lim\limits_{x \to 0}  \dfrac{{x - (1 + x)\ln (1 + x)}}{{{x^2}}} = \lim\limits_{x \to 0}  \dfrac{{1 - \ln (1 + x) - 1}}{{2x}} = \lim\limits_{x \to 0}  \dfrac{{ - \frac{1}{{1 + x}}}}{2} =  - \dfrac{1}{2}$
 
-(6)$\mathop {\lim }\limits_{x \to 1} (\dfrac{{{x^x} - x}}{{\ln x - x + 1}}) = \mathop {\lim }\limits_{x \to 1} \dfrac{{{x^x}(\ln x + 1) - 1}}{{\dfrac{1}{x} - 1}} = \mathop {\lim }\limits_{x \to 1} \ddfrac{{{x^x}{{(\ln x + 1)}^2} + {x^{x - 1}}}}{{ - \dfrac{1}{{{x^2}}}}} =  - 2$
-
-\begin{flalign*} \indent
-    \begin{split}
-    (7)\mathop {\lim }\limits_{x \to 0} \dfrac{{1 - \cos {x^2}}}{{{x^2} - {{\tan }^2}x}} 
-    &= \dfrac{1}{2}\mathop {\lim }\limits_{x \to 0} \dfrac{{{x^4}}}{{(x + \tan x)(x - \tan x)}} = \dfrac{1}{2}\mathop {\lim }\limits_{x \to 0} \dfrac{x}{{x + \tan x}} \cdot \dfrac{{{x^3}}}{{x - \tan x}}\\
-    &=\dfrac{1}{2} \cdot \dfrac{1}{2}\mathop {\lim }\limits_{x \to 0} \dfrac{{3{x^2}}}{{1 - {{\sec }^2}x}} =  - \dfrac{3}{4}\mathop {\lim }\limits_{x \to 0} \dfrac{{{x^2}}}{{{{\tan }^2}x}} =  - \frac{3}{4}.\\
-    \end{split}&
-\end{flalign*}
-
-(8)$\mathop {\lim }\limits_{x \to 0} \dfrac{{x - \arctan x}}{{{{\sin }^3}x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{1 - \frac{1}{{1 + {x^2}}}}}{{3{x^2}}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{{x^2}}}{{3{x^2}(1 + {x^2})}} = \dfrac{1}{3}$
-
-(9)$\mathop {\lim }\limits_{x \to 0} \dfrac{{\ln (1 + {x^2})}}{{\sec x - \cos x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{{x^2} \cdot \cos x}}{{1 - {{\cos }^2}x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{{x^2}}}{{{{\sin }^2}x}} = 1$
-
-(10)$\mathop {\lim }\limits_{x \to 0} (\frac{1}{{{x^2}}} - \frac{1}{{{{\tan }^2}x}}) = \mathop {\lim }\limits_{x \to 0} \frac{{{{\tan }^2}x - {x^2}}}{{{x^2}{{\tan }^2}x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{(\tan x + x)(\tan x - x)}}{{{x^4}}} = $
-
-$\mathop {\lim }\limits_{x \to 0} \dfrac{{\tan x + x}}{x} \cdot \mathop {\lim }\limits_{x \to 0} \dfrac{{\tan x - x}}{{{x^3}}} = 2\mathop {\lim }\limits_{x \to 0} \dfrac{{{{\sec }^2}x - 1}}{{3{x^2}}} = \frac{2}{3}\mathop {\lim }\limits_{x \to 0} \dfrac{{{{\tan }^2}x}}{{{x^2}}} = \dfrac{2}{3}$
-
-(11)$\mathop {\lim }\limits_{x \to 1} (\dfrac{1}{{\ln x}} - \dfrac{1}{{x - 1}}) = \mathop {\lim }\limits_{x \to 1} \dfrac{{x - \ln x - 1}}{{(x - 1)\ln x}} = \mathop {\lim }\limits_{x \to 1} \dfrac{{x - 1}}{{(x - 1) + x\ln x}} = \mathop {\lim }\limits_{x \to 1} \dfrac{1}{{1 + 1 + \ln x}} = \dfrac{1}{2}$
+(6)$\lim\limits_{x \to 1}  (\dfrac{{{x^x} - x}}{{\ln x - x + 1}}) = \lim\limits_{x \to 1}  \dfrac{{{x^x}(\ln x + 1) - 1}}{{\dfrac{1}{x} - 1}} = \lim\limits_{x \to 1}  \dfrac{{{x^x}{{(\ln x + 1)}^2} + {x^{x - 1}}}}{{ - \dfrac{1}{{{x^2}}}}} =  - 2$
 
 \begin{flalign*} \indent
     \begin{split}
-    (12)\mathop {\lim }\limits_{x \to 0} {(\dfrac{{\tan x}}{x})^{\frac{1}{{{x^2}}}}} 
-    &= \mathop {\lim }\limits_{x \to 0} {e^{\frac{1}{{{x^2}}} \cdot \ln \dfrac{{\tan x}}{x}}} = {e^{\mathop {\lim }\limits_{x \to 0} \dfrac{{\frac{x}{{\tan x}} \cdot \dfrac{{{{\sec }^2}x \cdot x - \tan x}}{{{x^2}}}}}{{2x}}}}  \\
-    &={e^{\mathop {\lim }\limits_{x \to 0} \dfrac{{{{\sec }^2}x \cdot (x - \sin x\cos x)}}{{2{x^3}}}}} = {e^{\mathop {\lim }\limits_{x \to 0} \dfrac{{1 - \cos 2x}}{{6{x^2}}}}} \\
-    &= {e^{\mathop {\lim }\limits_{x \to 0} \dfrac{1}{2} \cdot \dfrac{{{{(2x)}^2}}}{{6{x^2}}}}} = {e^{\dfrac{1}{3}}}\\
+    (7)\lim\limits_{x \to 0}  \dfrac{{1 - \cos {x^2}}}{{{x^2} - {{\tan }^2}x}}
+    &= \dfrac{1}{2}\lim\limits_{x \to 0}  \dfrac{{{x^4}}}{{(x + \tan x)(x - \tan x)}}
+    = \dfrac{1}{2}\lim\limits_{x \to 0}  \dfrac{x}{{x + \tan x}} \cdot \dfrac{{{x^3}}}{{x - \tan x}}\\
+    &=\dfrac{1}{2} \cdot \dfrac{1}{2}\lim\limits_{x \to 0}  \dfrac{{3{x^2}}}{{1 - {{\sec }^2}x}}
+    =  - \dfrac{3}{4}\lim\limits_{x \to 0}  \dfrac{{{x^2}}}{{{{\tan }^2}x}}
+    =  - \frac{3}{4}.\\
     \end{split}&
 \end{flalign*}
 
-(13)$\mathop {\lim }\limits_{x \to 1} (1 - x)\tan \dfrac{{\pi x}}{2} = \mathop {\lim }\limits_{x \to 1} \dfrac{{\tan \frac{{\pi x}}{2}}}{{\frac{1}{{1 - x}}}} = \mathop {\lim }\limits_{x \to 1} \frac{{{{(1 - x)}^2} \cdot \dfrac{\pi }{2}}}{{{{\cos }^2}\dfrac{{\pi x}}{2}}} = \mathop {\lim }\limits_{x \to 1} \dfrac{{2(1 - x)}}{{\sin \pi x}} =  - 2\mathop {\lim }\limits_{x \to 1} \dfrac{1}{{\cos \pi x \cdot \pi }} = \dfrac{2}{\pi }$
+(8)$\lim\limits_{x \to 0}  \dfrac{{x - \arctan x}}{{{{\sin }^3}x}} = \lim\limits_{x \to 0}  \dfrac{{1 - \frac{1}{{1 + {x^2}}}}}{{3{x^2}}} = \lim\limits_{x \to 0}  \dfrac{{{x^2}}}{{3{x^2}(1 + {x^2})}} = \dfrac{1}{3}$
 
-(14)$\mathop {\lim }\limits_{x \to {0^+}} {e^{ - \tan \ln x}} = \mathop {\lim }\limits_{x \to {0^+}} {e^{ - \frac{{\sin x\ln x}}{{\cos x}}}} = {e^0} = 1$
+(9)$\lim\limits_{x \to 0}  \dfrac{{\ln (1 + {x^2})}}{{\sec x - \cos x}} = \lim\limits_{x \to 0}  \dfrac{{{x^2} \cdot \cos x}}{{1 - {{\cos }^2}x}} = \lim\limits_{x \to 0}  \dfrac{{{x^2}}}{{{{\sin }^2}x}} = 1$
+
+(10)$\lim\limits_{x \to 0}  (\frac{1}{{{x^2}}} - \frac{1}{{{{\tan }^2}x}}) = \lim\limits_{x \to 0}  \frac{{{{\tan }^2}x - {x^2}}}{{{x^2}{{\tan }^2}x}} = \lim\limits_{x \to 0}  \dfrac{{(\tan x + x)(\tan x - x)}}{{{x^4}}} = $
+
+$\lim\limits_{x \to 0}  \dfrac{{\tan x + x}}{x} \cdot \lim\limits_{x \to 0}  \dfrac{{\tan x - x}}{{{x^3}}} = 2\lim\limits_{x \to 0}  \dfrac{{{{\sec }^2}x - 1}}{{3{x^2}}} = \frac{2}{3}\lim\limits_{x \to 0}  \dfrac{{{{\tan }^2}x}}{{{x^2}}} = \dfrac{2}{3}$
+
+(11)$\lim\limits_{x \to 1}  (\dfrac{1}{{\ln x}} - \dfrac{1}{{x - 1}}) = \lim\limits_{x \to 1}  \dfrac{{x - \ln x - 1}}{{(x - 1)\ln x}} = \lim\limits_{x \to 1}  \dfrac{{x - 1}}{{(x - 1) + x\ln x}} = \lim\limits_{x \to 1}  \dfrac{1}{{1 + 1 + \ln x}} = \dfrac{1}{2}$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (12)\lim\limits_{x \to 0}  {(\dfrac{{\tan x}}{x})^{\frac{1}{{{x^2}}}}}
+    &= \lim\limits_{x \to 0}  {e^{\frac{1}{{{x^2}}} \cdot \ln \dfrac{{\tan x}}{x}}} = {e^{\lim\limits_{x \to 0}  \dfrac{{\frac{x}{{\tan x}} \cdot \dfrac{{{{\sec }^2}x \cdot x - \tan x}}{{{x^2}}}}}{{2x}}}}  \\
+    &={e^{\lim\limits_{x \to 0}  \dfrac{{{{\sec }^2}x \cdot (x - \sin x\cos x)}}{{2{x^3}}}}} = {e^{\lim\limits_{x \to 0}  \dfrac{{1 - \cos 2x}}{{6{x^2}}}}} \\
+    &= {e^{\lim\limits_{x \to 0}  \dfrac{1}{2} \cdot \dfrac{{{{(2x)}^2}}}{{6{x^2}}}}} = {e^{\frac{1}{3}}}\\
+    \end{split}&
+\end{flalign*}
+
+(13)$\lim\limits_{x \to 1}  (1 - x)\tan \dfrac{{\pi x}}{2} = \lim\limits_{x \to 1}  \dfrac{{\tan \frac{{\pi x}}{2}}}{{\frac{1}{{1 - x}}}} = \lim\limits_{x \to 1}  \frac{{{{(1 - x)}^2} \cdot \dfrac{\pi }{2}}}{{{{\cos }^2}\dfrac{{\pi x}}{2}}} = \lim\limits_{x \to 1}  \dfrac{{2(1 - x)}}{{\sin \pi x}} =  - 2\lim\limits_{x \to 1}  \dfrac{1}{{\cos \pi x \cdot \pi }} = \dfrac{2}{\pi }$
+
+(14)$\lim\limits_{x \to 0^+}  {e^{ - \tan \ln x}} = \lim\limits_{x \to 0^+}  {e^{ - \frac{{\sin x\ln x}}{{\cos x}}}} = {e^0} = 1$
 
 2.解析:
 
-(1)$\mathop {\lim }\limits_{x \to 0} \dfrac{{{x^2}\sin \dfrac{1}{x}}}{{\sin x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{2x\sin \frac{1}{x} - \cos \dfrac{1}{x}}}{{\cos x}}$此极限不存在，洛必达法则不适用.
+(1)$\lim\limits_{x \to 0}  \dfrac{{{x^2}\sin \dfrac{1}{x}}}{{\sin x}} = \lim\limits_{x \to 0}  \dfrac{{2x\sin \frac{1}{x} - \cos \dfrac{1}{x}}}{{\cos x}}$此极限不存在，洛必达法则不适用.
 
-原极限$ = \mathop {\lim }\limits_{x \to 0} \dfrac{x}{{\sin x}} \cdot x \cdot \sin \dfrac{1}{x} = 1 \cdot 0 = 0$
+原极限$ = \lim\limits_{x \to 0}  \dfrac{x}{{\sin x}} \cdot x \cdot \sin \dfrac{1}{x} = 1 \cdot 0 = 0$
 
 (2)$\mathop {\lim }\limits_{x \to \infty } \dfrac{{x - \sin x}}{{x + \sin x}} = \mathop {\lim }\limits_{x \to \infty } \dfrac{{1 - \cos x}}{{1 + \cos x}}$此极限不存在，洛必达法则不适用.
 
@@ -202,13 +201,13 @@ $\mathop {\lim }\limits_{x \to 0} \dfrac{{\tan x + x}}{x} \cdot \mathop {\lim }\
 
 3.解析:因$f(x)$具有一阶连续导数,从而$f(x)$连续,$x \to 0$时,$f(1 - \cos x) \to f(0) = 0$,
 
-则$\mathop {\lim }\limits_{x \to 0} \dfrac{{f(1 - \cos x)}}{{\tan {x^2}}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{f'(1 - \cos x) \cdot \sin x}}{{{{\sec }^2}{x^2} \cdot 2x}} = \dfrac{1}{2}\mathop {\lim }\limits_{x \to 0} f'(1 - \cos x) = \dfrac{1}{2}f'(0) = 1$
+则$\lim\limits_{x \to 0}  \dfrac{{f(1 - \cos x)}}{{\tan {x^2}}} = \lim\limits_{x \to 0}  \dfrac{{f'(1 - \cos x) \cdot \sin x}}{{{{\sec }^2}{x^2} \cdot 2x}} = \dfrac{1}{2}\lim\limits_{x \to 0}  f'(1 - \cos x) = \dfrac{1}{2}f'(0) = 1$
 
 4.证明:当$h \to 0$时,$f(x + h) + f(x - h) - 2f(x) \to 0$,以及${h^2} \to 0$且分子、分母（视为h的函数）都有导数，又注意到分母的导数,$2h \ne 0,(h \to 0,h \ne 0)$,故对
 
 \begin{flalign*}
     \begin{split}
-    \mathop {\lim }\limits_{h \to 0} \dfrac{{f(x + h) + f(x - h) - 2f(x)}}{{{h^2}}} 
+    \mathop {\lim }\limits_{h \to 0} \dfrac{{f(x + h) + f(x - h) - 2f(x)}}{{{h^2}}}
     &= \mathop {\lim }\limits_{h \to 0} \dfrac{{f'(x + h) - f'(x - h)}}{{2h}} \\
     &= 4\mathop {\lim }\limits_{x \to \frac{1}{2}} \dfrac{2}{{{\pi ^2}{e^{\sin \pi x}}({{\cos }^2}\pi x - \sin \pi x) - 9{\pi ^2}{e^{ - \sin 3\pi x}}({{\cos }^2}3\pi x + \sin 3\pi x)}} \\
     &=4 \cdot \dfrac{2}{{ - {\pi ^2}e + 9{\pi ^2}e}} = \dfrac{1}{{{\pi ^2}e}}\\
@@ -218,63 +217,69 @@ $\mathop {\lim }\limits_{x \to 0} \dfrac{{\tan x + x}}{x} \cdot \mathop {\lim }\
 
 \begin{flalign*}
     \begin{split}
-    (2)\mathop {\lim }\limits_{x \to 0} \dfrac{{\sqrt {1 + \tan x}  - \sqrt {1 + \sin x} }}{{x\ln (1 + x) - {x^2}}} 
-    & =  \mathop {\lim }\limits_{x \to 0} \dfrac{{\tan x(1 - \cos x)}}{{x(\sqrt {1 + \tan x}  + \sqrt {1 + \sin x} ) \cdot [\ln (1 + x) - x]}}\\
-    & = \dfrac{1}{4}\mathop {\lim }\limits_{x \to 0} \dfrac{{2x}}{{\dfrac{1}{{1 + x}} - 1}} =  - \dfrac{1}{2}\\
+    (2)\lim\limits_{x \to 0}  \dfrac{{\sqrt {1 + \tan x}  - \sqrt {1 + \sin x} }}{{x\ln (1 + x) - {x^2}}}
+    & =  \lim\limits_{x \to 0}  \dfrac{{\tan x(1 - \cos x)}}{{x(\sqrt {1 + \tan x}  + \sqrt {1 + \sin x} ) \cdot [\ln (1 + x) - x]}}\\
+    & = \dfrac{1}{4}\lim\limits_{x \to 0}  \dfrac{{2x}}{{\dfrac{1}{{1 + x}} - 1}} =  - \dfrac{1}{2}\\
     \end{split}&
 \end{flalign*}
 
 \begin{flalign*}
     \begin{split}
-    (3)\mathop {\lim }\limits_{x \to {0^+}} {\left( {2-}{3^{{{\arctan }^2}\sqrt x }}} \right)^{\dfrac{2}{{\sin {x}}}}}
-    & = {e^{\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{2}{{\sin x}}\left( {2 - {3^{{{\arctan }^2}\sqrt x }}} \right)}} = {e^{\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{2}{{\sin x}}\left( {1 - {3^{{{\arctan }^2}\sqrt x }}} \right)}}\\
-    &  = {e^{ - 2\ln 3\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{3{{\arctan }^2}\sqrt x  \cdot 2\arctan \sqrt x }}{{\cos x}} \cdot \dfrac{1}{{1 + x}}}}\\
-    &  = {e^0} = 1\\
+    (3)\lim\limits_{x \to 0^+}  \left( {2-}3^{{{\arctan }^2}\sqrt x } \right)^{\frac{2}{{\sin {x}}}}
+    & = {e^{\lim\limits_{x \to 0^+}  \dfrac{2}{{\sin x}}\left( {2 - {3^{{{\arctan }^2}\sqrt x }}} \right)}}
+    = {e^{\lim\limits_{x \to 0^+}  \dfrac{2}{{\sin x}}\left( {1 - {3^{{{\arctan }^2}\sqrt x }}} \right)}}\\
+    & = {e^{ - 2\ln 3\lim\limits_{x \to 0^+}  \dfrac{{3{{\arctan }^2}\sqrt x  \cdot 2\arctan \sqrt x }}{{\cos x}} \cdot \dfrac{1}{{1 + x}}}}\\
+    & = {e^0}
+    = 1
     \end{split}&
 \end{flalign*}
 
 \begin{flalign*}
     \begin{split}
-    (4)\mathop {\lim }\limits_{x \to  + \infty } \dfrac{{\ln (a + b{e^x})}}{{\sqrt {m + n{x^2}} }}(b > 0,n > 0) 
-    &= \mathop {\lim }\limits_{x \to  + \infty } \dfrac{b}{{\frac{a}{{{e^x}}} + b}} \cdot \dfrac{{\sqrt {m + n{x^2}} }}{{nx}} = \mathop {\lim }\limits_{x \to  + \infty } \dfrac{{\frac{{nx}}{{\sqrt {m + n{x^2}} }}}}{n}\\
-    &=\mathop {\lim }\limits_{x \to  + \infty } \dfrac{1}{{\sqrt {\dfrac{m}{{{x^2}}} + n} }} = \dfrac{1}{{\sqrt n }}\\
+    (4)\lim\limits_{x \to +\infty}  \dfrac{{\ln (a + b{e^x})}}{{\sqrt {m + n{x^2}} }}(b > 0,n > 0)
+    & = \lim\limits_{x \to +\infty}  \dfrac{b}{{\frac{a}{{{e^x}}} + b}} \cdot \dfrac{{\sqrt {m + n{x^2}} }}{{nx}} = \lim\limits_{x \to +\infty}  \dfrac{{\frac{{nx}}{{\sqrt {m + n{x^2}} }}}}{n}\\
+    & =\lim\limits_{x \to +\infty}  \dfrac{1}{{\sqrt {\dfrac{m}{{{x^2}}} + n} }} = \dfrac{1}{{\sqrt n }}
     \end{split}&
 \end{flalign*}
 
 \begin{flalign*}
     \begin{split}
-    (5)\mathop {\lim }\limits_{n\to \infty } {n^2}\ln (n\sin \dfrac{1}{n}) 
-    &= \mathop {\lim }\limits_{x \to  + \infty } {x^2}\ln (x\sin \dfrac{1}{x}) = \mathop {\lim }\limits_{x \to  + \infty } {x^2}(x\sin \dfrac{1}{x} - 1) = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{1}{{{x^2}}}(\dfrac{{\sin x}}{x} - 1)\\
-    &  = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\sin x - x}}{{{x^3}}} = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\cos x - 1}}{{3{x^2}}} = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{ - \sin x}}{{6x}}\\
-    & =  - 6\\
+    (5)\mathop {\lim }\limits_{n\to \infty } {n^2}\ln (n\sin \dfrac{1}{n})
+    & = \lim\limits_{x \to +\infty}  {x^2}\ln (x\sin \dfrac{1}{x})
+    = \lim\limits_{x \to +\infty}  {x^2}(x\sin \dfrac{1}{x} - 1)
+    = \lim\limits_{x \to 0^+}  \dfrac{1}{{{x^2}}}(\dfrac{{\sin x}}{x} - 1)\\
+    & = \lim\limits_{x \to 0^+}  \dfrac{{\sin x - x}}{{{x^3}}}
+    = \lim\limits_{x \to 0^+}  \dfrac{{\cos x - 1}}{{3{x^2}}}
+    = \lim\limits_{x \to 0^+}  \dfrac{{ - \sin x}}{{6x}}
+    = - 6
     \end{split}&
 \end{flalign*}
 
-(6)$\mathop {\lim }\limits_{x \to 0} {(\dfrac{{{a^x} - x\ln a}}{{{b^x} - \ln b}})^{\frac{1}{{{x^2}}}}} = \mathop {\lim }\limits_{x \to 0} {e^{\frac{{\ln ({a^x} - x\ln a) - \ln ({b^x} - \ln b)}}{{{x^2}}}}} = {e^{\frac{1}{2}({{\ln }^2}a - {{\ln }^2}b)}}$
+(6)$\lim\limits_{x \to 0}  {(\dfrac{{{a^x} - x\ln a}}{{{b^x} - \ln b}})^{\frac{1}{{{x^2}}}}} = \lim\limits_{x \to 0}  {e^{\frac{{\ln ({a^x} - x\ln a) - \ln ({b^x} - \ln b)}}{{{x^2}}}}} = {e^{\frac{1}{2}({{\ln }^2}a - {{\ln }^2}b)}}$
 
 \begin{flalign*}
     \begin{split}
-    (7)\mathop {\lim }\limits_{x \to 0} {\left( {\dfrac{{\arcsin x}}{{\rm{x}}}} \right)^{\frac{1}{{1 - \cos x}}}} 
-    &= {e^{\mathop {\lim }\limits_{x \to 0} \frac{1}{{1 - \cos x}}\ln (\frac{{\arcsin x}}{x})}} = {e^{\lim \frac{1}{{1 - \cos x}}(\frac{{\arcsin x}}{x} - 1)}}\\
-    & = {e^{\mathop {\lim }\limits_{x \to 0} \frac{{\arcsin x - x}}{{x(1 - \cos x)}}}} = {e^{2\mathop {\lim }\limits_{x \to 0} \frac{{\arcsin x - x}}{{{x^3}}}}} = {e^{2\mathop {\lim }\limits_{x \to 0} \frac{{\frac{1}{{\sqrt {1 - {x^2}} }} - 1}}{{3{x^2}}}}}\\
-    & = {e^{2\mathop {\lim }\limits_{x \to 0} \frac{{1 - \sqrt {1 - {x^2}} }}{{3{x^2}\sqrt {1 - {x^2}} }}}} = {e^{2\mathop {\lim }\limits_{x \to 0} \frac{{\frac{1}{2}{x^2}}}{{3{x^2}}}}}\\
+    (7)\lim\limits_{x \to 0}  {\left( {\dfrac{{\arcsin x}}{{\rm{x}}}} \right)^{\frac{1}{{1 - \cos x}}}}
+    &= {e^{\lim\limits_{x \to 0}  \frac{1}{{1 - \cos x}}\ln (\frac{{\arcsin x}}{x})}} = {e^{\lim \frac{1}{{1 - \cos x}}(\frac{{\arcsin x}}{x} - 1)}}\\
+    & = {e^{\lim\limits_{x \to 0}  \frac{{\arcsin x - x}}{{x(1 - \cos x)}}}} = {e^{2\lim\limits_{x \to 0}  \frac{{\arcsin x - x}}{{{x^3}}}}} = {e^{2\lim\limits_{x \to 0}  \frac{{\frac{1}{{\sqrt {1 - {x^2}} }} - 1}}{{3{x^2}}}}}\\
+    & = {e^{2\lim\limits_{x \to 0}  \frac{{1 - \sqrt {1 - {x^2}} }}{{3{x^2}\sqrt {1 - {x^2}} }}}} = {e^{2\lim\limits_{x \to 0}  \frac{{\frac{1}{2}{x^2}}}{{3{x^2}}}}}\\
     & = {e^{2 \cdot \frac{1}{6}}} = \sqrt[3]{e}\\
      \end{split}&
 \end{flalign*}
 
-(8)$\mathop {\lim }\limits_{x \to  + \infty } {(1 + \dfrac{1}{x} + \dfrac{1}{{{x^2}}})^x} = \mathop {\lim }\limits_{x \to  + \infty } {(1 + \dfrac{{x + 1}}{{{x^2}}})^{\frac{{{x^2}}}{{x + 1}} \cdot \dfrac{{x + 1}}{x}}} = {e^{\mathop {\lim }\limits_{x \to  + \infty } \dfrac{{x + 1}}{x}}} = e$
+(8)$\lim\limits_{x \to +\infty}  {(1 + \dfrac{1}{x} + \dfrac{1}{{{x^2}}})^x} = \lim\limits_{x \to +\infty}  {(1 + \dfrac{{x + 1}}{{{x^2}}})^{\frac{{{x^2}}}{{x + 1}} \cdot \dfrac{{x + 1}}{x}}} = {e^{\lim\limits_{x \to +\infty}  \dfrac{{x + 1}}{x}}} = e$
 
-所以$\mathop {\lim }\limits_{x \to  + \infty } {(1 + \fdrac{1}{n} + \dfrac{1}{{{n^2}}})^n} = e$
+所以$\lim\limits_{x \to +\infty}  {(1 + \dfrac{1}{n} + \dfrac{1}{{{n^2}}})^n} = e$
 
-5.解:由于$\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{1}{x}[\ln {(1 + x)^{\frac{1}{x}}} - 1] = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\ln (1 + x) - x}}{{{x^2}}} = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\frac{1}{{1 + x}} - 1}}{{2x}} =  - \dfrac{1}{2}$
+5.解:由于$\lim\limits_{x \to 0^+}  \dfrac{1}{x}[\ln {(1 + x)^{\frac{1}{x}}} - 1] = \lim\limits_{x \to 0^+}  \dfrac{{\ln (1 + x) - x}}{{{x^2}}} = \lim\limits_{x \to 0^+}  \dfrac{{\frac{1}{{1 + x}} - 1}}{{2x}} =  - \dfrac{1}{2}$
 
-所以$\mathop {\lim }\limits_{x \to {0^ + }} f(x) = \mathop {\lim }\limits_{x \to {0^ + }} {[\dfrac{{{{(1 + x)}^{\frac{1}{x}}}}}{e}]^{\frac{1}{x}}} = {e^{ - \frac{1}{2}}} = f(0)$即函数$f(x)$在点$x = 0$处连续.
+所以$\lim\limits_{x \to 0^+}  f(x) = \lim\limits_{x \to 0^+}  {[\dfrac{{{{(1 + x)}^{\frac{1}{x}}}}}{e}]^{\frac{1}{x}}} = {e^{ - \frac{1}{2}}} = f(0)$即函数$f(x)$在点$x = 0$处连续.
 
 6.解析:若使$f(x)$在$[\dfrac {1}{2} , 1)$连续，则满足$f(1) = \mathop {\lim }\limits_{x \to {1^ - }} f(x);$
 
 \begin{flalign*} \indent
     \begin{split}
-    \text {又} \mathop {\lim }\limits_{x \to {1^ - }} f(x) 
+    \text {又} \mathop {\lim }\limits_{x \to {1^ - }} f(x)
     &= \dfrac{1}{\pi } + \mathop {\lim }\limits_{x \to {1^ - }} [\frac{1}{{\sin \pi x}} - \dfrac{1}{{\pi (1 - x)}}] = d\frac{1}{\pi } + \mathop {\lim }\limits_{x \to {1^ - }} \dfrac{{\pi (1 - x) - \sin \pi x}}{{\pi (1 - x)\sin \pi x}}  \\
     &= \dfrac{1}{\pi } + \mathop {\lim }\limits_{x \to {1^ - }} \dfrac{{ - \pi  - \pi \cos \pi x}}{{ - \pi \sin \pi x + {\pi ^2}(1 - x)\cos \pi x}}\\
     & = \dfrac{1}{\pi } + \mathop {\lim }\limits_{x \to {1^ - }} \dfrac{{{\pi ^2}\sin \pi x}}{{ - {\pi ^2}\cos \pi x + {\pi ^2} + {\pi ^2}(1 - x)\sin \pi x}}\\
@@ -297,7 +302,6 @@ $\mathop {\lim }\limits_{x \to 0} \dfrac{{\tan x + x}}{x} \cdot \mathop {\lim }\
 
 \section{泰勒公式}
 \begin{flushright}
-  \color{zhanqing!80}
   \color{zhanqing!80}
   \ding{43} 教材见199 页 % 这里需要添加页数
 \end{flushright}
@@ -370,11 +374,11 @@ ${R_{2m}}(x) = \dfrac{{\sin [\theta x + (2m + 1) \cdot \frac{\pi }{2}]}}{{(2m + 
 
 (2)因为${(1 + x)^a} = 1 + ax + \dfrac{{a(a - 1)}}{{2!}}{x^2} +  \cdots  + \dfrac{{a(a - 1) \cdots (a - n + 1)}}{{n!}}{x^n} + {R_n}(x)$其中${R_n}(x) = \dfrac{{a(a - 1) \cdots (a - n + 1)(a - n)}}{{(n + 1)!}}{(1 + \theta x)^{a - n - 1}}{x^{n + 1}}(0 < \theta  < 1)$.
 
-所以${(1 + x)^{\dfrac{1}{2}}} = 1 + \dfrac{1}{2}x - \dfrac{1}{8}{x^2} +  \cdots  + \dfrac{{\frac{1}{2} \cdot (\frac{1}{2} - 1) \cdots (\frac{1}{2} - n + 1)}}{{n!}}{x^n} + {R_n}(x)$
+所以${(1 + x)^{\frac{1}{2}}} = 1 + \dfrac{1}{2}x - \dfrac{1}{8}{x^2} +  \cdots  + \dfrac{{\frac{1}{2} \cdot (\frac{1}{2} - 1) \cdots (\frac{1}{2} - n + 1)}}{{n!}}{x^n} + {R_n}(x)$
 
-当$n = 2$时,得近似值$\sqrt {1 + x}  \approx 1 + \frac{1}{2}x - \frac{1}{8}{x^2},
+当$n = 2$时,得近似值$\sqrt {1 + x}  \approx 1 + \dfrac{1}{2}x - \dfrac{1}{8}{x^2},$
 
-$当$0 \le x \le 1$时,此时误差${R_3}(x) = \dfrac{1}{2} \cdot \dfrac{3}{4} \cdot \dfrac{1}{{3!}}{(1 + \theta x)^{ - \frac{1}{2}}}{x^3} < 6.25 \times {10^{ - 2}}$
+当$0 \le x \le 1$时,此时误差${R_3}(x) = \dfrac{1}{2} \cdot \dfrac{3}{4} \cdot \dfrac{1}{{3!}}{(1 + \theta x)^{ - \frac{1}{2}}}{x^3} < 6.25 \times {10^{ - 2}}$
 
 10.解析:$\cos x = 1 - \dfrac{1}{{2!}}{x^2} + \dfrac{1}{{4!}}{x^4} -  \cdots  + \dfrac{{{{( - 1)}^m}}}{{(2m)!}}{x^{2m}} + {R_{2m + 1}}(x),$
 
@@ -390,19 +394,19 @@ $当$0 \le x \le 1$时,此时误差${R_3}(x) = \dfrac{1}{2} \cdot \dfrac{3}{4} \
 
 所以$\cos x - {e^{ - \frac{{{x^2}}}{2}}} = 1 - \dfrac{1}{{2!}}{x^2} + \dfrac{1}{{4!}}{x^4} + o({x^4}) - 1 + \dfrac{1}{2}{x^2} - \dfrac{1}{8}{x^4} - o({x^4}) =  - \dfrac{1}{{12}}{x^4} + o({x^4})$
 
-$\mathop {\lim }\limits_{x \to 0} \dfrac{{\cos x - {e^{ - \frac{{{x^2}}}{2}}}}}{{{x^4}}} =  - \dfrac{1}{{12}}$
+$\lim\limits_{x \to 0}  \dfrac{{\cos x - {e^{ - \frac{{{x^2}}}{2}}}}}{{{x^4}}} =  - \dfrac{1}{{12}}$
 
 (2)因为${e^x} = 1 + x + \dfrac{1}{2}{x^2} + 0({x^2}),\sin x = x + o(x),$
 
-所以$\mathop {\lim }\limits_{x \to 0} \dfrac{{{e^x}\sin x - x(1 + x)}}{{{x^3}}} = \dfrac{{x + {x^2} + \dfrac{1}{2}{x^3} + o({x^3}) - x - {x^2}}}{{{x^3}}} = \dfrac{1}{2}$
+所以$\lim\limits_{x \to 0}  \dfrac{{{e^x}\sin x - x(1 + x)}}{{{x^3}}} = \dfrac{{x + {x^2} + \dfrac{1}{2}{x^3} + o({x^3}) - x - {x^2}}}{{{x^3}}} = \dfrac{1}{2}$
 
 (3)${e^x} = 1 + x + \dfrac{1}{2}{x^2} + \dfrac{1}{6}{x^3} + 0({x^2}),\therefore {e^{\frac{1}{x}}} = 1 + \dfrac{1}{x} + \dfrac{1}{{2{x^2}}} + \dfrac{1}{{6{x^3}}} + 0(\dfrac{1}{{{x^3}}}),$
 
 所以$\mathop {\lim }\limits_{x \to \infty } [({x^3} - {x^2} + \dfrac{x}{2}){e^{\frac{1}{x}}} - \sqrt {{x^6} - 1} ] = \mathop {\lim }\limits_{x \to \infty } ({x^3} - {x^2} + \dfrac{x}{2})\left( {1 + \dfrac{1}{x} + \dfrac{1}{{2{x^2}}} + \dfrac{1}{{6{x^3}}} + 0(\dfrac{1}{{{x^3}}})} \right) =  - \sqrt {{x^6} - 1}  = \dfrac{1}{6}$
 
-(4)$\sin x = x + 0(x),\therefore \mathop {\lim }\limits_{x \to 0} (\dfrac{1}{x} - \dfrac{1}{{\sin x}}) = \mathop {\lim }\limits_{x \to 0} (\dfrac{1}{x} - \dfrac{1}{{x + 0(x)}}) = 0$
+(4)$\sin x = x + 0(x),\therefore \lim\limits_{x \to 0}  (\dfrac{1}{x} - \dfrac{1}{{\sin x}}) = \lim\limits_{x \to 0}  (\dfrac{1}{x} - \dfrac{1}{{x + 0(x)}}) = 0$
 
-13.解析:由题意可得:$\mathop {\lim }\limits_{x \to 0} \dfrac{{f(x) - x}}{{{x^2}}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{f'(x) - 1}}{{2x}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{f''(x)}}{2} = \dfrac{{f''(x)}}{2}$
+13.解析:由题意可得:$\lim\limits_{x \to 0}  \dfrac{{f(x) - x}}{{{x^2}}} = \lim\limits_{x \to 0}  \dfrac{{f'(x) - 1}}{{2x}} = \lim\limits_{x \to 0}  \dfrac{{f''(x)}}{2} = \dfrac{{f''(x)}}{2}$
 
 14.题目有误,无法证明.
 
@@ -432,20 +436,19 @@ $ = 1 + \dfrac{1}{{2!}}{x^2} + \dfrac{1}{{4!}}{x^4} +  \cdots  + \dfrac{1}{{2n!}
 
 20.解析:要使得$x - (a + b\cos x)\sin x$为关于x的5阶无穷小,即使得
 
-$\mathop {\lim }\limits_{x \to 0} \dfrac{{x - (a + b\cos x)\sin x}}{{{x^5}}} = c(c \ne 0),$
+$\lim\limits_{x \to 0}  \dfrac{{x - (a + b\cos x)\sin x}}{{{x^5}}} = c(c \ne 0),$
 
 $\cos x = 1 - \dfrac{1}{{2!}}x + \dfrac{1}{{4!}}{x^4} + o({x^5}),\sin x = x - \dfrac{1}{{3!}}{x^3} + \dfrac{1}{{5!}}{x^5} + o({x^5})$,
 
 原式=$\dfrac{{x - a(x - \frac{1}{{3!}}{x^3} + \frac{1}{{5!}}{x^5} + o({x^5})) - b(x - \frac{1}{{2!}}{x^3} + \frac{1}{{4!}}{x^5} - \frac{1}{{3!}}{x^3} - 90\frac{1}{{2!3!}}{x^5} + \frac{1}{{5!}}{x^5} + o({x^5}))}}{{{x^5}}}$
 
-欲使得$\mathop {\lim }\limits_{x \to 0} \frac{{x - (a + b\cos x)\sin x}}{{{x^5}}} = c(c \ne 0)$即$,1 - a - b = 0,\dfrac{1}{{3!}}a + \dfrac{1}{{2!}}b + \dfrac{1}{{3!}}b = 0,a = \dfrac{4}{3},b =  - \dfrac{1}{3}.$
+欲使得$\lim\limits_{x \to 0}  \frac{{x - (a + b\cos x)\sin x}}{{{x^5}}} = c(c \ne 0)$即$,1 - a - b = 0,\dfrac{1}{{3!}}a + \dfrac{1}{{2!}}b + \dfrac{1}{{3!}}b = 0,a = \dfrac{4}{3},b =  - \dfrac{1}{3}.$
 
 $\therefore a = \dfrac{4}{3},b =  - \dfrac{1}{3}$时$x - (a + b\cos x)\sin x$为x的5阶无穷小.
 
 
 \section{函数的单调性与极值判定}
 \begin{flushright}
-  \color{zhanqing!80}
   \color{zhanqing!80}
   \ding{43} 教材见214 页 % 这里需要添加页数
 \end{flushright}
@@ -454,9 +457,9 @@ $\therefore a = \dfrac{4}{3},b =  - \dfrac{1}{3}$时$x - (a + b\cos x)\sin x$为
 
 2.解析:
 
-(1)$f\left( x \right)$的定义域为$\left( { - \infty , + \infty } \right)$,${f^'}\left( x \right) = 3 - 3{x^2}$.
+(1)$f\left( x \right)$的定义域为$\left( { - \infty , + \infty } \right)$, ${f' }\left( x \right) = 3 - 3{x^2}$.
 
-令${f^'}\left( x \right) = 0$得$x =  \pm 1$
+令${f' }\left( x \right) = 0$得$x =  \pm 1$
 
 当$ - 1 < x < 1$时,$f' \left( x \right) > 0$故在$f\left( x \right)\left( { - 1,1} \right)$上单调增加;
 
@@ -560,7 +563,7 @@ $f\left( { - 5} \right) =  - 5 + \sqrt 6 $.
 
 6.解析:$f\left( x \right) = {x^3} - 6{x^2} + 9x - 10 \Rightarrow f'\left( x \right) = 3{x^2} - 12x + 9,$
 
-$f'\left( x \right) = 0 \Rightarrow {x_1} = 3,{x_2} = 1$,易得$f\left( x \right)$在$\left[ {1,3} \right]$内单调减少,在$\left( { - \infty ,1} \right],\left[ {3, + \infty } \right)$内单调增加,$f\left( 1 \right) =  - 6 < 0,f\left( 3 \right) =  - 10 < 0,\mathop {\lim }\limits_{x \to  - \infty } f\left( x \right) =  - \infty ,\mathop {\lim }\limits_{x \to  + \infty } f\left( x \right) =  + \infty $,所以$f\left( x \right)$仅在$\left( {3, + \infty } \right)$内又一个实根.
+$f'\left( x \right) = 0 \Rightarrow {x_1} = 3,{x_2} = 1$,易得$f\left( x \right)$在$\left[ {1,3} \right]$内单调减少,在$\left( { - \infty ,1} \right],\left[ {3, + \infty } \right)$内单调增加,$f\left( 1 \right) =  - 6 < 0,f\left( 3 \right) =  - 10 < 0,\mathop {\lim }\limits_{x \to  - \infty } f\left( x \right) =  - \infty ,\lim\limits_{x \to +\infty}  f\left( x \right) =  + \infty $,所以$f\left( x \right)$仅在$\left( {3, + \infty } \right)$内又一个实根.
 
 7.解析:令$f\left( x \right) = \ln x - ax \Rightarrow f'\left( x \right) = \dfrac{1}{x} - a.$$f'\left( x \right) = 0 \Rightarrow x = \dfrac{1}{a}$,$f\left( x \right)$在$\left( {0,\dfrac{1}{a}} \right)$上单调增加,在$\left( {\dfrac{1}{a}, + \infty } \right)$上单调减少,$f\left( {\dfrac{1}{a}} \right) =  - \ln a - 1$,$f\left( x \right)$的根的数目取决于a的取值范围.
 
@@ -577,7 +580,7 @@ $f'\left( x \right) = 0 \Rightarrow x = 0.$当$x < 0$时,$f'\left( x \right) < 0
 
 9.解析:$f\left( x \right) = {x^5} + 2a{x^3} + 3bx + 4c \Rightarrow f'\left( x \right) = 5{x^4} + 6a{x^2} + 3b$,$\Delta  = 36{a^2} - 60b < 0$,故$f'\left( x \right) > 0$,即$f\left( x \right)$在$\left( { - \infty , + \infty } \right)$内为增函数.
 
-又$\mathop {\lim }\limits_{x \to  - \infty } f\left( x \right) =  - \infty ,\mathop {\lim }\limits_{x \to  + \infty } f\left( x \right) =  + \infty $,所以方程${x^5} + 2a{x^3} + 3bx + 4c = 0$有且仅有一个实根.
+又$\mathop {\lim }\limits_{x \to  - \infty } f\left( x \right) =  - \infty ,\lim\limits_{x \to +\infty}  f\left( x \right) =  + \infty $,所以方程${x^5} + 2a{x^3} + 3bx + 4c = 0$有且仅有一个实根.
 
 10.解析:$f'\left( x \right) = \dfrac{{x\left( {2{b^2} - 3{x^2}} \right)}}{{\sqrt {{b^2} - {x^2}} }}.f'\left( x \right) = 0 \Rightarrow {x_1} = 0,{x_2} = \dfrac{{\sqrt 6 b}}{3}\left( {0 \le x \le b} \right)$.
 
@@ -650,9 +653,9 @@ $f'\left( 0 \right) = 0,$$f'\left( x \right)$在$ = 0$处连续.当$0 < x < 1$�
 
 20.证明:对任意的$x \ne 0$有,
 
-${e^{ - \frac{3}{{\left| x \right|}}}} \le {e^{ - \frac{1}{{\left| x \right|}}\left( {2 + \sin \dfrac{1}{x}} \right)}} \le {e^{ - \frac{1}{{\left| x \right|}}}},\mathop {\lim }\limits_{x \to 0} {e^{ - \frac{3}{{\left| x \right|}}}} = \mathop {\lim }\limits_{x \to 0} {e^{ - \frac{1}{{\left| x \right|}}}} = 0.$
+${e^{ - \frac{3}{{\left| x \right|}}}} \le {e^{ - \frac{1}{{\left| x \right|}}\left( {2 + \sin \dfrac{1}{x}} \right)}} \le {e^{ - \frac{1}{{\left| x \right|}}}},\lim\limits_{x \to 0}  {e^{ - \frac{3}{{\left| x \right|}}}} = \lim\limits_{x \to 0}  {e^{ - \frac{1}{{\left| x \right|}}}} = 0.$
 
-由极限的夹逼性可知,$\mathop {\lim }\limits_{x \to 0} {e^{ - \frac{1}{{\left| x \right|}}\left( {2 + \sin \frac{1}{x}} \right)}} = f\left( 0 \right) = 0$,从而$f\left( x \right)$在$x = 0$处连续.
+由极限的夹逼性可知,$\lim\limits_{x \to 0}  {e^{ - \frac{1}{{\left| x \right|}}\left( {2 + \sin \frac{1}{x}} \right)}} = f\left( 0 \right) = 0$,从而$f\left( x \right)$在$x = 0$处连续.
 
 当$x \ne 0$时,$f\left( x \right)$可导,又因为
 
@@ -687,7 +690,6 @@ $f'\left( x \right) = 2x\ln x - x - \dfrac{1}{x} + 2,f'\left( 1 \right) = 0,$由
 
 \section{曲线的凹凸性与拐点}
 \begin{flushright}
-  \color{zhanqing!80}
   \color{zhanqing!80}
   \ding{43} 教材见221 页 % 这里需要添加页数
 \end{flushright}
@@ -758,11 +760,11 @@ $y = \dfrac{{x - 1}}{{{x^2} + 1}}$有三个拐点在同一条直线上.
 
 当$n > 1$时,$y'' > 0$,故是凹的;当$0 < n < 1$时,$y'' < 0$,故是凸的;
 
-$y = {e^x},y' = {e^x},y'' = {e^x},$当$x \in \left( {0, + \infty } \right)4时,$y'' > 0$故是凹的;
+$y = {e^x}$, $y' = {e^x}$, $y'' = {e^x}$, 当$x \in \left( {0, + \infty } \right)4$时, $y'' > 0$故是凹的;
 
 $y = x\ln x,y' = \ln x + 1,y'' = \frac{1}{x},$当$x \in \left( {0, + \infty } \right)$时$y'' > 0$,故是凹的
 
-$y = \ln x,y' = \dfrac{1}{x},y'' =  - \dfrac{1}{{{x^2}}}$,当4x \in \left( {0, + \infty } \right)$时,$y'' < 0$,故是凸的.
+$y = \ln x,y' = \dfrac{1}{x},y'' =  - \dfrac{1}{{{x^2}}}$,当$4x \in \left( {0, + \infty } \right)$时,$y'' < 0$,故是凸的.
 
 6.解析:$f'\left( x \right) = 3a{x^2} + 2bx + c,f''\left( x \right) = 6ax + 2b$
 
@@ -814,7 +816,6 @@ $y = \ln x,y' = \dfrac{1}{x},y'' =  - \dfrac{1}{{{x^2}}}$,当4x \in \left( {0, +
 \section{函数图形的描绘}
 \begin{flushright}
   \color{zhanqing!80}
-  \color{zhanqing!80}
   \ding{43} 教材见229 页 % 这里需要添加页数
 \end{flushright}
 2.解析:$\mathop {\lim }\limits_{x \to 2} \dfrac{{{x^2} + x}}{{\left( {x - 2} \right)\left( {x + 3} \right)}} = \infty \mathop {\lim }\limits_{x \to  - 3} \dfrac{{{x^2} + x}}{{\left( {x - 2} \right)\left( {x + 3} \right)}} = \infty $,故$x = 2,x = -3$为曲线的铅直渐近线;
@@ -825,15 +826,15 @@ $\mathop {\lim }\limits_{x \to \infty } \dfrac{{{x^2} + x}}{{\left( {x - 2} \rig
 
 $x \to  - 1,y \to \infty $,故$x = - 1$杀一条垂直渐近线
 
-${y^'} = \dfrac{{{x^2} + 2x}}{{{{\left( {x + 1} \right)}^2}}} = 0 \Rightarrow x = 0,x =  - 2$
+${y' } = \dfrac{{{x^2} + 2x}}{{{{\left( {x + 1} \right)}^2}}} = 0 \Rightarrow x = 0,x =  - 2$
 
 8.解析:$2x \ne k\pi  - \dfrac{\pi }{2}$
 
-$\y' = \dfrac{{ - \sin x\cos 2x + 2\sin 2x\cos x}}{{{{\sin }^2}x}} = \frac{{ - \sin x\left( {1 - 2{{\sin }^2}x} \right) + 4\sin x\left( {1 - {{\sin }^2}x} \right)}}{{{{\sin }^2}x}} = \dfrac{{\sin x\left( {3 - 2{{\sin }^2}x} \right)}}{{{{\sin }^2}x}} = 0$
+$y' = \dfrac{{ - \sin x\cos 2x + 2\sin 2x\cos x}}{{{{\sin }^2}x}} = \frac{{ - \sin x\left( {1 - 2{{\sin }^2}x} \right) + 4\sin x\left( {1 - {{\sin }^2}x} \right)}}{{{{\sin }^2}x}} = \dfrac{{\sin x\left( {3 - 2{{\sin }^2}x} \right)}}{{{{\sin }^2}x}} = 0$
 
 
 
-                                                    
+
 
 
 
@@ -842,7 +843,6 @@ $\y' = \dfrac{{ - \sin x\cos 2x + 2\sin 2x\cos x}}{{{{\sin }^2}x}} = \frac{{ - \
 
 \section{曲率}
 \begin{flushright}
-  \color{zhanqing!80}
   \color{zhanqing!80}
   \ding{43} 教材见239 页 % 这里需要添加页数
 \end{flushright}
@@ -871,7 +871,12 @@ $\therefore x = \dfrac{{\sqrt 2 }}{2}$时,$K{(x)_{\max }} = K(\frac{{\sqrt 2 }}{
 
 $\therefore y'' = \dfrac{{\rd y'}}{{\rd x}} = \dfrac{d}{{\rd x}}(\frac{{{b^2}x}}{{{a^2}y}}) = \dfrac{{{b^2}}}{{{a^2}}}\dfrac{{y - xy'}}{{{y^2}}} = \dfrac{{{b^2}}}{{{a^2}}}\dfrac{{y - \dfrac{{{b^2}{x^2}}}{{{a^2}y}}}}{{{y^2}}} =  - \dfrac{{{b^4}}}{{{a^2}{y^3}}}$
 
-$\therefore K = \dfrac{{|y''|}}{{{{(1 + {{y'}^2})}^{\dfrac{3}{2}}}}} = \dfrac{{{a^4}{b^4}}}{{{{({a^4}{y^2} + {b^4}{x^2})}^{\dfrac{3}{2}}}}} = \ddfrac{{ab}}{{{{(\frac{{{a^2} + {b^2}}}{{{a^2}}}{x^2} - {a^2})}^{\frac{3}{2}}}}} \Rightarrow R = \dfrac{{{{(\frac{{{a^2} + {b^2}}}{{{a^2}}}{x^2} - {a^2})}^{\frac{3}{2}}}}}{{ab}}$
+$
+\therefore K = \dfrac{\abs{y''}}{{{{(1 + {{y'}^2})}^{\frac{3}{2}}}}}
+= \dfrac{{{a^4}{b^4}}}{{{{({a^4}{y^2} + {b^4}{x^2})}^{\frac{3}{2}}}}}
+= \dfrac{{ab}}{{{{(\frac{{{a^2} + {b^2}}}{{{a^2}}}{x^2} - {a^2})}^{\frac{3}{2}}}}}
+\Rightarrow R = \dfrac{{{{(\frac{{{a^2} + {b^2}}}{{{a^2}}}{x^2} - {a^2})}^{\frac{3}{2}}}}}{{ab}}
+$
 
 4.解析:由$\dfrac{{{x^2}}}{{{a^2}}} + \dfrac{{{y^2}}}{{{b^2}}} = 1$
 得${b^2}{x^2} + {a^2}{y^2} = {a^2}{b^2}$
@@ -980,13 +985,10 @@ $\therefore R{|_{x = 0}} = \dfrac{1}{K}{|_{x = 0}} = \dfrac{{{{(1 + {{y'}^2})}^{
 
 根据$N - G = m\dfrac{{{v^2}}}{R}$得:
 
-\[N = G + m\dfrac{{{v^2}}}{R} = m(g + \dfrac{{{v^2}}}{R}) = 1246(N)\].
+\[N = G + m\dfrac{{{v^2}}}{R} = m(g + \dfrac{{{v^2}}}{R}) = 1246(N).\]
 
-\begin{document}
-\end{document}
 \section{总习题三}
 \begin{flushright}
-  \color{zhanqing!80}
   \color{zhanqing!80}
   \ding{43} 教材见 247页 % 这里需要添加页数
 \end{flushright}
@@ -1007,7 +1009,7 @@ $\therefore \dfrac{{f'\left( \zeta  \right)}}{{f\left( \zeta  \right)}} = \dfrac
 
 5.证明:设$F\left( x \right) = f\left( x \right) \cdot \sin \left( x \right) \Rightarrow F'\left( x \right) = \cos (x)f(x) + \sin (x)f'(x)$
 
-$\because f\left( {\dfrac{\pi }{2}} \right) = 0,\therefore F\left( {\Dfrac{\pi }{2}} \right) = 0,F\left( 0 \right) = 0$
+$\because f\left( {\dfrac{\pi }{2}} \right) = 0,\therefore F\left( {\dfrac{\pi }{2}} \right) = 0,F\left( 0 \right) = 0$
 
 且$f(x)$，$\sin x$在$[0,\dfrac {\pi}{2}]$连续在$(0,\dfrac {\pi}{2})$内可导$\therefore F\left( x \right)$在此区间上有同样的性质,根据罗尔定理得在$(0,\dfrac {\pi}{2})$上必有一点$\xi$使得$F'\left( x \right) = 0$,即$\cos (\xi )f(\xi ) + \sin (\xi )f'(\xi ) = 0$.
 
@@ -1016,22 +1018,20 @@ $\because f\left( {\dfrac{\pi }{2}} \right) = 0,\therefore F\left( {\Dfrac{\pi }
 7.证明:构造函数$f'\left( x \right) = \dfrac{{f(x) - f(a)}}{{x - a}},g'\left( x \right) = \dfrac{{g(x) - g(a)}}{{x - a}}$
 
 因为$\left| {f'\left( x \right)} \right| < g'\left( x \right)$,所以
-
 \[\left| {\dfrac{{f(x) - f(a)}}{{x - a}}} \right| < \dfrac{{g(x) - g(a)}}{{x - a}}\]
-
-又因为$x > a$,得\[\left| {f\left( x \right) - f(a)} \right| < g\left( x \right) - g(a)\]
+又因为$x > a$,得\[\left| {f\left( x \right) - f(a)} \right| < g\left( x \right) - g(a).\]
 
 8.解析:
 
-(1)$\cos x = 1 - \dfrac{1}{2}{x^2} + o({x^2}),{e^{x}^2}}} = 1 + {x^2} + o({x^2})$
+(1)$\cos x = 1 - \dfrac{1}{2}{x^2} + o({x^2}),{e^{x^2}} = 1 + {x^2} + o({x^2})$
 
-$\mathop {\lim }\limits_{x \to 0} \dfrac{{1 + {x^2} + o({x^2}) - 1 + \dfrac{1}{2}{x^2} - o({x^2})}}{{{x^2}}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{{x^2} + \frac{1}{2}{x^2}}}{{{x^2}}} = \dfrac{3}{2}$
+$\lim\limits_{x \to 0}  \dfrac{{1 + {x^2} + o({x^2}) - 1 + \dfrac{1}{2}{x^2} - o({x^2})}}{{{x^2}}} = \lim\limits_{x \to 0}  \dfrac{{{x^2} + \frac{1}{2}{x^2}}}{{{x^2}}} = \dfrac{3}{2}$
 
-(2)$\mathop {\lim }\limits_{x \to 1} \left( {\dfrac{x}{{x - 1}} - \frac{1}{{\ln x}}} \right) = \mathop {\lim }\limits_{x \to 1} \left( {\dfrac{{x - 1 + 1}}{{x - 1}} - \dfrac{1}{{\ln x}}} \right) = 1 + \mathop {\lim }\limits_{x \to 1} \left( {\dfrac{{\ln x - x + 1}}{{\left( {x - 1} \right)\ln x}}} \right)$
+(2)$\lim\limits_{x \to 1}  \left( {\dfrac{x}{{x - 1}} - \frac{1}{{\ln x}}} \right) = \lim\limits_{x \to 1}  \left( {\dfrac{{x - 1 + 1}}{{x - 1}} - \dfrac{1}{{\ln x}}} \right) = 1 + \lim\limits_{x \to 1}  \left( {\dfrac{{\ln x - x + 1}}{{\left( {x - 1} \right)\ln x}}} \right)$
 
-应用洛必达法则得$\mathop {\lim }\limits_{x \to 1} \left( {\dfrac{{\frac{1}{x} - 1}}{{\frac{{\left( {x - 1} \right)}}{x} + \ln x}}} \right) = \mathop {\lim }\limits_{x \to 1} \left( {\dfrac{{\frac{{1 - x}}{x}}}{{\frac{{\left( {x - 1} \right) + x\ln x}}{x}}}} \right) = \mathop {\lim }\limits_{x \to 1} \left( {\dfrac{{1 - x}}{{\left( {x - 1} \right) + x\ln x}}} \right)$
+应用洛必达法则得$\lim\limits_{x \to 1}  \left( {\dfrac{{\frac{1}{x} - 1}}{{\frac{{\left( {x - 1} \right)}}{x} + \ln x}}} \right) = \lim\limits_{x \to 1}  \left( {\dfrac{{\frac{{1 - x}}{x}}}{{\frac{{\left( {x - 1} \right) + x\ln x}}{x}}}} \right) = \lim\limits_{x \to 1}  \left( {\dfrac{{1 - x}}{{\left( {x - 1} \right) + x\ln x}}} \right)$
 
-洛必达法则得$\mathop {\lim }\limits_{x \to 1} \left( {\dfrac{{1 - x}}{{\left( {x - 1} \right) + x\ln x}}} \right) =  - \dfrac{1}{2} \Rightarrow  $原式$= 1 - \dfrac{1}{2} = \dfrac{1}{2}$.
+洛必达法则得$\lim\limits_{x \to 1}  \left( {\dfrac{{1 - x}}{{\left( {x - 1} \right) + x\ln x}}} \right) =  - \dfrac{1}{2} \Rightarrow  $原式$= 1 - \dfrac{1}{2} = \dfrac{1}{2}$.
 
 (3)$\mathop {\lim }\limits_{x \to {1^ - }} \ln x\ln (1 - x) = \mathop {\lim }\limits_{x \to {1^ - }} \dfrac{{\ln (1 - x)}}{{\frac{1}{{\ln x}}}}$
 
@@ -1053,15 +1053,15 @@ $ = {e^{\mathop {\lim }\limits_{x \to {{\frac{\pi }{2}}^ - }}  - \frac{{{{(2x - 
 
 应用洛必达法则得,原式$ = {e^{\mathop {\lim }\limits_{x \to \infty } \frac{{\frac{1}{{1 + n}}}}{{\frac{1}{{2\sqrt n }}}}}} = {e^{\mathop {\lim }\limits_{x \to \infty } \frac{{2\sqrt n }}{{1 + n}}}} = {e^0} = 1$
 
-(8)$\mathop {\lim }\limits_{x \to 0} \dfrac{1}{x}(\dfrac{1}{x} - \cot x) = \mathop {\lim }\limits_{x \to 0} \dfrac{{(\frac{1}{x} - \cot x)}}{x}$
+(8)$\lim\limits_{x \to 0}  \dfrac{1}{x}(\dfrac{1}{x} - \cot x) = \lim\limits_{x \to 0}  \dfrac{{(\frac{1}{x} - \cot x)}}{x}$
 
 应用洛必达法则,得原式=
 
-$\mathop {\lim }\limits_{x \to 0} \left( { - \dfrac{1}{{{x^2}}} + {{\csc }^2}x} \right) = \mathop {\lim }\limits_{x \to 0} \left( { - \frac{1}{{{x^2}}} + d\frac{1}{{{{\sin }^2}x}}} \right) = \mathop {\lim }\limits_{x \to 0} \left( {\dfrac{{{x^2} - {{\sin }^2}x}}{{{x^2}{{\sin }^2}x}}} \right) = \mathop {\lim }\limits_{x \to 0} \left( {\dfrac{{{x^2} - {{\sin }^2}x}}{{{x^4}}}} \right)$
+$\lim\limits_{x \to 0}  \left( { - \dfrac{1}{{{x^2}}} + {{\csc }^2}x} \right) = \lim\limits_{x \to 0}  \left( { - \frac{1}{{{x^2}}} + d\frac{1}{{{{\sin }^2}x}}} \right) = \lim\limits_{x \to 0}  \left( {\dfrac{{{x^2} - {{\sin }^2}x}}{{{x^2}{{\sin }^2}x}}} \right) = \lim\limits_{x \to 0}  \left( {\dfrac{{{x^2} - {{\sin }^2}x}}{{{x^4}}}} \right)$
 
 应用洛必达法则得原式=
 
-$\mathop {\lim }\limits_{x \to 0} \dfrac{{(2x - 2\sin x\cos x)}}{{4{x^3}}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{(2x - 2\sin x\cos x)}}{{4{x^3}}} = \mathop {\lim }\limits_{x \to 0} \dfrac{{(1 + {{\sin }^2}x - {{\cos }^2}x)}}{{6{x^2}}} = \dfrac{1}{3}$
+$\lim\limits_{x \to 0}  \dfrac{{(2x - 2\sin x\cos x)}}{{4{x^3}}} = \lim\limits_{x \to 0}  \dfrac{{(2x - 2\sin x\cos x)}}{{4{x^3}}} = \lim\limits_{x \to 0}  \dfrac{{(1 + {{\sin }^2}x - {{\cos }^2}x)}}{{6{x^2}}} = \dfrac{1}{3}$
 
 12.解析:
 
@@ -1087,7 +1087,7 @@ $y' = 0 \Rightarrow (1 - \ln x){x^{(\frac{1}{x} - 2)}} = 0$因为${x^{(\frac{1}{
 
 当$x < e$时,$y' > 0$,为;$x > e$时,$y' < 0$,为减,
 
-所以,该函数存在极大值,当$x = e$时,极大值为$y = {e^{\dfrac{1}{e}}}$.
+所以,该函数存在极大值,当$x = e$时,极大值为$y = {e^{\frac{1}{e}}}$.
 
 (2)$\ln y = \dfrac{1}{3}\ln x + \dfrac{2}{3}\ln (1 - x) \Rightarrow (\ln y)' = \dfrac{{y'}}{y} = \dfrac{1}{{3x}} - \dfrac{2}{{3(1 - x)}}$
 
@@ -1139,7 +1139,7 @@ $\ln y = 3\ln (x + 1) - 2\ln (x - 1),(\ln y)' = \dfrac{{y'}}{y} = \dfrac{3}{{(x 
 
 $ \Rightarrow y' = [\dfrac{3}{{x + 1}} - \frac{2}{{x - 1}}]y$
 
-$y'' = [ - \dfrac{3}{{{{(x + 1)}^2}}} + \dfrac{2}{{{{(x - 1)}^2}}}]y + {(\dfrac{3}{{x + 1}} - \dfrac{2}{{x - 1}})^2}y = 6y{(\dfrac{3}{{x + 1}} - \ddfrac{2}{{x - 1}})^2}$
+$y'' = [ - \dfrac{3}{{{{(x + 1)}^2}}} + \dfrac{2}{{{{(x - 1)}^2}}}]y + {(\dfrac{3}{{x + 1}} - \dfrac{2}{{x - 1}})^2}y = 6y{(\dfrac{3}{{x + 1}} - \dfrac{2}{{x - 1}})^2}$
 
 令$y'' > 0 \Rightarrow 6y{(\dfrac{3}{{x + 1}} - \dfrac{2}{{x - 1}})^2} > 0$,即$y > 0 \Rightarrow \dfrac{{{{(x + 1)}^3}}}{{{{(x - 1)}^2}}} \Rightarrow x \in ( - 1,1) \cup (1, + \infty )$
 
@@ -1149,7 +1149,7 @@ $y'' = [ - \dfrac{3}{{{{(x + 1)}^2}}} + \dfrac{2}{{{{(x - 1)}^2}}}]y + {(\dfrac{
 
 $x \in ( - \infty , - 1)$时,函数为凸函数.
 
-(2)渐近线:因为$\mathop {\lim }\limits_{x \to 1} \dfrac{{{{(x + 1)}^3}}}{{{{(x - 1)}^2}}} = \infty $,所以$x = 1$为函数的垂直渐近线;
+(2)渐近线:因为$\lim\limits_{x \to 1}  \dfrac{{{{(x + 1)}^3}}}{{{{(x - 1)}^2}}} = \infty $,所以$x = 1$为函数的垂直渐近线;
 
 因为$\mathop {a = \mathop {\lim }\limits_{x \to \infty } \dfrac{{\dfrac{{{{(x + 1)}^3}}}{{{{(x - 1)}^2}}}}}{x} = 1}\limits_{x \to \infty } $
 
