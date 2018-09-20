@@ -1,0 +1,73 @@
+% !TEX root = ./HTNotes-Demo.tex
+\usepackage{zhlipsum,esint,tablists,pdfpages,cases,xfrac}
+  \usepackage{chngcntr}
+  \counterwithin*{chapter}{part}
+
+% \usepackage{newtxmath}
+% \setmainfont{Times New Roman}
+
+\fancyhead[C]{\includegraphics[width=1cm]{user1}}
+\setlength{\parindent}{0pt}
+\linespread{1.6}
+% \setlength{\jot}{2pt}
+% \setlength{\abovedisplayskip}{2pt plus 0pt minus 1pt}
+% \setlength{\abovedisplayshortskip}{1pt plus 0 pt minus 1pt}
+% \setlength{\belowdisplayskip}{2pt plus 0pt minus 1pt}
+% \setlength{\belowdisplayshortskip}{1pt plus 0 pt minus 1pt}
+
+\title{高等数学教材解析与习题指导}
+\author{编委会}
+\HTset{
+  % 封面颜色: orange,green,violet,blue,默认为 blue
+  cvcolor = {green},
+  % logo: Lion,Mine,user1,user2,默认为 Lion,将图片命名为相应的选项即可
+  logo = {user1},
+  % answer: true|false,显示答案，默认为false，即不显示
+  answer = {true},
+  % PDF 主题: 默认为空
+  % Subject = {},
+  % PDF 创建程序: 默认为 XeLaTeX+TeXLive 2018
+  % Producer = {},
+  % PDF 关键词: 默认为空
+  Keywords = {高等数学；课后习题解析；历年真题解析},
+  % 丛书系列名称，可为空
+  Series = {北京科技大学学生学习与发展指导中心系列丛书},
+  % 副标题，可为空
+  SubTitle = {配套《高等数学》第二版},
+  % 封面书籍简介，可为文字或图片
+  % Introduction = {
+  %   编委会成员
+  %   \begin{description}
+  %     \item[组长] 黄\hspace*{1em}腾
+  %     \item[组员] 陈\hspace*{1em}龙 \hspace*{1em} 郭春军 \hspace*{1em} 林晓晨 \hspace*{1em} 田\hspace*{1em}野\\
+  %     吴柏华 \hspace*{1em} 武心语 \hspace*{1em} 吴国铭 \hspace*{1em} 张\hspace*{1em}开
+  %   \end{description}
+  % },
+  % 版次，可为空
+  Edition = {1},
+  % 出版社
+  % Publisher = {},
+  % 字数统计
+  % Words = {},
+  % 反馈邮箱
+  % Email = {},
+  % 反馈网站
+  % Website = {},
+  % 前言
+  Preface = {\zhlipsum[2,5]},
+  % 前言作者，为空则为书籍作者
+  % Writer = {},
+  % 封底后记
+  % Summary = {},
+  % 编辑
+  Editor = {黄腾},
+  % 封面设计
+  Designer = {黄腾},
+  % 价格
+  % Price = {},
+  % ISBN 编号
+  % ISBN = {},
+}
+
+\numberwithin{equation}{section}
+\renewcommand\theequation{\arabic{section}-\arabic{equation}}
