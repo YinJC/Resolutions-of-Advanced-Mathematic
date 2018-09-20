@@ -240,3 +240,14 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+# the auxiliary file
+Mine.jpg
+Copy.bat
+*.doc
+*.docx
+main.pdf
+App1.pdf
+App2.pdf
+试卷整理/
+课后习题解析/
