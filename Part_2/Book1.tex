@@ -1,0 +1,49 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\setcounter{section}{0}
+\type{中值定理综合证明题}
+  \Example{
+    2014-2015-1-期末-证明题-18
+  }{%
+    设$f(x)$在$[0,1]$上连续,在$(0,1)$内可导,且满足$f(1)=5\displaystyle\int_{0}^{\frac{1}{5}}{x{{\re}^{1-x}}f(x)dx}$, 证明:至少存在一点$\xi \in (0,1)$,使得${f}'(\xi )=(1-{{\xi }^{-1}})f(\xi )$.
+  }{%
+    见解析.
+  }{%
+    构造函数$g\left( x \right)=x{{\re}^{1-x}}f\left( x \right)$，由积分第一中值定理可知
+
+    $$\exists \eta \in \left( 0,\frac{1}{5} \right),~f\left( 1 \right)=g\left( 1 \right)=5\int_{0}^{\frac{1}{5}}{g\left( \eta  \right)\rd x}=g\left( \eta  \right)$$
+
+    从而由罗尔定理可知$\exists \xi \in \left( \eta ,1 \right)\subset \left( 0,1 \right)$,~${g}'\left( \xi  \right)={{\re}^{1-\xi }}\left( 1-\xi  \right)f\left( \xi  \right)+\xi {{\re}^{1-\xi }}{f}'\left( \xi  \right)=0$
+
+    从而
+    $\exists \xi \in \left( 0,1 \right)$,~${f}'\left( \xi  \right)=\left( 1-{{\xi }^{-1}} \right)f\left( \xi  \right)$.
+  }
+
+\type{导数、积分综合性应用题}
+  \Example{
+    2013-2014-1-期末-解答题-17
+  }{%
+    设$f\left( x \right)$连续，且$\lim\limits_{z \to 0} \dfrac{f\left( x \right)-4}{x}=1$，试求常数$k$使得$g\left( x \right)$在$x=0$处连续，其中
+    $g\left( x \right)=
+    \begin{cases}
+      \displaystyle\frac{1}{x\ln \left( 1+x \right)}\int_{0}^{x}{tf\left( {{t}^{2}}-{{x}^{2}} \right)\rd t}, & x\ne 0 \\
+      k, & x=0
+    \end{cases}$.
+  }{%
+    见解析.
+  }{%
+    已知$f\left( x \right)$连续，$\lim\limits_{z \to 0} \dfrac{f\left( x \right)-4}{x}=1$，
+    由极限四则运算法则可知
+    $$f\left( 0 \right)=\lim\limits_{z \to 0} f\left( x \right)=\lim\limits_{z \to 0} \left[ \frac{f\left( x \right)-4}{x}\cdot x+4 \right]=\lim\limits_{z \to 0} \frac{f\left( x \right)-4}{x}\cdot \lim\limits_{z \to 0} x+4=4$$
+    及
+    $${f}'\left( 0 \right)=\lim\limits_{z \to 0} \frac{f\left( x \right)-f\left( 0 \right)}{x-0}=\lim\limits_{z \to 0} \frac{f\left( x \right)-4}{x}=1$$
+    从而
+    \begin{align*}
+      & \lim\limits_{z \to 0} g\left( x \right)=\lim\limits_{z \to 0} \frac{1}{x\ln \left( 1+x \right)}\int_{0}^{x}{tf\left( {{t}^{2}}-{{x}^{2}} \right)\rd t}=\lim\limits_{z \to 0} \frac{1}{x\ln \left( 1+x \right)}\cdot \frac{1}{2}\int_{0}^{x}{f\left( {{t}^{2}}-{{x}^{2}} \right)\rd \left( {{t}^{2}}-{{x}^{2}} \right)} \\
+      & =\lim\limits_{z \to 0} \frac{1}{x\ln \left( 1+x \right)}\cdot \frac{1}{2}\int_{-{{x}^{2}}}^{0}{f\left( u \right)\rd u}=\frac{1}{2}\lim\limits_{z \to 0} \frac{1}{{{\left[ x\ln \left( 1+x \right) \right]}^{\prime }}}\cdot \frac{\rd }{\rd x}\int_{-{{x}^{2}}}^{0}{f\left( u \right)\rd u} \\
+      & =\frac{1}{2}\lim\limits_{z \to 0} \frac{2xf\left( -{{x}^{2}} \right)}{\ln \left( 1+x \right)+\frac{x}{1+x}}=\lim\limits_{z \to 0} \frac{f\left( -{{x}^{2}} \right)}{\frac{\ln \left( 1+x \right)}{x}+\frac{1}{1+x}} \\
+      & =\frac{\lim\limits_{z \to 0} f\left( -{{x}^{2}} \right)}{\lim\limits_{z \to 0} \frac{\ln \left( 1+x \right)}{x}+\lim\limits_{z \to 0} \frac{1}{1+x}}=\frac{f\left( 0 \right)}{1+1}=2
+    \end{align*}
+    于是$g\left( x \right)$连续$\Leftrightarrow k=g\left( 0 \right)=\lim\limits_{z \to 0} g\left( x \right)=2$.
+  }

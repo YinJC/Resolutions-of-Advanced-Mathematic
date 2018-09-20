@@ -1,0 +1,174 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\type{导数与微分的定义以及两者的关系}
+  \Example{%
+    2013-2014-1-期中-选择题-1
+  }{%
+    若${f}'\left( 0 \right)=1$ ，则极限$\lim\limits_{h \to 0} \dfrac{f\left( -h \right)-f\left( 0 \right)}{3h}=$
+    \fillin{$-\dfrac{1}{3}$}.
+  }{%
+    $-\dfrac{1}{3}$.
+  }{%
+    $\lim\limits_{h \to 0} \dfrac{f\left( -h \right)-f\left( 0 \right)}{3h}
+    =\lim\limits_{h \to 0} \dfrac{f(-h)-f(0)}{-h}\cdot \dfrac{1}{-3}
+    =-\dfrac{1}{3}{f}'(0)
+    =-\dfrac{1}{3}$.
+  }
+
+  \Example{%
+    2013-2014-1-期中-选择题-12
+  }{%
+    设$f\left( x \right)$可导，$F\left( x \right)=f\left( x \right)\left( 1+\left| \sin x \right| \right)$，则$f\left( 0 \right)=0$是$F\left( x \right)$在$x=0$处可导的
+    \pickout{A}
+    \options{充分必要条件}
+      {充分但非必要条件}
+      {必要但非充分条件}
+      {既非充分也非必要条件}
+  }{%
+    A.
+  }{%
+    点态导数问题，首先考虑导数定义.
+
+    ${F}'\left( 0 \right)=\lim\limits_{x \to 0} \dfrac{F\left( x \right)-F\left( 0 \right)}{x-0}=\lim\limits_{x \to 0} \dfrac{f\left( x \right)\left( 1+\left| \sin x \right| \right)-f\left( 0 \right)}{x}=\lim\limits_{x \to 0} \left[ \dfrac{f\left( x \right)-f\left( 0 \right)}{x}+\dfrac{f\left( x \right)\left| \sin x \right|}{x} \right]$,
+
+    一方面，由极限四则运算法则可知
+
+    ${F}'\left( 0 \right)$存在$\Leftrightarrow \lim\limits_{x \to 0} \dfrac{f\left( x \right)\left| \sin x \right|}{x}={F}'\left( 0 \right)-\lim\limits_{x \to 0} \dfrac{f\left( x \right)-f\left( 0 \right)}{x}={F}'\left( 0 \right)-{f}'\left( 0 \right)$存在；
+
+    另一方面，不难看出$\lim\limits_{x \to 0} \dfrac{f\left( x \right)\left| \sin x \right|}{x}$存在$\Leftrightarrow f\left( 0 \right)=0$.
+
+    因此$f\left( 0 \right)=0$是$F\left( x \right)$在$x=0$处可导的充要条件.
+  }
+
+  \Example{%
+    2011-2012-1-期中-填空题-1
+  }{%
+    设$f\left( x \right)=\begin{cases}
+      x\lim\limits_{n \to +\infty} \sqrt[n]{1+{{3}^{n}}+{{x}^{n}}},x>0 \\
+      a \ln \left( 1-x \right)+b,x \le 0 \\
+    \end{cases}$在$x=0$处可导，则$a=$
+    \fillin{$-3$},
+    $b=$
+    \fillin{$0$}.
+  }{%
+    $a=-3$, $b=0$.
+  }{%
+    当$0<x<1$时，$\lim\limits_{n \to +\infty} \sqrt[n]{1+{{3}^{n}}+{{x}^{n}}}=\lim\limits_{n \to +\infty} 3\sqrt[n]{1+{{\left( \dfrac{1}{3} \right)}^{n}}+{{\left( \dfrac{x}{3} \right)}^{n}}}=3$
+
+    即有
+    $f(x)=\begin{cases}
+      a\ln (1-x)+b, & x \le 0\\
+      3x, & 0<x<1
+    \end{cases}$，
+    又因$f(x)$可导（连续），
+
+    $f({{0}^{+}})=f({{0}^{-}})$解得$b=0$，
+    $f'({{0}^{+}})=f'({{0}^{-}})$解得$a=-3$.
+  }
+
+  \Example{%
+    2015-2016-1-期中-选择题-8
+  }{%
+    设函数$g\left( x \right)$在$x=0$的某邻域内有定义，若$\lim\limits_{x \to 0} \dfrac{x-g\left( x \right)}{\sin x}=1$成立，则
+    \pickout{A}
+    \options{$x\to 0$时，$g\left( x \right)$是$x$的高阶无穷小}
+    {$g\left( x \right)$在$x=0$处可导}
+    {$\lim\limits_{x \to 0} g\left( x \right)$存在但$g\left( x \right)$在$x=0$处不连续}
+    {$g\left( x \right)$在$x=0$处连续但不可导}
+  }{%
+    A.
+  }{%
+    $\lim\limits_{x \to 0} \dfrac{g\left( x \right)}{x}=\lim\limits_{x \to 0} \left[ \dfrac{x}{\sin x}-\dfrac{x-g\left( x \right)}{\sin x} \right]=\lim\limits_{x \to 0} \dfrac{x}{\sin x}-\lim\limits_{x \to 0} \dfrac{x-g\left( x \right)}{\sin x}=0$
+
+    未给出$g\left( 0 \right)$与$\lim\limits_{x \to 0} g\left( x \right)$的关系，因此连续性及点态导数的命题均无法判定为真，BCD均错.
+  }
+
+\type{导数的计算}
+
+  \hspace*{2em}包括基本求导法则、复合函数求导法则、基本导数表（初等函数）、隐函数与参数方程求导方法等
+
+  \subsection{复合函数求导}
+    \Example{%
+      2013-2014-1-期中-选择题-12
+    }{%
+      已知$y=f\left( \dfrac{3x-2}{3x+2} \right)$，${f}'\left( x \right)=\arctan {{x}^{2}}$，则${{\left. \dfrac{\rd y}{\rd x} \right|}_{x=0}}=$
+      \pickout{C}
+      \options{$\pi $}
+      {$\dfrac{3}{2}\pi $}
+      {$\dfrac{3}{4}\pi $}
+      {$\dfrac{1}{4}\pi $}
+    }{%
+      C.
+    }{%
+      复合函数求导问题，注意不要漏掉该求导的函数.
+
+      $\dfrac{\rd y}{\rd x}={f}'\left( \dfrac{3x-2}{3x+2} \right)\cdot \dfrac{12}{{{\left( 3x+2 \right)}^{2}}}$，于是${{\left. \dfrac{\rd y}{\rd x} \right|}_{x=0}}=3{f}'\left( -1 \right)=3\arctan 1=\dfrac{3}{4}\pi $.
+    }
+
+  \subsection{隐函数求导}
+    \Example{%
+      2013-2014-1-期中-填空题-4
+    }{%
+      设函数$y=y\left( x \right)$由方程${{\left( x+y \right)}^{\frac{1}{x}}}=y$确定，则$\dfrac{\rd y}{\rd x}=$
+      \fillin{$\dfrac{y\left[ \left( x+y \right)\ln \left( x+y \right)-x \right]}{x\left[ y-x\left( x+y \right) \right]}$}.
+    }{%
+      $\dfrac{y\left[ \left( x+y \right)\ln \left( x+y \right)-x \right]}{x\left[ y-x\left( x+y \right) \right]}$.
+    }{%
+      隐函数求导问题. 方程改写为$\dfrac{\ln \left( x+y \right)}{x}=\ln y$，两边同时对$x$求导得到
+        $$LHS=\dfrac{\frac{x\left( 1+{y}' \right)}{x+y}-\ln \left( x+y \right)}{{{x}^{2}}}
+        =\dfrac{{{y}'}}{x\left( x+y \right)}+\dfrac{1}{x\left( x+y \right)}-\dfrac{\ln \left( x+y \right)}{{{x}^{2}}}, \quad
+        RHS=\dfrac{{{y}'}}{y},$$
+      整理得到
+        $$\dfrac{y-x\left( x+y \right)}{xy\left( x+y \right)}\cdot \dfrac{\rd y}{\rd x}
+        =\dfrac{\left( x+y \right)\ln \left( x+y \right)-x}{{{x}^{2}}\left( x+y \right)},$$
+      于是
+      $\dfrac{\rd y}{\rd x}
+      =\dfrac{\left( x+y \right)\ln \left( x+y \right)-x}{{{x}^{2}}\left( x+y \right)}\cdot \dfrac{xy\left( x+y \right)}{y-x\left( x+y \right)}
+      =\dfrac{y\left[ \left( x+y \right)\ln \left( x+y \right)-x \right]}{x\left[ y-x\left( x+y \right) \right]}$.
+    }
+
+  \subsection{参数方程求导}
+    \Example{%
+      2013-2014-1-期中-填空题-4
+    }{%
+      设$\begin{cases}
+       x={f}'\left( t \right) \\
+       y=t{f}'\left( t \right)-f\left( t \right) \\
+      \end{cases}$，其中${f}''\left( x \right)$存在且不为零，则$\dfrac{{{\rd }^{2}}y}{\rd {{x}^{2}}}=$
+      \fillin{$\dfrac{1}{{f}''\left( t \right)}$}.
+    }{%
+      $\dfrac{1}{{f}''\left( t \right)}$.
+    }{%
+      参数方程求导问题. 以下是这类问题的通法：
+      $$\begin{cases}
+        x={f}'\left( t \right) \\
+        y=t{f}'\left( t \right)-f\left( t \right) \\
+      \end{cases} \Rightarrow \dfrac{\rd y}{\rd x}
+      =\dfrac{\rd y}{\rd t}\cdot \dfrac{1}{\frac{\rd x}{\rd t}}
+      =t{f}''\left( t \right)\cdot \dfrac{1}{{f}''\left( t \right)}
+      =t,$$
+
+      于是$\dfrac{{{\rd }^{2}}y}{\rd {{x}^{2}}}
+      =\dfrac{\rd }{\rd x}\left( \dfrac{\rd y}{\rd x} \right)
+      =\dfrac{\rd t}{\rd x}
+      =\dfrac{1}{\frac{\rd x}{\rd t}}
+      =\dfrac{1}{{f}''\left( t \right)}$.
+    }
+
+  \subsection{反函数求导}
+    \Example{%
+      2013-2014-1-期中-填空题-8
+    }{%
+      已知$\dfrac{\rd x}{\rd y}=\dfrac{1}{{{y}'}}$，则$\dfrac{{{\rd }^{2}}x}{\rd {{y}^{2}}}=$
+      \fillin{$-\dfrac{{{y}''}}{{{{{y}'}}^{3}}}$}.
+    }{%
+      $-\dfrac{{{y}''}}{{{{{y}'}}^{3}}}$.
+    }{%
+      反函数求导问题.
+      $\dfrac{{{\rd }^{2}}x}{\rd {{y}^{2}}}
+      =\dfrac{\rd }{\rd y}\left( \dfrac{\rd x}{\rd y} \right)
+      =\dfrac{\rd }{\rd x}\left( \dfrac{\rd x}{\rd y} \right)\cdot \dfrac{\rd x}{\rd y}
+      =\dfrac{-{y}''}{{{{{y}'}}^{2}}}\cdot \dfrac{1}{{{y}'}}
+      =-\dfrac{{{y}''}}{{{{{y}'}}^{3}}}$.
+    }

@@ -1,0 +1,770 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\type{定积分的定义、基本性质以及存在性判定}
+  \subsection{定积分（黎曼积分）的定义}
+    \Example{%
+      2015-2016-1-期末-填空题-6
+    }{%
+      极限$\lim\limits_{n \to +\infty} \dfrac{1}{n}\sqrt[n]{\left( n+1 \right)\left( n+2 \right)\cdots \left( 2n \right)}=$
+      \fillin{$\dfrac{4}{\re}$}.
+    }{%
+      $\dfrac{4}{\re}$.
+    }{%
+      【法一】形式满足定积分定义式
+      \begin{align*}
+        & \lim\limits_{n \to +\infty} \dfrac{1}{n}\sqrt[n]{\left( n+1 \right)\left( n+2 \right)\cdots \left( 2n \right)}
+        =\lim\limits_{n \to +\infty} \sqrt[n]{\dfrac{\left( n+1 \right)\left( n+2 \right)\cdots \left( 2n \right)}{{{n}^{n}}}} \\
+        = & \exp \left\{ \lim\limits_{n \to +\infty} \dfrac{1}{n}\ln \dfrac{\left( n+1 \right)\left( n+2 \right)\cdots \left( 2n \right)}{{{n}^{n}}} \right\}
+        =\exp \left\{ \lim\limits_{n \to +\infty} \dfrac{1}{n}\sum\limits_{i=1}^{n}{\ln \dfrac{n+ \ri }{n}} \right\} \\
+        = & \exp \left\{ \displaystyle\int_{0}^{1}{\ln \left( 1+x \right)\rd x} \right\}
+      \end{align*}
+      而$\displaystyle\int_{0}^{1}{\ln \left( 1+x \right)\rd x}
+      = x\ln \left( 1+x \right) \Big|_{0}^{1}-\displaystyle\int_{0}^{1}{\left( 1-\dfrac{1}{1+x} \right)\rd x}
+      =\ln 2- \left[ x-\ln \left( 1+x \right) \right] \big|_{0}^{1}
+      =2\ln 2-1$
+
+      故原式$={{\re}^{2\ln 2-1}}
+      =\dfrac{4}{\re}$.
+
+      【法二】由Stirling公式$n! \sim \dfrac{{{n}^{n}}}{{{\re}^{n}}}\sqrt{2\pi n}$及$\lim\limits_{n \to +\infty} \sqrt[n]{a}=1(a>0)$
+      \begin{align*}
+        & \therefore \lim\limits_{n \to +\infty} \dfrac{1}{n}\sqrt[n]{(n+1)(n+2)\cdots (2n)}
+        =\lim\limits_{n \to +\infty} \dfrac{1}{n}\sqrt[n]{\dfrac{(2n)!}{n!}}
+        =\lim\limits_{n \to +\infty} \dfrac{1}{n}\sqrt[n]{\dfrac{{{(2n)}^{2n}}\sqrt{4\pi n}}{{{\re}^{2n}}}\cdot \dfrac{{{\re}^{n}}}{{{n}^{n}}\sqrt{2\pi n}}} \\
+        = & \lim\limits_{n \to +\infty} \dfrac{1}{n}\sqrt[n]{\dfrac{{{(4n)}^{n}}\sqrt{2}}{{{\re}^{n}}}}
+        =\lim\limits_{n \to +\infty} \dfrac{4}{\re}\sqrt[n]{\sqrt{2}}
+        =\dfrac{4}{\re}.
+      \end{align*}
+    }
+
+    \Example{%
+      2013-2014-1-期末-填空题-6
+    }{%
+      $\lim\limits_{n \to +\infty} \dfrac{{{n}^{4}}}{{{1}^{3}}+{{2}^{3}}+\cdots +{{n}^{3}}}=$
+      \fillin{$4$}.
+    }{%
+      $4$.
+    }{%
+      【法一】$\lim\limits_{n \to +\infty} \dfrac{{{n}^{4}}}{{{1}^{3}}+{{2}^{3}}+\cdots +{{n}^{3}}}
+      =\dfrac{1}{\lim\limits_{n \to +\infty} \dfrac{1}{n}\left[ {{\left( \frac{1}{n} \right)}^{3}}+{{\left( \frac{2}{n} \right)}^{3}}+\cdots +{{\left( \frac{n}{n} \right)}^{3}} \right]}
+      =\dfrac{1}{\displaystyle\int_{0}^{1}{{{x}^{3}} \rd x}}
+      =4$.
+
+      【法二】$\lim\limits_{n \to +\infty} \dfrac{{{n}^{4}}}{{{1}^{3}}+{{2}^{3}}+\cdots +{{n}^{3}}}
+      =\lim\limits_{n \to +\infty} \dfrac{{{n}^{4}}}{\frac{{{n}^{2}}{{(n+1)}^{2}}}{4}}
+      =4\lim\limits_{n \to +\infty} \dfrac{{{n}^{4}}}{{{n}^{4}}+2{{n}^{3}}+{{n}^{2}}}
+      =4.$
+
+      注: ${{1}^{3}}+{{2}^{3}}+\cdots +{{n}^{3}}=\dfrac{{{n}^{2}}{{(n+1)}^{2}}}{4}={{(1+2+\cdots +n)}^{2}}$.
+    }
+
+    \Example{%
+     2016-2017-1-期末-填空题-12
+    }{%
+      极限$\lim\limits_{n \to +\infty} (\dfrac{n}{{{n}^{2}}+{{1}^{2}}}+\dfrac{n}{{{n}^{2}}+{{2}^{2}}}+\cdots +\dfrac{n}{{{n}^{2}}+{{n}^{2}}})=$
+      \fillin{$\dfrac{\pi}{4}$}.
+    }{%
+      $\dfrac{\pi}{4}$.
+    }{%
+      $\lim\limits_{n \to +\infty} \left(\dfrac{n}{{{n}^{2}}+{{1}^{2}}}+\dfrac{n}{{{n}^{2}}+{{2}^{2}}}+\cdots +\dfrac{n}{{{n}^{2}}+{{n}^{2}}}\right)$
+
+      $=\lim\limits_{n \to +\infty} \dfrac{1}{n}\left(\dfrac{1}{1+{{\left( \frac{1}{n} \right)}^{2}}}+\dfrac{1}{1+{{\left( \frac{2}{n} \right)}^{2}}}+\cdots +\dfrac{1}{1+{{\left( \frac{n}{n} \right)}^{2}}}\right)$
+      $=\displaystyle\int_{0}^{1}{\dfrac{1}{1+{{x}^{2}}} \rd x}$
+      $=\dfrac{\pi }{4}$.
+    }
+
+    \Example{%
+      2014-2015-1-期末-选择题-10
+    }{%
+      $\lim\limits_{n \to +\infty} \dfrac{1}{n}{{[n(n+1)(n+2)\cdots (n+n-1)]}^{\frac{1}{n}}}=$
+      \pickout{A}
+        \options{${{\re}^{2\ln 2-1}}$}
+          { ${{\re}^{2\left( \ln 2-1 \right)}}$}
+          {${{\re}^{2\ln 2-3}}$}
+          { ${{\re}^{3\ln 2-1}}$}
+    }{%
+      A.
+    }{%
+      \begin{align*}
+        & \lim\limits_{n \to +\infty} \dfrac{1}{n}{{[n(n+1)(n+2)\cdots (n+n-1)]}^{\frac{1}{n}}}
+        =\lim\limits_{n \to +\infty} \exp \left\{{\ln \dfrac{1}{n}{{\left[n(n+1)(n+2)\cdots (n+n-1)\right]}^{\frac{1}{n}}}}\right\} \\
+        & =\exp \left\{\lim\limits_{n \to +\infty} \dfrac{1}{n}\ln \left[\dfrac{n(n+1)(n+2)\cdots (n+n-1)}{{{n}^{n}}}\right]\right\} \\
+        & =\exp \left\{\lim\limits_{n \to +\infty} \dfrac{1}{n}\left[\ln (1+\dfrac{0}{n})+\ln (1+\dfrac{1}{n})+\cdots +\ln (1+\dfrac{n-1}{n})\right]\right\} \\
+        & =\exp \left\{\displaystyle\int_{0}^{1}{\ln (1+x)\rd x}\right\}
+        =\exp \left\{2\ln 2-1\right\}.
+      \end{align*}
+    }
+
+  \subsection{定积分的基本性质}
+
+    \Example{%
+      2016-2017-1-期末-选择题-2
+    }{%
+      下列定积分中积分值不为零的是
+      \pickout{C}
+        \options{$\displaystyle\int_{\frac{1}{2}}^{\frac{1}{2}}{\ln \dfrac{1+x}{1-x}\rd x}$}
+          {$\displaystyle\int_{\frac{\pi }{4}}^{\frac{\pi }{4}}{\dfrac{x}{1+\cos x}\rd x}$}
+          {$\displaystyle\int_{\frac{\pi }{2}}^{\frac{\pi }{2}}{\dfrac{\sin x+\cos x}{1+{{\sin }^{2}}x}\rd x}$}
+          {$\displaystyle\int_{0}^{2\pi }{\dfrac{\sin x+\cos x}{2}\rd x}$}
+    }{%
+      C.
+    }{%
+      $\ln \dfrac{1+x}{1-x}$,$\dfrac{x}{1+\cos x}$均为奇函数，$\dfrac{\sin x+\cos x}{2}$在整数个周期内的积分值为零.
+
+      $\displaystyle\int_{\frac{\pi }{2}}^{\frac{\pi }{2}}{\dfrac{\sin x+\cos x}{1+{{\sin }^{2}}x}\rd x}=2\displaystyle\int_{0}^{\frac{\pi }{2}}{\dfrac{\cos x}{1+{{\sin }^{2}}x}\rd x}\ne 0.$
+    }
+
+  \Example{%
+    2013-2014-1-期末-解答题-13
+    }{%
+      $\displaystyle\int_{-1}^{1}{\dfrac{{{x}^{2}}+\sin x\cos x}{1+{{x}^{6}}}\rd x}.$
+    }{%
+      见解析.
+    }{%
+      $\displaystyle\int_{-1}^{1}{\dfrac{{{x}^{2}}+\sin x\cos x}{1+{{x}^{6}}}\rd x}$
+      $=\displaystyle\int_{-1}^{1}{\dfrac{{{x}^{2}}}{1+{{x}^{6}}}\rd x}+\displaystyle\int_{-1}^{1}{\dfrac{\sin x\cos x}{1+{{x}^{6}}}\rd x}$
+
+      $=\dfrac{1}{3}\displaystyle\int_{-1}^{1}{\dfrac{1}{1+{{\left( {{x}^{3}} \right)}^{2}}}\rd{{x}^{3}}}+0$
+      $=\dfrac{1}{3}\left. \arctan {{x}^{3}} \right|_{-1}^{1}$
+      $=\dfrac{\pi }{6}$.
+  }
+
+\type{变限积分的概念、求导法则}
+  \Example{%
+    2015-2016-1-期末-选择题-11
+  }{%
+    设函数$f(x)=\begin{cases}
+    a, & x=0 \\
+    \dfrac{1}{{{x}^{3}}}\displaystyle\int_{0}^{3x}{({{\re}^{-{{t}^{2}}}}-1)\rd t}, & x\ne 0 \\
+    \end{cases}$在$x=0$点连续，则$a=$
+    \pickout{A}
+    \options{$-9$}
+      {$-3$}
+      {$0$}
+      {$1$}
+  }{%
+    A.
+  }{%
+    $a=\lim\limits_{x \to 0} \dfrac{1}{{{x}^{3}}}\displaystyle\int_{0}^{3x}{({{\re}^{-{{t}^{2}}}}-1)\rd t}=\lim\limits_{x \to 0} \dfrac{3({{\re}^{-9{{x}^{2}}}}-1)}{3{{x}^{2}}}=\lim\limits_{x \to 0} \dfrac{-9{{x}^{2}}}{{{x}^{2}}}=-9.$
+  }
+
+  \Example{%
+    2016-2017-1-期末-填空题-9
+  }{%
+    设$y(x)=\displaystyle\int_{0}^{{{x}^{2}}}{\sin {{(x-t)}^{2}}\rd t}$,则${{\left. \dfrac{\rd y}{\rd x} \right|}_{x=2}}=$
+    \fillin{$4\sin 4$}.
+  }{%
+    $4\sin 4$.
+  }{%
+    换元得到变限积分的标准形式
+    $$y\left( x \right) =\displaystyle\int_0^{x^2}{\sin \left( x-t \right) ^2\rd t}\xlongequal{\text{令}u=x-t}\displaystyle\int_x^{x-x^2}{\sin u^2\rd \left( x-u \right)}=\displaystyle\int_{x-x^2}^x{\sin u^2\rd u}$$
+    于是由变限积分求导法则得
+    $$\left. \dfrac{\rd y}{\rd x} \right|_{x=2}=\left. \left( \dfrac{\rd }{\rd x}\displaystyle\int_{x-x^2}^x{\sin u^2\rd u} \right) \right|_{x=2}=\left. \left[ \sin x^2-\left( 1-2x \right) \sin \left( x-x^2 \right) ^2 \right] \right|_{x=2}=\text{4}\sin 4.$$
+  }
+
+  \Example{%
+    2014-2015-1-期末-选择题-9
+  }{%
+    $f(x)=\displaystyle\int_{0}^{{{x}^{2}}}{\dfrac{\sin t}{t}\rd t}$,$g(x)={{2}^{{{x}^{2}}}}-1$,则当$x\to 0$时,$f(x)$是$g(x)$
+    \pickout{B}
+    \options{低阶无穷小}
+      {同阶但非等价无穷小}
+      {高阶无穷小}
+      {等价无穷小}
+  }{%
+    B.
+  }{%
+    $\lim\limits_{x \to 0} \dfrac{f(x)}{g(x)}
+    =\lim\limits_{x \to 0} \dfrac{\int_{0}^{{{x}^{2}}}{\frac{\sin t}{t}\rd t}}{{{2}^{{{x}^{2}}}}-1}
+    =\lim\limits_{x \to 0} \dfrac{\int_{0}^{{{x}^{2}}}{\frac{\sin t}{t}\rd t}}{{{x}^{2}}\ln 2}
+    =\lim\limits_{x \to 0} \dfrac{\frac{\sin {{x}^{2}}}{{{x}^{2}}}\cdot 2x}{2x\ln 2}
+    =\lim\limits_{x \to 0} \dfrac{\sin {{x}^{2}}}{{{x}^{2}}\ln 2}
+    =\dfrac{1}{\ln 2}$.
+  }
+
+  \Example{%
+    2014-2015-1-期末-解答题-17
+  }{%
+    设$f(x)=\begin{cases}
+    x, & 0\le x\le 1 \\
+    {{x}^{2}}, & x>1
+    \end{cases}$, 求$\displaystyle\int_{0}^{x}{f(t)\rd t}(x\ge 0)$.
+  }{%
+    见解析.
+  }{%
+    $x \le 1$时$\displaystyle\int_{0}^{x}{f(t)\rd t}=\displaystyle\int_{0}^{x}{t\rd t}=\dfrac{1}{2}{{x}^{2}}$；$x>1$时$\displaystyle\int_{0}^{x}{f(t)\rd t}\text{=}\displaystyle\int_{0}^{1}{t\rd t}\text{+}\displaystyle\int_{1}^{x}{{{t}^{2}}\rd t}\text{=}\dfrac{1}{3}{{x}^{3}}+\dfrac{1}{6}$
+
+    因此$f\left( x \right)=\begin{cases}
+    \dfrac{1}{2}{{x}^{2}}, & x \le 1 \\
+    \dfrac{1}{3}{{x}^{3}}+\dfrac{1}{6}, & x>1
+    \end{cases}$.
+  }
+
+  \Example{%
+    2013-2014-1-期末-选择题-11
+  }{%
+    $f(x)=\displaystyle\int_{0}^{5x}{\dfrac{\sin t}{t}\rd t}$,~$g(x)=\displaystyle\int_{0}^{\sin x}{{{(1+t)}^{\frac{1}{t}}}\rd t}$, 当$x\to 0$时, $f(x)$是$g(x)$的
+    \pickout{D}
+    \options{等阶无穷小}
+      {高阶无穷小}
+      {低阶无穷小}
+      {同阶但非等价无穷小}
+  }{%
+    D.
+  }{%
+    $\lim\limits_{x \to 0} \dfrac{f(x)}{g(x)}
+    =\lim\limits_{x \to 0} \dfrac{\int_{0}^{5x}{\frac{\sin t}{t}\rd t}}{\int_{0}^{\sin x}{{{(1+t)}^{\frac{1}{t}}}\rd t}}
+    =\lim\limits_{x \to 0} \dfrac{\frac{\sin 5x}{5x}\cdot 5}{{{(1+\sin x)}^{\frac{1}{\sin x}}}\cos x}
+    =5\lim\limits_{x \to 0} \dfrac{\frac{\sin 5x}{5x}}{\re}
+    =\dfrac{5}{\re}$.
+  }
+
+  \Example{%
+    2012-2013-1-期末-选择题-9
+  }{%
+    设$f\left( x \right)=\begin{cases}
+      {{x}^{2}}, & 0 \le x<1 \\
+      1, & 1 \le x \le 2 \\
+    \end{cases}$，则$F\left( x \right)=\displaystyle\int_{1}^{x}{f\left( t \right)\rd t}\left( 0x2 \right)$为
+    \pickout{A}
+    \options{$\begin{cases}
+        \dfrac{1}{3}{{x}^{3}}-\dfrac{1}{3}, & 0\le x<1 \\
+        x-1, & 1\le x\le 2 \\
+      \end{cases}$}
+      {$\begin{cases}
+        \dfrac{1}{3}{{x}^{3}}-\dfrac{1}{3}, & 0\le x<1 \\
+        x, & 1\le x\le 2 \\
+      \end{cases}$}
+      {$\begin{cases}
+        \dfrac{1}{3}{{x}^{3}}, & 0\le x<1 \\
+        x-1, & 1\le x\le 2 \\
+      \end{cases}$}
+      { $\begin{cases}
+        \dfrac{1}{3}{{x}^{3}}, & 0\le x<1 \\
+        x, & 1\le x\le 2 \\
+      \end{cases}$}
+  }{%
+    A.
+  }{%
+    $0 \le x<1$时，$F\left( x \right)=\displaystyle\int_{1}^{x}{{{t}^{2}}\rd t}=\dfrac{1}{3}{{x}^{3}}-\dfrac{1}{3}$；$1 \le x \le 2$时，$F\left( x \right)=\displaystyle\int_{1}^{x}{1\rd t}=x-1$.
+  }
+
+  \Example{%
+    2012-2013-1-期末-选择题-11
+  }{%
+
+    设$f\left( x \right)$为连续函数，且$F\left( x \right)=\displaystyle\int_{{{x}^{2}}}^{{{\re}^{-x}}}{xf\left( t \right)\rd t}$，则$\dfrac{\rd F}{\rd t}=$
+    \pickout{C}
+    \options{$xf({{\re}^{-x}})-xf({{x}^{2}})]$}
+      {$-x{{\re}^{-x}}f({{\re}^{-x}})-2xf({{x}^{2}})$}
+      {$\displaystyle\int_{{{x}^{2}}}^{{{\re}^{-x}}}{f(t)\rd t}-x[{{\re}^{-x}}f({{\re}^{-x}})+2xf({{x}^{2}})]$}
+      {$\displaystyle\int_{{{x}^{2}}}^{{{\re}^{-x}}}{f(t)\rd t}+x\left[{{\re}^{-x}}f({{\re}^{-x}})-2xf({{x}^{2}})\right]$}
+  }{%
+    C.
+  }{%
+    $\dfrac{\rd F}{\rd x}=\dfrac{\rd}{\rd x}x\displaystyle\int_{{{x}^{2}}}^{{{\re}^{-x}}}{f(t)\rd t}$
+    $=\displaystyle\int_{{{x}^{2}}}^{{{\re}^{-x}}}{f(t)\rd t}+x\left[-{{\re}^{-x}}f({{\re}^{-x}})-2xf({{x}^{2}})\right]$
+
+    $=\displaystyle\int_{{{x}^{2}}}^{{{\re}^{-x}}}{f(t)\rd t}-x\left[{{\re}^{-x}}f({{\re}^{-x}})+2xf({{x}^{2}})\right]$.
+  }
+
+\type{不定积分的概念与微积分基本定理}
+  \Example{%
+    2015-2016-1-期末-填空题-4
+  }{%
+
+    若$\sqrt{1-{{x}^{2}}}$是$xf(x)$的一个原函数,则$\displaystyle\int_{0}^{1}{\dfrac{1}{f(x)}\rd x}=$
+    \fillin{$-\dfrac{\pi}{4}$}.
+  }{%
+    $-\dfrac{\pi }{4}$
+  }{%
+      $f(x)=\dfrac{1}{x}\cdot {{\left( \sqrt{1-{{x}^{2}}} \right)}^{\prime }}
+      =\dfrac{1}{x}\cdot \dfrac{-2x}{2\sqrt{1-{{x}^{2}}}}
+      =-\dfrac{1}{\sqrt{1-{{x}^{2}}}}$
+
+      $\displaystyle\int_{0}^{1}{\dfrac{1}{f(x)}\rd x}
+      =-\displaystyle\int_{0}^{1}{\sqrt{1-{{x}^{2}}}\rd x}
+      \xlongequal{x=\sin t}-\displaystyle\int_{0}^{\frac{\pi }{2}}{{{\cos }^{2}}t\rd t}
+      =-\displaystyle\int_{0}^{\frac{\pi }{2}}{\dfrac{1+\cos 2t}{2}\rd t}
+      =-\dfrac{\pi }{4}$.
+  }
+
+\type{不定积分与定积分的常用积分法（重点）}
+
+  在基本性质及定理的基础上，结合积分表、凑微分法、换元法、分部法、有理函数积分法等.
+
+  \Example{%
+    2015-2016-1-期末-解答题-13
+  }{%
+
+    计算$\displaystyle\int_{-1}^{1}{\dfrac{{{x}^{2}}+{{(\cos x)}^{3}}\arctan x}{1+\sqrt{1-{{x}^{2}}}}\rd x}$.
+  }{%
+    见解析.
+  }{%
+    积分区间是对称区间，被积函数有三角，首先观察是否有对称性.
+
+    不难看出$\dfrac{{{x}^{2}}}{1+\sqrt{1-{{x}^{2}}}}$是偶函数而$\dfrac{{{\left( \cos x \right)}^{3}}\arctan x}{1+\sqrt{1-{{x}^{2}}}}$是奇函数，后者在有界对称区间的积分值为0
+    \begin{align*}
+      & \Rightarrow \displaystyle\int_{-1}^{1}{\dfrac{{{x}^{2}}+{{(\cos x)}^{3}}\arctan x}{1+\sqrt{1-{{x}^{2}}}}\rd x}
+      =2\displaystyle\int_{0}^{1}{\dfrac{{{x}^{2}}}{1+\sqrt{1-{{x}^{2}}}}\rd x}
+      =2\displaystyle\int_{0}^{1}{\dfrac{{{x}^{2}}}{1+\sqrt{1-{{x}^{2}}}}\cdot \dfrac{1-\sqrt{1-{{x}^{2}}}}{1-\sqrt{1-{{x}^{2}}}}\rd x} \\
+      & =2\displaystyle\int_{0}^{1}{\left( 1-\sqrt{1-{{x}^{2}}} \right)\rd x}
+      =2-\dfrac{\pi }{2}
+    \end{align*}
+    其中最后一步计算用到了定积分的几何性质.
+  }
+
+  \Example{%
+    2015-2016-1-期末-解答题-14
+  }{%
+    计算$\displaystyle\int{{{\sec }^{6}}x\rd x}$.
+  }{%
+    见解析.
+  }{%
+    【法一】令$x=\arctan t$，从而$\rd x=\dfrac{1}{1+{{t}^{2}}}\rd t,{{\sec }^{6}}x={{(1+{{\tan }^{2}}x)}^{3}}={{(1+{{t}^{2}})}^{3}}$
+
+    $\displaystyle\int{{{\sec }^{6}}x\rd x}
+    =\displaystyle\int{{{(1+{{t}^{2}})}^{3}}\cdot \dfrac{1}{1+{{t}^{2}}}\rd t}
+    =\displaystyle\int{{{(1+{{t}^{2}})}^{2}}\rd t}
+    =\dfrac{1}{5}{{t}^{5}}+\dfrac{2}{3}{{t}^{3}}+t+C
+    =\dfrac{1}{5}{{\tan }^{5}}x+\dfrac{2}{3}{{\tan }^{3}}x+\tan x+C.$
+
+    【法二】利用$\sec^2 x \rd x = \rd \left( \tan x \right)$有
+
+    $\displaystyle\int{{{\sec }^{6}}x\rd x}
+    =\displaystyle\int{{{\sec }^{4}}x \rd(\tan x)}
+    =\displaystyle\int{{{(1+{{\tan }^{2}}x)}^{2}} \rd(\tan x)}
+    =\dfrac{1}{5}{{\tan }^{5}}x+\dfrac{2}{3}{{\tan }^{3}}x+\tan x+C.$
+  }
+
+  \Example{%
+    2016-2017-1-期末-填空题-10
+  }{%
+    若$f({{\sin }^{2}}x)=\dfrac{x}{\sin x}$,则$\displaystyle\int{\dfrac{\sqrt{x}}{\sqrt{1-x}}f(x)\rd x}=$
+    \fillin{$2\sqrt{x}-2\sqrt{1-x}\arcsin \sqrt{x}+C$}.
+  }{%
+    $2\sqrt{x}-2\sqrt{1-x}\arcsin \sqrt{x}+C$.
+  }{%
+    令$x={{\sin }^{2}}t$，从而$t=\arcsin \sqrt{x},\rd x=2\sin t\cos t\rd t$，于是
+    \begin{align*}
+      & \displaystyle\int{\dfrac{\sqrt{x}}{\sqrt{1-x}}f(x)\rd x}
+      =\displaystyle\int{\dfrac{\sin t}{\cos t}\cdot \dfrac{t}{\sin t}\cdot 2\sin t\cos t\rd t}
+      =2\displaystyle\int{t\sin t\rd t}
+      =2\sin t-2t\cos t+C \\
+      = & 2\sqrt{x}-2\sqrt{1-x}\arcsin \sqrt{x}+C.
+    \end{align*}
+  }
+
+  \Example{%
+    2016-2017-1-期末-解答题-13
+  }{%
+    已知函数$f(x)=\displaystyle\int_{1}^{x}{{{\re}^{-{{t}^{2}}}}\rd t}$, 求$\displaystyle\int_{0}^{1}{f(x)\rd x}$.
+  }{%
+    $\dfrac{1-\re}{2\re}$.
+  }{%
+    $\displaystyle\int_{0}^{1}{f(x)\rd x}$
+    $= xf(x) \big|_{0}^{1}-\displaystyle\int_{0}^{1}{x \rd f(x)}$
+    $= x\displaystyle\int_{1}^{x}{{{\re}^{-{{t}^{2}}}}\rd t} \big|_{0}^{1}-\displaystyle\int_{0}^{1}{x{{\re}^{-{{x}^{2}}}}\rd x}$
+
+    $=0+\dfrac{1}{2}\displaystyle\int_{0}^{1}{{{\re}^{-{{x}^{2}}}}\rd(-{{x}^{2}})}$
+    $=\dfrac{1-\re}{2\re}$.
+  }
+
+  \Example{%
+    2014-2015-1-期末-填空题-1
+  }{%
+    $\displaystyle\int{\ln (1+{{x}^{2}})\rd x}=$
+    \fillin{$x\ln (1+{{x}^{2}})-2x+2\arctan x+C$}.
+  }{%
+    $x\ln (1+{{x}^{2}})-2x+2\arctan x+C$.
+  }{%
+    \begin{align*}
+      & \displaystyle\int{\ln (1+{{x}^{2}})\rd x}
+      =x\ln (1+{{x}^{2}})-\displaystyle\int{x \rd \ln (1+{{x}^{2}})}
+      =x\ln (1+{{x}^{2}})-\displaystyle\int{\dfrac{2{{x}^{2}}}{1+{{x}^{2}}}\rd x} \\
+      = & x\ln (1+{{x}^{2}})-2\displaystyle\int{(1-\dfrac{1}{1+{{x}^{2}}})\rd x}
+      =x\ln (1+{{x}^{2}})-2x+\arctan x+C.
+    \end{align*}
+  }
+
+  \Example{%
+    2014-2015-1-期末-填空题-3
+  }{%
+    积分$\displaystyle\int_{-1}^{1}{{{(x+\sqrt{1-{{x}^{2}}})}^{2}}\rd x}=$
+    \fillin{$2$}.
+  }{%
+    $2$.
+  }{%
+    $\displaystyle\int_{-1}^{1}{{{(x+\sqrt{1-{{x}^{2}}})}^{2}}\rd x}$
+    $=\displaystyle\int_{-1}^{1}{({{x}^{2}}+2x\sqrt{1-{{x}^{2}}}+1-{{x}^{2}})\rd x}$
+
+    $=\displaystyle\int_{-1}^{1}{2x\sqrt{1-{{x}^{2}}}\rd x+\displaystyle\int_{-1}^{1}{\rd x}}$
+    $=0+2$
+    $=2$.
+  }
+
+  \Example{%
+    2014-2015-1-期末-填空题-5
+  }{%
+    设$\lim\limits_{x \to +\infty} {{\left( \dfrac{1+x}{x} \right)}^{bx}}=\displaystyle\int_{-\infty }^{b}{t{{\re}^{t}}\rd t}$ ,则常数$b=$
+    \fillin{$2$}.
+  }{%
+    $2$.
+  }{%
+    $\displaystyle\int_{-\infty }^{b}{t{{\re}^{t}}\rd t}$
+    $={{\re}^{b}}(b-1),\lim\limits_{x \to +\infty} {{(\dfrac{x+1}{x})}^{bx}}$
+    $=\lim\limits_{x \to +\infty} {{({{(1+\dfrac{1}{x})}^{x}})}^{b}}$
+    $={{\re}^{b}}$，
+    ${{\re}^{b}}(a-1)$
+    $={{\re}^{b}}\Rightarrow b$
+    $=2$.
+  }
+
+  \Example{%
+    2014-2015-1-期末-填空题-6
+  }{%
+    若函数$f(x)=\dfrac{1}{1+{{x}^{2}}}+\sqrt{1-{{x}^{2}}}\displaystyle\int_{0}^{1}{f(x)\rd x}$,则$\displaystyle\int_{0}^{1}{f(x)\rd x}=$
+    \fillin{$\dfrac{\pi }{4-\pi }$}.
+  }{%
+    $\dfrac{\pi }{4-\pi }$.
+  }{%
+    记常数$m=\displaystyle\int_{0}^{1}{f\left( x \right)\rd x}$，则$f\left( x \right)=\dfrac{1}{1+{{x}^{2}}}+m\sqrt{1-{{x}^{2}}}$
+
+    于是
+    $m=\displaystyle\int_{0}^{1}{\left[ \dfrac{1}{1+{{x}^{2}}}+m\sqrt{1-{{x}^{2}}} \right]\rd x}=\displaystyle\int_{0}^{1}{\dfrac{1}{1+{{x}^{2}}}\rd x}+m\displaystyle\int_{0}^{1}{\sqrt{1-{{x}^{2}}}\rd x}=\dfrac{\pi }{4}\left( 1+m \right)$
+
+    $\Rightarrow m=\dfrac{\pi }{4-\pi }$.
+  }
+
+  \Example{%
+    2013-2014-1-期末-填空题-4
+  }{%
+    $\displaystyle\int_{1}^{4}{\dfrac{\ln x}{\sqrt{x}}}\rd x=$
+    \fillin{$8\ln 2-4$}.
+  }{%
+    $8\ln 2-4$.
+  }{%
+    $\displaystyle\int_{1}^{4}{\dfrac{\ln x}{\sqrt{x}}\rd x}$
+    $=\displaystyle\int_{0}^{1}{\ln x\rd \left( 2\sqrt{x} \right)}$
+    $= 2\sqrt{x}\ln x \big|_{1}^{4}-2\displaystyle\int_{1}^{4}{\dfrac{1}{\sqrt{x}}\rd x}$
+    $=8\ln 2-4 \sqrt{x} \big|_{1}^{4}=8\ln 2-4$.
+  }
+
+  \Example{%
+    2013-2014-1-期末-解答题-15
+  }{%
+    计算$\displaystyle\int_{0}^{+\infty }{{{x}^{2}}{{\re}^{-x}}\rd x}$.
+  }{%
+    见解析.
+  }{%
+    【法一】$\displaystyle\int_{0}^{+\infty }{{{x}^{2}}{{\re}^{-x}}\rd x}$
+    $= - {{x}^{2}}{{\re}^{-x}} \big|_{0}^{+\infty }+\displaystyle\int_{0}^{+\infty }{2x{{\re}^{-x}}\rd x}$
+
+    $=0-2(\left. x{{\re}^{-x}} \right|_{0}^{+\infty }-\displaystyle\int_{0}^{+\infty }{{{\re}^{-x}}\rd x})$
+    $=-2 {{\re}^{-x}} \big|_{0}^{+\infty }$
+    $=2$.
+
+    【法二】原式$= \Gamma(3) = 2! = 2$.
+  }
+
+  \Example{%
+    2012-2013-1-期末-填空题-3
+  }{%
+    $\displaystyle\int_{\frac{\pi }{2}}^{\frac{\pi }{2}}{({{x}^{7}}+{{\sin }^{2}}x){{\cos }^{2}}x\rd x}=$
+    \fillin{$\dfrac{\pi}{8}$}.
+  }{%
+    $\dfrac{\pi }{8}$.
+  }{%
+    \begin{align*}
+      & \displaystyle\int_{\frac{\pi }{2}}^{\frac{\pi }{2}}{({{x}^{7}}+{{\sin }^{2}}x){{\cos }^{2}}x\rd x}=\displaystyle\int_{\frac{\pi }{2}}^{\frac{\pi }{2}}{{{x}^{7}}{{\cos }^{2}}x\rd x}+\displaystyle\int_{\frac{\pi }{2}}^{\frac{\pi }{2}}{{{\sin }^{2}}x{{\cos }^{2}}x\rd x}=2\displaystyle\int_{0}^{\frac{\pi }{2}}{{{\sin }^{2}}x{{\cos }^{2}}x\rd x} \\
+      = & \dfrac{1}{2}\displaystyle\int_{0}^{\frac{\pi }{2}}{{{\sin }^{2}}2x\rd x}=\dfrac{1}{2}\displaystyle\int_{0}^{\frac{\pi }{2}}{\dfrac{1-\cos 4x}{2}\rd x}
+      =\dfrac{\pi }{8}.
+    \end{align*}
+  }
+
+  \Example{%
+    2012-2013-1-期末-填空题-5
+  }{%
+    $\displaystyle\int_{-\infty }^{a}{t{{\re}^{t}}\rd t}=\lim\limits_{x \to +\infty} {{\left( \dfrac{x+1}{x} \right)}^{ax}}$,~$a=$
+    \fillin{$2$}.
+  }{%
+    $2$.
+  }{%
+    $\displaystyle\int_{-\infty }^{a}{t{{\re}^{t}}\rd t}
+    ={{\re}^{a}}(a-1)$,~$\lim\limits_{x \to +\infty} {{\left(\dfrac{x+1}{x}\right)}^{ax}}
+    =\lim\limits_{x \to +\infty} {{({{(1+\dfrac{1}{x})}^{x}})}^{a}}
+    ={{\re}^{a}},{{\re}^{a}}(a-1)={{\re}^{a}}$
+    $\Rightarrow a=2$.
+  }
+
+  \Example{%
+    2012-2013-1-期末-解答题-14
+  }{%
+    $\displaystyle\int{\dfrac{x{{\re}^{\arctan x}}}{{{(1+{{x}^{2}})}^{\frac{3}{2}}}}\rd x}$.
+  }{%
+    见解析.
+  }{%
+    令$x=\tan t$，则$\sin t=\dfrac{x}{\sqrt{1+{{x}^{2}}}},\cos t=\dfrac{1}{\sqrt{1+{{x}^{2}}}}$
+
+    于是
+    $\displaystyle\int{\dfrac{x{{\re}^{\arctan x}}}{{{\left( 1+{{x}^{2}} \right)}^{\frac{3}{2}}}}\rd x}=\displaystyle\int{\dfrac{\tan t{{\re}^{t}}}{{{\sec }^{3}}t}\rd (\tan t)}=\displaystyle\int{{{\re}^{t}}\sin t\rd t}=\dfrac{1}{2}{{\re}^{t}}(\sin t-\cos t)=\dfrac{(x-1){{\re}^{\arctan x}}}{2\sqrt{1+{{x}^{2}}}}+C$.
+  }
+
+  \Example{%
+    2012-2013-1-期末-解答题-17
+  }{%
+    设函数$f\left( x \right)$在$\left[ 0,1 \right]$有二阶导数，且$\displaystyle\int_{0}^{1}{\left[ 2f\left( x \right)+x\left( 1-x \right){f}''\left( x \right) \right]\rd x}$.
+  }{%
+    见解析.
+  }{%
+    \begin{align*}
+      & \displaystyle\int_{0}^{1}{[2f(x)+x(1-x)f''(x)]\rd x}=2\displaystyle\int_{0}^{1}{f(x)\rd x}+\displaystyle\int_{0}^{1}{(x-{{x}^{2}})d(f'(x))} \\
+      = & 2xf(x)|_{0}^{1}-2\displaystyle\int_{0}^{1}{xf'(x)\rd x}+(x-{{x}^{2}})f'(x)|_{0}^{1}-\displaystyle\int_{0}^{1}{(1-2x)f'(x)\rd x} \\
+      = & 2f(1)-2\displaystyle\int_{0}^{1}{xf'(x)\rd x}-\displaystyle\int_{0}^{1}{f'(x)\rd x}+2\displaystyle\int_{0}^{1}{xf'(x)\rd x}
+      =f(0)+f(1).
+    \end{align*}
+  }
+
+\type{定积分的应用}
+
+  \hspace*{2em}包括几何应用：计算平面曲线的弧长、平面图形的面积、规则几何体的体积；物理应用：变力做功等.
+
+  \subsection{平面曲线的弧长}
+    \Example{%
+      2016-2017-1-期末-选择题-5
+    }{%
+      曲线$y=\dfrac{{{\re}^{x}}+{{\re}^{-x}}}{2}$从$x=0$到$x=a>0$的长度为
+      \pickout{D}
+      \options{$\dfrac{{{\re}^{a}}+{{\re}^{-a}}}{3}$}
+        {$\dfrac{{{\re}^{a}}-{{\re}^{-a}}}{3}$}
+        {$\dfrac{{{\re}^{a}}+{{\re}^{-a}}}{2}$}
+        {$\dfrac{{{\re}^{a}}-{{\re}^{-a}}}{2}$}
+    }{%
+      D.
+    }{%
+      弧微分$\rd s=\sqrt{1+{{\left( {{y}'} \right)}^{2}}}\rd x=\dfrac{{{\re}^{x}}+{{\re}^{-x}}}{2}\rd x$，
+      弧长$l=\displaystyle\int_{0}^{a}{\rd s}
+      =\displaystyle\int_{0}^{a}{\dfrac{{{\re}^{x}}+{{\re}^{-x}}}{2}\rd x}
+      =\dfrac{{{\re}^{a}}-{{\re}^{-a}}}{2}$.
+    }
+
+  \subsection{平面图形的面积}
+
+    \Example{%
+      2016-2017-1-期末-选择题-3
+    }{%
+      曲线$y={{x}^{2}}$与${{y}^{2}}=x$所围成的图像的面积为
+      \pickout{B}
+      \options{$\dfrac{1}{2}$}
+        { $\dfrac{1}{3}$}
+        { $\dfrac{1}{4}$}
+        { $\dfrac{1}{5}$}
+    }{%
+      B.
+    }{%
+      由方程组$\begin{cases}
+        & y={{x}^{2}} \\
+        & {{y}^{2}}=x \\
+      \end{cases}$有两组解$x=y=0,x=y=1$知曲线$y={{x}^{2}}$与${{y}^{2}}=x$有两个交点$\left( 0,0 \right)$,~$\left( 1,1 \right)$，且曲线在两点之间的部分成闭区域，该区域面积S即为待求值.
+
+      由于$\forall x\in \left( 0,1 \right),{{x}^{2}}<\sqrt{x}$，故$S=\displaystyle\int_{0}^{1}{(\sqrt{x}-{{x}^{2}})\rd x}=\dfrac{1}{3}$.
+    }
+
+    \Example{%
+      2014-2015-1-期末-解答题-16
+    }{%
+      已知曲线$y=a\sqrt{x}(a>0)$与曲线$y=\ln \sqrt{x}$在点$P({{x}_{0}},{{y}_{0}})$有公共切线，求:
+
+      (1)常数$a$及切点；
+
+      (2)两曲线与$x$轴围成图形$S$的面积.
+    }{%
+      见解析.
+    }{%
+      (1)~$\begin{cases}
+        y=a\sqrt{{{x}_{0}}}=\ln \sqrt{{{x}_{0}}}=\dfrac{1}{2}\ln {{x}_{0}}  \\
+        y'=\dfrac{a}{2\sqrt{{{x}_{0}}}}=\dfrac{1}{2{{x}_{0}}}
+      \end{cases}\Rightarrow \begin{cases}
+        a=\dfrac{1}{\re}  \\
+        {{x}_{0}}={{\re}^{2}}  \\
+      \end{cases}$
+
+      (2)~$S=\displaystyle\int_{0}^{{{\re}^{2}}}{a\sqrt{x}\rd x}-\dfrac{1}{2}\displaystyle\int_{1}^{{{\re}^{2}}}{\ln x\rd x}
+      =\dfrac{2}{3}a{{x}^{\frac{3}{2}}}|_{0}^{{{\re}^{2}}}-x(\ln x-1)|_{1}^{{{\re}^{2}}}
+      =\dfrac{{{\re}^{2}}}{6}-\dfrac{1}{2}$.
+    }
+
+    \Example{%
+      2013-2014-1-期末-解答题-14
+    }{%
+      计算抛物线${{y}^{2}}=2x$与直线$y=x-4$所围成的图形的面积.
+    }{%
+      见解析.
+    }{%
+      $\begin{cases}
+        {{y}^{2}}=2x \\
+        y=x-4 \\
+      \end{cases} \Rightarrow
+      \begin{cases}
+        y=4 \\
+        x=8 \\
+      \end{cases}
+      \begin{cases}
+        y=-2 \\
+        x=2 \\
+      \end{cases}$
+      $\Rightarrow S=\displaystyle\int_{-2}^{4}{f(y) \rd y}=\displaystyle\int_{-2}^{4}{(y+4-\dfrac{{{y}^{2}}}{2}) \rd y}=18$.
+    }
+
+    \Example{%
+      2013-2014-1-期中-解答题-20
+    }{%
+      在椭圆$\dfrac{{{x}^{2}}}{{{a}^{2}}}+\dfrac{{{y}^{2}}}{{{b}^{2}}}=1$的第一象限部分上求一点P，使得该点处的切线、椭圆以及两坐标轴所围成的面积最小（其中$a>0,b>0$，椭圆面积为$\pi ab$）.
+    }{%
+      见解析.
+    }{%
+      设$P\left( {{x}_{0}},{{y}_{0}} \right)$是椭圆在第一象限部分的点，则由椭圆方程$\dfrac{{{x}^{2}}}{{{a}^{2}}}+\dfrac{{{y}^{2}}}{{{b}^{2}}}=1$得$y'{{|}_{P}}=-\dfrac{{{b}^{2}}}{{{a}^{2}}}\cdot \dfrac{{{x}_{0}}}{{{y}_{0}}}$
+
+      $\therefore $过点$P$的切线方程为：$y-{{y}_{0}}=-\dfrac{{{b}^{2}}}{{{a}^{2}}}\cdot \dfrac{{{x}_{0}}}{{{y}_{0}}}\left( x-{{x}_{0}} \right)$，又$\dfrac{{{x}^{2}}}{{{a}^{2}}}+\dfrac{{{y}^{2}}}{{{b}^{2}}}=1$得到切线方程为：$\dfrac{x{{x}_{0}}}{{{a}^{2}}}+\dfrac{y{{y}_{0}}}{{{b}^{2}}}=1$
+
+      $\therefore $切线与坐标轴在第一象限围成的三角形面积${{S}_{\Delta }}=\dfrac{1}{2}\cdot \dfrac{{{a}^{2}}{{b}^{2}}}{{{x}_{0}}{{y}_{0}}}$
+
+      $\therefore $切线、椭圆及两坐标轴所围成图形面积$S={{S}_{\vartriangle }}-\dfrac{1}{4}S$椭圆$\text{=}\dfrac{{{a}^{2}}{{b}^{2}}}{2{{x}_{0}}{{y}_{0}}}-\dfrac{1}{4}\pi ab$
+      又$\dfrac{{{x}^{2}}}{{{a}^{2}}}+\dfrac{{{y}^{2}}}{{{b}^{2}}}=1$，得$S=S\left( {{x}_{0}} \right)=\dfrac{{{a}^{3}}b}{2{{x}_{0}}\sqrt{{{a}^{2}}-{{x}_{0}}^{2}}}-\dfrac{1}{4}\pi ab$
+
+      要使得$S\left( {{x}_{0}} \right)$取最小，实际上是要使得${{x}_{0}}\sqrt{{{a}^{2}}-{{x}_{0}}^{2}}$取最大
+
+      令$f\left( {{x}_{0}} \right)={{x}_{0}}\sqrt{{{a}^{2}}-{{x}_{0}}^{2}},{{x}_{0}}\in \left( 0,a \right)$，则$f'\left( {{x}_{0}} \right)=\dfrac{{{a}^{2}}-2{{x}_{0}}^{2}}{\sqrt{{{a}^{2}}-{{x}_{0}}^{2}}}$，令$f'\left( {{x}_{0}} \right)=0$，解得${{x}_{0}}=\dfrac{a}{\sqrt{2}}$
+
+      而当${{x}_{0}}>\dfrac{a}{\sqrt{2}}$时，$f'\left( {{x}_{0}} \right)<0$；当${{x}_{0}}<\dfrac{a}{\sqrt{2}}$，$f'\left( {{x}_{0}} \right)>0$，$\therefore $${{x}_{0}}=\dfrac{a}{\sqrt{2}}$是$f\left( x \right)$的最大值点
+
+      于是$\left( \dfrac{a}{\sqrt{2}},\dfrac{b}{\sqrt{2}} \right)$是$S\left( x \right)$的最小值点，即待求点P为$\left( \dfrac{a}{\sqrt{2}},\dfrac{b}{\sqrt{2}} \right)$.
+    }
+
+    \Example{%
+      2014-2015-2-期中-选择题-11
+    }{%
+      双纽线${{\left( {{x}^{2}}+{{y}^{2}} \right)}^{2}}={{x}^{2}}-{{y}^{2}}$所围成区域的面积可用定积分表示为
+      \pickout{A}
+      \options{$2\int_{0}^{\frac{\pi }{4}}{\cos 2\theta \text{d}\theta }$}
+        {$4\int_{0}^{\frac{\pi }{4}}{\cos 2\theta \text{d}\theta }$}
+        {$\int_{0}^{\frac{\pi }{4}}{\cos 2\theta \text{d}\theta }$}
+        {$\frac{1}{2}\int_{0}^{\frac{\pi }{4}}{{{\cos }^{2}}2\theta \text{d}\theta }$}
+    }{%
+      A.
+    }{%
+      令$x=\rho \cos \theta $，$y=\rho \sin \theta $，则双纽线方程${{\left( {{x}^{2}}+{{y}^{2}} \right)}^{2}}={{x}^{2}}-{{y}^{2}}$化为${{\rho }^{\text{2}}}=\cos 2\theta $. 再利用双纽线在第一象限与$x$轴所围成的面积相等可得其面积
+      $S=4\int_{0}^{\frac{\pi }{4}}{\frac{1}{2}\cos 2\theta \text{d}\theta }=2\int_{0}^{\frac{\pi }{4}}{\cos 2\theta \text{d}\theta }$.
+    }
+
+  \subsection{规则几何体的体积}
+    \Example{%
+      2015-2016-1-期末-解答题-17
+    }{%
+      在曲线$y={{x}^{2}}(x\ge 0)$上某点$A$处作一切线，使之与曲线及$x$轴所围图形$B$的面积为$\dfrac{1}{12}$，求平面图形$B$绕$y$轴旋转一周所围成的立体的体积.
+    }{%
+      见解析.
+    }{%
+      不妨设切点为$P\left( t,{{t}^{2}} \right)\left( t>0 \right)$，计算得切线方程为$y=2t\left( x-t \right)+{{t}^{2}}=2tx-{{t}^{2}}\Rightarrow x=\dfrac{1}{2t}\left( y+{{t}^{2}} \right)$
+
+      图形$B$的面积为$S=\displaystyle\int_{0}^{{{t}^{2}}}{\left( \dfrac{1}{2t}\left( y+{{t}^{2}} \right)-\sqrt{y} \right)\rd y}=\dfrac{1}{12}{{t}^{3}}=\dfrac{1}{12}\Rightarrow t=1$
+
+      则切线方程为$y=2x-1\Rightarrow x=\dfrac{1}{2}\left( y+1 \right)$. 于是旋转体的体积
+      \begin{align*}
+        & V=\displaystyle\int_{0}^{1}{\pi \left\{ {{\left[ \dfrac{1}{2}\left( y+1 \right) \right]}^{2}}-{{\left( \sqrt{y} \right)}^{2}} \right\}\rd y}
+        =\pi \displaystyle\int_{0}^{1}{\left[ \dfrac{1}{4}\left( {{y}^{2}}+2y+1 \right)-y \right]\rd y} \\
+        = & \dfrac{\pi }{4}\displaystyle\int_{0}^{1}{{{\left( y-1 \right)}^{2}}\rd y}
+        =\dfrac{\pi }{4}\displaystyle\int_{-1}^{0}{{{y}^{2}}\rd y}
+        =\dfrac{\pi }{12}\cdot \left. {{y}^{3}} \right|_{-1}^{0}
+        =\dfrac{\pi }{12}.
+      \end{align*}
+      也可采用对$x$积分的方法，但计算要分段，稍嫌麻烦.
+    }
+
+    \Example{%
+      2016-2017-1-期末-解答题-17
+    }{%
+      设${{D}_{1}}$是由抛物线$y=2{{x}^{2}}$和直线$x=a,x=2$及$y=0$所围成的平面区域,${{D}_{2}}$是由抛物线$y=2{{x}^{2}}$和直线$y=0,x=a$所围成的平面区域,其中$0<a<2$.
+
+      (1)求${{D}_{1}}$绕$x$轴旋转而成的旋转体体积${{V}_{1}}$,${{D}_{2}}$绕$y$轴旋转而成的旋转体体积${{V}_{2}}$
+
+      (2)问当$a$为何值时,${{V}_{1}}+{{V}_{2}}$取得最大值?并求此最大值.
+    }{%
+      见解析.
+    }{%
+      (1)~$\rd {{V}_{1}}=\pi {{\left( 2{{x}^{2}} \right)}^{2}}\rd x
+      =4\pi {{x}^{4}}$，${{V}_{1}}
+      =\displaystyle\int_{a}^{2}{4\pi {{x}^{4}}\rd x}
+      =\left. \dfrac{4\pi }{5}{{x}^{5}} \right|_{a}^{2}
+      =\dfrac{128\pi -4\pi {{a}^{5}}}{5}$
+
+      $\rd {{V}_{2}}=\pi {{\left( \sqrt{{y}/{2}\;} \right)}^{2}}\rd y=\dfrac{\pi }{2}y\rd y$，${{V}_{2}}=\displaystyle\int_{0}^{2{{a}^{2}}}{\dfrac{\pi y}{2}\rd x}=\left. \dfrac{\pi }{4}{{y}^{2}} \right|_{0}^{2{{a}^{2}}}=\pi {{a}^{4}}$.
+
+      (2)令$f\left( a \right)={{V}_{1}}+{{V}_{2}}=-\dfrac{4\pi }{5}{{a}^{5}}+\pi {{a}^{4}}+\dfrac{128\pi }{5},a\in \left( 0,2 \right)$，则${f}'\left( a \right)=-4\pi {{a}^{4}}+4\pi {{a}^{3}}=4\pi {{a}^{3}}\left( 1-a \right)$
+
+      易知
+        $$\forall a\in \left( 0,1 \right),{f}'(a)>0;~\forall a\in \left( 1,2 \right),{f}'(a)<0$$
+      于是$f\left( a \right)$在$a=1$处取得极大值（同时也是最大值），为$\dfrac{129\pi }{5}$.
+    }
+
+    \Example{%
+      2013-2014-1-期末-选择题-10
+    }{%
+      由曲线$x=\sqrt{y}$,~$x=0$,~$y=4$围成的图形，绕$y$轴旋转所得旋转体的体积为
+      \pickout{A}
+      \options{$8\pi $}
+        {$6\pi $}
+        {$4\pi $}
+        {$2\pi $}
+    }{%
+      A.
+    }{%
+      $\begin{cases}
+        \rd V=\pi {{\left( \sqrt{y} \right)}^{2}}\rd y \\
+        V=\displaystyle\int{dV}=\displaystyle\int_{0}^{4}{\pi y\rd y}=8\pi
+      \end{cases}$.
+    }
+
+    \Example{%
+      2012-2013-1-期末-解答题-18
+    }{%
+      设平面图形$A$位于曲线$y={{\re}^{x}}$下方、该曲线过原点的切线的左方以及$x$轴的上方，求：
+
+      (1)平面图形$A$的面积$S$；
+
+      (2)$A$绕$x$轴旋转所得旋转体的体积${{V}_{x}}$；
+
+      (3)$A$绕直线$x=1$旋转所得旋转体的体积${{V}_{x=1}}$.
+    }{%
+      见解析.
+    }{%
+      (1)~$S={{S}_{1}}-{{S}_{2}}=\displaystyle\int_{-\infty }^{1}{{{\re}^{x}}\rd x}-\dfrac{1}{2}\times 1\times e=e-\dfrac{\re}{2}=\dfrac{\re}{2}$.
+
+      (2)~${{V}_{x}}=\displaystyle\int_{-\infty }^{1}{\pi {{y}^{2}}\rd x-\dfrac{1}{3}\times \pi \times {{\re}^{2}}\times }1=\dfrac{{{\re}^{2}}\pi }{2}-\dfrac{{{\re}^{2}}\pi }{3}=\dfrac{{{\re}^{2}}\pi }{6}$.
+
+      (3)~${{V}_{x=1}}=\displaystyle\int_{-\infty }^{1}{2\pi (1-x)y\rd x-\dfrac{1}{3}\times \pi \times e\times }{{1}^{2}}=2e\pi -\dfrac{e\pi }{3}=\dfrac{5e\pi }{3}$.
+    }
+
+  % \subsection{变力做功}
+  %   无
+
+\type{反常积分的概念与存在性判定（审敛），简单
+反常积分的计算}
+  \Example{%
+    2015-2016-1-期末-解答题-15
+  }{%
+    讨论广义积分$\displaystyle\int_{1}^{+\infty }{\dfrac{1}{{{x}^{a}}}\rd x}$的收敛性.
+  }{%
+    见解析.
+  }{%
+    由无界区间上反常积分的定义有
+      $$\displaystyle\int_{1}^{+\infty }{\dfrac{1}{{{x}^{a}}}\rd x}=\lim\limits_{b \to +\infty} \displaystyle\int_{0}^{b}{\dfrac{1}{{{x}^{a}}}\rd x}=\begin{cases}
+      \lim\limits_{b \to +\infty} \dfrac{{{b}^{1-a}}-1}{1-a}, & a\ne 1 \\
+      \lim\limits_{b \to +\infty} \ln b, & a=1
+      \end{cases}=\begin{cases}
+        \dfrac{1}{1-a}, & a>1 \\
+        +\infty , & a \le 1
+      \end{cases}$$
+    即当$a>1$时积分收敛，当$a \le 1$时积分发散.
+  }

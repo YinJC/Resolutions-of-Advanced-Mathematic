@@ -1,0 +1,329 @@
+% !TEX root = ../HTNotes-Demo.tex
+\begin{flushright}
+  \color{zhanqing!80}
+  \ding{43} 习题见\autopageref{cha:6}
+\end{flushright}
+\section{向量及其线性运算}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见 9 页
+\end{flushright}
+
+  3.证明: 设$AB$中点为$E$, $AC$中点为$F$, 连接$EF$
+
+  则$\overrightarrow{AE} = \dfrac{1}{2} \overrightarrow{AB}$, $\overrightarrow{AF} = \dfrac{1}{2} \overrightarrow{AC}$, 则
+  $\overrightarrow{EF} = \overrightarrow{EA} + \overrightarrow{AF} = - \dfrac{1}{2} \overrightarrow{AB} + \dfrac{1}{2} \overrightarrow{AC} = \dfrac{1}{2} \overrightarrow {BC}$,
+  即
+  $\overrightarrow {EF} \parallel \overrightarrow {BC},~\left| {\overrightarrow {EF} } \right| = \dfrac{1}{2}\left| {\overrightarrow {BC} } \right|. $
+
+  5.证明: (1) 由三角形不等式$\bm{a} + \bm{b} \ge \left| \bm{a} + \bm{b} \right|$有
+  $\left| \bm{a} - \bm{b} \right| + \left| \bm{b} \right| \ge \left| \bm{a} - \bm{b}  +  \bm{b} \right| = \left| {\bm{a} } \right|$
+
+  即
+  $\left| {\bm{a} } \right| - \left| {\bm{b} } \right| \le \left| {\bm{a} } - {\bm{b} } \right|, $
+  当且仅当$\bm {a} \parallel \bm {b}$时取等.
+
+  (2) 由三角形不等式$\left| {\bm{a} } \right| + \left| {\bm{b} } \right| \ge \left| {\bm{a} } + \bm{b} \right|$有
+  $\left| {\bm{a} } + {\bm{b} } \right| + \left| {\bm{c} } \right| \ge \left| {\bm{a} } + \bm{b}  + {\bm{c} } \right|$
+
+  则
+  $\left| {\bm{a} } + \bm{b}  + {\bm{c} } \right| \le \left| {\bm{a} } \right| + {\bm{b} } + \left| {\bm{c} } \right| \le |\bm{a}| + |\bm{b}| + |\bm{c}|$,
+  当且仅当$\bm{a} \parallel \bm{b} \parallel \bm{c}$时取等.
+
+  7.证明: \ding{192} 充分性: 不妨设$\lambda=0$, 则必有$\mu \ne 0$,
+  那么$\bm{b}=\frac{\lambda}{\mu} \bm{a}$, 即
+  $\bm{a} \parallel\bm{b}; $
+
+  \ding{193} 必要性: $\bm{a} \parallel \bm{b}$, 即$\bm{a} = k\bm{b}$,
+  则有
+  $\bm{a} - k\bm{b} = \bm{0}$
+  即存在不全为零的实数$\lambda=1, \mu=k$, 使得
+  $\lambda\bm{a} + \mu\bm{b} = \bm{0}.$
+
+  9.证明: \ding{192} 充分性: 若$\overrightarrow {OA} + \overrightarrow {OB} + \overrightarrow {OC} = \bm{O}$, 则
+  $\overrightarrow {OA}  + \overrightarrow {OB} = \overrightarrow {CO}$
+
+  又$D$是$AB$中点, 则
+  $\overrightarrow {OA}  + \overrightarrow {OB} = 2 \overrightarrow {OD}$,
+  即$O$在中线$CD$上
+
+  同理可得$O$在中线$AE$上, 以及$O$在中线$BF$上,
+  则有$O$是$\triangle ABC$的重心, 充分性证毕.
+
+  \ding{193} 必要性: 取$AB, AC, BC$中点分别为$D,E, F$
+  连接$AD, BE, CF$交于点$O$, 即为重心, 则
+  $\overrightarrow {AO}  =  2 \overrightarrow {OD}$
+  又$D$是$BC$中点, 则
+  $\overrightarrow {OB}  + \overrightarrow {OC} = 2 \overrightarrow {OD}$
+  则
+  $\overrightarrow {OA} = \overrightarrow {BO}  + \overrightarrow {CO}$
+  即证得$\overrightarrow {OA} + \overrightarrow {OB} + \overrightarrow {OC} = \bm{O}$.
+
+\section{向量的坐标}
+\begin{flushright}
+  \color{zhanqing!80}
+  \ding{43} 教材见18页
+\end{flushright}
+
+  3.解: 距$x$轴$\sqrt {4 + 25}  = \sqrt {29}$, 距$y$轴$\sqrt {34}$, 距$z$轴$\sqrt {13}$;
+  距$xOy$面5, 距$xOz$面2, 距$yOz$面3.
+
+  5.解: (1)~$(-3,2,-1)$;
+
+  (2)关于$x$轴 $(3,2,-1)$,   关于$y$轴 $(-3,-2,-1)$, 关于$z$轴 $(-3,2,1)$;
+
+  (3)关于$xOy$ $(3,-2,-1)$, 关于$xOz$ $(3,2,1)$, 关于$yOz$ $(-3,-2,1)$.
+
+  7.解: $\overrightarrow{M_1M_2}= \overrightarrow {OM_2}  - \overrightarrow {OM_1}  = ( -1,-2,1)$,
+  则$\left| {\overrightarrow {M_1M_2} } \right| = \sqrt {1 + 2 + 1}  = 2$;
+
+  $\cos \alpha = -\dfrac{1}{2}, \cos \beta = - \dfrac{{\sqrt 2 }}{2}, \cos \gamma  = - \dfrac{1}{2}$; \quad
+  $\alpha  = 120^\circ$, $\beta  = 135^\circ$, $\gamma  = 60^\circ$; \quad
+  $\bm{e}_a=\dfrac{\bm{a}}{\left| {\bm{a}} \right|} = (\dfrac{1}{2}, - \dfrac{\sqrt {2}}{2},\dfrac{1}{2})$.
+
+  9.解: $\overrightarrow {AM}  = \overrightarrow {OM}  - \overrightarrow {OA}$, $\overrightarrow {MB}  = \overrightarrow {OB}  - \overrightarrow {OM}$, 则  $\overrightarrow {OM}  - \overrightarrow {OA}  = \dfrac{1}{2} \left(\overrightarrow {OB}  - \overrightarrow {OM} \right)$,
+  则
+  $\overrightarrow {OM}  = \dfrac{1}{3} \overrightarrow {OB}  + \dfrac{2}{3} \overrightarrow {OA} $
+
+  设$M(x,y,z)$, 则$(x,y,z)=\dfrac{1}{3} (-1,3,-2) + \dfrac{2}{3} (1,2,3) = \left(\dfrac{1}{3},\dfrac{7}{3},\dfrac{4}{3} \right)$, 即
+  $$M(\dfrac{1}{3},\dfrac{7}{3},\dfrac{4}{3}).$$
+
+  11.解:$\overrightarrow {AC}  = \overrightarrow {AB}  + \overrightarrow {BC}  = (1,1,1)$
+  又$AC$中点为$M$, 所以$\overrightarrow {AM}  = \overrightarrow {MC}$
+  而$\overrightarrow {AM}  = \overrightarrow {OM}  - \overrightarrow {OA} $
+
+  $\overrightarrow {MC}  = \overrightarrow {OC}  - \overrightarrow {OM} ,\overrightarrow {OM}  - \overrightarrow {OA}  = \overrightarrow {OC}  - \overrightarrow {OM}$,
+  则$\overrightarrow {OM}  = \dfrac{1}{2}(\overrightarrow {OA}  + \overrightarrow {OC} )$,
+  同理$\overrightarrow {ON}  = \dfrac{1}{2}(\overrightarrow {OB}  + \overrightarrow {OD} )$, 则
+  $$\overrightarrow {MN}  = \overrightarrow {ON}  - \overrightarrow {OM}  = \frac{1}{2}(\overrightarrow {AB}  + \overrightarrow {CD} ) = (3,2, - 4).$$
+
+  12.解: 由题$\alpha  = \dfrac{\pi }{3},~\beta  = \dfrac{\pi }{4}$有
+  $\cos \alpha  = \dfrac{1}{2}, ~\cos \beta  = \dfrac{{\sqrt 2 }}{2}$,
+  设$A(x,y,z)$
+  $x=\left| {\overrightarrow {OA} } \right|\cos \alpha  = 3$,
+  $y=3\sqrt 2$
+
+  又$\left| {\overrightarrow {OA} } \right| = 6$, 则$z=3$,
+  $\therefore~A(3,3\sqrt{2},3)$.
+
+\section{向量的乘积}
+\begin{flushright}
+  \color{zhanqing!80}
+  \ding{43} 教材见28页
+\end{flushright}
+
+  3.解: (1)~$(2\bm{a} ) \cdot (3\bm{b} ) = 6 \bm{a} \cdot \bm{b}  =  - 6$; \qquad
+  (2)~$\left( {2\bm{a} } \right) \times \left( {3\bm{b} } \right) = 6\bm{a}  \times \bm{b}  = ( - 30, - 18,6 )$;
+
+  (3)~$\left( {\bm{a} } - {\bm{b} } \right) \left( {\bm{a} } + 2 {\bm{c} } \right) =  - 15$; \qquad \qquad
+  (4)~$\left( {\bm{a} } - {\bm{b} } \right) \times \left( {\bm{a} } + 2 {\bm{b} } \right) = ( - 15, - 9,3)$;
+
+  (5)~$\bm{u}  \cdot \bm{v}  = (k\bm{a}  + \bm{b} ) \cdot ( - \bm{a}  + 3\bm{b} ) = 0$, 则$\- 4k + 3 + 2(3k - 1) \cos\left\langle {\widehat {\bm{a},\bm{b}}} \right\rangle  = 0$, 解得$k=2$.
+
+  7.解: $\overrightarrow {MA}  = ( - 3,1,2)$, $\overrightarrow {MB}  = (0, - 1,3)$
+
+  则(1)~$S= \dfrac{1}{2} \times \left| {\overrightarrow {MA} } \times {\overrightarrow {MB} } \right| =  \left| (5,9,3) \right| = \dfrac{\sqrt {115}}{2}$;
+  \quad
+  (2)~$S' = \left| {\overrightarrow {MA} } \times {\overrightarrow {MB} } \right| = \sqrt {115}$;
+
+  (3)~$\hat{a} = \pm \dfrac{\overrightarrow{MA} \times \overrightarrow{MB}}{\left| \overrightarrow{MA} \times \overrightarrow{MB} \right|} = \pm \dfrac{1}{{\sqrt {115} }}(5,9,3)$.
+
+  9.证明:设有三角形$ABC$, 三边分别为向量$\bm{a}$, $\bm{b}$, $\bm{c}$,
+  $S = \dfrac{1}{2} \left| \bm{a} \times \bm{b} \right| = \dfrac{1}{2} \left| \bm{b}  \times \bm{c} \right| = \dfrac{1}{2} \left| \bm{a} \times \bm{c} \right|$
+
+  则$\left| {\bm{a} } \right| \cdot \left| {\bm{b} } \right|\sin \left\langle {\widehat {\bm{a},\bm{b}}} \right\rangle = \left| {\bm{b} } \right| \cdot \left| {\bm{c} } \right|\sin \left\langle {\widehat {\bm{b},\bm{c}}} \right\rangle = \left| {\bm{a} } \right| \cdot \left| {\bm{c} } \right|\sin \left\langle {\widehat {\bm{a},\bm{c}}} \right\rangle$,
+  即$ab\sin C = bc\sin A = ac\sin B$
+
+  则证得$\dfrac{a}{{\sin A}} = \dfrac{b}{{\sin B}} = \dfrac{c}{{\sin C}}$.
+
+
+  11.证明: $\overrightarrow {AB}  = (1, - 3, - 2)$, $\overrightarrow {AC}  = ( - 2,9,4)$, $\overrightarrow {AD}  = (3, - 6, - 6)$
+
+  设$A,B,C,D$在同一个平面上, 则$\overrightarrow {AB}  = \lambda \overrightarrow {AC}  + \mu \overrightarrow {AD}$, 即
+  $(1, - 3, - 2) = ( - 2\lambda ,9\lambda ,4\lambda ) + (3\mu , - 6\mu , - 6\mu )$
+
+  $\begin{cases}
+  1=-2\lambda +3\mu \\
+  -3=9\lambda -6\mu \\
+  -2=4\lambda -6\mu
+  \end{cases}$
+  $\Rightarrow~\lambda  =  - \frac{1}{5},\mu  = \frac{1}{5}$,
+  则假设成立, 共面.
+
+\section{平面与直线}
+\begin{flushright}
+  \color{zhanqing!80}
+  \ding{43} 教材见42页
+\end{flushright}
+
+  2.解: (1)由题意, 设所求平面方程为$By+Cz=0$
+
+  将点$(4,-3,-1)$代入, 得$C=-3B$, 即得$y-3z=0$;
+
+  (2)平面法向量$\overrightarrow n  = \overrightarrow {OP}  = (3, - 6,2)$, $3x-6y+2z+D=0$, 代入$P(3,-6,2)$得$3x-6y+2z-49=0$;
+
+  (3)设平面方程为$Ax+By+Cz+D=0$, 代入得$2x-3y+2z-10=0$.
+
+  4.解:$\begin{cases}
+  x+3y+z-1=0\\
+  2x-y-z=0\\
+  x-2y-2z+3=0
+  \end{cases}$
+  $\Rightarrow~x=1,y=-1,z=3$, 则交点为$(1,-1,3)$.
+
+  6.解: 过$\pi_1$与$\pi_2$的平面为$\left( 1+\lambda \right)x+5y+\left( 1-\lambda \right)+4\lambda = 0$
+
+  $\dfrac{\left( 1+\lambda,5,1-\lambda \right) \cdot \left( 1,-4,-8 \right)}{\left| \left( 1+\lambda,5,1-\lambda \right) \cdot \left( 1,-4,-8 \right) \right|} = \cos\dfrac{\pi}{4} = \dfrac{\sqrt{2}}{2}$ $\Rightarrow~\lambda = -\dfrac{3}{4}$, 则所求平面为$x+20y+7z-12=0$
+
+  又$\pi_2$与已知平面恰好成$\dfrac{\pi}{4}$角
+
+  $\therefore$ 所求平面为$x+20y+7z-12=0$或$x-z+4=0$.
+
+  8.解: 取$x=0$, 由$\begin{cases}
+  -2y+4z+1=0\\
+  2y-z+2=0
+  \end{cases}$,
+  解得$y=-\dfrac{3}{2}$, $z=-1$
+
+  即直线$L$过点$M(0,-\dfrac{3}{2},-1)$,
+  $\overrightarrow n_1  = (3, - 2,4)$, $\overrightarrow n_2  = (1, 2,-1)$,
+  $\overrightarrow s  = \overrightarrow n_1  \times \overrightarrow n_2 =(-6,7,8)$
+
+  从而所求直线对称式为$\dfrac{x}{{ - 6}} = \dfrac{{y + \frac{3}{2}}}{7} = \dfrac{{z + 1}}{8}$, 参数式方程为
+  $\begin{cases}
+    x=-6t \\
+    y=7t-\dfrac{3}{2} \\
+    z=8t-1
+  \end{cases}$.
+
+  10.解: 设过直线$L$的平面束方程为$4x-y+3z-1+\lambda (x+5y-z+2)=0$
+
+  即$(4 + \lambda )x + ( - 1 + 5\lambda )y + (3 - \lambda )z + ( - 1 + 2\lambda ) = 0$
+  $\Rightarrow 2(4 + \lambda ) - ( - 1 + 5\lambda ) + 5(3 - \lambda ) = 0 , \lambda  = 3$
+
+  则投影平面方程为$7x+14y+5=0$,
+  则投影直线为$\begin{cases}
+  7x+14y+5=0\\
+  zx-y+5z-3=0
+  \end{cases}$.
+
+\section{空间曲面与空间曲线}
+\begin{flushright}
+  \color{zhanqing!80}
+  \ding{43} 教材见64页
+\end{flushright}
+
+  2.解: (1)双曲柱面; \quad (2)椭圆柱面; \quad (3)抛物柱面;
+
+  (4)球面; \quad (5)圆锥面(下半部分); \quad (6)旋转单叶双曲面.
+
+  {\small 注: 用电脑进行图形绘制难度过大, 故图略, 下同.}
+
+  3.解: (1)~$\begin{cases} \dfrac{x^2}{4} - \dfrac{y^2}{9} = 1 \\ z = 0 \end{cases}$ 绕$x$轴旋转形成的; \quad
+  (2)~$\begin{cases} y = \dfrac{x^2}{4} \\ z = 0 \end{cases}$ 绕$y$轴旋转形成的.
+
+  4.解: (1)~$4x^2 + 9y^2 + 9z^2 = 36$, 为旋转椭球面; \quad
+  (2)~$x^2 + y^2 = 6z$, 为旋转抛物面; \quad
+  (3)~$y^2 - x^2 - z^2 = 1$, 为旋转双叶双曲面.
+
+  6.解: 直线方程一式乘以二加上二式消去$z$得到该柱面方程为$4x^2 + 7y^2 = 8$
+  则该柱面在$xOy$上的投影为$\begin{cases} 4x^2 + 7y^2 = 8 \\ z = 0 \end{cases}$.
+
+  9.解: 设此动弦的中点为$\left( x_0,y_0,z_0 \right)$
+
+  $\because$ 此动弦的一个端点为$(0,0,0)$
+
+  $\therefore$ 另一个端点为$\left( 2x_0,2y_0,2z_0 \right)$
+
+  又该端点在球面上, 则有$\left( 2x_0 \right)^2 + \left( 2y_0 \right)^2 + \left( 2z_0 \right)^2 = R^2$
+
+  即此动弦中点轨迹为
+  $$x^2 + y^2 + \left( z - \dfrac{R}{2} \right)^2 = \dfrac{R^2}{4}.$$
+
+\section*{总习题六}
+\addcontentsline{toc}{section}{总习题六}
+\begin{flushright}
+  \color{zhanqing!80}
+  \ding{43} 教材见75页
+\end{flushright}
+
+  4.解: 假设$\bm{a}, \bm{b}, \bm{c}$共面, 设$\bm{c}  = \lambda \bm{a}  + \mu \bm{b}$
+
+  代入$(-3,12,6)=\lambda (-1,3,2)+\mu (2,-3,-4)$,解得$\lambda  = 5, \mu  = 1$,
+  则共面, $\bm{c}  = 5\bm{a}  + \bm{b}$.
+
+  6.解: 设$C(0,0,2)$, $\overrightarrow {AB}  = ( - 1,2,1)$, $\overrightarrow {AC}  = ( - 1,0,z)$,
+  则
+  $\cos\angle BAC = \dfrac{{\overrightarrow {AB}  \cdot \overrightarrow {AC} }}{{\left| {\overrightarrow {AB} } \right| \cdot \left| {\overrightarrow {AC} } \right|}}$
+
+  $$S=\dfrac{1}{2}\left| {\overrightarrow {AB} } \right| \cdot \left| {\overrightarrow {AC} } \right| \cdot \sin \angle BAC = \dfrac{1}{2}\sqrt {5z^2 - 2z + 5} $$
+  当且仅当$z=\dfrac{1}{2}$时, 取最小值, $C(0,0,\dfrac{1}{5})$
+
+  8.解: 设$\dfrac{{x - 1}}{1} = \dfrac{{y + 1}}{2} = \dfrac{{z - 1}}{\lambda } = t_1$,
+  $\dfrac{{x + 1}}{1} = \dfrac{{y - 1}}{1} = \dfrac{z}{1} = t_2$
+
+  则
+  $\begin{cases}
+  x=t_1+1\\
+  y=2t_1-1\\
+  z=\lambda t_1+1
+  \end{cases}$,
+  $\begin{cases}
+  x=t_2-1\\
+  y=t_2+1\\
+  z=t_2
+  \end{cases}$
+  $\Rightarrow~\begin{cases} t_1=4 \\ t_2=6 \\ \lambda =\dfrac{5}{4} \end{cases}$.
+
+  10.解: $L_1$方向向量为$\bm{n}_1 = \left( 1,1,2 \right)$, 过点$A \left( -1,0,1 \right)$, $L_2$方向向量为$\bm{n}_2 = \left( 1,3,4 \right)$, 过点$B \left( 0,-1,2 \right)$
+
+  $$\left[ \bm{n}_1~\bm{n}_2~\overrightarrow{AB} \right] = \left( -2,-2,2 \right) \cdot \left( 1,-1,1 \right) = -2+2+2=2 \ne 0$$
+
+  则$L_1$与$L_2$异面;
+  两者间的距离$d = \dfrac{\left| \overrightarrow{AB} \cdot \left(\bm{n}_1 \times \bm{n}_2 \right) \right|}{\bm{n}_1\times\bm{n}_2} = \dfrac{\sqrt{3}}{3}$.
+
+  \begin{flalign*} \indent
+    \begin{split}
+      \text{12.解: }\lim \limits_{x \rightarrow 0 } \dfrac{\left| \bm{a} + x\bm{b} \right| - \left| \bm{\bm{a}} \right|}{x}
+      & \xlongequal[\text{分子的共轭}]{\text{分子分母乘以}} \lim \limits_{x \rightarrow 0 } \dfrac{2 \bm{a} \cdot \bm{b} + x \left| \bm{b} \right|^2}{\left| \bm{a} + x\bm{b} \right| + \left| \bm{\bm{a}} \right|}
+      = \dfrac{\left| \bm{a} \right|}{\left| \bm{a} \right| + \left| \bm{a} \right|}
+      = \dfrac{1}{2}.
+    \end{split}&
+  \end{flalign*}
+
+  14.解: 设公垂线过$L_1$上的点为$P \left( 3t-1,2t-3,t \right)$, 过$L_2$上的点为$Q \left( m,2m-5,7m+2 \right)$,
+
+  则公垂线的方向向量为$\overrightarrow{AB} = \left( m-3t+1,2m-2t-2,7m-t+2 \right)$
+
+  又$L_1$方向向量为$\left( 3,2,1 \right)$, $L_2$方向向量为$\left( 1,2,7 \right)$
+
+  则$\begin{cases}
+  \overrightarrow{AB} \cdot \left( 3,2,1 \right) = 0 \\
+  \overrightarrow{AB} \cdot \left( 1,2,7 \right) = 0
+  \end{cases}$
+  $\Rightarrow~\begin{cases} m = - \dfrac{1}{4} \\ t = - \dfrac{5}{28} \end{cases}$, 即$Q \left( -\dfrac{1}{4},-\dfrac{11}{2},\dfrac{1}{4} \right)$, $P \left( -\dfrac{43}{28},-\dfrac{47}{14},-\dfrac{5}{28} \right)$
+
+  又公垂线的方向向量为$\left( 3,2,1 \right) \times \left( 1,2,7 \right) = \left( 3,-5,1 \right)$
+
+  $\therefore$ 公垂线方程为$\dfrac{x+\frac{1}{4}}{3} = \dfrac{y+\frac{11}{2}}{-5} = \dfrac{z-\frac{1}{4}}{1}$或$\dfrac{x+\frac{43}{28}}{3} = \dfrac{y+\frac{47}{14}}{-5} = \dfrac{z-\frac{5}{28}}{1}$.
+
+  16.解: 过直线$L$的平面为$(1+2\lambda)x + (1+\lambda)y + (1+\lambda)z = 0$, 原点到该平面的距离为
+  $$d = \dfrac{1}{\sqrt{\left( 1+2\lambda \right)^2 + \left( 1+\lambda \right)^2 + \left( 1+\lambda \right)^2}}=\dfrac{1}{\sqrt{6\lambda^2 + 8\lambda + 3}}$$
+  当且仅当$\lambda = -\dfrac{8}{2 \times 6} = - \dfrac{2}{3}$时, 取最小值$d_{\min} = \sqrt{3}$
+
+  而平面$2x+y+z=0$到原点的距离$d'=\dfrac{0}{\sqrt{6}} = 0 < d_{\min} = \sqrt{3}$
+
+  $\therefore$ 所求平面应为$\lambda = -\dfrac{2}{3}$的平面, 即$x-y-z-3=0$.
+
+  18.解: 考虑$z$轴上一点$\left( 0,0,z_0 \right)$(不妨设$z_0>0$)绕直线$x=y=z$旋转形成该圆锥面, 圆锥面的底面在平面$x+y+z-z_0=0$上, 圆心在直线$x=y=z$上
+
+  则显然圆心$O$为$\left( \dfrac{z_0}{3},\dfrac{z_0}{3},\dfrac{z_0}{3} \right)$
+
+  那么, $\left( x,y,z \right)$须满足以下两个条件:
+
+  \ding{192} 到原点的距离相等, 即$z_0^2 = x^2+y^2+z^2$
+
+  \ding{193} 到$O$点的距离相等, 即$\left( x-\dfrac{z_0}{3} \right)^2 + \left( y-\dfrac{z_0}{3} \right)^2 + \left( z-\dfrac{z_0}{3} \right)^2 = \left( \dfrac{z_0}{3} \right)^2$
+
+  整理以上二式可得该圆锥面方程为$xy+yz+xz=0$.

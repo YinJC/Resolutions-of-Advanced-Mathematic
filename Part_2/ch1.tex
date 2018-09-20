@@ -1,0 +1,443 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\type{函数的概念与复合函数解析式及性质的确定}
+
+  \Example{%
+    2015-2016-1-期末-选择题-10
+  }{%
+    若函数$f(x)=\max \{|x-2|,\sqrt{x}\}$，则$f(x)$的最小值等于
+    \pickout{B}
+    \options{2}
+      {1}
+      {$\dfrac{1}{2}$}
+      {0}
+  }{%
+    B.
+  }{%
+    $f\left( x \right)=\begin{cases}
+    2-x, & x\in \left( -\infty ,1 \right) \\
+    \sqrt{x}, & x\in \left[ 1,4 \right] \\
+    x-2, & x\in \left( 4,+\infty  \right) \\
+    \end{cases}$，画图即可.
+  }
+
+  \Example{%
+    2011-2011-1-期中-选择题-13
+  }{%
+    当$x\to 0$时，变量$\dfrac{\text{1}}{{{x}^{2}}}\cos \dfrac{1}{x}$是
+    \pickout{D}.
+    \options{无穷小}
+      {有界但不是无穷小}
+      {无穷大}
+      {无界但不是无穷大}
+  }{%
+    D.
+  }{%
+    无穷大必须是充分靠近某个值或充分靠后的任意点都足够大；无界只要求存在大于任意给定值的点.
+
+    相关解释详见课本46页注(2)及47页例3.8.
+  }
+
+  \Example{%
+    2015-2016-1-期中-填空题-7
+  }{%
+    已知$f(x-1)=\ln \dfrac{x}{x-2}$，若$f(g(x))=\ln x$则$g(x)=$
+    \fillin{$\dfrac{2}{\ln x-1}+1$}.
+  }{%
+    $\dfrac{2}{\ln x-1}+1$.
+  }{%
+    $x-1=tf(t)=\ln \dfrac{t+1}{t-1}$,
+    则$f(g(x))=\ln \dfrac{g(x)+1}{g(x)-1}=\ln x$,
+    则$g(x)=\dfrac{2}{\ln x-1}+1$.
+  }
+
+\type{数列/函数极限的定义及存在性的判定}
+
+  \hspace*{2em}要求掌握$\varepsilon - \delta$语言的内涵，以及单调有界准则、夹逼准则、归结原理，在此基础上，掌握柯西命题（课本22页例2.3）及基本的审敛方法（如课本23页例2.4，习题1-2第8题、第15~17题）.
+
+  \hspace*{2em}无期中、期末考试题，读者可在学完本章重要极限之后练习杂题，以作补充.
+
+\type{简单极限的计算}
+
+  \hspace*{2em}涉及到的基本概念及方法包括：极限的定义、存在性判定定理、运算法则，两个重要极限，等价无穷小替换等.
+
+  \subsection{化简极限的基本方法}
+    \Example{%
+      2011-2011-1-期中-填空题-6
+    }{%
+      设$f(x)={{a}^{x}}\left( a>0,a\ne 1 \right)$，则$\underset{n\to 0}{\mathop{\lim }} \dfrac{1}{{{n}^{2}}}\ln \left( f\left( 1 \right)f\left( 2 \right)\cdots f\left( n \right) \right)=$
+      \fillin{$\dfrac{1}{2}\ln a$}.
+    }{%
+      $\dfrac{1}{2}\ln a$.
+    }{%
+      原式$=\underset{n\to 0}{\mathop{\lim }} \dfrac{\ln (a{{a}^{2}}\cdots {{a}^{n}})}{{{n}^{2}}}=\lim\limits_{n \to \infty} \dfrac{\ln a+2\ln a+\cdots +n\ln a}{{{n}^{2}}}=\ln a\cdot \underset{n\to 0}{\mathop{\lim }} \dfrac{\sfrac{n(n+1)}{2}}{{{n}^{2}}}=\dfrac{\ln a}{2}$.
+    }
+
+    \Example{%
+      2015-2016-1-期中-选择题-3
+    }{%
+      在直径$d$的大圆内作两两外切的$n$个小圆，小圆的圆心都在大圆的同一直径上，两边的小圆又分别内切与大圆，若第${{l}_{k}}$个小圆的周长为，则$\lim\limits_{n \to \infty} \sum\limits_{k=1}^{n}{{{l}_{k}}}=$
+      \pickout{A}
+      \options{$\pi d$}
+        {$2d$}
+        {$d$}
+        {不存在}
+    }{%
+      A.
+    }{%
+      $\lim\limits_{n \to \infty} \sum\limits_{k=1}^{n}{{{l}_{k}}}=\lim\limits_{n \to \infty} \pi ({{d}_{1}}+{{d}_{2}}+{{d}_{3}}+\ldots +{{d}_{n}})=\lim\limits_{n \to \infty} \pi d=\pi d$.
+    }
+
+    \Example{%
+      2016-2017-1-期中-填空题-3
+    }{%
+      极限$\lim\limits_{x \to -\infty} x\left( \sqrt{{{x}^{2}}+100}+x \right)=$
+      \fillin{$-50$}.
+    }{%
+      $-50$
+    }{%
+      负代换$t=-x$得
+      $$\lim\limits_{x \to -\infty} x\left( \sqrt{{{x}^{2}}+100}+x \right)=-\lim\limits_{t \to +\infty} t\left( \sqrt{{{t}^{2}}+100}-t \right)=-\lim\limits_{t \to +\infty} t\cdot \dfrac{100}{\sqrt{{{t}^{2}}+100}-t}=-50.$$
+    }
+
+    \Example{%
+      2016-2017-1-期中-填空题-8
+    }{%
+      设$|x|<1$, 则$\lim\limits_{n \to \infty} \prod\limits_{i=0}^{n}{(1+{{x}^{{{2}^{i}}}})}=$
+      \fillin{$\dfrac{1}{1-x}$}.
+    }{%
+      $\dfrac{1}{1-x}$.
+    }{%
+      $\lim\limits_{n \to \infty} \prod\limits_{i=0}^{n}{(1+{{x}^{{{2}^{i}}}})}=\lim\limits_{n \to \infty} \dfrac{(1-x)(1+x)(1+{{x}^{2}})\ldots }{1-x}=\lim\limits_{n \to \infty} \dfrac{1-{{x}^{{{2}^{n+1}}}}}{1-x}=\dfrac{1}{1-x}$.
+    }
+
+    \Example{%
+      2016-2017-1-期中-选择题-17
+    }{%
+      设$\lim\limits_{n \to \infty} \dfrac{{{n}^{2016}}}{{{n}^{m}}-{{(n-1)}^{m}}}=l$，（$l$为非0常数，$m$为正整数），则
+      \pickout{D}
+      \options{$l=\dfrac{1}{2016},m=2016$}
+        {$m=\dfrac{1}{2016},l=2016$}
+        {$l=\dfrac{1}{2017},m=2017$}
+        {$m=\dfrac{1}{2017},l=2017$}
+    }{%
+      D.
+    }{%
+      $\lim\limits_{n \to \infty} \dfrac{{{n}^{2016}}}{{{n}^{m}}-{{(n-1)}^{m}}}
+      =\lim\limits_{n \to \infty} \dfrac{{{n}^{2016}}}{{{n}^{m}}-[{{n}^{m}}-m{{n}^{m-1}}+\ldots ]}
+      =\lim\limits_{n \to \infty} \dfrac{{{n}^{2016}}}{m{{n}^{m-1}}+\ldots }=l$
+
+      $\Rightarrow 2016=m-1$ 即$m=2017$, $l=\dfrac{1}{2017}$.
+    }
+
+    \Example{%
+      2017-2018-1-期中-填空题-3
+    }{%
+      设$f(x)=\lim\limits_{n \to \infty} \dfrac{{{x}^{n+2}}-{{x}^{-(n+1)}}}{{{x}^{n}}+{{x}^{-n}}}=$
+      \fillin{$\begin{cases}
+      \lim\limits_{n \to \infty} \dfrac{{{x}^{-(n+1)}}}{{{x}^{-n}}}=\dfrac{1}{x}, & \abs{x} < 1 \\
+      \lim\limits_{n \to \infty} \dfrac{{{x}^{n+2}}}{{{x}^{n}}}={{x}^{2}}, & \abs{x} >1 \\
+      1, & \abs{x} = 1
+    	\end{cases}$}.
+    }{%
+      见解析.
+    }{%
+    	$\begin{cases}
+      \lim\limits_{n \to \infty} \dfrac{{{x}^{-(n+1)}}}{{{x}^{-n}}}=\dfrac{1}{x}, & \abs{x} < 1 \\
+      \lim\limits_{n \to \infty} \dfrac{{{x}^{n+2}}}{{{x}^{n}}}={{x}^{2}}, & \abs{x} >1 \\
+      1, & \abs{x} = 1
+    	\end{cases}.$
+    }
+
+    \Example{%
+      2017-2018-1-期中-填空题-4
+    }{%
+      $0\le a<1,\lim\limits_{n \to \infty} \sqrt[n]{[a[a\ldots [a[a]]\ldots ]]}=$
+      \fillin{$0$}.
+      该式有n个方括号，$\left[ x \right]$表示不超过$x$的最大整数.
+    }{%
+      0
+    }{%
+      $a \in [0,1)$ $\Rightarrow [a]=0,~a[a]=0$$\Rightarrow [a[a]] = [a[0]] = [0] = 0$，
+      运用数学归纳法，从而
+      $$\lim\limits_{n \to \infty} \sqrt[n]{[a[a\ldots [a[a]]\ldots ]]}=\lim\limits_{n \to \infty} \sqrt[n]{0}=0$$.
+    }
+
+  \subsection{两个重要极限}
+    \Example{%
+      2014-2015-1-期中-选择题-14
+    }{%
+      若$a>0,b>0$均为常数，则$\lim\limits_{x \to 0} {{\left( \dfrac{{{a}^{x}}+{{b}^{x}}}{2} \right)}^{\frac{3}{x}}}=$
+      \pickout{B}
+      \options{$a{{b}^{\frac{3}{2}}}$}
+        {${{\left( ab \right)}^{\frac{3}{2}}}$}
+        {${{a}^{\frac{3}{2}}}b$}
+        {${{\left( ab \right)}^{\frac{2}{3}}}$}
+    }{%
+      B.
+    }{%
+      考查对极限运算法则和e的重要极限及基本的等价无穷小的掌握，运算中要注意每一步拆分、替换是否成立.
+      \begin{align*}
+        & \lim\limits_{x \to 0} {{\left( \dfrac{{{a}^{x}}+{{b}^{x}}}{2} \right)}^{\frac{3}{x}}}
+        =\lim\limits_{x \to 0} {{\re}^{\frac{3}{x}\ln \left( \frac{{{a}^{x}}+{{b}^{x}}}{2} \right)}}
+        =\exp \left\{ \lim\limits_{x \to 0} \dfrac{3}{x}\ln \left( \dfrac{{{a}^{x}}+{{b}^{x}}}{2} \right) \right\}
+        =\exp \left\{ \lim\limits_{x \to 0} \dfrac{3}{x}\cdot \dfrac{{{a}^{x}}+{{b}^{x}}-2}{2} \right\} \\
+      	& =\exp \left\{ \lim\limits_{x \to 0} \dfrac{3}{x}\cdot \dfrac{{{a}^{x}}-1}{2}+\lim\limits_{x \to 0} \dfrac{3}{x}\cdot \dfrac{{{b}^{x}}-1}{2} \right\}
+      	=\exp \left\{ \lim\limits_{x \to 0} \dfrac{3}{x}\cdot \dfrac{x\ln a}{2}+\lim\limits_{x \to 0} \dfrac{3}{x}\cdot \dfrac{x\ln b}{2} \right\} \\
+       & =\exp \left\{ \dfrac{3}{2}\left( \ln a+\ln b \right) \right\}
+       ={{\left( ab \right)}^{\frac{3}{2}}}.
+    \end{align*}
+    }
+
+    \Example{%
+      2014-2015-1-期中-选择题-16
+    }{%
+      极限$\lim\limits_{x \to 0} {{\left( \dfrac{{\re^{x}}+{\re^{2x}}+\cdots +{{\re}^{nx}}}{n} \right)}^{\frac{1}{x}}}=$
+      \pickout{D}
+      \options{${{\re}^{\frac{1}{2}}}$}
+        {${{\re}^{\frac{n}{2}}}$}
+        {${{\re}^{-\dfrac{1}{2}}}$}
+        {${{\re}^{\frac{n+1}{2}}}$}
+
+    }{%
+      D.
+    }{%
+      $\lim\limits_{x \to 0} {{\left( \dfrac{{{\re}^{x}}+{{\re}^{2x}}+\cdots +{{\re}^{nx}}}{n} \right)}^{\frac{1}{x}}}
+      =\exp \left\{ \lim\limits_{x \to 0} \dfrac{1}{x}\cdot \ln \left( \dfrac{{{\re}^{x}}+{{\re}^{2x}}+\cdots +{{\re}^{nx}}}{n} \right) \right\}$
+
+      $=\exp \left\{ \lim\limits_{x \to 0} \dfrac{1}{x}\cdot \left( \dfrac{{{\re}^{x}}+{{\re}^{2x}}+\cdots +{{\re}^{nx}}}{n}-1 \right) \right\}$
+      $=\exp \left\{ \lim\limits_{x \to 0} \dfrac{1}{x}\cdot \dfrac{\left( {{\re}^{x}}-1 \right)+\left( {{\re}^{2x}}-1 \right)+\cdots +\left( {{\re}^{nx}}-1 \right)}{n} \right\}$
+
+      $=\exp \left\{ \lim\limits_{x \to 0} \dfrac{1}{x}\cdot \dfrac{x+2x+\cdots +nx}{n} \right\}$
+      $={{\re}^{\frac{n+1}{2}}}$.
+    }
+
+  \subsection{等价无穷小及其替换定理}
+    \Example{%
+      2011-2011-1-期中-填空题-2
+    }{%
+      $\lim\limits_{x \to 0} \dfrac{x\tan {{x}^{3}}}{1-\cos {{x}^{2}}}=$
+      \fillin{$2$}.
+    }{%
+      $2$.
+    }{%
+      采用等价无穷小替换$\tan x\sim x,1-\cos x\sim \dfrac{1}{2}{{x}^{2}}\left( x\to 0 \right)$可得$\lim\limits_{x \to 0} \dfrac{x\tan {{x}^{3}}}{1-\cos {{x}^{2}}}=\lim\limits_{x \to 0} \dfrac{x\cdot {{x}^{3}}}{\frac{1}{2}{{\left( {{x}^{2}} \right)}^{2}}}=2$.
+    }
+
+    \Example{%
+      2013-2014-1-期中-填空题-2
+    }{%
+      设$\lim\limits_{x \to 0} \dfrac{\ln \left( 1+\frac{f\left( x \right)}{\sin x} \right)}{{{a}^{x}}-1}=8\left( a>0 \right)$，则$\lim\limits_{x \to 0} \dfrac{f\left( x \right)}{{{x}^{2}}}=$
+      \fillin{$ 8\ln a$}.
+    }{%
+      $8\ln a$.
+    }{%
+        易得$\dfrac{f(x)}{\sin x}\to \text{0}$，
+        则有$\ln \left(1+\dfrac{f(x)}{\sin x}\right) \sim \dfrac{f(x)}{\sin x}$，
+        又${{a}^{x}}-1 \sim x\ln a$，
+
+        故原式$ = \lim\limits_{x \to 0} \dfrac{\frac{f(x)}{\sin x}}{x\ln a}
+        =\lim\limits_{x \to 0} \dfrac{f(x)}{{{x}^{2}}\ln a}\dfrac{x}{\sin x}
+        =8$
+        $\Rightarrow \lim\limits_{x \to 0} \dfrac{f(x)}{{{x}^{2}}} = 8\ln a$.
+    }
+
+    \Example{%
+      2013-2014-1-期中-填空题-4
+    }{%
+      计算$\lim\limits_{x \to 0} \dfrac{5{{\sin }^{2}}x+{{x}^{3}}\cos \frac{1}{{{x}^{2}}}}{\left( 1+\cos x \right)\ln \left( 1+{{x}^{2}} \right)}=$
+      \fillin{$\dfrac{5}{2}$}.
+    }{%
+      $\dfrac{5}{2}$.
+    }{%
+      注意到当$x\to 0$时，${{x}^{3}}\cos \dfrac{1}{{{x}^{2}}}$是${{x}^{2}}$的高阶无穷小，以及$1+\cos x\to 2$，于是由等价无穷小
+        $\ln \left( 1+{{x}^{2}} \right)\sim {{x}^{2}}\sim {{\sin }^{2}}x\left( x\to 0 \right)$
+      可得原式$=\lim\limits_{x \to -\infty} \dfrac{5{{x}^{2}}+0}{2{{x}^{2}}}=\dfrac{5}{2}$.
+    }
+
+    \Example{%
+      2017-2018-1-期中-选择题-10
+    }{%
+      $x\to 1$时，$1-x$是$1-\sqrt[\text{3}]{x}$的
+      \pickout{D}
+      \options{3阶无穷小}
+        {等价无穷小}
+        {高阶无穷小}
+        {同阶无穷小}
+    }{%
+      D.
+    }{%
+      $1-\sqrt[3]{x}=-\left( \sqrt[3]{1+x-1}-1 \right)\sim -\dfrac{1}{3}\left( x-1 \right)\left( x\to 1 \right)$.
+    }
+
+    \Example{%
+      2016-2017-1-期末-填空题-11
+    }{%
+      设函数$\lim\limits_{x \to 0} \dfrac{\re - {{\re}^{\cos x}}}{\sqrt[3]{1+{{x}^{2}}}-1}=$
+      \fillin{$\dfrac{3 \re}{2}$}.
+    }{%
+       $\dfrac{3 \re}{2}$.
+    }{%
+      $\lim\limits_{x \to 0} \dfrac{ \re -{{ \re }^{\cos x}}}{\sqrt[3]{1+{{x}^{2}}}-1}\
+      = - \lim\limits_{x \to 0} \re \dfrac{{{ \re }^{\cos x-1}}-1}{\frac{1}{3}{{x}^{2}}}
+      = - \lim\limits_{x \to 0} \re \dfrac{\cos x-1}{\frac{1}{3}{{x}^{2}}}
+      = - \lim\limits_{x \to 0} \re \dfrac{-\frac{1}{2}{{x}^{2}}}{\frac{1}{3}{{x}^{2}}}
+      = \dfrac{3 \re }{2}$.
+    }
+
+  \subsection{杂题}
+    \Example{%
+      2013-2014-1-期中-填空题-6
+    }{%
+      极限$\lim\limits_{x \to -\infty} \dfrac{\sqrt{4{{x}^{2}}+x-1}+x+1}{\sqrt{{{x}^{2}}+\sin x}}=$
+      \fillin{$1$}.
+    }{%
+      1.
+    }{%
+      注意$x$的趋向. 可以采用负代换避免负数进入/移出开方运算时粗心产生的错误.
+
+      令$t=-x$，得
+      原式$=\lim\limits_{t \to +\infty} \dfrac{\sqrt{4{{t}^{2}}-t-1}-t+1}{\sqrt{{{t}^{2}}-\sin t}}$,
+
+      观察结构，得到
+
+      原式$=\lim\limits_{t \to +\infty} \dfrac{t\left( \sqrt{4-{{t}^{-1}}-{{t}^{-2}}}-1+{{t}^{-1}} \right)}{t\sqrt{1-{{t}^{-2}}\sin t}}=\dfrac{\lim\limits_{t \to +\infty} \left( \sqrt{4-{{t}^{-1}}-{{t}^{-2}}}-1+{{t}^{-1}} \right)}{\lim\limits_{t \to +\infty} \sqrt{1-{{t}^{-2}}\sin t}}=\dfrac{\sqrt{4}-1}{1}=1$.
+    }
+
+    \Example{%
+      2016-2017-1-期中-解答题-20
+    }{%
+      计算$\lim\limits_{x \to 0} \left( \dfrac{\text{2+}{{\re}^{\frac{1}{x}}}}{1+{{\re}^{\frac{4}{x}}}}+\dfrac{\sin x}{|x|} \right)$
+    }{%
+      见解析.
+    }{%
+      应当分为两个单侧极限计算
+      $\lim\limits_{x \to 0^+} \left( \dfrac{\text{2+}{{\re}^{\frac{1}{x}}}}{1+{{\re}^{\frac{4}{x}}}}+\dfrac{\sin x}{|x|} \right)
+      = \lim\limits_{x \to 0^+} \left( \dfrac{\text{2}{{\re}^{-\frac{4}{x}}}+{{\re}^{-\frac{3}{x}}}}{1+{{\re}^{-\frac{4}{x}}}}+\frac{\sin x}{x} \right)=1$，
+
+      $\lim\limits_{x \to 0^-} \left( \dfrac{\text{2+}{{\re}^{\frac{1}{x}}}}{1+{{\re}^{\frac{4}{x}}}}+\dfrac{\sin x}{|x|} \right)
+      = \lim\limits_{x \to 0^-} \left( \dfrac{\text{2}+{{\re}^{\frac{1}{x}}}}{1+{{\re}^{\frac{4}{x}}}}-\dfrac{\sin x}{x} \right)
+      =2-1
+      =1$
+      因此$\lim\limits_{x \to 0} \left( \dfrac{\text{2+}{{\re}^{\frac{1}{x}}}}{1+{{\re}^{\frac{4}{x}}}}+\dfrac{\sin x}{|x|} \right)=1$.
+    }
+
+\type{函数的连续性与间断点}
+
+  \Example{%
+    2013-2014-1-期中-填空题-2
+  }{%
+    已知$f\left( x \right)=\lim\limits_{n \to \infty} \dfrac{{{x}^{2n+1}}+a{{x}^{2}}+bx}{{{x}^{2n}}+1}$，且$f\left( x \right)$在$x=\pm 1$处连续，则$a=$
+    \fillin{0}，$b=$
+    \fillin{1}.
+  }{%
+    0; 1.
+  }{%
+    首先将$f\left( x \right)$写成分段函数形式（注意分段点的选取）
+
+    $f\left( x \right)=\lim\limits_{n \to \infty} \dfrac{{{x}^{2n+1}}+a{{x}^{2}}+bx}{{{x}^{2n}}+1}=\begin{cases}
+    & \lim\limits_{n \to \infty} \dfrac{x+a{{x}^{2-2n}}+b{{x}^{1-2n}}}{1+{{x}^{-2n}}},\left| x \right|>1 \\
+      & \lim\limits_{n \to \infty} \dfrac{1+a+b}{1+1},x=1 \\
+      & \lim\limits_{n \to \infty} \dfrac{-1+a-b}{1+1},x=-1 \\
+      & x\cdot \lim\limits_{n \to \infty} \dfrac{{{x}^{2n}}+ax+b}{{{x}^{2n}}+1},\left| x \right|<1 \\
+    \end{cases}=\begin{cases}
+      & x,\left| x \right|>1 \\
+      & \dfrac{a+b+1}{2},x=1 \\
+      & \dfrac{a-b-1}{2},x=-1 \\
+      & bx,\left| x \right|<1 \\
+    \end{cases}$,
+
+    再由$f\left( x \right)$在$x=\pm 1$处连续知
+      $\underset{x\to {{1}^{-}}}{\mathop{\lim }} f\left( x \right)=f\left( 1 \right)=\underset{x\to {{1}^{+}}}{\mathop{\lim }} f\left( x \right),\underset{x\to -{{1}^{-}}}{\mathop{\lim }} f\left( x \right)=f\left( -1 \right)=\underset{x\to -{{1}^{+}}}{\mathop{\lim }} f\left( x \right)$,
+
+    即$b=\dfrac{a+b+1}{2}=1,-b=\dfrac{a-b-1}{2}=-1$,
+    解得$a=0$, $b=1$.
+  }
+
+  \Example{%
+    2013-2014-1-期中-选择题-14
+  }{%
+    设函数$f\left( x \right)$和$\varphi \left( x \right)$在$\left( -\infty ,+\infty  \right)$内有定义，$f\left( x \right)$为连续函数，且$f\left( x \right)\ne 0$，$\varphi \left( x \right)$有间断点，则\underspace{2em}必有间断点.
+    \pickout{B}
+    \options{$\varphi \left[ f\left( x \right) \right]$}
+      {$\dfrac{\varphi \left( x \right)}{f\left( x \right)}$}
+      {${{\left[ \varphi \left( x \right) \right]}^{2}}$}
+      { $f\left[ \varphi \left( x \right) \right]$}
+  }{%
+    B.
+  }{%
+    考查对复合函数连续性的判断.
+
+	  对A构造反例：只需让$f$的值域落在$\varphi $的某段不包含间断点的定义区间上即可，例如构造$\varphi $有间断点$x=5$而$f$的值域是$\left( -1,1 \right)$；
+
+	  对C构造反例：构造一个进行平方运算之后可以被消除的跳跃间断点，例如$\varphi \left( x \right)=\begin{cases}
+	    1, & x>0 \\
+	   -1, & x \le 0 \\
+	  \end{cases}$.
+
+	  事实上也只有满足单侧连续且两侧极限互为相反数的跳跃间断点能被平方运算消除，而其他类型的间断点均不可，读者不妨思考原因；
+
+	  对D构造反例：构造$\varphi \left( x \right)=\begin{cases}
+	    x+1, & x \le 0 \\
+	    x, & x>0 \\
+	  \end{cases}$；
+
+	  对B的分析：在有意义的前提下（分母不为0之类），连续函数与连续函数进行有限次四则运算、复合运算仍然得到连续函数.
+
+	  若$\dfrac{\varphi \left( x \right)}{f\left( x \right)}$是连续函数，则$\dfrac{\varphi \left( x \right)}{f\left( x \right)}\cdot f\left( x \right)=\varphi \left( x \right)$也是连续函数，与已知矛盾，故B错.
+  }
+
+  \Example{%
+    2014-2015-1-期中-填空题-4
+  }{%
+    函数$f\left( x \right)={{\left( 1+x \right)}^{\frac{x}{\tan \left( x-\frac{\pi }{4} \right)}}}$在区间$\left( 0,2\pi  \right)$内的间断点是
+    \fillin{$x = \dfrac{\pi }{4},\dfrac{5\pi }{4}$}.
+  }{%
+$x = \dfrac{\pi }{4},\dfrac{5\pi }{4}$.
+  }{%
+    $\tan (x-\dfrac{\pi }{4})=0\Rightarrow x=\dfrac{\pi }{4}, \dfrac{5\pi }{4}$.
+  }
+
+  \Example{%
+    2014-2015-1-期中-选择题-17
+  }{%
+    函数$f\left( x \right)=\lim\limits_{n \to \infty} \dfrac{x\left( 1-{{x}^{2}} \right)}{1+{{x}^{2n}}}$在
+	  \pickout{D}
+    \options{$x=\pm 1$均连续}
+	    {$x=1$连续，$x=-1$不连续}
+	    {$x=1$不连续，$x=-1$连续}
+	    {$x=\pm 1$均不连续}
+  }{%
+    D.
+  }{%
+    将$f\left( x \right)$写成分段函数形式
+
+    $f\left( x \right)=\lim\limits_{n \to \infty} \dfrac{x\left( 1-{{x}^{2n}} \right)}{1+{{x}^{2n}}}=x\cdot \lim\limits_{n \to \infty} \dfrac{1-{{x}^{2n}}}{1+{{x}^{2n}}}=\begin{cases}
+      x\cdot 1, & \left| x \right|<1 \\
+      x\cdot \lim\limits_{n \to \infty} \dfrac{{{x}^{-2n}}-1}{{{x}^{-2n}}+1}, & \left| x \right|>1 \\
+      0, & x=\pm 1
+    \end{cases}=\begin{cases}
+      x, & \left| x \right|<1 \\
+      -x, & \left| x \right|>1 \\
+      0, & x=\pm 1 \\
+    \end{cases}$,
+
+    画出图像即可判断.
+  }
+
+  \Example{%
+    2017-2018-1-期中-填空题-9
+  }{%
+    设函数
+    $f(x)=\begin{cases}
+    {{(1+x)}^{-\frac{2}{x}}}, & x\ne 0 \\
+    k, & x=0
+    \end{cases}$，则$k=$
+    \fillin{$\dfrac{1}{{{\re}^{2}}}$}
+    时，$f(x)$在$x=0$处连续.
+  }{%
+    $\dfrac{1}{{{\re}^{2}}}$.
+  }{%
+    $\lim\limits_{x \to 0} f(x)=f(0)\Leftrightarrow k = \lim\limits_{x \to 0} {{(1+x)}^{-\frac{2}{x}}}={{\re}^{-2}}$.
+  }

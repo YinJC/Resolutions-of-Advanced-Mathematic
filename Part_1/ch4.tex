@@ -1,0 +1,1021 @@
+% !TEX program = xelatex
+% !TEX root = ./HTNotes-Demo.tex
+\begin{flushright}
+  \color{zhanqing!80}
+  \ding{43} 习题见\autopageref{cha:4}
+\end{flushright}
+
+
+\section{定积分的概念}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见258 页 % 这里需要添加页数
+\end{flushright}
+
+
+4.解析:
+
+(1)$\displaystyle\int_a^b {x\rd x = \mathop {\lim }\limits_{n \to \infty } } \dfrac{{b - a}}{n}\sum\limits_{i = 1}^n {(a + \dfrac{{b - a}}{n}i)}  = \mathop {\lim }\limits_{n \to \infty } \dfrac{{b - a}}{n}\left[ {na + \frac{{b - a}}{n}\dfrac{{n(n + 1)}}{2}} \right] = \dfrac{{{b^2} - {a^2}}}{2}$
+
+(2)$\displaystyle\int_0^1 {{e^x}\rd hx = } \mathop {\lim }\limits_{n \to \infty } \dfrac{1}{n}\sum\limits_{i = 1}^n {{e^{\frac{1}{n}i}}}  = \mathop {\lim }\limits_{n \to \infty } \dfrac{1}{n}\dfrac{{{e^{\frac{{n + 1}}{n}}} - {e^{\frac{1}{n}}}}}{{{e^{\frac{1}{n}}} - 1}} = \mathop {\lim }\limits_{n \to \infty } (e - 1)\dfrac{{\frac{1}{n}}}{{1 - {e^{ - \frac{1}{n}}}}} = \mathop {\lim }\limits_{n \to \infty } (e - 1)\dfrac{t}{{1 - {e^{ - t}}}} = e - 1$
+
+(3)$\displaystyle\int_0^b {{x^2}\rd x = } \mathop {\lim }\limits_{n \to \infty } \dfrac{b}{n}\sum\limits_{i = 1}^n {(\dfrac{b}{n}} i{)^2} = \mathop {\lim }\limits_{n \to \infty } \dfrac{{{b^3}}}{{{n^3}}}\sum\limits_{i = 1}^n {{i^2}}  = \mathop {\lim }\limits_{n \to \infty } \frac{{{b^3}}}{{{n^3}}}\dfrac{{n(n + 1)(2n + 1)}}{6} = \frac{{{b^3}}}{3}$
+
+5.解析:
+
+(1)由$y = \sqrt {{a^2} - {n^2}} $得${x^2} + {y^2} = {a^2}(y \geqslant 0)$,可知:原式的几何意义为:以原点为圆心,啊为半径的圆在第一象限的面积,即为:$\dfrac{\pi }{4}{a^2}$.
+
+(2)由$f(x) = \sin (x)(x \in \left[ { - \pi , + \pi } \right])$图象可知:面积代数和为零.所以:$\displaystyle\int_{ - \pi }^\pi  {\sin (x)\rd x = 0} $
+
+(3)由$f(x) = |x - \dfrac{{a + b}}{2}|$图象知:$f(a) = f(b) = \dfrac{{b - a}}{2}$
+
+所以$\displaystyle\int_a^b {|x - \frac{{a + b}}{2}|} \rd x = \frac{1}{2}(b - a)f(a) = \dfrac{{{{(b - a)}^2}}}{4}$
+
+6.解析:金属丝的质量为$m = \displaystyle\int_0^a {kx\rd x = \mathop {\lim }\limits_{n \to \infty } } \frac{a}{n}\sum\limits_{i = 1}^n {k(0 + \frac{a}{n}} i) = \mathop {\lim }\limits_{n \to \infty } \frac{{k{a^2}}}{{{n^2}}}\frac{{n(n + 1)}}{2} = \frac{{k{a^2}}}{2}$
+
+8.解析:当为奇函数时,函数关于原点对称,则有$\displaystyle\int_0^a {f(x)\rd x} $与$\displaystyle\int_{ - a}^0 {f(x)\rd x} $与x轴围成的图形面积相等,符号相反,所以有:$\displaystyle\int_{ - a}^a {f(x)\rd x = 0} $
+
+当为偶函数时,函数关于y轴对称,则有$\displaystyle\int_0^a {f(x)\rd x} $与$\displaystyle\int_{ - a}^0 {f(x)\rd x} $与y轴围成的图形面积相等,符号相同,所以有:$\displaystyle\int_{ - a}^a {f(x)\rd x = } 2\displaystyle\int_0^a {f(x)\rd x} $
+
+
+\section{定积分的性质}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见 265页 % 这里需要添加页数
+\end{flushright}
+1.解析:
+
+(1)利用例2.1的结果,当$f(x)$不等于零时,因为$f\left( x \right) \geqslant 0$,而$\displaystyle\int_a^b {f(x)\rd x} $是述职,它只有是0和不是0两种可能,设若$\displaystyle\int_a^b {f(x)\rd x} > 0$,则由已证明得例2.1结果,在$[a,b]$上必有$f\left( x \right) \equiv 0$不恒等于0矛盾,所以得出结论:若在$[a,b]$上,$f\left( x \right) \geqslant 0$且$f(x)$不恒等于0,则$\displaystyle\int_a^b {f(x)\rd x}  > 0$
+
+$\displaystyle\int_0^1 {\left( {{e^x} - {e^{{x^2}}}} \right)} \rd x$在$[0,1]$上${e^x} - {e^{{x^2}}} \geqslant 0$,且${e^x} - {e^{{x^2}}} $不恒等于零,所以$\displaystyle\int_0^1 {\left( {{e^x} - {e^{{x^2}}}} \right)} \rd x > 0$
+
+(3)$\displaystyle\int_1^2 {{x^2}} \rd x - \displaystyle\int_1^2 {{x^3}} \rd x = \displaystyle\int_1^2 {\left( {{x^2} - {x^3}} \right)} \rd x$ ,因为在$[1,2]$上${x^2} - {x^3} \leqslant 0$且${x^2} - {x^3}$不恒等于零,所以$\displaystyle\int_1^2 {{x^2}} \rd x - \displaystyle\int_1^2 {{x^3}} \rd x = \displaystyle\int_1^2 {\left( {{x^2} - {x^3}} \right)} \rd x$,进而$\displaystyle\int_1^2 {{x^2}} \rd x < \displaystyle\int_1^2 {{x^3}} \rd x$.
+
+(5)构造函数$f\left( x \right) = \ln \left( {1 + x} \right) - \frac{{\arctan x}}{{1 + x}}$,在[0,1]上$f'\left( x \right)\dfrac{{{x^2}}}{{\left( {1 + x} \right)\left( {1 + {x^2}} \right)}} + \dfrac{{\arctan x}}{{{{\left( {1 + x} \right)}^2}}} > 0$,于是$\displaystyle\int_0^1 {\ln \left( {1 + x} \right)\rd x}  > \displaystyle\int_0^1 {\dfrac{{\arctan x}}{{1 + x}}\rd x} $.
+
+2.解析:
+
+(1)只需求出$f(x)$在区间上的最大和最小值M与m,便可用估值定理估计.显见${x^2} + 1$
+在$[1,4]$上单调增加,有m=2,M=17,$x \in \left( {1,4} \right]$,
+所以$6 \leqslant \displaystyle\int_1^4 {({x^2} + 1)\rd x}   \leqslant 51 $.
+
+(3)记$f\left( x \right) = {e^{{x^2} - x}},x \in \left[ {0,2} \right]$,因为$f'\left( x \right) = \left( {2x - 1} \right){e^{{x^2} - x}}$,令$f'\left( x \right) = 0$,得到唯一驻点$x = \dfrac{1}{2}$,又$f\left( {\dfrac{1}{2}} \right) = {e^{ - \frac{1}{4}}},f\left( 0 \right) = 1,f\left( 2\right) = {e^2},$所以$m = \min f\left( x \right) = {e^{ - \frac{1}{4}}},M = \max f\left( x \right) = {e^x},$又因为$b - a = -2$,所以$ - 2{e^2} \leqslant {\displaystyle\int_2^0 e ^{{x^2} - x}}\rd x \leqslant  - 2{e^{ - \frac{1}{4}}}$.
+
+4.解析:令$L\left( x \right) = f\left( x \right) + \lambda g\left( x \right),$,则${L^2}\left( x \right) = {f^2}\left( x \right) + 2\lambda f\left( x \right)g\left( x \right) + {\lambda ^2}{g^2}\left( x \right) \geqslant 0$,从而有$\displaystyle\int_a^b {{L^2}(x)} \rd x \geqslant 0$.将上式右边视为关于$\lambda $的二次多项式.因为$A{x^2} + Bx + C \geqslant 0,$,可知${B^2} - 4AC \leqslant 0,$从而有$4(\displaystyle\int_a^b {f(x)g(x)\rd x{)^2} \leqslant 4} \displaystyle\int_a^b {{f^2}(x)\rd x} \displaystyle\int_a^b {{g^2}(x)\rd x} $,
+从而有$(\displaystyle\int_a^b {f(x)g(x)\rd x{)^2} \leqslant } \displaystyle\int_a^b {{f^2}(x)\rd x} \displaystyle\int_a^b {{g^2}(x)\rd x} $.
+
+5.解析:利用上题的结论,令$f\left( x \right) = \sqrt {{e^{f\left( x \right)}}} ,g\left( x \right) = \sqrt {{e^{ - f\left( x \right)}}} ,$它们都是连续函数,有
+
+\[\left( {\displaystyle\int_a^b {{e^{\sqrt {{e^{f(x)}}} }}} d{x^2}} \right)\left( {\displaystyle\int_a^b {{e^{\sqrt {{e^{ - f(x)}}} }}} d{x^2}} \right) \geqslant {\left( {\displaystyle\int_{\text{a}}^b {\sqrt {{e^{ - f(x)}}} } \sqrt {{e^{f(x)}}} \rd x} \right)^2} = {\left( {b - a} \right)^2}\]
+
+7.解析:根据积分中值定理,在$[a,b]$上,存在${\xi _1}$,满足$\displaystyle\int_a^b {f(x)\rd x}  = f({\xi _1})(a - b) = 0$,得到$f({\xi _1}) = 0$
+${\xi _1}$是$f(x)$的一个零点.假设${\xi _1}$是唯一的一个零点,那么在$(a,{\xi _1})$和$({\xi _1},b)$内$f(x)$异号.
+
+假设$(a,{\xi _1})$上$f(x) > 0$,$({\xi _1},b)$上$f(x) < 0$.由$\displaystyle\int_a^b {f(x)\rd x = } \displaystyle\int_a^b {xf(x)\rd x}  = 0$和$f({\xi _1}) = 0$得$0 = \displaystyle\int_a^{{\xi _1}} {f(x)(x - {\xi _1})\rd x}  + \displaystyle\int_{{\xi _1}}^b {f(x)(x - {\xi _1})\rd x \ne 0} $矛盾,所以至少在$(a,b)$上还有一个零点.
+
+
+\section{微积分基本公式与基本定理}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见274 页 % 这里需要添加页数
+\end{flushright}
+3.解析:$\dfrac{{\rd y}}{{\rd x}} = (\displaystyle\int_0^x {\sin t\rd t} )' = \sin x,\dfrac{{\rd y}}{{\rd x}}\left| {_{x = 0}} \right. = \sin 0 = 0,\dfrac{{\rd y}}{{\rd x}}\left| {_{x = \dfrac{\pi }{4}}} \right. = \sin \dfrac{\pi }{4} = \dfrac{{\sqrt 2 }}{2}.$
+
+5.解析:
+
+(1)$\displaystyle\int_0^1 {4{x^2}} \rd x = \frac{4}{3}{x^3}\left| {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right. = \dfrac{4}{3}$
+
+(3)$\displaystyle\int_0^\pi  {\sin x\rd x}  =  - \cos x\left| {\begin{array}{*{20}{c}}
+  \pi  \\ 
+  0 
+\end{array}} \right. = 2$
+
+(5)$\displaystyle\int_0^a {(3{x^2}}  - x + 1)\rd x = ({x^3} - \dfrac{1}{2}{x^2} + x)\left| {\begin{array}{*{20}{c}}
+  a \\ 
+  0 
+\end{array}} \right. = {a^3} - \dfrac{1}{2}{a^2} + a$
+
+(7)$\displaystyle\int_4^9 {\sqrt x } (1 + \sqrt x )\rd x = \displaystyle\int_4^9 {(\sqrt x  + x} )\rd x = (\dfrac{2}{3}{x^{\dfrac{3}{2}}} + \dfrac{1}{2}{x^2})\left| {\begin{array}{*{20}{c}}
+  9 \\ 
+  4 
+\end{array}} \right. = \dfrac{{271}}{6}$
+
+(9)$\displaystyle\int_0^{\sqrt 3 a} {\dfrac{1}{{{a^2} + {x^2}}}} \rd x = \dfrac{1}{a}\arctan \dfrac{x}{a}\left| {\begin{array}{*{20}{c}}
+  {\sqrt 3 a} \\ 
+  0 
+\end{array}} \right. = \dfrac{\pi }{{3a}}$
+
+(11)$\displaystyle\int_0^{\frac{\pi }{4}} {{{\tan }^2}} x\rd x = \displaystyle\int_0^{\frac{\pi }{4}} {({{\sec }^2}x - 1} )\rd x = (\tan x - x)\left| {\begin{array}{*{20}{c}}
+  {\frac{\pi }{4}} \\ 
+  0 
+\end{array}} \right. = 1 - \dfrac{\pi }{4}$
+
+(13)$\displaystyle\int_{ - 1}^1 {f(x)\rd x}  = \displaystyle\int_{ - 1}^0 {f(x)\rd x + \displaystyle\int_0^1 {f(x)\rd x} }  = \displaystyle\int_{ - 1}^0 {x\rd x + \displaystyle\int_0^1 {{x^2}\rd x} }  = \dfrac{1}{2}{x^2}\left| {\begin{array}{*{20}{c}}
+  0 \\ 
+  { - 1} 
+\end{array}} \right. + \dfrac{1}{3}{x^3}\left| {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right. =  - \dfrac{1}{6}$
+
+6.解析:
+
+(1)$\arctan x$(3)$\dfrac{{3{x^2}}}{{\sqrt {1 + {x^{12}}} }} - \dfrac{{2x}}{{\sqrt {1 + {x^8}} }}$(5)$\dfrac{1}{{3\sqrt[3]{{{x^2}}}}}\ln (1 + {x^2}) - \dfrac{1}{{2\sqrt x }}\ln (1 + {x^3})$
+
+7.解析:
+
+(1)忘记了$x^3$对x的进一步求导.正确解:$3{x^2}\sqrt {1 + {x^3}} $
+
+(3)错误,$\dfrac{1}{x}$在$[-1,1]$上无界,不可积.
+
+9.解析:
+
+(1)左式=$\dfrac{1}{2}\displaystyle\int_{ - \pi }^\pi  {[\sin (k + m)x + \sin (k - m)x]\rd x =  - \dfrac{1}{2}\left. {[\dfrac{{\cos (k + m)x}}{{k + m}} + \dfrac{{\cos (k - m)x}}{{k - m}}]} \right|} _{ - \pi }^\pi  = 0$
+
+(2)左式=$ - \dfrac{1}{2}\displaystyle\int_{ - \pi }^\pi  {[\cos (k + m)x - \cos (k - m)x]\rd x =  - \dfrac{1}{2}\left. {[\dfrac{{\sin (k + m)x}}{{k + m}} - \dfrac{{sin(k - m)x}}{{k - m}}]} \right|} _{ - \pi }^\pi  = 0$
+
+(3)左式=$\dfrac{1}{2}\displaystyle\int_{ - \pi }^\pi  {[\cos (k + m)x + \cos (k - m)x]\rd x = \dfrac{1}{2}\left. {[\frac{{\sin (k + m)x}}{{k + m}} + \dfrac{{\sin (k - m)x}}{{k - m}}]} \right|} _{ - \pi }^\pi  = 0$
+
+10.解析:$\dfrac{{\rd x}}{{\rd s}} = {\sin ^2}t,\dfrac{{\rd y}}{{\rd s}} = 2t\cos t$
+
+两式相比得$\dfrac{{\rd y}}{{\rd x}} = 2t\cot t\csc t$
+
+13.解析:
+
+(1)根据洛必达法则$\mathop {\lim }\limits_{x \to 0} \dfrac{{\displaystyle\int_0^x {\cos {t^2}\rd t} }}{x} = \mathop {\lim }\limits_{x \to 0} \cos {x^2} = 1$
+
+(3)根据洛必达法则和等价无穷小
+
+$\mathop {\lim }\limits_{x \to {0^+ }} \dfrac{{\displaystyle\int_0^{\sin x} {\sqrt {\tan t} dt} }}{{\displaystyle\int_0^{\tan x} {\sqrt {\sin t} dt} }} = \mathop {\lim }\limits_{x \to {0^+ }} \dfrac{{\cos x\sqrt {\tan (\sin x )}}}{{{{\sec }^2}x\sqrt {\sin (\tan x)} }} = \mathop {\lim }\limits_{x \to {0^+ }} \sqrt {\dfrac{{\tan (\sin x)}}{{\sin (\tan x)}}}  = 1,\left( {x \to {0^+ },\tan x \sim \sin x \sim x} \right)$
+
+(5)根据洛必达法则$\mathop {\lim }\limits_{x \to \infty } \dfrac{{\displaystyle\int_0^x {{e^{{t^2}}}dt} }}{{\displaystyle\int_0^x {{e^{2{t^2}}}dt} }} = \mathop {\lim }\limits_{x \to \infty } \dfrac{{{e^{{x^2}}}}}{{{e^{2{x^2}}}}} = \mathop {\lim }\limits_{x \to \infty } \dfrac{1}{{{e^{{x^2}}}}} = 0$
+
+15.解析:根据洛必达法则,
+
+$\mathop {\lim }\limits_{x \to 1} \dfrac{{\displaystyle\int_1^x {(t\displaystyle\int_t^1 {f(u)\rd u)dt} } }}{{{{(1 - x)}^3}}} = \mathop {\lim }\limits_{x \to 1} \dfrac{{x\displaystyle\int_1^x {f(u)\e\rd u} }}{{3{{(1 - x)}^2}}} = \mathop {\lim }\limits_{x \to 1} \frac{{\displaystyle\int_1^x {f(u)\rd u}  + xf(x)}}{{6(x - 1)}} = \mathop {\lim }\limits_{x \to 1} \dfrac{{2f(x) + xf'(x)}}{6} = \dfrac{{2f(1) + f'(1)}}{6} = \dfrac{1}{6}$
+
+16.解析:
+
+(1)原式=$\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {\dfrac{1}{{1 + {{(\frac{i}{n})}^2}}}} .\dfrac{1}{n} = \displaystyle\int_0^1 {\dfrac{1}{{1 + {x^2}}}} \rd x = \arctan x\left| {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right. = \dfrac{\pi }{4}$
+
+(2)原式=$\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {\dfrac{{\frac{i}{n}}}{{1 + {{(\frac{i}{n})}^2}}}} .\dfrac{1}{n} = \displaystyle\int_0^1 {\dfrac{x}{{1 + {x^2}}}} \rd x = \dfrac{1}{2}\ln ({x^2} + 1)\left| {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right. = \dfrac{1}{2}\ln 2$
+
+
+
+\section{不定积分的基本积分法}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见 298页 % 这里需要添加页数
+\end{flushright}
+
+4.解析:
+
+(1)$\displaystyle\int {\dfrac{1}{{{x^2}}}\rd x}  = \displaystyle\int { - d\left( {\dfrac{1}{x}} \right)}  =  - \dfrac{1}{x} + C$
+
+(3)$\displaystyle\int {\dfrac{{\rd x}}{{\sqrt x }}}  = \displaystyle\int {{x^{ - \dfrac{1}{2}}}} \rd x = 2\sqrt x  + C$
+
+(5)$\displaystyle\int {(1 - x + {x^3} - \dfrac{1}{{\sqrt[3]{{{x^2}}}}}} )\rd x = \displaystyle\int {1\rd x}  - \displaystyle\int {x\rd x + \displaystyle\int {{x^3}\rd x - \displaystyle\int {\dfrac{1}{{\sqrt[3]{{{x^2}}}}}\rd x} } } $
+
+$ = x - \dfrac{1}{2}{x^2} + \dfrac{1}{4}{x^4} - 3{x^{\fdrac{1}{3}}} + C$
+
+(7)$\displaystyle\int {({2^x} + {3^x}} {)^2}\rd x = \displaystyle\int {({4^x} + {9^x} + 2 \times {6^x}} )\rd x = \dfrac{{{4^x}}}{{2\ln 2}} + \dfrac{{{9^x}}}{{2\ln 3}} + \dfrac{{2 \times {6^x}}}{{\ln 6}} + C$
+
+(9)$\displaystyle\int {\dfrac{{{x^2}}}{{3\left( {1 + {x^2}} \right)}}} \rd x = \displaystyle\int {(\dfrac{1}{3}}  - \dfrac{1}{{3\left( {1 + {x^2}} \right)}})\rd x = \dfrac{x}{3} - \dfrac{1}{3}\arctan x + C$
+
+(11)$\displaystyle\int {\dfrac{{{{(1 - x)}^2}}}{{\sqrt x }}\rd x}  = \displaystyle\int {(\dfrac{1}{{\sqrt x }} - 2\sqrt x  + {x^{\dfrac{3}{2}}})\rd x}  = 2\sqrt x  - \dfrac{4}{3}{x^{\dfrac{3}{2}}} + \dfrac{2}{5}{x^{\dfrac{5}{2}}} + C$
+
+(13)$\displaystyle\int {{{\tan }^2}x\rd x}  = \displaystyle\int {\dfrac{{{{\sin }^2}x}}{{{{\cos }^2}x}}} \rd x = \displaystyle\int {(\dfrac{1}{{{{\cos }^2}x}}}  - 1)\rd x = \tan x - x + C$
+
+(15)$\displaystyle\int {\dfrac{{\cos 2x}}{{\cos x - \sin x}}} \rd x = \displaystyle\int {\dfrac{{2{{\cos }^2}x - {{\cos }^2}x + {{\sin }^2}x}}{{\cos x - \sin x}}} \rd x = \displaystyle\int {(\cos x + \sin x)\rd x} $
+
+$ = \sin x - \cos x + C$
+
+(17)$\displaystyle\int {{{10}^x} \cdot {3^{2x}}\rd x}  = \displaystyle\int {{{90}^x}\rd x}  = \dfrac{{{{90}^x}}}{{\ln 90}} + C$
+
+(19)$\displaystyle\int {\left( {\sqrt {\dfrac{{1 + x}}{{1 - x}}}  + \sqrt {\dfrac{{1 - x}}{{1 + x}}} } \right)}  = \displaystyle\int {\dfrac{2}{{\sqrt {1 - {x^2}} }}} \rd x = 2\arcsin x + C$
+
+(21)$\displaystyle\int {\cos x \cdot \cos 2x\rd x = \displaystyle\int {\cos x\left( {1 - 2{{\sin }^2}x} \right)} } \rd x = \displaystyle\int {(\cos x}  - 2\cos x{\sin ^2}x)\rd x$
+
+$ = \sin x - \dfrac{2}{3}{\sin ^3}x + C$
+
+(23)$\displaystyle\int {\sec x\left( {\sec x - \tan x} \right)} \rd x = \displaystyle\int {\left( {{{\sec }^2}x - \sec x\tan x} \right)\rd x}  = \tan x - \sec x + C$
+
+(25)$\displaystyle\int {\left( {1 - \dfrac{1}{{{x^2}}}} \right)} \sqrt {x\sqrt x } \rd x = \displaystyle\int {\left( {1 - \dfrac{1}{{{x^2}}}} \right){x^{\frac{1}{2}}}} {x^{\frac{1}{4}}}\rd x = \displaystyle\int {\left( {{x^{\frac{3}{4}}} - {x^{ - \frac{5}{4}}}} \right)} \rd x = \dfrac{4}{7}{x^{\frac{7}{4}}} - 4{x^{\frac{{ - 1}}{4}}} + C$
+
+6.解析:$l = \displaystyle\int {3{t^2}\rd x}  = {t^3} + C$
+
+(1)当$t = 0$时,$l = 0$;得$C = 0$,故$l = {t^3}$.
+
+(2)当经过的路程为512m时,$512 = {t^3},t = 8s$.
+
+7.解析:
+
+(1)$\displaystyle\int {\cos (3x + 5} )\rd x = \displaystyle\int {\dfrac{1}{3}} \cos (3x + 5)\rd x\left( {3x + 5} \right) = \dfrac{1}{3}\sin \left( {3x + 5} \right) + C$
+
+(3)$\displaystyle\int {\dfrac{1}{{2x + 3}}} \rd x = \displaystyle\int {\dfrac{1}{2}}  \times \dfrac{1}{{2x + 3}}\rd\left( {2x + 3} \right) = \dfrac{{\ln \left( {2x + 3} \right)}}{2} + C$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (5)\displaystyle\int {(\dfrac{1}{{\sqrt {3 - {x^2}} }}}  + \dfrac{1}{{\sqrt {1 - 3{x^2}} }})\rd x 
+    &= \displaystyle\int {\dfrac{1}{{\sqrt {3 - {x^2}} }}} \rd x + \displaystyle\int {\dfrac{1}{{\sqrt {1 - 3{x^2}} }}} \rd x\\
+    & = \displaystyle\int {\dfrac{1}{{\sqrt {1 - {{\left( {\dfrac{x}{{\sqrt 3 }}} \right)}^2}} }}} \rd \dfrac{x}{{\sqrt 3 }} + \dfrac{{\sqrt 3 }}{3}\displaystyle\int {\dfrac{1}{{\sqrt {1 - {{\left( {\sqrt 3 x} \right)}^2}} }}} \rd \sqrt 3 x\\
+    & = \arcsin \dfrac{x}{{\sqrt 3 }} + \dfrac{{\sqrt 3 }}{3}\arcsin \sqrt 3 x + C\\
+    \end{split}&
+\end{flalign*} 
+
+(7)$\displaystyle\int {\sqrt {8 - 3x} } \rd x =  - \displaystyle\int {\dfrac{{\sqrt {8 - 3x} }}{3}} d\left( {8 - 3x} \right) =  - \dfrac{{2{{\left( {8 - 3x} \right)}^{\frac{3}{2}}}}}{9} + C$
+
+(9)$\displaystyle\int {x\cos {x^2}\rd x}  = \displaystyle\int {\dfrac{1}{2}\cos {x^2}} d{x^2} = \dfrac{1}{2}\sin {x^2} + C$
+
+(11)$\displaystyle\int {\dfrac{{\rd x}}{{1 + \cos x}}}  = \displaystyle\int {\dfrac{{\rd x}}{{2{{\cos }^2}\dfrac{x}{2}}}}  = \displaystyle\int {{{\sec }^2}\dfrac{x}{2}\rd \dfrac{x}{2}}  = \tan \frac{x}{2} + C$
+
+(13)$\displaystyle\int {\dfrac{x}{{4 + {x^4}}}} \rd x = \displaystyle\int {\dfrac{1}{2}} \dfrac{{d{x^2}}}{{4 + {x^4}}} = \dfrac{1}{4}\arctan \dfrac{{{x^2}}}{2} + C$
+
+(15)$\displaystyle\int {\dfrac{{\rd x}}{{x\ln x}}}  = \displaystyle\int {\dfrac{1}{{\ln x}}} d\ln x = \ln \left| {\ln x} \right| + C$
+
+(17)$\displaystyle\int {\dfrac{{{{\cos }^3}x}}{{{{\sin }^2}x}}} \rd x = \displaystyle\int {(\dfrac{{\cos x}}{{{{\sin }^2}x}} - \cos x)\rd x =  - \dfrac{1}{{\sin x}} - \sin x + C} $
+
+(19)$\displaystyle\int {{{\sin }^2}x} {\cos ^2}x\rd x = \displaystyle\int {\dfrac{{{{\sin }^2}2x}}{4}} \rd x = \displaystyle\int {\dfrac{{1 - \cos 4x}}{8}} \rd x = \dfrac{x}{8} - \dfrac{{\sin 4x}}{{32}} + C$
+
+(21)$\displaystyle\int {{{\csc }^3}x} \cot x\rd x = \displaystyle\int {{{\csc }^{_2}}x} \csc x\cot x\rd x = \displaystyle\int { - {{\csc }^2}x} d\csc x =  - \frac{{{{\csc }^3}x}}{3} + C$
+
+(23)$\displaystyle\int {\dfrac{{\rd x}}{{1 + {{\sin }^2}x}}} = \displaystyle\int {\dfrac{{{{\sin }^2}x + {{\cos }^2}x}}{{{{\cos }^2}x + 2{{\sin }^2}x}}} \rd x = \displaystyle\int {\dfrac{{1 + {{\tan }^2}x}}{{1 + 2{{\tan }^2}x}}} \rd x = \displaystyle\int {\dfrac{1}{{1 + 2{{\tan }^2}x}}} d\tan x = \dfrac{1}{{\sqrt 2 }}\arctan (\sqrt 2 \tan x) + C$
+
+(25)$\displaystyle\int {\dfrac{1}{{{e^x} + {e^{ - x}}}}} \rd x = \displaystyle\int {\dfrac{{{e^x}}}{{1 + {e^{2x}}}}} \rd x = \displaystyle\int {\dfrac{{\rd ({e^x})}}{{1 + {e^{2x}}}}}  = \arctan {e^x} + C$
+
+(27)$\displaystyle\int {\dfrac{{\rd x}}{{{{(1 - {x^2})}^{\frac{3}{2}}}}}}  = \displaystyle\int {\dfrac{1}{{(1 - {x^2})\sqrt {1 - {x^2}} }}} \rd x = \displaystyle\int {\dfrac{{\sqrt {1 - {x^2}}  + \frac{{{x^2}}}{{\sqrt {1 - {x^2}} }}}}{{1 - {x^2}}}} \rd x = \dfrac{x}{{\sqrt {1 - {x^2}} }} + C$
+
+(29)令$x = 3\sec t,0 < t < \dfrac{\pi }{2} \Rightarrow \rd x = 3\sec t\tan t\rd t.$
+
+$\displaystyle\int {\dfrac{{\rd x}}{{{x^2}\sqrt {{x^2} - 9} }}}  = \displaystyle\int {\dfrac{{3\sec t\tan t\rd t}}{{9{{\sec }^2}t\sqrt {9{{\sec }^2}t - 9} }}}  = \dfrac{1}{9}\displaystyle\int {\dfrac{{\tan t\rd t}}{{\sec t\tan t}}}  = \dfrac{1}{9}\displaystyle\int {\cos t\rd t}  = \dfrac{1}{9}\sin t + C$
+
+$\because x = 3\sec t,\therefore \sin t = \dfrac{{\sqrt {{x^2} - 9} }}{x}$
+
+$\therefore \displaystyle\int {\dfrac{{\rd x}}{{{x^2}\sqrt {{x^2} - 9} }}}  = \dfrac{{\sqrt {{x^2} - 9} }}{{9x}} + C.$
+
+8.解析:
+
+(1)$\displaystyle\int {\arccos x\rd x = \arccos x - \displaystyle\int {\dfrac{x}{{\sqrt {1 - {x^2}} }}} } \rd x = x\arccos x - \sqrt {1 - {x^2}}  + C$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (3)\displaystyle\int {{x^2}\cos x} \rd x 
+    &= {x^2}\sin x - \displaystyle\int {2x\sin x\rd x} \\
+    & = {x^2}\sin x - 2x\cos x - \displaystyle\int {2\cos x\rd x} \\
+    & = {x^2}\sin x + 2x\cos x - 2\sin x + C\\
+    \end{split}&
+\end{flalign*}
+
+\begin{flalign*} \indent
+    \begin{split}
+    (5)\displaystyle\int {{{(\ln x)}^2}} \rd x
+    & = x{(\ln x)^2} - \displaystyle\int {2x \cdot \dfrac{1}{x}\ln x\rd x} = x{(\ln x)^2} - 2\displaystyle\int {\ln x} \rd x \\
+    & = x{(\ln x)^2} - 2x\ln x + 2\displaystyle\int {x \cdot \dfrac{1}{x}\rd x} \\
+    & = x{(\ln x)^2} - 2x\ln x + 2x + C\\
+    \end{split}&
+\end{flalign*}
+
+(7)$\displaystyle\int {x{{\tan }^2}x\rd x = } \displaystyle\int {x({{\sec }^2}x - 1)\rd x}  =  - \dfrac{1}{2}{x^2} - \displaystyle\int {x{{\sec }^2}x\rd x}  =  - \dfrac{1}{2}{x^2} + x\tan x + ln\left| {\cos x} \right| + C$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (9)\displaystyle\int {\dfrac{x}{{co{s^2}x}}} \rd x
+    &=\displaystyle\int {xcec2x\rd x = x\tan x - \displaystyle\int {\tan x\rd x = } } x\tan x - \displaystyle\int {\dfrac{{\sin x}}{{\cos x}}\rd x} \\
+    &=x\tan x + \ln \left| {\cos x} \right| + C\\
+    \end{split}&
+\end{flalign*}
+
+(11)$\displaystyle\int {\dfrac{{x{e^x}}}{{{{\left( {1 + {e^x}} \right)}^2}}}} \rd x =  - \dfrac{1}{{1 + {e^x}}} + \displaystyle\int {\dfrac{1}{{1 + {e^x}}}\rd x = }  - \dfrac{1}{{1 + {e^x}}} + \displaystyle\int {\dfrac{{{e^{ - x}}}}{{1 + {e^{ - x}}}}}  =  - \dfrac{1}{{1 + {e^x}}} - \ln \left( {1 + {e^{ - x}}} \right) + C$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (13)\displaystyle\int {\arctan \sqrt x } \rd x 
+    &= x\arctan \sqrt x  - \displaystyle\int {\dfrac{x}{{2\left( {1 + x} \right)\sqrt x }}} \rd x = x\arctan \sqrt x  - \displaystyle\int {\dfrac{x}{{1 + x}}} \rd \sqrt x \\
+    & = x\arctan \sqrt x  - \displaystyle\int {\left( {1 - \dfrac{1}{{1 + {{\left( {\sqrt x } \right)}^2}}}} \right)} d\sqrt x  = \left( {1 + x} \right)\arctan \sqrt x  - \sqrt x  + C\\
+    \end{split}&
+\end{flalign*}
+
+\begin{flalign*} \indent
+    \begin{split}
+    (15)\displaystyle\int {\dfrac{{{x^2}\arctan x}}{{1 + {x^2}}}} \rd x 
+    &= \displaystyle\int {\arctan x\rd x}  - \displaystyle\int {\dfrac{{\arctan x}}{{1 + {x^2}}}} \rd x\\
+    &= x\arctan x - \displaystyle\int {\dfrac{x}{{1 + {x^2}}}} \rd x - \dfrac{1}{2}{\arctan ^2}x\\
+    & = x\arctan x - \dfrac{1}{2}\ln \left( {1 + {x^2}} \right) - \dfrac{1}{2}{\arctan ^2}x + C\\
+    \end{split}&
+\end{flalign*}
+
+
+(17)$\displaystyle\int {\dfrac{{{e^{\arctan x}}}}{{{{\left( {1 + {x^2}} \right)}^{\dfrac{3}{2}}}}}} \rd x = \dfrac{{{e^{\arctan x}}}}{{\sqrt {1 + {x^2}} }} - \displaystyle\int {{e^{\arctan x}}}\rd \dfrac{1}{{\sqrt {1 + {x^2}} }} = \dfrac{{{e^{\arctan x}}}}{{\sqrt {1 + {x^2}} }} + \dfrac{{x{e^{\arctan x}}}}{{\sqrt {1 + {x^2}} }} - \displaystyle\int {\dfrac{{{e^{\arctan x}}}}{{{{\left( {1 + {x^2}} \right)}^{\dfrac{3}{2}}}}}} $
+
+于是有$2\displaystyle\int {\dfrac{{{e^{\arctan x}}}}{{{{\left( {1 + {x^2}} \right)}^{\frac{3}{2}}}}}} \rd x = \dfrac{{{e^{\arctan x}}}}{{\sqrt {1 + {x^2}} }} + \dfrac{{x{e^{\arctan x}}}}{{\sqrt {1 + {x^2}} }}$
+
+(19)$\displaystyle\int {\dfrac{{\ln x}}{{\left( {1 + {x^2}} \right)\sqrt {1 + {x^2}} }}} \rd x = \dfrac{{x\ln x}}{{\sqrt {1 + {x^2}} }} - \displaystyle\int {\dfrac{1}{{\sqrt {1 + {x^2}} }}} \rd x = \dfrac{{x\ln x}}{{\sqrt {1 + {x^2}} }} - \ln \left( {x + \sqrt {1 + {x^2}} } \right) + C$
+
+
+\begin{flalign*} \indent
+    \begin{split}
+    (21)\displaystyle\int {\left( {1 + x - \dfrac{1}{x}} \right)} {e^{x + \dfrac{1}{x}}}\rd x
+    & = \displaystyle\int {\left( {1 + x - \dfrac{1}{x}} \right)} {e^x}{e^{\dfrac{1}{x}}}\rd x = \displaystyle\int {x'} {e^x}{e^{\dfrac{1}{x}}} + x\left( {{e^x}} \right)'{e^{\dfrac{1}{x}}} - x\left( {{e^{\frac{1}{x}}}} \right)'{e^x}\rd x \\
+    & =x{e^x}{e^{\dfrac{1}{x}}} + C\\
+    \end{split}&
+\end{flalign*}
+
+
+
+
+
+
+
+
+\section{有理函数的积分}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见311页 % 这里需要添加页数
+\end{flushright}
+
+1.解析:
+
+(1)$\displaystyle\int {\dfrac{{{x^3}}}{{x - 1}}\rd x = \displaystyle\int {\dfrac{{{x^3} + 1 - 1}}{{x - 1}}} } \rd x = \displaystyle\int {\dfrac{{{x^3} - 1}}{{x - 1}}} \rd x + \displaystyle\int {\frac{1}{{x - 1}}} \rd x = \dfrac{{{x^3}}}{3} + \dfrac{{{x^2}}}{2} + x + \ln \left| {x - 1} \right| + C$
+
+(3)$\displaystyle\int {\dfrac{{2x + 3}}{{{x^2} + 3x - 10}}} \rd x = \displaystyle\int {\dfrac{{2x + 3}}{{\left( {x + 5} \right)\left( {x - 2} \right)}}} \rd x = \displaystyle\int {\frac{1}{{\left( {x + 5} \right)}}}  + \dfrac{1}{{\left( {x - 2} \right)}}\rd x = \ln \left| {x + 5} \right| + \ln \left| {x - 2} \right| + C$
+
+(5)$\displaystyle\int {\dfrac{x}{{\left( {x + 1} \right)\left( {x + 2} \right)\left( {x + 3} \right)}}} \rd x =  - \displaystyle\int {\dfrac{1}{{2\left( {x + 1} \right)}}}  + \dfrac{2}{{\left( {x + 2} \right)}} + \dfrac{1}{{2\left( {x + 3} \right)}}\rd x =  - \dfrac{1}{2}\ln \left| {x + 1} \right| + 2\ln \left| {x + 2} \right| - \dfrac{3}{2}\ln \left| {x + 3} \right| + C$
+
+(7)$\displaystyle\int {\dfrac{1}{{x\left( {{x^2} + 1} \right)}}\rd x}  = \displaystyle\int {\dfrac{1}{x}}  + \dfrac{{ - x}}{{{x^2} + 1}}\rd x = \ln \left| x \right| - \dfrac{1}{2}\ln \left( {{x^2} + 1} \right) + C$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (9)\displaystyle\int {\dfrac{{x - 2}}{{{{\left( {2{x^2} + 2x + 1} \right)}^2}}}} \rd x 
+    &= \dfrac{1}{4}\displaystyle\int {\dfrac{{4x + 2 - 10}}{{{{\left( {2{x^2} + 2x + 1} \right)}^2}}}} \rd x \\
+    & = \dfrac{1}{4}\displaystyle\int {\dfrac{{d\left( {2{x^2} + 2x + 1} \right)}}{{{{\left( {2{x^2} + 2x + 1} \right)}^2}}}}  - \dfrac{{10}}{2}\displaystyle\int {\dfrac{1}{{{{\left( {2x + 1} \right)}^2} + 1}}} \rd x\\
+    & =  - \dfrac{1}{{4\left( {2{x^2} + 2x + 1} \right)}} - \dfrac{5}{2}\arctan \left( {2x + 1} \right) + C\\
+    \end{split}&
+\end{flalign*}
+
+(11)$\displaystyle\int {\dfrac{1}{{5 - 3\cos x}}\rd x = \displaystyle\int {\dfrac{{{{\sin }^2}\frac{x}{2} + {{\cos }^2}\frac{x}{2}}}{{8{{\sin }^2}\frac{x}{2} + 2{{\cos }^2}\frac{x}{2}}}} } \rd x = \displaystyle\int {\dfrac{{{{\tan }^2}\frac{x}{2} + 1}}{{8{{\tan }^2}\frac{x}{2} + 2}}} \rd x$
+
+令$\tan \dfrac{x}{2} = t$,则$x = \arctan t$,$\rd x = \dfrac{1}{{{t^2} + 1}}\rd t$
+
+代入得原式$ = \displaystyle\int {\fdrac{{{t^2} + 1}}{{8{t^2} + 2}} \cdot \dfrac{1}{{{t^2} + 1}}} \rd t = \displaystyle\int {\dfrac{1}{{4{t^2} + 1}}} \rd t = \dfrac{1}{2}\arctan 2t = \dfrac{1}{2}\arctan (2\tan \dfrac{x}{2}) + C$
+
+(13)$\displaystyle\int {\dfrac{1}{{\tan x + 1}}} \rd x = \displaystyle\int {\dfrac{{\cos x}}{{\sin x + \cos x}}} \rd x;$
+
+$2\displaystyle\int {\dfrac{{\cos x}}{{\sin x + \cos x}}} \rd x = \displaystyle\int {\dfrac{{\cos x + \sin x}}{{\sin x + \cos x}}} \rd x + \displaystyle\int {\dfrac{{\cos x - \sin x}}{{\sin x + \cos x}}} \rd x = x + \ln \left| {\sin x + \cos x} \right| + C$
+
+即$\displaystyle\int {\dfrac{{\cos x}}{{\sin x + \cos x}}} \rd x = \dfrac{1}{2}\left( {x + \ln \left| {\sin x + \cos x} \right|} \right) + C$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (15)\displaystyle\int {\dfrac{1}{{1 + \sin x + \cos x}}} \rd x 
+    &= \displaystyle\int {\dfrac{{{{\cos }^2}\frac{x}{2} + {{\sin }^2}\frac{x}{2}}}{{{{\cos }^2}\frac{x}{2} + {{\sin }^2}\frac{x}{2} + 2\sin \frac{x}{2}\cos \frac{x}{2} + {{\cos }^2}\frac{x}{2} - {{\sin }^2}\frac{x}{2}}}} \rd x\\
+    & = \displaystyle\int {\dfrac{{{{\cos }^2}\frac{x}{2} + {{\sin }^2}\frac{x}{2}}}{{\left( {\cos \frac{x}{2} + \sin \frac{x}{2}} \right)\cos \frac{x}{2}}}} \rd x = \displaystyle\int {\dfrac{{1 + {{\tan }^2}\frac{x}{2}}}{{1 + \tan \frac{x}{2}}}} \rd x\\
+    & = \displaystyle\int {\frac{1}{{1 + \tan \frac{x}{2}}}} \rd \left( {1 + \tan \frac{x}{2}} \right)\\
+    & = \ln \left| {1 + \tan \dfrac{x}{2}} \right| + C\\
+    \end{split}&
+\end{flalign*}
+
+(17)$\displaystyle\int {\dfrac{1}{{{{\cos }^4}x}}} \rd x = \displaystyle\int {\dfrac{{{{\cos }^2}\frac{x}{2} + {{\sin }^2}\frac{x}{2}}}{{{{\cos }^4}x}}} \rd x = \displaystyle\int {\left( {{{\sec }^2}x + {{\tan }^2}x{{\sec }^2}x} \right)} \rd x = \tan x + \dfrac{{{{\tan }^3}x}}{3} + C$
+
+(19)令$\sqrt[6]{x} = t,x = {t^6} \Rightarrow \rd x = 6{t^5}dt$
+
+原式=$\displaystyle\int {\dfrac{{6{t^5}}}{{{t^3} + {t^2}}}} \rd x = \displaystyle\int {\frac{{6{t^3}}}{{t + 1}}} \rd t = 6\displaystyle\int {\dfrac{{{t^3} - 1 + 1}}{{t + 1}}} \rd x = 2{t^3} - 3{t^2} + 6t - 6\ln \left( {t + 1} \right) + C$
+
+将$\sqrt[6]{x} = t$代入得
+
+$\displaystyle\int {\dfrac{1}{{\sqrt x  + \sqrt[3]{x}}}} \rd x = 2\sqrt x  - 3\sqrt[3]{x} + 6\sqrt[6]{x} - 6\ln \left( {\sqrt[6]{x} + 1} \right) + C$
+
+(21)令$\sqrt {\dfrac{{1 - x}}{{x + 1}}}  = t,$于是$x = \dfrac{{1 - {t^2}}}{{{t^2} + 1}},\rd x = \dfrac{{ - 4t}}{{{{\left( {{t^2} + 1} \right)}^2}}}$
+
+\begin{flalign*} \indent
+    \begin{split}
+    \text {原式} 
+    & =  - 4\displaystyle\int {\dfrac{{{t^2}}}{{\left( {1 - {t^2}} \right)\left( {1 + {t^2}} \right)}}} \rd t = 2\displaystyle\int {\dfrac{1}{{1 + {t^2}}}} dt - 2\displaystyle\int {\dfrac{1}{{1 - {t^2}}}} \rd t \\
+    & = 2\arctan t + \ln \left| {1 - t} \right| - \ln \left| {1 + t} \right| + C\\
+    & = 2\arctan \sqrt {\dfrac{{1 - x}}{{x + 1}}}  + \ln \left| {1 - \sqrt {\dfrac{{1 - x}}{{x + 1}}} } \right| - \ln \left| {1 + \sqrt {\dfrac{{1 - x}}{{x + 1}}} } \right| + C\\
+    & = 2\arctan \sqrt {\dfrac{{1 - x}}{{1 + x}}}  + \ln \left| {\dfrac{{\sqrt {1 - x}  - \sqrt {1 + x} }}{{\sqrt {1 - x}  + \sqrt {1 + x} }}} \right| + C\\
+    \end{split}&
+\end{flalign*}
+
+(23)令$\cos x - \sin x = a\left( {\cos x + 2\sin x} \right) + b\left( {\cos x + 2\sin x} \right)'$
+
+解得$a =  - \dfrac{1}{5},b = \dfrac{3}{5}$
+
+原式=$\displaystyle\int { - \dfrac{1}{5}} \dfrac{{\cos x + 2\sin x}}{{\cos x + 2\sin x}}\rd x + \displaystyle\int {\dfrac{3}{5}\dfrac{{\left( {\cos x + 2\sin x} \right)'}}{{\cos x + 2\sin x}}} \rd x =  - \dfrac{x}{5} + \dfrac{{3\ln \left| {\cos x + 2\sin x} \right|}}{5} + C$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{定积分的计算法}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见317页 % 这里需要添加页数
+\end{flushright}
+
+1.解析:
+
+(1)$\displaystyle\int_{\frac{\pi }{2}}^\pi  {\cos (x + \dfrac{\pi }{3})} \rd (x + \dfrac{\pi }{3}) = \sin (x + \dfrac{\pi }{3})|_{\dfrac{\pi }{3}}^\pi  =  - \sqrt 3 $
+
+(3)$\displaystyle\int_0^{\frac{\pi }{2}} {(1 - {{\cos }^3}x)} \rd x = \displaystyle\int_0^{\frac{\pi }{2}} {\rd x}  - \displaystyle\int_0^{\frac{\pi }{2}} {{{\cos }^3}x} \rd x = \dfrac{\pi }{2} - \dfrac{2}{3} = \dfrac{1}{6}(3\pi  - 4)$
+
+(5)$\displaystyle\int_{\frac{\pi }{6}}^{\frac{\pi }{2}} {{{\sin }^2}x} \rd x = \displaystyle\int_{\frac{\pi }{6}}^{\frac{\pi }{2}} {\dfrac{{1 - \cos 2x}}{2}} \rd x = \frac{1}{2}(\displaystyle\int_{\frac{\pi }{6}}^{\frac{\pi }{2}} \rd x - \frac{1}{2}\displaystyle\int_{\frac{\pi }{6}}^{\frac{\pi }{2}} {\cos 2x} \rd 2x)$
+
+$= \dfrac{1}{2}(} x|_{\frac{\pi }{6}}^{\frac{\pi }{2}} - \dfrac{1}{2}\sin 2x|_{\frac{\pi }{6}}^{\frac{\pi }{2}}) = \dfrac{1}{2}(\dfrac{\pi }{3} + \dfrac{1}{2} \times \dfrac{{\sqrt 3 }}{2}) = \dfrac{\pi }{6} + \dfrac{{\sqrt 3 }}{8}$
+
+(7)$\displaystyle\int_{\frac{1}{{\sqrt 2 }}}^1 {\dfrac{{\sqrt {1 - {x^2}} }}{{{x^2}}}} \rd x\xrightarrow{{x = \sin t}}\displaystyle\int_{\frac{\pi }{4}}^{\frac{\pi }{2}} {\dfrac{{{{\cos }^2}t}}{{{{\sin }^2}t}}} \rd t = \displaystyle\int_{\frac{\pi }{4}}^{\frac{\pi }{2}} {(\dfrac{1}{{{{\sin }^2}t}}}  - 1)\rd t = ( - \cot t - t)|_{\frac{\pi }{4}}^{\frac{\pi }{2}} = 1 - \dfrac{\pi }{4} $
+
+(9)$\displaystyle\int_0^1 {x\sqrt {\dfrac{{1 - {x^2}}}{{1 + {x^2}}}} } \rd x\xrightarrow{{t = {x^2}}}\dfrac{1}{2}\displaystyle\int_0^1 {\sqrt {\dfrac{{1 - t}}{{1 + t}}} } \rd t = \dfrac{1}{2}\displaystyle\int_0^1 {\dfrac{{\sqrt {1 - {t^2}} }}{{1 + t}}} \rd t$
+
+$\xrightarrow{{t = \sin \theta }}\dfrac{1}{2}\displaystyle\int_0^{\frac{\pi }{2}} {\dfrac{{{{\cos }^2}\theta }}{{1 + \sin \theta }}} d\theta  = \dfrac{1}{2}\displaystyle\int_0^{\frac{\pi }{2}} {\dfrac{{1 - {{\sin }^2}\theta }}{{1 + \sin \theta }}} \rd \theta  = \dfrac{1}{2}\displaystyle\int_0^{\frac{\pi }{2}} {(1 - \sin \theta )} \rd \theta  = \dfrac{\pi }{4} - \dfrac{1}{2}$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (11)\displaystyle\int_0^a {{x^2}\sqrt {{a^2} - {x^2}} } \rd x\xrightarrow{{x = a\sin t}} 
+    &= \displaystyle\int_0^{\frac{\pi }{2}} {{a^2}} {\sin ^2}t{a^2}{\cos ^2}t\rd t = {a^4}\displaystyle\int_0^{\frac{\pi }{2}} {{{(\sin t\cos t)}^2}} \rd t \\
+    & = \dfrac{{{a^4}}}{4}\displaystyle\int_0^{\frac{\pi }{2}} {{{\sin }^2}2t} \rd t = \dfrac{{{a^4}}}{4}\displaystyle\int_0^{\frac{\pi }{2}} {\frac{{1 - \cos 4t}}{2}} \rd t\\
+    & = \dfrac{{{a^4}}}{8} \times \dfrac{\pi }{2} - \dfrac{{{a^4}}}{8} \times \frac{1}{4}\sin 4t|_0^{\frac{\pi }{2}} = \dfrac{{{a^4}\pi }}{{16}}\\
+    \end{split}&
+\end{flalign*}
+
+(13)$\displaystyle\int_0^{\frac{\pi }{2}} {\sqrt {\cos x} \sin x} \rd x =  - \displaystyle\int_0^{\frac{\pi }{2}} {\sqrt {\cos x} } d\cos x = \dfrac{2}{3}co{x^{\frac{3}{2}}}|_0^{\frac{\pi }{2}} = \dfrac{2}{3}$
+
+(15)$\displaystyle\int_0^4 {\dfrac{1}{{1 + \sqrt x }}} \rd x\xrightarrow{{t = 1 + \sqrt x }}\displaystyle\int_1^3 {\dfrac{{2(t - 1)}}{t}} \rd x = \displaystyle\int_1^3 {(2 - \dfrac{1}{t}} )\rd x = 4 - 2\ln t|_1^3 = 4 - 2\ln 3$
+
+(17)$\displaystyle\int_0^{\frac{\pi }{2}} {\dfrac{{\cos x}}{{1 + {{\sin }^2}x}}} \rd x = \displaystyle\int_0^{\frac{\pi }{2}} {\dfrac{{d\sin x}}{{1 + {{\sin }^2}x}}}  = \arctan (\sin x)|_0^{\frac{\pi }{2}} = \dfrac{\pi }{4}$
+
+\begin{flalign*} \indent
+    \begin{split}
+    (19)\displaystyle\int_0^1 {{e^{\sqrt[3]{x}}}} \rd x\xrightarrow{{\sqrt[3]{x} = t}} 
+    &= \displaystyle\int_0^1 {3{t^2}{e^t}} \rd t = 3\displaystyle\int_0^1 {{t^2}} \rd {e^t}\\
+    & = 3(e - 2\displaystyle\int_0^1 {t{e^t}} \rd t) = 3e - 6{e^t}t|_0^1 + 6\displaystyle\int_0^1 {{e^t}} \rd t\\
+    & = 3(e - 2)\\
+    \end{split}&
+\end{flalign*}
+
+(21)$\displaystyle\int_0^{\frac{\pi }{2}} {\dfrac{{\cos x}}{{\sin x + \cos x}}} \rd x = \displaystyle\int_0^{\frac{\pi }{2}} {\dfrac{{\sin x}}{{\sin x + \sin x}}} \rd x$(利用书P302例6.5的结论)$ = \displaystyle\int_0^{\frac{\pi }{2}} {\frac{1}{2}} \rd x| = \dfrac{\pi }{4}$
+
+(23)$\displaystyle\int_0^{\frac{\pi }{2}} {x{{\cos }^2}x} \rd x\xrightarrow{{x = t + \pi }} = \displaystyle\int_{ - \pi }^\pi  {(t + \pi ){{\cos }^2}t} dt = \displaystyle\int_{ - \pi }^\pi  {\pi {{\cos }^2}t} dt + \displaystyle\int_{ - \pi }^\pi  {t{{\cos }^2}t} dt$
+
+$\because \displaystyle\int_{ - \pi }^\pi  {t{{\cos }^2}t} dt = 0$(奇函数)
+
+$\therefore \displaystyle\int_{ - \pi }^\pi  {\pi {{\cos }^2}t} \rd t = 2\pi \displaystyle\int_0^\pi  {{{\cos }^2}t} \rd t = \dfrac{\pi }{2}\displaystyle\int_0^\pi  {(\cos 2t}  + 1)d2t = {\pi ^2}$
+
+5.证明:
+
+(1)$\displaystyle\int_a^{a + T} {f(x)} \rd x = \displaystyle\int_a^T {f(x)} \rd x + \displaystyle\int_T^{a + T} {f(x)} \rd x$
+
+对于等式右端第二个积分,设$x - T = t$,则$\displaystyle\int_T^{a + T} {f(x)} \rd x = \displaystyle\int_0^a {f(t + T)} dt = \displaystyle\int_0^a {f(t)} \rd t$
+
+于是$\displaystyle\int_a^{a + T} {f(x)} \rd x = \displaystyle\int_a^T {f(x)} \rd x + \displaystyle\int_0^a {f(x)} \rd x = \displaystyle\int_0^T {f(x)} \rd x$
+
+6.证明:令$x = a + b - t,\rd x = d\left( { - t} \right)$,当$x = a$时$t = b$,当$x = b$时$t = a$
+
+于是:$\displaystyle\int_a^b {f(x)} \rd x = \displaystyle\int_b^a {f(a + b - t)( - 1)} dt = \displaystyle\int_a^b {f(a + b - t)} \rd t$
+
+而$\displaystyle\int_a^b {f(a + b - t)} \rd t = \displaystyle\int_a^b {f(a + b - x)} \rd x$
+
+所以$\displaystyle\int_a^b {f(x)} \rd x = \displaystyle\int_a^b {f(a + b - x)} \rd x$
+
+(2)令${x^2} = t$,于是
+
+\[\displaystyle\int_0^{{a^2}} {t\sqrt t f(t)} \rd \sqrt t  = \dfrac{1}{2}\displaystyle\int_0^{{a^2}} {tf(t)} \rd t = \dfrac{1}{2}\displaystyle\int_0^{{a^2}} {xf(x)} \rd x\]
+
+(3)令$x = t + \pi ,t = x - \pi ,t \in ( - \pi ,\pi )$,于是
+
+\[\displaystyle\int_0^{2\pi } {f(\left| {\cos x} \right|)} \rd x = \displaystyle\int_{ - \pi }^\pi  {f(\left| {\cos (t + \pi )} \right|)} \rd t = 2\displaystyle\int_0^\pi  {f(\left| {\cos t} \right|)} \rd t\]
+
+再令$t = x + \dfrac{\pi }{2},x = t - \dfrac{\pi }{2},x \in ( - \dfrac{\pi }{2},\dfrac{\pi }{2})$,于是
+
+\[2\displaystyle\int_0^\pi  {f(\left| {\cos t} \right|)} dt = 2\displaystyle\int_{ - \frac{\pi }{2}}^{\frac{\pi }{2}} {f(\left| {\cos (x + \dfrac{\pi }{2})} \right|)} \rd x = 4\displaystyle\int_0^{\frac{\pi }{2}} {f(\left| {\sin x} \right|)} \rd x = 4\displaystyle\int_0^{\frac{\pi }{2}} {f(\left| {\cos x} \right|)} \rd x\]
+
+10.证明:
+
+(1)令$1 - x = t$,则
+
+$\displaystyle\int_0^1 {{x^m}{{(1 - x)}^n}} \rd x =  - \displaystyle\int_1^0 {{{(1 - t)}^m}{t^n}} \rd t = \displaystyle\int_0^1 {{x^n}{{(1 - x)}^m}} \rd x$,即$\displaystyle\int_0^1 {{x^m}{{(1 - x)}^n}} \rd x = \displaystyle\int_0^1 {{x^n}{{(1 - x)}^m}} \rd x$
+
+(2)$\displaystyle\int_0^{\frac{\pi }{2}} {{{\sin }^m}x} {\cos ^m}x\rd x = \displaystyle\int_0^{\frac{\pi }{2}} {{{\left( {\sin x\cos x} \right)}^m}} \rd x = {\displaystyle\int_0^{\frac{\pi }{2}} {\left( {\dfrac{{\sin 2x}}{2}} \right)} ^m}\rd x = \dfrac{1}{{{2^m}}}{\displaystyle\int_0^{\frac{\pi }{2}} {\left( {\sin 2x} \right)} ^m}\rd x$
+
+令$2x = \dfrac{\pi }{2} - t,x = \dfrac{\pi }{4} - \dfrac{t}{2},$得
+
+$\dfrac{1}{{{2^m}}}{\displaystyle\int_0^{\frac{\pi }{2}} {\left( {\sin 2x} \right)} ^m}\rd x = \dfrac{1}{{{2^m}}}\displaystyle\int_{\frac{\pi }{2}}^{ - \frac{\pi }{2}} {{{\cos }^m}t} \rd (\fdrac{\pi }{4} - \dfrac{t}{2}) =  - \dfrac{1}{{{2^{m + 1}}}}\displaystyle\int_{\frac{\pi }{2}}^{ - \frac{\pi }{2}} {{{\cos }^m}t} \rd t = \dfrac{1}{{{2^m}}}\displaystyle\int_0^{\frac{\pi }{2}} {{{\cos }^m}t} \rd t$
+
+即$\displaystyle\int_0^{\frac{\pi }{2}} {{{\sin }^m}x} {\cos ^m}x\rd x = \dfrac{1}{{{2^m}}}\displaystyle\int_0^{\frac{\pi }{2}} {{{\cos }^m}x} \rd x$
+
+11.解:
+
+\begin{flalign*} \indent
+    \begin{split}
+    (1)\mathop {\lim }\limits_{n \to \infty } 
+    & \ln \left[ {\dfrac{1}{n}\sqrt[n]{{(n + 1)(n + 2) \cdots (2n)}}} \right]\\
+    & = \mathop {\lim }\limits_{n \to \infty } \dfrac{1}{n}\left[ {\ln (1 + \dfrac{1}{n}) + \ln (1 + \dfrac{2}{n}) +  \cdots  + \ln (1 + \dfrac{2}{n})} \right]\\
+    & = \mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {\ln (1 + \dfrac{i}{n})} \dfrac{1}{n} = \mathop {\lim }\limits_{\xi  \to {0^ + }} \displaystyle\int_\xi ^1 {\ln (1 + x)\rd x} \\
+    & = \left[ {(x + 1)\ln (x + 1) - (x + 1)} \right]|_0^1\\
+    & = \ln 4 - 1\\
+    \end{split}&
+\end{flalign*}
+
+\begin{flalign*} \indent
+    \begin{split}
+    (2)\mathop {\lim }\limits_{n \to \infty } (\dfrac{1}{{4{n^2} - {2^2}}} + \dfrac{1}{{4{n^2} - {2^2}}} +  \cdots  + \dfrac{{n - 1}}{{4{n^2} - {n^2}}})
+    & = \mathop {\lim }\limits_{n \to \infty } (\dfrac{{\frac{1}{n}}}{{4 - {{\left( {\frac{2}{n}} \right)}^2}}} + \dfrac{{\frac{2}{n}}}{{4 - {{\left( {\frac{3}{n}} \right)}^2}}} +  \cdots  + \dfrac{{\frac{{n - 1}}{n}}}{{4 - {{\left( {\frac{n}{n}} \right)}^2}}}) \times \frac{1}{n} \\
+    & = \displaystyle\int_0^1 {\dfrac{x}{{4 - {x^2}}}} \rd x = \dfrac{1}{2}\displaystyle\int_0^1 {\dfrac{{d{x^2}}}{{4 - {x^2}}}} \rd x = \dfrac{1}{2}\ln \dfrac{4}{3}\\
+    \end{split}&
+\end{flalign*}
+
+\section{定积分的应用}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见338页 % 这里需要添加页数
+\end{flushright}
+1.解析:
+
+(1)$A = \displaystyle\int_2^4 {(\dfrac{3}{2}x - \dfrac{1}{4}{x^2} - 2)} \rd x = \dfrac{3}{4}{x^2}|_2^4 - \dfrac{1}{{12}}{x^3}|_2^4 - 2x|_2^4 = 12 - 3 - \dfrac{{16}}{4} - \dfrac{2}{3} - 8 + 4 = \dfrac{1}{3}$
+
+(3)$A = \displaystyle\int_0^a {\left( {a + x - 2\sqrt {ax} } \right)\rd x = \dfrac{{{a^2}}}{6}}. $
+
+
+\begin{flalign*} \indent
+    \begin{split}
+    (5)A 
+    &= \displaystyle\int_{\frac{1}{{10}}}^{10} {\left| {\ln x} \right|} 
+    &= \displaystyle\int_{\frac{1}{{10}}}^1 {( - \ln x)\rd x + \displaystyle\int_1^{10} {\left( {\ln x} \right)} } \rd x\\
+    & =  - [x\ln x|_{\frac{1}{{10}}}^1 - \displaystyle\int_{\frac{1}{{10}}}^1 {xd\ln x}  + (x\ln x|_1^{10} - \displaystyle\int_1^{10} {xd\ln x} )\\
+    & = \dfrac{{90}}{{10}}\ln 10 - \dfrac{{81}}{{10}}.\\
+    \end{split}&
+\end{flalign*}
+
+(7)$y = x\sqrt {1 - {x^2}} (x > 0,y > 0)$
+
+从而$A = 4\displaystyle\int_0^1 {x\sqrt {1 - {x^2}} } \rd x = \dfrac{4}{2}\displaystyle\int_0^1 {\sqrt {1 - {x^2}} d(1 - {x^2})}  =  - \dfrac{4}{2} \times \dfrac{2}{3}{(1 - {x^2})^{\frac{3}{2}}}|_0^1 = \dfrac{4}{3}$.
+
+(9)由对称性可知,
+
+$S = 2(\dfrac{1}{2} \cdot \dfrac{\pi }{3} \cdot {1^2} + 2\displaystyle\int_{\dfrac{\pi }{6}}^{\frac{\pi }{4}} {\dfrac{1}{2} \cdot 2\cos 2\theta d\theta } ) = \dfrac{\pi }{3} + 2 - \sqrt 3 $
+
+(11)$S = {\displaystyle\int_{ - \pi }^\pi  {\dfrac{1}{2}(a{e^\theta })} ^2}\rd \theta  = \dfrac{{{a^2}}}{4}\displaystyle\int_{ - \pi }^\pi  {{e^{2\theta }}} \rd 2\theta  = \dfrac{{{a^2}}}{4}({e^{2\pi }} - {e^{ - 2\pi }})$
+
+3.解析:
+
+(1)绕y轴:
+
+${V_y} = \displaystyle\int_{ - |b|}^{|b|} {\pi {r^2\rd y = } \displaystyle\int_{ - |b|}^{|b|} {\pi {a^2}(1 - \dfrac{{{y^2}}}{{{b^2}}}\rd y = } \pi {a^2}(y - \dfrac{{{y^3}}}{{3{b^2}}}){|_{|b| - ( - |b|)}} = \dfrac{4}{3}|b|{a^2}\pi}$
+
+绕x轴:
+
+${V_x} = \displaystyle\int_{ - |a|}^{|a|} {\pi {r^2}\rd x = } \displaystyle\int_{ - |b|}^{|b|} {\pi {b^2}(1 - \dfrac{{{y^2}}}{{{a^2}}})\rd y = } \pi {b^2}(y - \dfrac{{{y^3}}}{{3{a^2}}}){|_{|a| - ( - |a|)}} = \dfrac{4}{3}|a|{b^2}\pi $
+
+\begin{flalign*} \indent
+    \begin{split}
+    (5)V 
+    &= \displaystyle\int \rd V  = \displaystyle\int {\pi {x^2}}\rd y\\
+    & = \displaystyle\int_{2\pi }^\pi  {\pi {{[a(t - \sin t)]}^2}\rd a(1 - \cos t)}  - \displaystyle\int_0^\pi  {\pi {{[a(t - \sin t)]}^2}\rd a(1 - \cos t)} \]\\
+    & =  - \pi {a^3}\displaystyle\int_\pi ^{2\pi } {{{(t - \sin t)}^2}\sin t\rd t}  - \pi {a^3}\displaystyle\int_0^\pi  {{{(t - \sin t)}^2}\sin t\rd t} \\
+    & = \pi {a^3} \cdot [\dfrac{{13{\pi ^2}}}{2} - \dfrac{8}{3} - (\dfrac{{{\pi ^2}}}{2} - \dfrac{8}{3})]\\
+    & = 6{\pi ^3}{a^3}\\
+    \end{split}&
+\end{flalign*}
+
+备注:$\displaystyle\int {{(t - \sin t)}^2}\sin t\rd t  =  - \dfrac{{{t^2}}}{2} - ({t^2} - 2)\cos t + 2t\sin t + \dfrac{1}{2}t\sin 2t - \dfrac{3}{4}\cos t + \dfrac{1}{4}\cos 2t + \dfrac{1}{{12}}\cos 3t + C$
+
+6.解析:$\because x > 0,y > 0,\therefore y = {x^2} \Rightarrow x = \sqrt y $
+
+求交点:$\sqrt y  = {y^2} \Rightarrow$ $y = 0$或$y = 1$
+
+$\therefore V = \displaystyle\int_0^1 {\pi (y_1^2 - y_2^2)} \rd x = \displaystyle\int_0^1 {\pi \left[ {{{(\sqrt x )}^2} - {x^4}} \right]} \rd x = \pi \left[ {\dfrac{{{x^2}}}{2} - \dfrac{{{x^5}}}{5}} \right]\left| {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right. = \dfrac{{3\pi }}{{10}}$
+
+8.解析：
+
+(1)弧长$S = \int_{\sqrt 2 }^{\sqrt 8 } {\sqrt {1 + {{y'}^2}} \rd x}  = \int_{\sqrt 2 }^{\sqrt 8 } {\frac{{\sqrt {1 + {x^2}} }}{x}} \rd x$
+
+设$x = tan\theta ,\theta  \in \left[ {\arctan \sqrt 3 ,\arctan \sqrt 8 } \right]$
+
+\begin{flalign*} \indent
+    \begin{split}
+    S 
+    &= \int_{{\theta _1}}^{{\theta _2}} {\dfrac{{\sec \theta }}{{\tan \theta }}d\left( {\tan \theta } \right)} \\
+    & = \int_{{\theta _1}}^{{\theta _2}} {\dfrac{1}{{\sin \theta {{\cos }^2}\theta }}d\theta }  = \int_{{\theta _1}}^{{\theta _2}} {\dfrac{{{{\sin }^2} + {{\cos }^2}\theta }}{{\sin \theta {{\cos }^2}\theta }}\rd \theta } \\
+    & = \int_{{\theta _1}}^{{\theta _2}} {(\dfrac{{\sin \theta }}{{{{\cos }^2}\theta }} + \csc \theta } )\rd \theta  = \dfrac{1}{{\cos \theta }}|_{{\theta _{ & 1}}}^{{\theta _2}} + \ln |\tan \dfrac{\theta }{2}||_{{\theta _1}}^{{\theta _2}}\\
+    & = 1 + \dfrac{1}{2}\ln \dfrac{3}{2}\\
+    \end{split}&
+\end{flalign*}
+
+(3)上半部分方程为$y = \sqrt {\dfrac{2}{3}{{(x - 1)}^2}} $
+
+设$t = x - 1$则$0 \leqslant t \leqslant 1$,$y = \sqrt {\dfrac{2}{3}} {t^{\dfrac{3}{2}}}$
+
+$S = 2\int_0^1 {\sqrt {{{(\dfrac{3}{2}t + 1)}^3}} \rd t}  = 2 \times \dfrac{2}{{3 \times \dfrac{3}{2}}}\sqrt {{{\left( {\frac{3}{2}t + 1} \right)}^3}} |_0^1 = \frac{8}{9}({\left( {\dfrac{5}{2}} \right)^{\dfrac{3}{2}}} - 1)$
+
+
+\begin{flalign*} \indent
+    \begin{split}
+    (5)S &= 4\int_0^{\frac{\pi }{2}} {\sqrt {{{\varphi '}^2}\left( t \right) + {{\phi '}^2}(t)} \rd t}  = 4\int_0^{\frac{\pi }{2}} {\sqrt {{{\left( { - 3a{{\cos }^2}t\sin t} \right)}^2} + {{\left( {3a{{\sin }^2}t\cos t} \right)}^2}} \rd t} \\
+    & = 4\int_0^{\frac{\pi }{2}} {3a\cos t\sin t\rd t}  = 4\int_0^{\frac{\pi }{2}} {\sin 2t\rd t}  = 6a\\
+    \end{split}&
+\end{flalign*} 
+
+函数要求$\cos t > 0$,t从$ - \dfrac{\pi }{2}$开始,故x的范围是$\left[ { - \dfrac{\pi }{2},\dfrac{\pi }{2}} \right]$.
+
+$s = \int_{ - \frac{\pi }{2}}^{\frac{\pi }{2}} {\sqrt {1 + {{y'}^2}} \rd x}  = \int_{ - \frac{\pi }{2}}^{\frac{\pi }{2}} {\sqrt {1 + \cos x} \rd x}  = \int_{ - \frac{\pi }{2}}^{\frac{\pi }{2}} {\sqrt {2{{\cos }^2}\dfrac{x}{2}} \rd x}  = \sqrt 2 \int_{ - \frac{\pi }{2}}^{\frac{\pi }{2}} {\cos \dfrac{x}{2}\rd x}  = 2\sqrt 2  \cdot \sqrt 2  = 4$
+
+\begin{flalign*} \indent
+    \begin{split}
+    13.\text {解析:}w 
+    &= \int_0^{15} {\pi {y^2}\rd x} \ell g(15 - x) = \int_0^{15} {\dfrac{4}{9}\ell g\pi {x^2}(15 - x)\rd x} \\
+    & = \dfrac{4}{9}\ell g\pi \left( {5{x^3} - \dfrac{1}{4}{x^4}} \right)|_0^{15} = 5.8 \times {10^7}J\\
+    \end{split}&
+\end{flalign*} 
+
+13.解析:
+
+由题意易知$F = 4.9(1 - x)$
+
+$W = FS = \int_{0.6}^{0.8} {4.9(1 - x)\rd x}  = 0.294J$
+
+15.解析:取椭圆底部中心为坐标点,短轴为y轴,椭圆方程为$\dfrac{{{x^2}}}{{{1^2}}} + \dfrac{{{{(y - 0.75)}^2}}}{{{{0.75}^2}}} = 1$
+
+深度为h$(0 \leqslant h \leqslant 1.5)$.深为$\rd h$的一段水平端面积为$\rd s = 2x\rd h = 2\sqrt {1 - \dfrac{{{{(y - 0.75)}^2}}}{{{{0.75}^2}}}} \rd h$
+
+$\rd s$所受压力应为$\rd F = \rho gh\rd s = 2\rho gh\sqrt {1 - \dfrac{{{{(y - 0.75)}^2}}}{{{{0.75}^2}}}} \rd h = \dfrac{8}{3}\rho gh\sqrt {{{0.75}^2} - {{(y - 0.75)}^2}} \rd h$
+
+$\therefore F = \int {\rd F}  = \int_0^{1.5} {\dfrac{8}{3}\rho gh\sqrt {{{0.75}^2} - {{(y - 0.75)}^2}} \rd h}  = \dfrac{8}{3}\rho g\int_{ - \frac{\pi }{2}}^{\frac{\pi }{2}} {(1 + \sin t) \cdot \dfrac{3}{4}\cos t \cdot \dfrac{3}{4}\cos t\rd t} $
+
+$ = \dfrac{9}{4}\rho g\int_0^{\frac{\pi }{2}} {{{\cos }^2}t\rd t}  = \dfrac{{9\pi }}{{16}}\rho g$
+
+对水,取$\rho  = {10^3}kg \cdot {m^{ - 3}},g = 10m/{s^2},$得$F = 17.67kN.$
+
+18.解析:由对称性可知,圆心电荷的受力方向在x轴方向
+
+\[F = 2\int_0^{\frac{\pi }{2}} {\dfrac{{kqR\delta }}{{{R^2}}}} \cos \theta \rd \theta  = \dfrac{{2kq\delta }}{R}\]
+\section{反常积分}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见 357页 % 这里需要添加页数
+\end{flushright}
+
+1.解析: 
+
+(1)$\int_1^{ + \infty } {\dfrac{1}{{{x^5}}}} \rd x = \frac{{ - 1}}{{4{x^4}}}_1^{ + \infty } = 0 + \frac{1}{4} = \frac{1}{4}(x > 1)$
+
+(2)$\int_1^{ + \infty } {\dfrac{1}{{\sqrt[3]{x}}}} \rd x = \dfrac{3}{2}{x^{\dfrac{2}{3}}}_1^{ + \infty } =  + \infty $,所以发散
+
+(3)$\int_0^{ + \infty } {e^{ - ax}}\rd x(a > 0)}  = \dfrac{{ - {e^{ - ax}}}}{a}_0^{ + \infty } = \dfrac{1}{a}$
+
+(4)令$t\ =  - \sqrt x $,则$\int_0^{ + \infty } {{e^{ - \sqrt x }}\rd x}  = \int_0^{ - \infty } {2t{e^t}\rd t = 2t{e^t}}  - \int_0^{ - \infty } {2t\rd ({e^t})}  = 2(t - 1){e^t}_0^{ - \infty } = 2$
+
+(5)令$t = \arctan x$,则$x = \tan t$
+
+$\int_0^{ + \infty }{\dfrac{{\arctan x}}{{{{\left( {1 + {x^2}} \right)}^{\frac{3}{2}}}}}}= \int_0^{\frac{\pi }{2}} {t\cos t\rd t = t\sin t + \cos t} } _0^{\frac{\pi }{2}}= \dfrac{\pi }{2} - 1$
+
+(6)$\int_0^{ + \infty } {{e^{ - pt}}\sin \omega t\rd t}  = \int_0^{ + \infty } {\dfrac{{ - 1}}{p}\sin \omega t\rd ({e^{ - pt}}) = \dfrac{{ - {e^{ - pt}}}}{p}\sin \omega t + \int_0^{ + \infty } {\dfrac{{{e^{ - pt}}}}{p}} } \omega \cos \omega t\rd t = $
+
+$\dfrac{{ - {e^{ - pt}}}}{p}\sin \omega t + \int_0^{ + \infty } {\dfrac{{ - \omega }}{{{p^2}}}} \cos \omega t\rd ({e^{ - pt}}) = \dfrac{{ - {e^{ - pt}}}}{p}\sin \omega t - \dfrac{{\omega {e^{ - pt}}}}{{{p^2}}} + \int_0^{ + \infty } {\dfrac{{ - {\omega ^2}}}{{{p^2}}}{e^{ - pt}}\sin \omega t\rd t} $
+
+所以$\int_0^{ + \infty } {{e}^{ - pt}}\sin \omega t\rd t = \dfrac{{{p^2}}}{{{\omega ^2} + {p^2}}}} (\dfrac{{ - {e^{ - pt}}}}{p}\sin \omega t - \dfrac{{\omega {e^{ - pt}}}}{{{p^2}}})_0^{ + \infty } = \dfrac{\omega }{{{\omega ^2} + {p^2}}}$
+
+(7)$\int_{ - \infty }^{ + \infty } {\dfrac{1}{{{x^2} + 2x + 2}}\rd x}  = \int_{ - \infty }^{ + \infty } {\dfrac{1}{{{{(x + 1)}^2} + 1}}d(x + 1) = \arctan (x + 1)_{ - \infty }^{ + \infty }}  = \dfrac{\pi }{2} - ( - \dfrac{\pi }{2}) = \pi $
+
+(8)令$x = \sin t,$则$\int_0^1 {\dfrac{x}{{\sqrt {1 - {x^2}} }}} \rd x = \int_0^{\frac{\pi }{2}} {\dfrac{{\sin t}}{{\cos t}}\cos tdt =  - \cos t_0^{\frac{\pi }{2}}}  = 1$
+
+(9)$\int_0^2 {\dfrac{1}{{{x^2} - 4x + 3}}\rd x}  = \int_0^2 {\dfrac{1}{2}} (\dfrac{1}{{x - 3}} - \dfrac{1}{{x - 1}})\rd x = \frac{1}{2}\ln (\dfrac{{x - 3}}{{x - 1}})_0^1 + \dfrac{1}{2}\ln (\dfrac{{x - 3}}{{x - 1}})_1^2$
+
+因为$\dfrac{1}{2}\ln (\dfrac{{x - 3}}{{x - 1}})_0^1$和$\dfrac{1}{2}\ln (\dfrac{{x - 3}}{{x - 1}})_1^2$都是发散的,所以原反常积分也是发散的.
+
+(10)令$x = \sec t,$则$\int_1^2 {\dfrac{1}{{x\sqrt {{x^2} - 1} }}\rd x}  = \int_0^{\frac{\pi }{3}} {\dfrac{1}{{\sec t\tan t}}\sec t\tan tdt = \int_0^{\frac{\pi }{3}} {\rd t}  = \dfrac{\pi }{3}} $
+
+(11)令$t = \sqrt {x - 1}  \Rightarrow x = {t^2} + 1,$所以$\int_1^2 {\dfrac{x}{{\sqrt {x - 1} }}\rd x}  = \int_0^1 {\dfrac{{{t^2} + 1}}{t}} 2t\rd t = \dfrac{2}{3}{t^2} + 2t_0^1 = \dfrac{8}{3}$
+
+(12)令$t = \dfrac{1}{x},$则$x = \dfrac{1}{t},$故而
+
+$\int_1^{ + \infty } {\dfrac{1}{{x\sqrt {{x^4} - 1} }}\rd x}  = \int_1^0 {\dfrac{{ - t}}{{\sqrt {1 - {t^4}} }}} \rd t = \int_1^0 {\dfrac{{ - \frac{1}{2}}}{{\sqrt {1 - {t^4}} }}} \rd ({t^2}) =  - \dfrac{1}{2}\arcsin ({t^2})_1^0 = \dfrac{\pi }{4}$
+
+(13)$\int_{ - \frac{\pi }{4}}^{ + \infty } {\dfrac{1}{{{x^2}}}} \sin \dfrac{1}{x}\rd x = \int_{ - \frac{\pi }{4}}^{ + \infty } { - \sin \dfrac{1}{x}} \rd (\dfrac{1}{x}) = \cos \dfrac{1}{x}_{ - \frac{\pi }{4}}^{ + \infty },$所以发散.
+
+(14)令$t = \sqrt {x - 1}  \Rightarrow x = {t^2} + 1,$,则$\int_1^{ + \infty } {\dfrac{1}{{x\sqrt {x - 1} }}\rd x = \int_0^{ + \infty } {\frac{2}{{1 + {t^2}}}} } dt = 2\arctan t\left| {\begin{array}{*{20}{c}}
+  { + \infty } \\ 
+  0 
+\end{array}} \right. = \pi $
+
+2.解析:
+
+$(1)\int_0^{\frac{\pi }{2}} {\ln \sin x\rd x = x\ln \sin x\left| {_0^{\frac{\pi }{2}}} \right. - } \int_0^{\frac{\pi }{2}} {\dfrac{x}{{\tan x}}} \rd x =  - \int_0^{\frac{\pi }{2}} {\dfrac{x}{{\tan x}}} \rd x =  - \dfrac{\pi }{2}\ln $
+
+所以$\int_0^{\frac{\pi }{2}} {\dfrac{x}{{\tan x}}} \rd x = \dfrac{\pi }{2}\ln 2$
+
+(2)令$x = \sin t$,则$\int_0^1 {\dfrac{{\ln x}}{{\sqrt {1 - {x^2}} }}} \rd x = \int_0^{\frac{\pi }{2}} {\dfrac{{\ln \sin t}}{{\cos t}}\cos t\rd t = \int_0^{\frac{\pi }{2}} {\ln \sin t\rd t = } }  - \dfrac{\pi }{2}\ln 2$
+
+(3)$\int_0^\pi  {\dfrac{{x\sin x}}{{1 - \cos x}}\rd x}  = \int_0^\pi  {\dfrac{{x2\sin \frac{x}{2}\cos \frac{x}{2}}}{{2\sin \frac{x}{2}\sin \frac{x}{2}}}} \rd x = \int_0^\pi  {\dfrac{x}{{\tan \dfrac{x}{2}}}} \rd x,$
+
+令$t = \dfrac{x}{2} \Rightarrow x = 2t$,则$\int_0^\pi  {\frac{x}{{\tan \frac{x}{2}}}} \rd x = 4\int_0^{\frac{\pi }{2}} {\dfrac{t}{{\tan t}}} \rd t$,由一式得$ = 2\pi \ln 2$.
+
+4.解析:
+
+(1)令$x = \tan t$,则$\int_0^{ + \infty } {\dfrac{1}{{{{(1 + {x^2})}^2}}}} \rd x = \int_0^{\frac{\pi }{2}} {\dfrac{1}{{{{(\sec t)}^4}}}} {(\sec t)^2}\rd t = \int_0^{\frac{\pi }{2}} {{{(\cos x)}^2}\rd x = \int_0^{\frac{\pi }{2}} {(\dfrac{1}{2}} }  + \dfrac{1}{2}\cos 2t)\rd t = \dfrac{t}{2} + \dfrac{1}{4}\sin 2t\left| {\begin{array}{*{20}{c}}
+  {\frac{\pi }{2}} \\ 
+  0 
+\end{array}} \right. = \dfrac{\pi }{4}$
+
+(2)令$u = \sqrt {\tan x}  \Rightarrow x = \arctan ({u^2})$,则$\int_0^{\frac{\pi }{2}} {\dfrac{{\rd x}}{{\sqrt {\tan x} }}}  = \int_0^{ + \infty } {\dfrac{2}{{1 + {u^4}}}} \rd u$
+
+再令$t = \dfrac{1}{u} \Rightarrow u = \dfrac{1}{t},$则原式$ = \int_0^{ + \infty } {\dfrac{{2t^2}}}{{1 + {t^4}}}} \rd t,$
+
+因为$\int_0^{ + \infty } {\dfrac{2}{{1 + {u^4}}}}\rd u = \int_0^{ + \infty } {\dfrac{{2t^2}}}{{1 + {t^4}}}} \rd t$
+
+\begin{flalign*} \indent
+    \begin{split}
+    \text {所以}2\int_0^{ + \infty } {\dfrac{2}{{1 + {u^4}}}} \rd u 
+    &= \int_0^{ + \infty } {\dfrac{{2 + 2u^2}}}{{1 + {u^4}}}} \rd u = 2\int_0^{ + \infty } {\dfrac{{1 + \frac{1}{{{u^2}}}}}{{{u^2} + \dfrac{1}{{{u^2}}}}}} \rd u 
+    &= 2\int_0^{ + \infty } {\dfrac{{\rd (u - \frac{1}{u})}}{{{{(u - \frac{1}{u})}^2} + 2}}}\\
+    & = 2 \cdot \dfrac{1}{{\sqrt 2 }}\arctan (\dfrac{{u - \frac{1}{u}}}{{\sqrt 2 }})_0^{ + \infty } 
+    &= \sqrt 2 \pi \\
+    \end{split}&
+\end{flalign*}
+
+所以原式等于$\int_0^{\frac{\pi }{2}} {\dfrac{{\rd x}}{{\sqrt {\tan x} }}}  = \int_0^{ + \infty } {\dfrac{2}{{1 + {u^4}}}} \rd u = \dfrac{{\sqrt 2 \pi }}{2}$
+
+5.解析:
+
+(1)$\mathop {\lim }\limits_{x \to  + \infty } {x^3} \cdot \frac{1}{{{x^3} + {x^2} + 1}} = 1$,由柯西判别法可知,原积分收敛.
+
+(3)$\mathop {\lim }\limits_{x \to  + \infty } {x^{\frac{3}{4}}} \cdot \dfrac{1}{{\sqrt {x\sqrt x } }} = \mathop {\lim }\limits_{x \to  + \infty } \dfrac{{{x^{\frac{3}{4}}}}}{{{x^{\frac{3}{4}}}}} = 1$,由柯西判别法可知,原积分发散.
+
+(5)$\mathop {\lim }\limits_{x \to  + \infty } {x^p} \cdot \dfrac{{\arctan x}}{{{x^p}}} = \mathop {\lim }\limits_{x \to  + \infty } \arctan x = 1$,由柯西判别法可知,当$p > 1$时,原积分收敛;当$p < 1$时,原积分发散.
+
+(7)$\int_0^2 {\dfrac{{\rd x}}{{\ln x}}}  = \int_0^{\frac{1}{2}} {\dfrac{{\rd x}}{{\ln x}}}  + \int_{\frac{1}{2}}^1 {\dfrac{{\rd x}}{{\ln x}}}  + \int_1^2 {\dfrac{{\rd x}}{{\ln x}}} $
+
+$\mathop {\lim }\limits_{x \to {1^ + }} (x - 1) \cdot \dfrac{1}{{\ln x}} = \mathop {\lim }\limits_{x \to {1^ + }} \dfrac{{x - 1}}{{\ln x}} = \mathop {\lim }\limits_{x \to {1^ + }} x = 1$由柯西判别法得,积分$\int_1^2 {\dfrac{{\rd x}}{{\ln x}}} $发散;
+
+$\mathop {\lim }\limits_{x \to {1^ - }} (1 - x) \cdot \frac{1}{{\ln x}} = \mathop {\lim }\limits_{x \to {1^ - }} \frac{{1 - x}}{{\ln x}} =  - 1$,由柯西判别法可知,积分$\int_{\frac{1}{2}}^1 {\dfrac{{\rd x}}{{\ln x}}} $发散;
+
+$\mathop {\lim }\limits_{x \to {0^ + }} {x^{\frac{1}{2}}} \cdot \left| {\dfrac{1}{{\ln x}}} \right| =  - \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{{x^{\frac{1}{2}}}}}{{\ln x}} = 0$,由柯西判别法可知,积分$\int_0^{\frac{1}{2}} {\left| {\dfrac{1}{{\ln x}}} \right|\rd x} $收敛,积分$\int_0^{\frac{1}{2}} {\dfrac{{\rd x}}{{\ln x}}} $绝对收敛.故原积分发散.
+
+(9)$\int_0^1 {\dfrac{{\rd x}}{{\sqrt x \sqrt {1 - {x^2}} }}}  = \int_0^{\frac{1}{2}} {\dfrac{{\rd x}}{{\sqrt x \sqrt {1 - {x^2}} }}}  + \int_{\frac{1}{2}}^1 {\dfrac{{\rd x}}{{\sqrt x \sqrt {1 - {x^2}} }}} $
+
+$\mathop {\lim }\limits_{x \to {1^ - }} {(1 - x)^{\frac{1}{2}}} \cdot \dfrac{1}{{\sqrt x \sqrt {1 - {x^2}} }} = \mathop {\lim }\limits_{x \to {1^ - }} \dfrac{1}{{\sqrt x \sqrt {1 + x} }} = \dfrac{1}{{\sqrt 2 }}$由柯西判别法可知,积分$\int_{\frac{1}{2}}^1 {\dfrac{{\rd x}}{{\sqrt x \sqrt {1 - {x^2}} }}} $收敛;
+
+$\mathop {\lim }\limits_{x \to {0^ + }} {(x - 0)^{\frac{1}{2}}} \cdot \dfrac{1}{{\sqrt x \sqrt {1 - {x^2}} }} = \mathop {\lim }\limits_{x \to {1^ - }} \dfrac{1}{{\sqrt {1 - {x^2}} }} = 1$由柯西判别法可知,积分$\int_0^{\frac{1}{2}} {\dfrac{{\rd x}}{{\sqrt x \sqrt {1 - {x^2}} }}} $收敛.故而原积分收敛.
+
+(11)$\int_2^ + \infty } {\dfrac{1}{{{x^3}\sqrt {{x^2} - 3x + 2} }}\rd x}  = \int_2^ + \infty } {\dfrac{1}{{{x^3}\sqrt {(x - 1)(x - 2)} }}\rd x}  = \int_2^3 {\dfrac{1}{{{x^3}\sqrt {(x - 1)(x - 2)} }}\rd x}  + \int_3^ + \infty } {d\frac{1}{{{x^3}\sqrt {(x - 1)(x - 2)} }}\rd x} $
+
+$\mathop {\lim }\limits_{x \to {2^ + }} {(x - 2)^{\dfrac{1}{2}}} \cdot \dfrac{1}{{{x^3}\sqrt {(x - 1)(x - 2)} }} = \mathop {\lim }\limits_{x \to {2^ + }}  \cdot \dfrac{1}{{{x^3}\sqrt {(x - 1)} }} = \dfrac{1}{8}$,由柯西判别法可知,积分$\int_2^3 {\dfrac{1}{{{x^3}\sqrt {(x - 1)(x - 2)} }}\rd x} $收敛;
+
+$\mathop {\lim }\limits_{x \to  + \infty } {x^3} \cdot \dfrac{1}{{{x^3}\sqrt {(x - 1)(x - 2)} }} = \mathop {\lim }\limits_{x \to  + \infty }  \cdot \dfrac{1}{{\sqrt {(x - 1)(x - 2)} }} = 0$
+由柯西判别法可知,积分$\int_3^ + \infty } {\dfrac{1}{{{x^3}\sqrt {(x - 1)(x - 2)} }}\rd x} $收敛;故原积分收敛.
+
+(13)$\mathop {\lim }\limits_{x \to  + \infty } {x^{\frac{3}{2}}} \cdot \left| {\dfrac{{x\sin x}}{{{x^3} + 2{x^2} + 5}}} \right| = \mathop {\lim }\limits_{x \to  + \infty } \dfrac{{{x^{\frac{5}{2}}}}}{{{x^3} + 2{x^2} + 5}} \cdot \left| {\sin x} \right| = \mathop {\lim }\limits_{x \to  + \infty } \dfrac{{{x^{ - \frac{1}{2}}}}}{{1 + 2{x^{ - 1}} + 5{x^{ - 3}}}} \cdot \left| {\sin x} \right| = 0$由柯西判别法可知,积分$\int_0^ + \infty } {\left| {\dfrac{{x\sin x}}{{{x^3} + 2{x^2} + 5}}} \right|\rd x} $收敛,原积分绝对收敛.
+
+(15)$\mathop {\lim }\limits_{x \to {0^ + }} {x^{\frac{3}{4}}} \cdot \dfrac{{\ln \sin x}}{{\sqrt x }} = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\ln \sin x}}{{{x^{ - \frac{1}{4}}}}} = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\cos x}}{{ - \frac{1}{4}{x^{ - \frac{5}{4}}}\sin x}} = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\cos x}}{{ - \frac{1}{4}{x^{ - \frac{1}{4}}}}} = 0$由柯西判别法可知,原积分收敛.
+
+(17)$\mathop {\lim }\limits_{x \to {0^ +} } \dfrac{{\ln (1 + x)}}{{{x^n}}} = \left\{ \begin{gathered}
+  0,0 < n < 1 \hfill \\
+  1,n = 1 \hfill \\
+   + \infty ,n > 1 \hfill \\ 
+\end{gathered}  \right.$
+
+$0 < n \leqslant 1$时,$x = 0$不是瑕点,只需讨论无穷限广义积分的敛散性.
+
+$\mathop {\lim }\limits_{x \to {+} }\infty } {x^m}\dfrac{{\ln (1 + x)}}{{{x^n}}}{=}\left\{ \begin{gathered}
+  \mathop {\lim }\limits_{x \to {+}\infty } \dfrac{{\ln (1 + x)}}{{{x^{n - m}}}} = \mathop {\lim }\limits_{x \to {+}\infty } \frac{1}{{(n - m){x^{n - m - 1}}(1 + x)}} = 0,n > m \hfill \\
+  \mathop {\lim }\limits_{x \to {+}\infty } {x^{m - n}}\ln (1 + x) =  + \infty ,n \leqslant m \hfill \\ 
+\end{gathered}  \right.$
+
+当$m > 1$且$n > m$,即$n > 1$时,广义积分收敛;
+当$m \leqslant 1,n \leqslant m,$即$0 < n \leqslant 1$时,广义积分发散;
+
+$\therefore 0 < n \leqslant 1$时,积分$\int_0^{ + \infty } {\dfrac{{\ln (1 + x)}}{{{x^n}}}\rd x} $发散.
+
+$n > 1$时,$x = 0$杀瑕点,$\int_0^{ + \infty } {\dfrac{{\ln (1 + x)}}{{{x^n}}}\rd x}  = \int_0^1 {\dfrac{{\ln (1 + x)}}{{{x^n}}}\rd x + } \int_1^{ + \infty } {\dfrac{{\ln (1 + x)}}{{{x^n}}}\rd x} $
+
+$\mathop {\lim }\limits_{x \to {0^ + }} {(x - 0)^q}\dfrac{{\ln (1 + x)}}{{{x^n}}} = \left\{ \begin{gathered}
+  0,n - m < 1 \hfill \\
+  1,n - m = 1 \hfill \\
+   + \infty ,n - m > 1 \hfill \\ 
+\end{gathered}  \right.$
+
+当$0 < m < 1,n - m < 1,$即$0 < n \leqslant 1$时,广义积分收敛;
+
+当$m \geqslant 1,n - m = 1,$即$n \geqslant 2$时,广义积分发散;
+
+当$m \geqslant 1,n - m > 1,$即$n > 2$时,广义积分发散.
+
+综上所述,当$1 < n < 2$时,积分$\int_0^{ + \infty } {\dfrac{{\ln (1 + x)}}{{{x^n}}}\rd x} $收敛,其余情况发散.
+
+
+
+
+
+\section{总习题四}
+\begin{flushright}
+  \color{zhanqing!80}
+  \color{zhanqing!80}
+  \ding{43} 教材见374页 % 这里需要添加页数
+\end{flushright}
+
+1,解析:
+
+(1)$\mathop {\lim }\limits_{n \to \infty } \dfrac{1}{n}\sum\limits_{i = 1}^n {\sqrt {1 + \dfrac{i}{n}} }  = \int_0^1 {\sqrt {1 + x} } \rd x = \dfrac{2}{3}\sqrt {{{(1 + x)}^3}}  & \left| {_0^1} \right. = \dfrac{2}{3}(2\sqrt 2  - 1)$
+
+(3)$\mathop {\lim }\limits_{n \to \infty } \dfrac{1}{n}(\sin \dfrac{\pi }{n} + \sin \dfrac{{2\pi }}{n} + \user1{ \ldots } + \sin \dfrac{{(n - 1)\pi }}{n}) = \int_0^1 {\sin x\pi \rd x = \dfrac{1}{\pi }} \int_0^1 {\sin x\pi \rd x\pi }  = \dfrac{{ - 1}}{\pi }(\cos \pi x)\left| {_0^1} \right. = \dfrac{2}{\pi }$
+
+(5)$\mathop {\lim }\limits_{n \to \infty } \dfrac{1}{n}\sum\limits_{i = 1}^n {f(a + i\dfrac{{b - a}}{n}) = \dfrac{1}{{b - a}}} \mathop {\lim }\limits_{n \to \infty } \dfrac{{b - a}}{n}\sum\limits_{i = 1}^n {f(a + i\dfrac{{b - a}}{n}} ) = \dfrac{1}{{b - a}}\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {f({x_i})} \Delta {x_i} = \dfrac{1}{{b - a}}\int_a^b {f(x)\rd x} $
+
+(${x_i}$为区间$(a,b)$上一点)
+
+(7)$\mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\int_0^{\sin x} {\sqrt {\tan t} \rd t} }}{{\int_0^{\tan x} {\sqrt {\sin t} \rd t} }} = \mathop {\lim }\limits_{x \to {0^ + }} \dfrac{{\frac{1}{{2\sqrt {\tan x} }} \cdot \frac{1}{{{{\cos }^2}x}} \cdot \cos x}}{{\frac{1}{{2\sqrt {\sin x} }} \cdot \frac{1}{{{{\cos }^2}x}} \cdot \cos x}} = \mathop {\lim }\limits_{x \to {0^ + }} \sqrt {\cos x}  = 1$
+
+2.解析:
+
+\begin{flalign*} \indent
+    \begin{split}
+    (1)\int_0^{\frac{\pi }{2}} {\dfrac{{x + \sin x}}{{1 + \cos x}}\rd x}  
+    &= \int_0^{\frac{\pi }{2}} {\dfrac{x}{{2{{\cos }^2}\frac{x}{2}}}} \rd x - \int_0^{\frac{\pi }{2}} {\frac{{d(1 + \cos x)}}{{1 + \cos x}}} = \int_0^{\frac{\pi }{2}} {xd(\tan \frac{x}{2}) - \ln (1 + cox)\left| {_0^{\frac{\pi }{2}}} \right.}  \\
+    &= (x\tan \dfrac{x}{2})\left| {_0^{\frac{\pi }{2}}} \right. - \int_0^{\frac{\pi }{2}} {\tan \dfrac{x}{2}\rd x + \ln 2 = \dfrac{\pi }{2}} \\
+    \end{split}&
+\end{flalign*}
+
+(3)令$t = \sqrt {\dfrac{x}{{1 + x}}} \Rightarrow x = \dfrac{{{t^2}}}{{1 - {t^2}}}$
+
+当$x = 0$时,$t = 0$;$x = 3$时,$t = \dfrac{{\sqrt 3 }}{2}$
+
+$\therefore$原式=$\int_0^{\dfrac{{\sqrt 3 }}{2}} {\arcsin t\rd \dfrac{{{t^2}}}{{1 - {t^2}}}}  = \arcsin t\dfrac{{{t^2}}}{{1 - {t^2}}}\left| {_0^{\frac{{\sqrt 3 }}{2}}} \right. - \int_0^{\dfrac{{\sqrt 3 }}{2}} {\frac{{{t^2}}}{{1 - {t^2}}}\rd \arcsin t} $
+
+$= \pi  - \int_0^{\frac{{\sqrt 3 }}{2}} {\dfrac{{{t^2}}}{{1 - {t^2}}}\dfrac{1}{{\sqrt {1 - {t^2}} }}} \rd t$
+
+再令$t = \sin y$,$t = 0$时,$y = 0$;$t = \dfrac{{\sqrt 3 }}{2}$时,$y = \dfrac{\pi }{3}$
+
+$\therefore$原式=$\pi  - \int_0^{\frac{\pi }{3}} {\dfrac{{{{\sin }^2}y}}{{{{\cos }^2}y - \cos y}}\cos y\rd y = \pi  - \int_0^{\frac{\pi }{3}} {\frac{{1 - {{\cos }^2}y}}{{{{\cos }^2}y}}\rd x = \dfrac{{4\pi }}{3} - \sqrt 3 } } $
+
+\begin{flalign*} \indent
+    \begin{split}
+    (5)\int_0^{\frac{\pi }{2}} {\dfrac{{\sin x - 2\cos x}}{{3\sin x + \cos x}}} \rd x
+    & = \int_0^{\frac{\pi }{2}} {\dfrac{{\frac{1}{{10}}(3\sin x + \cos x) - \dfrac{7}{{10}}(3\cos x - \sin x)}}{{(3\sin x + \cos x)}}\rd x}  = \dfrac{1}{{10}}\int_0^{\frac{\pi }{2}} {\rd x}  - \dfrac{7}{{10}}\int_0^{\frac{\pi }{2}} {\dfrac{1}{{3\sin x + \cos x}}} \\
+    &= \dfrac{\pi }{{20}} - \dfrac{7}{{10}}\ln 3 = \dfrac{1}{{20}}(\pi  - 14\ln 3)\\
+    \end{split}&
+\end{flalign*}
+
+4.证明:
+
+(1)$F'(x) = f(x) + \dfrac{1}{{f(x)}}$
+
+由题目得${\rm{F}}'(x) = {[\sqrt {f(x)}  - \dfrac{1}{{\sqrt {f(x)} }}]^2} + 2 \ge 2$
+
+(2)$F(a) = \int_a^a {f(t)\rd t + \int_b^a {\frac{{\rd t}}{{f(t)}} =  - \int_a^b {\frac{{\rd t}}{{f(t)}} < 0} } } F(b) = \int_a^b {f(t)dt + \int_b^b {\frac{{\rd t}}{{f(t)}}}  = \int_a^b {f(t)\rd t > 0} } $
+
+由定理可知,$F(x)$在${\rm{[a,b]}}$上连续,又有零点定理可知,方程$F(x) = 0$在$(a,b)$内至少有一个根.
+
+6.证明:${\left[ {\int_a^b {f(x)\cos kx\rd x} } \right]^2} + {\left[ {\int_a^b {f(x)\sin kx\rd x} } \right]^2} \le {\left[ {\int_a^b {f(x)\rd x} } \right]^2}$
+
+$ \Rightarrow {\left( {\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {\dfrac{1}{n}f(a + i\dfrac{{b - a}}{n})\cos k(a + i\dfrac{{b - a}}{n})} } \right)^2} + {\left( {\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {\dfrac{1}{n}f(a + i\dfrac{{b - a}}{n})\sin k(a + i\dfrac{{b - a}}{n})} } \right)^2} \le {\left( {\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {\frac{1}{n}f(a + i\frac{{b - a}}{n})} } \right)^2}$
+
+不妨设\[{p_i} = f(a + i\dfrac{{b - a}}{n})\cos k(a + i\dfrac{{b - a}}{n}),{q_i} = f(a + i\dfrac{{b - a}}{n})\sin k(a + i\dfrac{{b - a}}{n}),{r_i} = f(a + i\dfrac{{b - a}}{n})\]
+
+则只需证明${\left( {\sum\limits_{i = 1}^n {{p_i}} } \right)^2} + {\left( {\sum\limits_{i = 1}^n {{q_i}} } \right)^2} \le {\left( {\sum\limits_{i = 1}^n {{r_i}} } \right)^2},$
+
+则只需证明再取极限即可证明原不等式.
+
+${\left( {\sum\limits_{i = 1}^n {{p_i}} } \right)^2} = \sum\limits_{i = 1}^n {p_i^2}  + \sum\limits_{i = 1}^n {\sum\limits_{\scriptstylej = 1\hfill\atop
+\scriptstylej \ne i\hfill}^n {{p_i}{p_j}} } ,{\left( {\sum\limits_{i = 1}^n {{q_i}} } \right)^2} = \sum\limits_{i = 1}^n {q_i^2}  + \sum\limits_{i = 1}^n {\sum\limits_{\scriptstylej = 1\hfill\atop
+\scriptstylej \ne i\hfill}^n {{q_i}{q_j}} } ,{\left( {\sum\limits_{i = 1}^n {{r_i}} } \right)^2} = \sum\limits_{i = 1}^n {r_i^2}  + \sum\limits_{i = 1}^n {\sum\limits_{\scriptstylej = 1\hfill\atop
+\scriptstylej \ne i\hfill}^n {{r_i}{r_j}} } $
+
+且$p_i^2 + q_i^2 = r_i^2$
+
+$\therefore {\left( {\sum\limits_{i = 1}^n {{p_i}} } \right)^2} + {\left( {\sum\limits_{i = 1}^n {{q_i}} } \right)^2} = \sum\limits_{i = 1}^n {p_i^2}  + \sum\limits_{i = 1}^n {\sum\limits_{\scriptstylej = 1\hfill\atop
+\scriptstylej \ne i\hfill}^n {{p_i}{p_j}} }  + \sum\limits_{i = 1}^n {q_i^2}  + \sum\limits_{i = 1}^n {\sum\limits_{\scriptstylej = 1\hfill\atop
+\scriptstylej \ne i\hfill}^n {{q_i}{q_j}} }  = \sum\limits_{i = 1}^n {r_i^2}  + \sum\limits_{i = 1}^n {\sum\limits_{\scriptstylej = 1\hfill\atop
+\scriptstylej \ne i\hfill}^n {{p_i}{p_j}} }  + \sum\limits_{i = 1}^n {\sum\limits_{\scriptstylej = 1\hfill\atop
+\scriptstylej \ne i\hfill}^n {{q_i}{q_j}} } $
+
+所以只需证明对$\forall i \ne j,{p_i}{p_j} + {q_i}{q_j} \le {r_i}{r_j}$
+
+若${r_i} = 0$或${r_j} = 0$,此时有${p_i} = {q_i} = 0$或${p_j} = {q_j} = 0$,上式成立.
+
+反之,令$\sin A = \dfrac{{{p_i}}}{{{r_i}}},\cos A = \dfrac{{{q_i}}}{{{r_i}}},\sin B = \dfrac{{{p_j}}}{{{r_j}}},\cos B = \dfrac{{{q_j}}}{{{r_j}}}$,则上式等价于$\sin A\sin B + \cos A\cos B \le 1 \Rightarrow \cos (B - A) \le 1$
+
+$\therefore {\left( {\sum\limits_{i = 1}^n {{p_i}} } \right)^2} + {\left( {\sum\limits_{i = 1}^n {{q_i}} } \right)^2} \le {\left( {\sum\limits_{i = 1}^n {{r_i}} } \right)^2},\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {{p_i}}  = \int_a^b {f(x)\cos kx\rd x} ,\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {{q_i}}  = \int_a^b {f(x)\sin kx\rd x} ,$
+
+$\mathop {\lim }\limits_{n \to \infty } \sum\limits_{i = 1}^n {{r_i}}  = \int_a^b {f(x)\rd x} .$
+
+$\therefore {\left[ {\int_a^b {f(x)\cos kx\rd x} } \right]^2} + {\left[ {\int_a^b {f(x)\sin kx\rd x} } \right]^2} \le {\left[ {\int_a^b {f(x)\rd x} } \right]^2}.$
+
+8.解析:
+
+$f(x) = \left\{ \begin{array}{l}
+{e^{ - x}} x \ge 0\\
+1 + {x^2} x < 0
+\end{array} \right.$
+
+令$t = x + 1$$\therefore x \ge 0$时$t \ge 1\ ;$$x < 0 $时$t < 1$
+
+$f(t - 1) = \left\{ \begin{array}{l}
+{e^{1 - t}} t \ge 1\\
+1 + {(t - 1)^2} t < 1
+\end{array} \right.$
+
+$\int_{ - \frac{1}{2}}^1 {f(t - 1)\rd t}  = \int_{ - \frac{1}{2}}^1 {[1 + {{(t - 1)}^2}]\rd t}  + \int_1^2 {{e^{1 - t}}} \rd t = \dfrac{{29}}{8} - \dfrac{1}{e}$
+
+20.证明:令$F(t) = \int_a^t {xf(x)\rd x}  - \dfrac{{a + t}}{2}\int_a^t {f(x)\rd x} ,t \in [a,b]$
+
+则$F'(t) = tf(t) - \dfrac{{a + t}}{2}f(t) - \dfrac{1}{2}\int_a^t {f(x)\rd x} $
+
+$F''(t) = f(t) + tf'(t) - \dfrac{1}{2}f(t) - \dfrac{{a + t}}{2}f'(t) - \dfrac{1}{2}f(t) = \dfrac{{t - a}}{2}f'(t).$
+
+$\therefore f(x)$在$[a,b]$上单调递增
+
+$\therefore f'(t) \ge 0,\dfrac{{t - a}}{2} \ge 0 \Rightarrow \dfrac{{t - a}}{2}f'(t) \ge 0,t \in [a,b]$
+
+$\therefore F'(t)$在$[a,b]$上单调增加,又$F'(a) = 0,$故$F'(t) \ge 0,t \in [a,b]$
+
+$\therefore F(t)$在$[a,b]$上单调增加,又$F(a) = 0,$故$F(b) = \int_a^b {xf(x)\rd x}  - \dfrac{{a + b}}{2}\int_a^b {f(x)\rd x}  \ge 0$
+
+即$\int_a^b {xf(x)\rd x}  \ge \dfrac{{a + b}}{2}\int_a^b {f(x)\rd x} $.得证.
+
+25.证明:先证数列$\left\{ {{a_n}} \right\}$为单调的:
+
+${a_n} = \sum\limits_{k = 1}^n {f(k)}  - \int_1^n {f(x)\rd x} $
+
+$\therefore {a_{n + 1}} - {a_n} = f(n + 1) - \int_n^{n + 1} {f(x)\rd x}  = f(n + 1) - f(\xi )[(n + 1) - n] = f(n + 1) - f(\xi ),\xi  \in (n,n + 1)$
+
+又$f(x)$在区间$[0, + \infty )$上单调减少且非负连续,故$f(n + 1) < f(\xi ).$
+
+$\therefore {a_{n + 1}} - {a_n} < 0,$即数列$\left\{ {{a_n}} \right\}$单调递减.下面证明数列$\left\{ {{a_n}} \right\}$有界:
+
+${a_n} = \sum\limits_{k = 1}^n {f(k)}  - \int_1^n {f(x)\rd x}  = \sum\limits_{k = 1}^n {f(k)}  - \sum\limits_{k = 1}^{n - 1} {\int_k^{k + 1} {f(x)\rd x} }  = f(n) + \sum\limits_{k = 1}^{n - 1} {[f(k) - \int_k^{k + 1} {f(x)\rd x} ]} $
+
+$ = f(n) + \sum\limits_{k = 1}^{n - 1} {\int_k^{k + 1} {[f(k) - f(x)]\rd x} } $
+
+又$f(x)$在区间$[0, + \infty )$上单调减少且非负,
+
+$\therefore f(k) - f(x) > 0,x \in (k,k + 1),f(n) > 0$
+
+$\therefore {a_n} = f(n) + \sum\limits_{k = 1}^{n - 1} {\int_k^{k + 1} {[f(k) - f(x)]\rd x} }  > 0$
+
+$\therefore$数列$\left\{ {{a_n}} \right\}$单调递减且有下界,故$\left\{ {{a_n}} \right\}$的极限存在.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,250 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\type{常数项级数的审敛}
+
+  \hspace*{2em}包括正项级数、交错级数和任意项级数，要求读者掌握几个基本结论和判别法.
+
+  \Example{%
+    2016-2017-1-期末-选择题-6
+  }{%
+    若级数$\sum\limits_{n=1}^{\infty }{{{a}_{n}}}$收敛，则级数
+    \pickout{D}.
+    \options{$\sum\limits_{n=1}^{\infty }{\left| {{a}_{n}} \right|}$收敛}
+      {$\sum\limits_{n=1}^{\infty }{{{(-1)}^{n}}{{a}_{n}}}$收敛}
+      {$\sum\limits_{n=1}^{\infty }{{{a}_{n}}{{a}_{n+1}}}$收敛}
+      {$\sum\limits_{n=1}^{\infty }{\dfrac{{{a}_{n}}+{{a}_{n+1}}}{2}}$收敛}
+  }{%
+    D.
+  }{%
+    ABC选项可举反例$\sum\limits_{n=1}^{\infty }{\dfrac{{{\left( -1 \right)}^{n}}}{\sqrt{n}}}$，D选项实际有$\sum\limits_{n=1}^{\infty }{\dfrac{{{a}_{n}}+{{a}_{n+1}}}{2}}=\dfrac{1}{2}\left( \sum\limits_{n=1}^{\infty }{{{a}_{n}}}+\sum\limits_{n=2}^{\infty }{{{a}_{n}}} \right)$
+
+    而后者收敛，故D收敛.
+  }
+
+  \Example{%
+    2014-2015-1-期末-选择题-12
+  }{%
+    若常数项级数$\sum\limits_{n=0}^{\infty }{a_{n}^{2}}$收敛，则级数$\sum\limits_{n=0}^{\infty }{{{a}_{n}}}$
+    \pickout{D}.
+  \options{发散}
+    {绝对收敛}
+    {条件收敛}
+    {可能收敛,也可能发散.}
+  }{%
+    D.
+  }{%
+    举反例：令${{a}_{n}}=\dfrac{1}{n}$有$\sum\limits_{n=0}^{\infty }{{{a}_{n}}}$发散，令${{a}_{n}}=\dfrac{1}{{{n}^{2}}}$有$\sum\limits_{n=0}^{\infty }{{{a}_{n}}}$收敛，于是D正确.
+  }
+
+  \Example{%
+    2014-2015-1-期末-证明题-19
+  }{%
+    设正项数列$\left\{ {{a}_{n}} \right\}$单调减少，且$\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}{{a}_{n}}}$发散. 试证：级数$\sum\limits_{n=1}^{\infty }{{{\left( \dfrac{1}{{{a}_{n}}+1} \right)}^{n}}}$收敛.
+  }{%
+    见解析.
+  }{%
+    正项数列$\left\{ {{a}_{n}} \right\}$有下界，又由单调减少可知$\left\{ {{a}_{n}} \right\}$收敛，且由数列极限的保号性知$\lim\limits_{n \to +\infty} {{a}_{n}} \ge 0$.
+
+    而交错级数$\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}{{a}_{n}}}$发散，必定有$\lim\limits_{n \to +\infty} {{a}_{n}}\ne 0$（否则可由莱布尼茨审敛法推知$\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}{{a}_{n}}}$收敛）
+
+    于是$\lim\limits_{n \to +\infty} {{a}_{n}}>0$.
+    于是对正项级数$\sum\limits_{n=1}^{\infty }{{{\left( \dfrac{1}{{{a}_{n}}+1} \right)}^{n}}}$由Cauchy根值审敛法有
+
+    $$\rho =\lim\limits_{n \to +\infty} {{\left[ {{\left( \dfrac{1}{{{a}_{n}}\text{+}1} \right)}^{n}} \right]}^{\frac{1}{n}}}=\lim\limits_{n \to +\infty} \dfrac{1}{{{a}_{n}}\text{+}1}=\dfrac{1}{1+\lim\limits_{n \to +\infty} {{a}_{n}}}<1$$
+    从而级数$\sum\limits_{n=1}^{\infty }{{{\left( \dfrac{1}{{{a}_{n}}+1} \right)}^{n}}}$收敛.
+  }
+
+  \Example{%
+    2013-2014-1-期末-选择题-12
+  }{%
+    设常数$k>0$，且$\sum\limits_{n=1}^{\infty }{a_{n}^{2}}$收敛，则$\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}\dfrac{\left| {{a}_{n}} \right|}{\sqrt{{{n}^{2}}+k}}}$
+    \pickout{A}.
+    \options{绝对收敛}
+      {条件收敛}
+      {发散}
+      {收敛性与$k$值有关}
+  }{%
+    A.
+  }{%
+    由基本不等式有$\dfrac{\left| {{a}_{n}} \right|}{\sqrt{{{n}^{2}}+k}}=\sqrt{\dfrac{a_{n}^{2}}{{{n}^{2}}+k}}\dfrac{1}{2}\left( a_{n}^{2}+\dfrac{1}{{{n}^{2}}+k} \right)<\dfrac{1}{2}\left( a_{n}^{2}+\dfrac{1}{n} \right)$
+
+    而$\sum\limits_{n=1}^{\infty }{a_{n}^{2}}$与$\sum\limits_{n=1}^{\infty }{\dfrac{1}{{{n}^{2}}}}$均收敛，于是由比较审敛法可知$\sum\limits_{n=1}^{\infty }{\sqrt{\dfrac{a_{n}^{2}}{{{n}^{2}}+k}}}=\sum\limits_{n=1}^{\infty }{\left| {{\left( -1 \right)}^{n}}\dfrac{\left| {{a}_{n}} \right|}{\sqrt{{{n}^{2}}+k}} \right|}$收敛
+
+    于是$\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}\dfrac{\left| {{a}_{n}} \right|}{\sqrt{{{n}^{2}}+k}}}$绝对收敛，故选A.
+  }
+
+  \Example{%
+    2012-2013-1-期末-填空题-6
+  }{%
+    设级数$\sum\limits_{n=1}^{\infty }{\left( {{a}_{n}}-{{a}_{n+1}} \right)}$收敛且和为$S$，则$\lim\limits_{n \to +\infty} {{a}_{n}}=$
+    \fillin{${{a}_{1}}-S$}.
+  }{%
+    ${{a}_{1}}-S$.
+  }{%
+    由常数项级数的部分和定义有
+    $$\sum\limits_{n=1}^{\infty }{\left( {{a}_{n}}-{{a}_{n+1}} \right)}=\lim\limits_{n \to +\infty} {{S}_{n}}=\lim\limits_{n \to +\infty} \sum\limits_{i=1}^{n}{\left( {{a}_{i}}-{{a}_{i+1}} \right)}=\lim\limits_{n \to +\infty} \left( {{a}_{1}}-{{a}_{n+1}} \right)={{a}_{1}}-\lim\limits_{n \to +\infty} {{a}_{n+1}}=S$$
+    于是由极限的四则运算法则及唯一性可得$\lim\limits_{n \to +\infty} {{a}_{n}}={{a}_{1}}-S$.
+  }
+
+  \Example{%
+    2012-2013-1-期末-选择题-10
+  }{%
+    若正项级数$\sum\limits_{n=1}^{\infty }{{{u}_{n}}}$收敛，则下列级数中一定收敛的是
+    \pickout{D}.
+    \options{$\sum\limits_{n=1}^{\infty }{({{u}_{n}}+a)}(0\le a<1)$}
+      {$\sum\limits_{n=1}^{\infty }{\sqrt{{{u}_{n}}}}$}
+      {$\sum\limits_{n=1}^{\infty }{\dfrac{1}{{{u}_{n}}}}$}
+      {$\sum\limits_{n=1}^{\infty }{{{(-1)}^{n}}{{u}_{n}}}$}
+  }{%
+    D.
+  }{%
+    通项趋于0是常数项级数收敛的必要条件，C错；
+    当$a\ne 0$时$\sum\limits_{n=1}^{\infty }{\left( {{u}_{n}}+a \right)}$不满足该条件，A亦错；
+    对于B，可举反例${{u}_{n}}=\dfrac{1}{{{n}^{2}}}$；
+    由已知条件可证得D选项的级数在通项加绝对值之后仍收敛，故为绝对收敛，于是收敛.
+  }
+
+\type{幂级数的审敛与计算和函数}
+
+  \hspace*{2em}包括幂级数的相关概念、性质，和函数的相关概念、性质，要求读者掌握性质及基本解题方法.
+
+  \Example{%
+    2015-2016-1-期末-填空题-2
+  }{%
+    幂级数$\sum\limits_{n=0}^{\infty }{\dfrac{(2n-1)}{{{2}^{n}}}{{x}^{2n-2}}}$的收敛区间为
+    \fillin{$(-\sqrt{2},\sqrt{2})$}.
+  }{%
+    $(-\sqrt{2},\sqrt{2})$.
+  }{%
+    $\sum\limits_{n=0}^{\infty }{\dfrac{(2n-1)}{{{2}^{n}}}{{x}^{2n-2}}}=-\dfrac{1}{{{x}^{2}}}+\sum\limits_{n=0}^{\infty }{\dfrac{(2n+1)}{{{2}^{n+1}}}{{x}^{2n}}}=-\dfrac{1}{{{x}^{2}}}+\dfrac{1}{2}\sum\limits_{n=0}^{\infty }{(2n+1){{\left( \dfrac{x}{\sqrt{2}} \right)}^{2n}}}$
+
+    $R=\lim\limits_{n \to +\infty} \left| \dfrac{{{a}_{n}}}{{{a}_{n\text{+}1}}} \right| = \lim\limits_{n \to +\infty} \dfrac{2n+1}{2n+3}=1$，
+    $\therefore -1<\dfrac{x}{\sqrt{2}}<1\Rightarrow x\in (-\sqrt{2},\sqrt{2})$.
+  }
+
+  \Example{%
+    2016-2017-1-期末-填空题-8
+  }{%
+    幂级数$\sum\limits_{n=0}^{\infty }{\dfrac{{{\re}^{n}}-{{\left( -1 \right)}^{n}}}{{{n}^{2}}}{{x}^{n}}}$的收敛半径为
+    \fillin{$\dfrac{1}{\re}$}.
+  }{%
+    $\dfrac{1}{\re}$.
+  }{%
+    显然幂级数不缺项，则收敛半径
+    $$R=\lim\limits_{n \to +\infty} \left| \dfrac{{{a}_{n}}}{{{a}_{n+1}}} \right|
+    =\lim\limits_{n \to +\infty} \dfrac{\dfrac{{{\re}^{n}}-{{(-1)}^{n}}}{{{n}^{2}}}}{\dfrac{{{\re}^{n+1}}-{{(-1)}^{n+1}}}{{{(n+1)}^{2}}}}
+    =\lim\limits_{n \to +\infty} {{\left( \dfrac{n+1}{n} \right)}^{2}}\dfrac{1-{{\re}^{-n}}{{(-1)}^{n}}}{e-{{\re}^{-n}}{{(-1)}^{n+1}}}
+    =\dfrac{1}{\re}.$$
+  }
+
+  \Example{%
+    2016-2017-1-期末-解答题-16
+  }{%
+    求幂级数$1+\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}\dfrac{{{x}^{2n}}}{2n}}\left( \left| x \right|<1 \right)$的和函数$f\left( x \right)$及其极值.
+  }{%
+    见解析.
+  }{%
+    由和函数的可微性和可积性有
+    \begin{align*}
+      f\left( x \right) & =1+\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}\dfrac{{{x}^{2n}}}{2n}}=1+\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}\int_{0}^{x}{{{t}^{2n-1}}\rd t}}=1+\int_{0}^{x}{\sum\limits_{n=1}^{\infty }{{{\left( -1 \right)}^{n}}{{t}^{2n-1}}}\rd t} \\
+      & =1+\int_{0}^{x}{\dfrac{1}{t}\sum\limits_{n=1}^{\infty }{{{\left( -{{t}^{2}} \right)}^{n}}}\rd t}=1+\int_{0}^{x}{\dfrac{1}{t}\cdot \left( \dfrac{1}{1+{{t}^{2}}}-1 \right)\rd t} \\
+      & =1-\int_{0}^{x}{\dfrac{t}{1+{{t}^{2}}}\rd t}=1-\dfrac{1}{2}\ln \left( 1+{{x}^{2}} \right),\left| x \right|<1
+    \end{align*}
+    则${f}'\left( x \right)=-\dfrac{1}{2}\cdot \dfrac{2x}{1+{{x}^{2}}}=-\dfrac{x}{1+{{x}^{2}}},x\in \left( -1,1 \right)$.于是$\forall x\in \left( -1,0 \right),{f}'\left( x \right)>0;~\forall x\in \left( 0,1 \right),{f}'\left( x \right)<0$
+
+    从而$f\left( x \right)$有极大值$f\left( 0 \right)=1$.
+  }
+
+  \Example{%
+    2013-2014-1-期末-填空题-2
+  }{%
+    幂级数$\sum\limits_{n=1}^{\infty }{\dfrac{{{x}^{n}}}{n}}$的和函数$s\left( x \right)=$
+    \fillin{$-\ln (1-x),x\in [-1,1)$}.
+  }{%
+    $-\ln (1-x),x\in [-1,1)$.
+  }{%
+    $\sum\limits_{n=1}^{\infty }{\dfrac{{{x}^{n}}}{n}}$的收敛半径$R=\lim\limits_{n \to +\infty} \left| \dfrac{{{a}_{n}}}{{{a}_{n+1}}} \right|=\lim\limits_{n \to +\infty} \dfrac{n}{n+1}=1$，且$\sum\limits_{n=1}^{\infty }{\dfrac{1}{n}}$发散，$\sum\limits_{n=1}^{\infty }{\dfrac{{{\left( -1 \right)}^{n}}}{n}}$收敛
+
+    于是幂级数的收敛域为$\left[ -1,1 \right)$.
+
+    由和函数的可微性和可积性得
+    \begin{align*}
+      s\left( x \right) & =\int_{0}^{x}{{s}'\left( t \right)\rd t}
+      =\int_{0}^{x}{\sum\limits_{n=1}^{\infty }{{{\left( \dfrac{{{t}^{n}}}{n} \right)}^{\prime }}}\rd t}
+      =\int_{0}^{x}{\sum\limits_{n=1}^{\infty }{{{t}^{n-1}}}\rd t}
+      =\int_{0}^{x}{\sum\limits_{n=0}^{\infty }{{{t}^{n}}}\rd t}
+      =\int_{0}^{x}{\dfrac{1}{1-t}\rd t} \\
+      & =-\ln \left( 1-x \right),x\in \left[ -1,1 \right).
+    \end{align*}
+  }
+
+  \Example{%
+    2012-2013-1-期末-解答题-13
+  }{%
+    将函数$f\left( x \right)=\dfrac{1}{2{{x}^{2}}-3x+1}$展开为$x$的幂级数.
+  }{%
+    见解析.
+  }{%
+    观察结构，对$f\left( x \right)$进行部分分式展开得到
+    $f\left( x \right)=\dfrac{1}{\left( 1-x \right)\left( 1-2x \right)}=\dfrac{2}{1-2x}-\dfrac{1}{1-x}$
+
+    而$\dfrac{2}{1-2x}=2\sum\limits_{n=0}^{\infty }{{{\left( 2x \right)}^{n}}}=\sum\limits_{n=0}^{\infty }{{{2}^{n+1}}{{x}^{n}}},x\in \left( -\frac{1}{2},\frac{1}{2} \right);-\dfrac{1}{1-x}=-\sum\limits_{n=0}^{\infty }{{{x}^{n}}},x\in \left( -1,1 \right)$
+
+    故$f\left( x \right)=\sum\limits_{n=0}^{\infty }{{{2}^{n+1}}{{x}^{n}}}-\sum\limits_{n=0}^{\infty }{{{x}^{n}}}=\sum\limits_{n=0}^{\infty }{\left( {{2}^{n+1}}-1 \right){{x}^{n}}},x\in \left( -\frac{1}{2},\frac{1}{2} \right)$.
+  }
+
+\type{任意项级数的计算}
+
+  \Example{%
+    2015-2016-1-期末-选择题-12
+  }{%
+    级数$\sum\limits_{n=0}^{\infty }{\dfrac{{{\left( -1 \right)}^{n}}}{2n+1}}$的和为
+    \pickout{D}
+    \options{$\pi $}
+      {$\dfrac{\pi }{2}$}
+      {$\dfrac{\pi }{3}$}
+      {$\dfrac{\pi }{4}$}
+  }{%
+    D.
+  }{%
+    设$s\left( x \right)=\sum\limits_{n=0}^{\infty }{\dfrac{{{\left( -1 \right)}^{n}}}{2n+1}{{x}^{2n+1}}}$，收敛域为$\left( -1,1 \right]$.
+
+    由和函数的可微性有${s}'\left( x \right)=\sum\limits_{n=0}^{\infty }{{{\left( -1 \right)}^{n}}{{x}^{2n}}}=\sum\limits_{n=0}^{\infty }{{{\left( -{{x}^{2}} \right)}^{n}}}=\dfrac{1}{1+{{x}^{2}}}$
+
+    于是$s\left( x \right)=\displaystyle\int_{0}^{x}{{s}'\left( t \right)\rd t}=\arctan x$. 故$\sum\limits_{n=0}^{\infty }{\dfrac{{{\left( -1 \right)}^{n}}}{2n+1}}=s\left( 1 \right)=\dfrac{\pi }{4}$.
+  }
+
+  \Example{%
+    2014-2015-1-期末-解答题-15
+  }{%
+    求数项级数$\sum\limits_{n=1}^{\infty }{\dfrac{n+1}{{{2}^{n}}n!}}$的和.
+  }{%
+    见解析.
+  }{%
+    拆项
+    \begin{align*}
+      \sum\limits_{n=1}^{\infty }{\dfrac{n+1}{{{2}^{n}}n!}} & =\sum\limits_{n=1}^{\infty }{\dfrac{1}{\left( n-1 \right)!{{2}^{n}}}}+\sum\limits_{n = 1}^{\infty }{\dfrac{1}{n!{{2}^{n}}}}
+      =\dfrac{1}{2}\sum\limits_{n=\text{0}}^{\infty }{\dfrac{{{\left( {1}/{2}\; \right)}^{n}}}{n!}}+\sum\limits_{n=\text{0}}^{\infty }{\dfrac{{{\left( {1}/{2}\; \right)}^{n}}}{n!}}-1
+      =\dfrac{3}{2}\sum\limits_{n=\text{0}}^{\infty }{\dfrac{{{\left( {1}/{2}\; \right)}^{n}}}{n!}}-1 \\
+      & = {{\left. \dfrac{3}{2}\cdot {{\re}^{x}} \right|}_{x=\frac{1}{2}}}-1
+      =\dfrac{3}{2}\sqrt{\re}-1.
+    \end{align*}
+  }
+
+\type{傅里叶级数的简单问题}
+
+  \Example{%
+    2015-2016-1-期末-填空题-5
+  }{%
+    设$f\left( x \right)$是以$2\pi $为周期的函数，且$f\left( x \right)=\begin{cases}
+    -1, & -\pi <x \le 0 \\
+    1+{{x}^{2}}, & 0<x \le \pi  \\
+  \end{cases}$，则$f\left( x \right)$的傅里叶级数在$x=5\pi $处收敛于
+  \fillin{$\dfrac{\pi ^2}{2}$}.
+  }{%
+    $\dfrac{\pi ^2}{2}$.
+  }{%
+    由狄利克雷充分条件，$f\left( x \right)$的傅里叶级数在$x=5\pi $处收敛于
+    $$\dfrac{1}{2}\left[ f\left( 5\pi + \right)+f\left( 5\pi - \right) \right]=\dfrac{1}{2}\left[ f\left( \pi + \right)+f\left( \pi - \right) \right]=\dfrac{{{\pi }^{2}}}{2}.$$
+  }

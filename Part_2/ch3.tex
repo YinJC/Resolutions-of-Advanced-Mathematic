@@ -1,0 +1,686 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\type{较为复杂的极限的计算}
+
+  \hspace*{2em}在已经学习过的基本方法的基础上，进一步结合洛必达法则、泰勒公式与拉格朗日中值定理.
+
+  \Example{%
+    2011-2011-1-期中-填空题-3
+  }{%
+    $\lim\limits_{x \to 0} \dfrac{{{\left( 1+x \right)}^{\frac{1}{x}}}-{\re}}{x}=$
+    \fillin{$-\dfrac{1}{2}{\re}$}.
+  }{%
+    $-\dfrac{1}{2}{\re}$.
+  }{%
+    原式$=\lim\limits_{x \to 0} \dfrac{{{{\re}}^{\frac{\ln (1+x)}{x}}}-{\re}}{x}
+    ={\re}\cdot \lim\limits_{x \to 0} \dfrac{{{{\re}}^{\frac{\ln \left( 1+x \right)}{x}-1}}-1}{x}$，
+    由等价无穷小$\ln \left( 1+x \right)\sim x\sim {{{\re}}^{x}}-1\left( x\to 0 \right)$可知
+
+    原式$={\re}\cdot \lim\limits_{x \to 0} \dfrac{\frac{\ln \left( 1+x \right)}{x}-1}{x}
+    ={\re}\cdot \lim\limits_{x \to 0} \dfrac{\ln \left( 1+x \right)-x}{{{x}^{2}}}
+    ={\re}\cdot \lim\limits_{x \to 0} \dfrac{\frac{1}{1+x}-1}{2x}
+    ={\re}\cdot \lim\limits_{x \to 0} \dfrac{1-\left( 1+x \right)}{2x\left( 1+x \right)}
+    =-\dfrac{{\re}}{2}$.
+
+    其中用到了洛必达法则（也可以采用$\ln \left( 1+x \right)$的泰勒公式求解）.
+  }
+
+  \Example{%
+    2011-2011-1-期中-选择题-16
+  }{%
+    若$\lim\limits_{x \to 0} \dfrac{\sin 6x+xf(x)}{{{x}^{3}}}=0$，则$\lim\limits_{x \to +\infty} \dfrac{6+f(x)}{{{x}^{2}}}=$
+    \fillin{$36$}.
+  }{%
+    $36$.
+  }{%
+    由极限四则运算法则及泰勒公式$\sin x=x-\dfrac{1}{6}{{x}^{3}}+o\left( {{x}^{3}} \right),x\in \left( -\delta ,\delta  \right)$知
+    \begin{align*}
+      & \lim\limits_{x \to 0} \dfrac{6+f\left( x \right)}{{{x}^{2}}}
+      = \lim\limits_{x \to 0} \dfrac{6x+xf\left( x \right)}{{{x}^{3}}}
+      = \lim\limits_{x \to 0} \left[ \dfrac{\sin 6x+xf\left( x \right)}{{{x}^{3}}}+\dfrac{6x-\sin 6x}{{{x}^{3}}} \right] \\
+      & =\lim\limits_{x \to 0} \dfrac{\sin 6x+xf\left( x \right)}{{{x}^{3}}}+\lim\limits_{x \to 0} \dfrac{6x-\sin 6x}{{{x}^{3}}}
+      = 0+\lim\limits_{x \to 0} \dfrac{\frac{1}{6}{{\left( 6x \right)}^{3}}}{{{x}^{3}}}=36.
+    \end{align*}
+  }
+
+  \Example{%
+    2014-2015-1-期中-填空题-1
+  }{%
+    设曲线$y=f\left( x \right)={{x}^{n}}$在点$\left( 1,1 \right)$处的切线与$x$轴的交点为$\left( {{\xi }_{n}},0 \right)$，则$\lim\limits_{n \to +\infty} f\left( {{\xi }_{n}} \right)=$
+    \fillin{$\dfrac{1}{\re}$}.
+  }{%
+    $\dfrac{1}{{\re}}$.
+  }{%
+    由${f}'\left( 1 \right)=n$知点$\left( 1,1 \right)$处的切线为$y-1=n\left( x-1 \right)\Rightarrow x=1+\dfrac{y-1}{n}$
+
+    于是${{\xi }_{n}}=1-\dfrac{1}{n}$，
+    故$\lim\limits_{n \to +\infty} f\left( {{\xi }_{n}} \right)
+    =\lim\limits_{n \to +\infty} {{\left( 1-\dfrac{1}{n} \right)}^{n}}
+    =\dfrac{1}{{\re}}$.
+  }
+
+  \Example{%
+    2017-2018-1-期中-解答题-2
+  }{%
+    利用泰勒展开式求极限$\lim\limits_{x \to 0} \dfrac{{{\re}^{x}}\sin x-x\left( 1+x \right)}{{{x}^{3}}}$.
+  }{%
+    见解析.
+  }{%
+    原式$=\lim\limits_{x \to 0} \dfrac{\left[ 1+x+\frac{1}{2}{{x}^{2}}+o\left( {{x}^{2}} \right) \right]\left[ x-\frac{1}{6}{{x}^{3}}+o\left( {{x}^{3}} \right) \right]-x\left( 1+x \right)}{{{x}^{3}}}$
+
+    $=\lim\limits_{x \to 0} \dfrac{x-\frac{1}{6}{{x}^{3}}+{{x}^{2}}+\frac{1}{2}{{x}^{3}}+o\left( {{x}^{3}} \right)-x-{{x}^{2}}}{{{x}^{3}}}=\dfrac{1}{3}$.
+  }
+
+  \Example{%
+    2014-2015-1-期中-选择题-18
+  }{%
+    设当$x\to 0$时，函数$f\left( x \right)=3\sin x-\sin 3x$与$c{{x}^{k}}$是等价无穷小，则
+    \pickout{A}
+    \options{$k=3,c=4$}
+      {$k=3,c=-4$}
+      {$k=1,c=-4$}
+      {$k=1,c=4$}
+  }{%
+    A.
+  }{%
+    $3\sin x-\sin 3x\sim 3(x-\dfrac{1}{6}{{x}^{3}})-(3x-\dfrac{1}{6}{{(3x)}^{3}})
+    =4{{x}^{3}}$.
+  }
+
+  \Example{%
+    2015-2016-1-期中-填空题-9
+  }{%
+     $\lim\limits_{x \to 0} \dfrac{\frac{{{(1+x)}^{\frac{1}{x}}}}{\re}-1}{x}=$
+     \fillin{$-\dfrac{1}{2}$}.
+  }{%
+    $-\dfrac{1}{2}$.
+  }{%
+    $\lim\limits_{x \to 0} \dfrac{\dfrac{{{(1+x)}^{\frac{1}{x}}}}{\re}-1}{x}$
+    $=\lim\limits_{x \to 0} \dfrac{{{\re}^{\frac{1}{x}\ln (1+x)-1}}-1}{x}$
+    $=\lim\limits_{x \to 0} \dfrac{^{\frac{1}{x}\ln (1+x)-1}}{x}$
+    $=\lim\limits_{x \to 0} \dfrac{\ln (1+x)-x}{{{x}^{2}}}$
+
+    $=\lim\limits_{x \to 0} \dfrac{x-\frac{1}{2}{{x}^{2}}-x}{{{x}^{2}}}
+    =-\dfrac{1}{2}$.
+  }
+
+  \Example{%
+    2014-2015-1-期末-计算题-14
+  }{%
+    计算$\lim\limits_{x \to +\infty} x\left( {{\left( 1+\frac{1}{x} \right)}^{x}} - \re \right)$.
+  }{%
+    见解析.
+  }{%
+    倒代换，令$t=\dfrac{1}{x}$，将原式化为
+    \begin{align*}
+      & \lim\limits_{t \to 0} \dfrac{{{(1+t)}^{\frac{1}{t}}}- \re }{t}
+      =\lim\limits_{t \to 0} \dfrac{{{\re}^{\frac{1}{t}\ln (1+t)}}- \re }{t}
+      =\lim\limits_{t \to 0} \dfrac{ \re ({{\re}^{\frac{1}{t}\ln (1+t)-1}}-1)}{t}
+      = \re \lim\limits_{t \to 0} \dfrac{\frac{1}{t}\ln (1+t)-1}{t} \\
+      & = \re \lim\limits_{t \to 0} \dfrac{\ln (1+t)-t}{{{t}^{2}}}
+      = \re \lim\limits_{t \to 0} \dfrac{\frac{1}{1+t}-1}{2t}
+      = \re \lim\limits_{t \to 0} \dfrac{-\frac{1}{{{(1+t)}^{2}}}}{2}
+      =-\dfrac{\re}{2}.
+    \end{align*}
+  }
+
+\type{导数的应用}
+
+  \hspace*{2em}主要用于判定函数的点态特征，包括单调性与极值、凹凸性与拐点、渐近线与曲率圆，以及帮助作出简单函数的图像等.
+
+  \subsection{求切线}
+    \Example{%
+      2013-2014-1-期中-解答题-19
+    }{%
+      设$y=y\left( x \right)$由方程
+      $\begin{cases}
+        x=\arctan t \\
+        2y-t{{y}^{2}}+{{{\re}}^{t}}=5 \\
+      \end{cases}$
+      确定，求在点$\left( 0,2 \right)$处的切线方程.
+    }{%
+      见解析.
+    }{%
+      本质上是求参数方程
+      $\begin{cases}
+        x=\arctan t \\
+        2y-t{{y}^{2}}+{{{\re}}^{t}}=5 \\
+      \end{cases}$在$\left( 0,2 \right)$处的导数.
+
+      由隐函数的求导方法可得
+      $$2y-t{{y}^{2}}+{{{\re}}^{t}}
+      =5\Rightarrow 2\dfrac{\rd y}{\rd t}-{{y}^{2}}-2ty\dfrac{\rd y}{\rd t}+{{{\re}}^{t}}=0
+      \Rightarrow \dfrac{\rd y}{\rd t}
+      =\dfrac{{{{\re}}^{t}}-{{y}^{2}}}{2ty-2},$$
+      从而
+      $${{\left. \dfrac{\rd y}{\rd x}
+      ={\dfrac{\rd y}{\rd t}}/{\dfrac{\rd x}{\rd t}}\;
+      =\dfrac{\left( {{{\re}}^{t}}-{{y}^{2}} \right)\left( 1+{{t}^{2}} \right)}{2ty-2}\Rightarrow \dfrac{\rd y}{\rd x} \right|}_{x=0}}
+      ={{\left. \dfrac{\left( {{{\re}}^{t}}-{{y}^{2}} \right)\left( 1+{{t}^{2}} \right)}{2ty-2} \right|}_{t=0,y=2}}
+      =\dfrac{3}{2},$$
+      于是切线方程为$y=\dfrac{3}{2}x+2$.
+    }
+
+    \Example{%
+      2015-2016-1-期中-填空题-10
+    }{%
+      设对数螺线$\rho ={{\re}^{\theta }}$，该曲线在对应于$\theta =\dfrac{\pi }{2}$的点处的切线方程为
+      \fillin{$x+y={{\re}^{\frac{\pi }{2}}}$}.
+    }{%
+      $x+y={{\re}^{\frac{\pi }{2}}}$.
+    }{%
+      $\because x=\rho \cos \theta ,y=\rho \sin \theta $
+      $\therefore $对数螺线方程可化为：
+      $\begin{cases}
+        x={{\re}^{\theta }}\cos \theta \\
+        y={{\re}^{\theta }}\sin \theta \\
+      \end{cases}$
+
+      $\therefore \dfrac{\rd y}{\rd x}
+      =\dfrac{\frac{\rd y}{\rd \theta }}{\frac{\rd x}{\rd \theta }}
+      =\dfrac{\sin \theta +\cos \theta }{\cos \theta -\sin \theta }$，
+      $\left.\dfrac{\rd y}{\rd x}\right|_{\theta=\frac{\pi }{2}}
+      =-1$，
+
+      又$\left( \rho ,\theta  \right)=\left( {{\re}^{\frac{\pi }{2}}},\frac{\pi }{2} \right)$时，$x=0,y={{\re}^{\frac{\pi }{2}}}$
+
+      $\therefore $在$\left( \rho ,\theta  \right)=\left( {{\re}^{\frac{\pi }{2}}},\frac{\pi }{2} \right)$时的切线方程为：$y-{{\re}^{\frac{\pi }{2}}}=-1\left( x-0 \right)$
+      即$x+y={{\re}^{\frac{\pi }{2}}}$.
+  }
+
+  \subsection{判定单调性与极值/最值}
+    \Example{%
+      2012-2013-1-期末-选择题-12
+    }{%
+      设$\text{y=}f'(x)$对一切$x$满足$x{f}''\left( x \right)+3x{{\left[ {f}'\left( x \right) \right]}^{2}}=1-{{{\re}}^{x}}$，若${f}''\left( {{x}_{0}} \right)=0,{{x}_{0}}\ne 0$，则
+      \pickout{B}.
+      \options{$f({x_{0}})$是$f(x)$的极大值}
+        {$f({x_{0}})$是$f(x)$的极小值}
+        {$f({x_{0}},f({x_{0}}))$时曲线$y=f(x)$的拐点}
+        {以上都不对}
+    }{%
+      B.
+    }{%
+      式子带入${{x}_{0}}$即有
+      $f''({{x}_{0}})=\dfrac{1-{{\re}^{-{{x}_{0}}}}}{{{x}_{0}}}\ne 0,{{x}_{0}}>0$和${{x}_{0}}<0$时，均有$f''({{x}_{0}})>0$
+
+      则$f({{x}_{0}})$是极小值.
+    }
+
+    \Example{%
+      2014-2015-1-期末-选择题-7
+    }{%
+      函数$f\left( x \right)=\ln \left( 1+{{x}^{2}} \right)$在$[-1,2]$上的最大值是
+      \pickout{D}
+      \options{$\ln 2$}
+        {$\ln 3$}
+        {$\ln 4$}
+        {$\ln 5$}
+    }{%
+      D.
+    }{%
+      ${f}'\left( x \right)=\dfrac{2x}{1+{{x}^{2}}}$，于是$\forall x\in \left[ -1,0 \right]$，
+      ${f}'\left( x \right)<0$；
+      $\forall x\in \left[ 0,2 \right]$，
+      ${f}'\left( x \right)>0$
+
+      则$f\left( x \right)$在$\left[ -1,0 \right]$上单调递减，在$\left[ 0,2 \right]$上单调递增
+
+      于是$f\left( x \right)=\ln \left( 1+{{x}^{2}} \right)$在$[-1,2]$上的最大值为$\max \left\{ f\left( -1 \right),f\left( 2 \right) \right\}=\ln 5$.
+    }
+
+    \Example{%
+      2012-2013-1-期中-填空题-2
+    }{%
+      $y={{x}^{2}}{{\re}^{-x}}$的极大值是
+      \fillin{$\dfrac{4}{{{\re}^{2}}}$}.
+    }{%
+      $\dfrac{4}{{{\re}^{2}}}$.
+    }{%
+      $y'=2x{{\re}^{-x}}-{{x}^{2}}{{\re}^{-x}}=x{{\re}^{-x}}(2-x),{{\re}^{-x}}>0$
+      令$y'=0$ $\Rightarrow {{x}_{1}}=0,{{x}_{2}}=2$
+
+      则$x \in \left( -\infty ,0 \right),y'<0,y\downarrow$;
+      $x \in \left[ 0,2 \right],~y'>0,~y\uparrow$;
+      $x \in \left( 2,+\infty  \right),~y'<0,~y\downarrow$
+
+      所以当$x=2$时极大值为$\dfrac{4}{{{\re}^{2}}}$.
+    }
+
+    \Example{%
+      2015-2016-1-期中-填空题-3
+    }{%
+      若$y=ex-{{\re}^{-\lambda x}}$有正的极值点，则参数$\lambda $的取值范围是
+      \fillin{$-\re<\lambda <0$}.
+    }{%
+      $-\re<\lambda <0$.
+    }{%
+      $y'=\re+\lambda {{\re}^{-\lambda x}}$，$y'=0$有正的实根，即$\lambda {{\re}^{-\lambda x}}$$=-\re$，${{\re}^{-\lambda x}}$$=-\dfrac{\re}{\lambda }$
+
+      令$f\left( x \right)={{\re}^{-\lambda x}}$，$g\left( x \right)=-\dfrac{\re}{\lambda }$即$f\left( x \right)=g\left( x \right)$存在$x>0$的点
+
+      即图像有交点，画图可得$0<-\dfrac{\re}{\lambda }<1$，即$-\re<\lambda <0$.
+    }
+
+    \Example{%
+      2015-2016-1-期中-选择题-6
+    }{%
+      若$a,b,c,d$成等比数列，则函数$f\left( x \right)=\dfrac{1}{3}a{{x}^{3}}+b{{x}^{2}}+cx+d$
+      \pickout{D}
+      \options{有极大值，而无极小值}
+        {无极大值，而有极小值}
+        {有极大值，也有极小值}
+        {无极大值，也无极小值}
+    }{%
+      D.
+    }{%
+      $\because y=\dfrac{1}{3}a{{x}^{3}}+b{{x}^{2}}+cx+d,\therefore y'=a{{x}^{2}}+2bx+c$.
+
+      而$a,b,c,d$成等比数列，则${{b}^{2}}=ac$
+      令$a{{x}^{2}}+2bx+c=0$，则$\Delta =4{{b}^{2}}-4ac=4{{b}^{2}}-4{{b}^{2}}=0$
+
+      $\therefore y'\ge 0$或$y'\le 0$，
+      即$f\left( x \right)$无极值.
+    }
+
+    \Example{%
+      2016-2017-1-期中-选择题-13
+    }{%
+      设函数$g\left( t \right)$在$\left( -\infty ,+\infty  \right)$内可导，且对任意的${{t}_{1}},{{t}_{2}}$，当${{t}_{1}}>{{t}_{2}}$时，都有$g\left( {{t}_{1}} \right)>g\left( {{t}_{2}} \right)$，则
+      \pickout{B}
+      \options{对任意的$t$，$g'\left( t \right)>0$}
+        {函数$-g\left( -t \right)$单调增加}
+        {对任意的$t$，$g'\left( -t \right)\le 0$}
+        {函数$g\left( -t \right)$单调增加}
+    }{%
+      B.
+    }{%
+      由题可得$g'\left( t \right)\ge 0$，$g\left( t \right)$单调增加
+
+      对于B，$\left[ -g\left( -t \right) \right]'=g'\left( -t \right)\ge 0$，单增
+
+      对于D，$\left[ g\left( -t \right) \right]'=-g'\left( -t \right)\le 0$，单减.
+    }
+
+    \Example{%
+      2017-2018-1-期中-选择题-6
+    }{%
+      设$f\left( x \right)$在$x=0$的某邻域内连续，且$f\left( 0 \right)=0,\lim\limits_{x \to 0} \dfrac{f\left( x \right)}{{{x}^{2}}}=1$，则点$x=0$是$f\left( x \right)$的
+      \pickout{B}
+      \options{极大值点}
+        {驻点和极小值点}
+        {非驻点}
+        {非驻点但是极小值点}
+    }{%
+      B.
+    }{%
+      ${f}'\left( 0 \right)
+      =\lim\limits_{x \to 0} \dfrac{f\left( x \right)-f\left( 0 \right)}{x-0}
+      =\lim\limits_{x \to 0} \dfrac{f\left( x \right)}{x}
+      =\lim\limits_{x \to 0} \left[ x\cdot \dfrac{f\left( x \right)}{{{x}^{2}}} \right]
+      =\lim\limits_{x \to 0} x\cdot \lim\limits_{x \to 0} \dfrac{f\left( x \right)}{{{x}^{2}}}=0$
+
+      则点$x=0$是$f\left( x \right)$的驻点.
+    }
+
+  \subsection{判定拐点与凹凸性}
+    \Example{%
+      2013-2014-1-期末-填空题-3
+    }{%
+      曲线$y=\ln ({{x}^{2}}+1)$的拐点是
+      \fillin{$(\pm 1,\ln 2)$}.
+    }{%
+      $(\pm 1,\ln 2)$.
+    }{%
+      $y'=\dfrac{2x}{{{x}^{2}}+1}$，$y''=\dfrac{2({{x}^{2}}+1)-2x\cdot 2x}{{{({{x}^{2}}+1)}^{2}}}=\dfrac{2-2{{x}^{2}}}{{{x}^{2}}+1{{)}^{2}}}$，
+      $y''=0$时，${{x}^{2}}=1,x=\pm 1,y=\ln 2$.
+    }
+
+    \Example{%
+      2015-2016-1-期末-选择题-8
+    }{%
+      曲线$y=\begin{cases}
+         x{{(x-1)}^{2}}  \\
+         {{(x-1)}^{2}}(x-2)  \\
+      \end{cases},\begin{cases}
+         0\le x\le 1  \\
+         1<x\le 2  \\
+      \end{cases}$在区间$\left( 0,2 \right)$有
+      \pickout{C}
+      \options{2个极值点，1个拐点.}
+        {2个极值点，2个拐点.}
+        {2个极值点，3个拐点.}
+        {3个极值点，3个拐点.}
+    }{%
+      C.
+    }{%
+      注意$x=1$的特殊性即可.
+    }
+
+    \Example{%
+      2017-2018-1-期末模拟-选择题-13
+    }{%
+      曲线$y=(x-1){{(x-2)}^{2}}{{(x-3)}^{3}}{{\left( x-4 \right)}^{4}}$的拐点为
+      \pickout{C}
+      \options{$\left( 1,0 \right)$}
+        {$\left( 2,0 \right)$}
+        {$\left( 3,0 \right)$}
+        {$\left( 4,0 \right)$}
+    }{%
+      C.
+    }{%
+      求$y''$；令$y''=0$，求出使$y''=0$和$y''$不存在的点；
+
+      用这些点把定义域分成若干小区间，讨论$y''$的符号，判断曲线$y$在小区间的凹凸性；
+
+      考察$y''$在$x$两侧的近旁是否变号，如果$y''$变号，那么点$\left( x,f\left( x \right) \right)$是曲线$y$的拐点.
+    }
+
+    \Example{%
+      2017-2018-1-期中-选择题-7
+    }{%
+      曲线$y=3{{x}^{5}}-10{{x}^{3}}-360x$的拐点有
+      \pickout{C}
+      \options{1个}
+        {2个}
+        {3个}
+        {0个}
+    }{%
+      C.
+    }{%
+      $y'=15{{x}^{4}}-30{{x}^{2}}-360,y''=60{{x}^{3}}-60x=60x\left( x-1 \right)\left( x+1 \right)$，令${y}''=0$
+      并验证根两侧二阶导数的正负可知有3个拐点.
+    }
+
+  \subsection{求渐近线}
+    \Example{%
+      2017-2018-1-期末模拟-选择题-16
+    }{%
+      曲线$y=\dfrac{1}{x}+\ln (1+{{\re}^{x}})$渐近线条数为
+      \pickout{D}
+      \options{0}
+        {1}
+        {2}
+        {3}
+    }{%
+      D.
+    }{%
+      $\lim\limits_{x \to +\infty} y
+      =\lim\limits_{x \to +\infty} \left[ \frac{1}{x}+\ln (1+{{\re}^{x}}) \right]
+      =+\infty$,
+      $\lim\limits_{x \to -\infty} y
+      =\lim\limits_{x \to -\infty} \left[ \frac{1}{x}+\ln (1+{{\re}^{x}}) \right]
+      =0,$
+
+      所以$y=0$是曲线的水平渐近线；
+
+      $\lim\limits_{x \to 0} y=\lim\limits_{x \to 0} \left[ \frac{1}{x}+\ln (1+{{\re}^{x}}) \right]=\infty$，
+      所以$x=0$是曲线的垂直渐近线；
+
+      $\lim\limits_{x \to +\infty} \dfrac{y}{x}=\lim\limits_{x \to -\infty} \dfrac{\left[ \frac{1}{x}+\ln (1+{{\re}^{x}}) \right]}{x}
+      =0+\lim\limits_{x \to +\infty} \dfrac{\ln (1+{{\re}^{x}})}{x}
+      =\lim\limits_{x \to +\infty} \dfrac{{{\re}^{x}}}{\frac{1+{{\re}^{x}}}{1}}=1$，
+
+      $b=\lim\limits_{x \to +\infty} \left[ y-x \right]=\lim\limits_{x \to +\infty} \left[ \frac{1}{x}+\ln (1+{{\re}^x})-x \right]=0$
+
+      所以$y=x$是曲线的斜渐近线.
+
+      所以一共3条渐近线.
+    }
+
+    \Example{%
+      2012-2013-1-期中-选择题-12
+    }{%
+      曲线$y=\dfrac{{{x}^{2}}+x}{{{x}^{2}}-1}$的渐近线条数为
+      \pickout{C}
+      \options{0}
+        {1}
+        {2}
+        {3}
+    }{%
+      C.
+    }{%
+      由于$y=\dfrac{{{x}^{2}}+x}{{{x}^{2}}-1}$在$x=\pm 1$处没有定义，且$\underset{x\to 1}{\mathop{\lim }}\,\dfrac{{{x}^{2}}+x}{{{x}^{2}}-1}=\infty ,\lim\limits_{x \to -\infty} \dfrac{{{x}^{2}}+x}{{{x}^{2}}-1}=\dfrac{1}{2}$
+
+      $\therefore x=1$是$y$的垂直渐近线；
+
+      又$\lim\limits_{x \to +\infty} \dfrac{{{x}^{2}}+x}{{{x}^{2}}-1}=1$，$\therefore y=1$是曲线的水平渐近线；
+
+      而 $\lim\limits_{x \to +\infty} \dfrac{y}{x}=0$，$\therefore $曲线$y=\dfrac{{{x}^{2}}+x}{{{x}^{2}}-1}$无斜渐近线.
+
+      $\therefore $曲线的渐近线条数为2.
+    }
+
+    \Example{%
+      2013-2014-1-期中-选择题-17
+    }{%
+      曲线$y=\dfrac{1+{{\re}^{-{{x}^{2}}}}}{1-{{\re}^{{{x}^{2}}}}}$
+      \pickout{D}
+      \options{没有渐近线}
+        {仅有水平渐近线}
+        {仅有铅直渐近线}
+        {既有水平渐近线又有铅直渐近线}
+    }{%
+      D.
+    }{%
+      $\because \lim\limits_{x \to 0} \dfrac{1+{{\re}^{-{{x}^{2}}}}}{1-{{\re}^{{{x}^{2}}}}}=\infty $，
+      $\therefore x=0$是其铅直渐近线；
+
+      又$\because \lim\limits_{x \to +\infty} \dfrac{1+{{\re}^{-{{x}^{2}}}}}{1-{{\re}^{{{x}^{2}}}}}=\dfrac{1+\lim\limits_{x \to +\infty} {{\re}^{-{{x}^{2}}}}}{1-\lim\limits_{x \to +\infty} {{\re}^{-{{x}^{2}}}}}=1$，
+      $\therefore y=1$是其水平渐近线.
+    }
+
+    \Example{%
+      2017-2018-1-期中-选择题-9
+    }{%
+      曲线$y=x\sin \dfrac{1}{x}$
+      \pickout{A}
+      \options{只有水平渐近线}
+        {只有铅直渐近线}
+        {既有水平渐近线又有铅直渐近线}
+        {有斜渐近线}
+    }{%
+      A.
+    }{%
+      考虑铅直渐近线：$\lim\limits_{x \to 0} x\sin \dfrac{1}{x}=0$，则无铅直渐近线；
+
+      考虑水平渐近线：$\lim\limits_{x \to +\infty} x\sin \dfrac{1}{x}=\lim\limits_{x \to 0} \dfrac{\sin t}{t}=1$，$y=1$是其水平渐近线；
+
+      考虑斜渐近线：$\lim\limits_{x \to +\infty} \dfrac{x\sin \frac{1}{x}}{x}=\lim\limits_{x \to +\infty} \sin \dfrac{1}{x}$，极限不存在，无斜渐近线.
+    }
+
+  \subsection{函数性态的综合判断}
+    \Example{%
+      2013-2014-1-期中-选择题-10
+    }{%
+      若$f\left( -x \right)=-f\left( x \right)$，在$\left( 0,+\infty  \right)$内$f'\left( x \right)>0,f''\left( x \right)>0$，则$f\left( x \right)$在$\left( -\infty ,0 \right)$内
+      \pickout{A}
+      \options{$f'\left( x \right)>0,$$f''\left( x \right)<0$}
+        {$f'\left( x \right)<0$$,f''\left( x \right)>0$}
+        {$f'\left( x \right)<0$，$f''\left( x \right)<0$}
+        {$f'\left( x \right)>0,f''\left( x \right)>0$}
+    }{%
+      A.
+    }{%
+      $f\left( -x \right)=-f\left( x \right)$，$f\left( x \right)$为奇函数，图像关于原点对称，具有相同的单调性和相反的凹凸性
+
+      又在$\left( 0,+\infty  \right)$内$f'\left( x \right)>0,f''\left( x \right)>0$，所以在$\left( -\infty ,0 \right)$内$f'\left( x \right)>0,$ $f''\left( x \right)<0$.
+    }
+
+    \Example{%
+      2012-2013-1-期中-选择题-15
+    }{%
+      设$f\left( -x \right)=f\left( x \right)$，且在$\left( 0,\infty  \right)$内$f'\left( x \right)<0,f''\left( x \right)<0,$则曲线$y=f\left( x \right)$在$\left( -\infty ,0 \right)$内
+      \pickout{D}
+      \options{单调减且是凹的}
+        {单调减且是凸的}
+        {单调增且是凹的}
+        {单调增且是凸的}
+    }{%
+      D.
+    }{%
+      $f\left( -x \right)=f\left( x \right)$，所以$f\left( x \right)$是偶函数，图像关于$y$轴对称
+
+      可知在$y$轴两侧具有相同的凹凸性和相反的单调性
+
+      又$f\left( x \right)$在$\left( 0,\infty  \right)$内$f'\left( x \right)<0$，所以$f\left( x \right)$在$\left( 0,\infty  \right)$是单调减；
+
+      $f'\left( x \right)<0$，$f\left( x \right)$在$\left( 0,\infty  \right)$内是凸函数；
+
+      所以在$\left( -\infty ,0 \right)$内$f\left( x \right)$是单调增且是凸函数.
+    }
+
+    \Example{%
+      2013-2014-1-期中-选择题-15
+    }{%
+      设函数$f\left( x \right)$满足关系式$f''\left( x \right)+{{\left[ f'\left( x \right) \right]}^{2}}=x,$且$f'\left( 0 \right)=0$，则
+      \pickout{C}
+      \options{$x=0$是$f\left( x \right)$的极大值点}
+        {$x=0$是$f\left( x \right)$的极小值点}
+        {$\left( 0,f\left( 0 \right) \right)$是曲线$y=f\left( x \right)$的拐点}
+        {$x=0$不是$f\left( x \right)$的极值点，$\left( 0,f\left( 0 \right) \right)$也不是曲线$y=f\left( x \right)$的拐点}
+    }{%
+      C.
+    }{%
+      由$f''\left( x \right)+{{\left[ f'\left( x \right) \right]}^{2}}=x$，得$f\left( x \right)$在其定义域内存在二阶连续导数且$f''\left( 0 \right)=0$
+
+      $f''\left( x \right)$
+      $=x$$-{{\left[ f'\left( x \right) \right]}^{2}}$，所以$f'''\left( x \right)=1-2\left[ f'\left( x \right) \right]f''\left( x \right)$，
+
+      所以$f'''\left( 0 \right)=1\ne 0$即$\left( 0,f\left( 0 \right) \right)$是曲线$y=f\left( x \right)$的拐点.
+    }
+
+\type{微分中值定理的应用}
+
+  \hspace*{2em}主要用于判定函数的全局性态，例如特殊点、函数值的存在性
+
+  \Example{%
+    2015-2016-1期末-证明题-19
+  }{%
+    设函数$f\left( x \right)$在$\left[ a,b \right]$上具有二阶导数，且$f\left( a \right)=f\left( b \right)=0$,${f}'\left( a \right){f}'\left( b \right)>0$，证明：存在$\xi \in \left( a,b \right),{f}''\left( \xi  \right)=0$.
+  }{%
+    见解析.
+  }{%
+    由$f$在$\left[ a,b \right]$上二阶可导可知${f}'$在$\left[ a,b \right]$上连续. 由${f}'\left( a \right){f}'\left( b \right)>0$，不妨设${f}'\left( a \right)>0,{f}'\left( b \right)>0$，结合$f\left( a \right)=f\left( b \right)=0$可知
+    $$\exists {{\delta }_{1}},{{\delta }_{2}}>0,\forall x\in \left( a,a+{{\delta }_{1}} \right),f\left( x \right)>0;~\forall x\in \left( b-{{\delta }_{2}},b \right),f\left( x \right)<0$$
+    于是由$f$的连续性，借助零点存在定理可知
+    $$\exists \eta \in \left( a,b \right),f\left( \eta  \right)=0$$
+    于是$\left[ a,b \right]$上二阶可导的函数$f$满足$f\left( a \right)=f\left( \eta  \right)=f\left( b \right)=0$，接下来只需分别在$\left[ a,\eta  \right],\left[ \eta ,b \right]$上分别对$f$使用罗尔定理得到${f}'$的两个不同零点${{\xi }_{1}},{{\xi }_{2}}$，再在$\left[ {{\xi }_{1}},{{\xi }_{2}} \right]\subseteq \left[ a,b \right]$上对${f}'$使用罗尔定理即可证.
+  }
+
+  \Example{%
+    2016-2017-1-期末-证明题-18
+  }{%
+    设函数$f(x),g(x)$在$\left[ a,b \right]$上连续，在$\left( a,b \right)$内具有二阶导数且存在相等的最大值，$f(a)=g(a),f(b)=g(b)$，证明：存在$\xi \in (a,b)$，使得$f''(\xi )=g''\left( \xi  \right)$.
+  }{%
+    见解析.
+  }{%
+    构造函数$F(x)=f(x)-g(x)$，
+    由题$F(a)=F(b)=0$
+
+    设$c$处$f(x)$取最大值，$d$处$g(x)$取最大值，且有
+    $$f(c) = g(d), F(c)=f(c)-g(c)>f(c)-g(d)=0,F(d)=f(d)-g(d)<f(c)-g(d)=0$$
+    则$\exists \xi '\in \left( c,d \right)\subseteq \left( a,b \right)\,s.t.\,F\left( \xi ' \right)=0$，
+    又$F(a)=F(b)=0$则
+    $$\exists {{\xi }_{1}}\in \left( a,\xi ' \right)\,s.t.\,F'\left( {{\xi }_{1}} \right)=0,\exists {{\xi }_{2}}\in \left( \xi ',b \right)\,s.t.\,F'\left( {{\xi }_{2}} \right)=0\Rightarrow \exists \xi \in \left( {{\xi }_{1}},{{\xi }_{2}} \right)\subseteq \left( a,b \right)\,s.t.\,F''\left( \xi  \right)=0$$
+    即$f''(\xi )=g''\left( \xi  \right)$，得证.
+  }
+
+  \Example{%
+    2012-2013-1-期中-证明题-21
+  }{%
+    设函数$f\left( x \right)$在$\left[ 0,1 \right]$上具有二阶导数，且$f\left( 0 \right)=f\left( 1 \right)=0,\min f\left( x \right)=-1,\left( 0\le x\le 1 \right)$，
+    证明：至少存在一点$\xi \in \left( 0,1 \right)$，使得$f'''\left( \xi  \right)\ge 8$.
+  }{%
+    见解析.
+  }{%
+    由题$f\left( 0 \right)=f\left( 1 \right)=0\ne -1$，设$\min f(x)=f(c)=-1$；则$f'(c)=0$$c\in \left( 0,1 \right)$
+
+    因为$f(x)$在$\left[ 0,1 \right]$上具有二阶函数，且$f(c)=-1$
+
+    所以可将$f(x)$在$x=c$处展开成二阶带拉格朗日余项的泰勒公式，并分别带入$x=0$和$x=1$
+
+    有
+    $\begin{cases}
+      f(0)=f(c)+f'(c)(0-c)+\dfrac{1}{2}f''({{\xi }_{1}}){{(0-c)}^{2}}, & 0<{{\xi }_{1}}<c \\
+      f\left( 1 \right)=f\left( c \right)+f'\left( c \right)(1-c)+\dfrac{1}{2}f''\left( {{\xi }_{2}} \right){{\left( 1-c \right)}^{2}}, & c<{{\xi }_{2}}<1 \\
+    \end{cases}$，
+    即$\begin{cases}
+      f''\left( {{\xi }_{1}} \right)=\dfrac{2}{{{c}^{2}}} \\
+      f''\left( {{\xi }_{2}} \right)=\dfrac{2}{{{\left( 1-c \right)}^{2}}} \\
+    \end{cases}$
+
+    又$c\in \left( 0,1 \right)$，所以存在$\xi \in \left( {{\xi }_{1}},{{\xi }_{2}} \right)$使得$\max f''\left( \xi  \right)\ge \left\{ f''\left( {{\xi }_{1}} \right),f''\left( {{\xi }_{2}} \right) \right\}\ge \dfrac{2}{\frac{1}{4}}=8$，
+    得证.
+  }
+
+  \Example{%
+    2014-2015-1-期中-证明题-21
+  }{%
+    设函数$f\left( x \right)$在区间$\left[ 0,1 \right]$上连续，在$\left( 0,1 \right)$内可导，且$f\left( 0 \right)=f\left( 1 \right)=0,f\left( \frac{1}{2} \right)=1$.
+    试证：
+
+    (1)存在$\eta \in \left( \frac{1}{2},1 \right)$使$f\left( \eta  \right)=\eta $;
+
+    (2)对于任意实数$\lambda $，必存在$\xi \in \left( 0,\eta  \right)$使得$f'\left( \xi  \right)-\lambda \left[ f\left( \xi  \right)-\xi  \right]=1$.
+  }{%
+    见解析.
+  }{%
+    (1)令$g\left( x \right)=f\left( x \right)-x$，则$g\left( x \right)$在$\left[ \frac{1}{2},1 \right]$连续，在$\left( \frac{1}{2},1 \right)$可导
+
+    且$g\left( 1 \right)=f\left( 1 \right)-1=0-1=-1<0$，$g\left( \frac{1}{2} \right)=f\left( \frac{1}{2} \right)-\frac{1}{2}=1-\dfrac{1}{2}=\frac{1}{2}>0$
+
+    $\therefore $由零点定理，$\exists \eta \in \left( \frac{1}{2},1 \right)$，使得$g\left( \eta  \right)=0$，即$f\left( \eta  \right)=\eta $，得证.
+
+    (2)设$h\left( x \right)={{\re}^{-\lambda x}}\left[ f\left( x \right)-x \right],x\in \left[ 0,\eta  \right]$，则$h\left( x \right)$在$\left[ 0,\eta  \right]$连续，在$\left( 0,\eta  \right)$可导，且$h\left( 0 \right)=h\left( \eta  \right)=0$
+
+    $\therefore $由罗尔定理，$\exists \xi \in \left( 0,\eta  \right)$使得$h'\left( \xi  \right)=0$，又$h'\left( x \right)={{\re}^{-\lambda x}}\left[ f'\left( x \right)-1-\lambda \left( f\left( x \right)-x \right) \right]$
+
+    $\therefore $由$h'\left( \xi  \right)=0$得：${{\re}^{-\lambda \xi }}\left[ f'\left( \xi  \right)-1-\lambda \left( f\left( \xi  \right)-\xi  \right) \right]=0$
+
+    $\therefore $$f'\left( \xi  \right)-\lambda \left[ f\left( \xi  \right)-\xi  \right]=1$，得证.
+  }
+
+  \Example{%
+    2015-2016-1-期中-证明题-22
+  }{%
+    设函数$f\left( x \right)$是区间$\left[ -1,1 \right]$上的三阶可导函数，且$f\left( -1 \right)=0,f\left( 0 \right)=0,f\left( 1 \right)=1,f'\left( 0 \right)=0.$试证：$\exists \xi \in \left( -1,1 \right),$使得$f'''\left( \xi  \right) \ge 3$.
+  }{%
+    见解析.
+  }{%
+    泰勒展开$f\left( x \right)=f\left( 0 \right)+f'\left( 0 \right)x+\dfrac{f''\left( 0 \right)}{2}{{x}^{2}}+\dfrac{f'''\left( c \right)}{6}{{x}^{3}}=\dfrac{f''\left( 0 \right)}{2}{{x}^{2}}+\dfrac{f'''\left( c \right)}{6}{{x}^{3}}$
+
+    $\therefore f\left( 1 \right)=\dfrac{f''\left( 0 \right)}{2}+\dfrac{f'''\left( {{\xi }_{1}} \right)}{6},f\left( -1 \right)=\dfrac{f''\left( 0 \right)}{2}-\dfrac{f'''\left( {{\xi }_{2}} \right)}{6}$，
+    两式相减并整理得到$f'''\left( {{\xi }_{1}} \right)+f'''\left( {{\xi }_{2}} \right)=6$
+
+    取$f\left( \xi  \right)=\max \{f\left( {{\xi }_{1}} \right),f\left( {{\xi }_{2}} \right)\}3$即得证.
+  }
+
+  \Example{%
+    2017-2018-1-期中-填空题-6
+  }{%
+    $y=\sqrt{x}-1$在区间$\left[ 1,4 \right]$上用拉格朗日中值定理，结论中的点$\xi $=\fillin{$\dfrac{9}{4}$}.
+  }{%
+    $\dfrac{9}{4}$.
+  }{%
+    由拉格朗日中值定理得，$\dfrac{1}{2\sqrt{\xi }}=\dfrac{y\left( 4 \right)-y\left( 1 \right)}{4-1}=\dfrac{\sqrt{4}-\sqrt{1}}{3}=\dfrac{1}{3}$$\Rightarrow \sqrt{\xi }=\dfrac{3}{2}\Rightarrow \xi =\dfrac{9}{4}$.
+  }
+
+  \Example{%
+    2017-2018-1-期中-证明题-2
+  }{%
+    设$f\left( x \right)$在$\left[ 0,a \right]$存在三阶导数，且$f\left( 0 \right)=f\left( a \right)=0$，设$F\left( x \right)={{x}^{3}}f\left( x \right)$.证明：存在一点$\xi \in \left( 0,a \right)$，使得$F'''\left( \xi  \right)=0$.
+  }{%
+    见解析.
+  }{%
+    $F'\left( x \right)=3{{x}^{2}}f\left( x \right)+{{x}^{3}}f'\left( x \right),F''\left( x \right)=6xf\left( x \right)+6{{x}^{2}}f'\left( x \right)+{{x}^{2}}f''\left( x \right)$
+
+    $\Rightarrow F\left( 0 \right)=F\left( a \right)=0,F'\left( 0 \right)=0,F''\left( 0 \right)=0$
+
+    $\Rightarrow F\left( 0 \right)=F\left( a \right)=0\Rightarrow \exists b\in \left( 0,a \right)\,s.t.\,F'\left( b \right)=0$，又$F'\left( 0 \right)=0$
+
+    $\Rightarrow \exists c\in \left( 0,b \right)\,s.t.\,F''\left( c \right)=0$，又$F''\left( 0 \right)=0$
+
+    $\Rightarrow \exists \xi \in \left( 0,c \right)\subseteq \left( 0,a \right) \,s.t.\, F'''\left( \xi  \right)=0$，得证.
+  }

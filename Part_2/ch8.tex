@@ -1,0 +1,873 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\type{重积分的概念、性质以及简单的累次积分换序}
+  \subsection{线性性质}
+    \Example{%
+      2013-2014-2-期中-选择题-16
+    }{%
+      设${{I}_{1}}=\displaystyle\iint\limits_{D}{\cos \sqrt{{{x}^{2}}+{{y}^{2}}}\rd \sigma }$，${{I}_{2}}=\displaystyle\iint\limits_{D}{\cos \left( {{x}^{2}}+{{y}^{2}} \right)\rd \sigma }$，${{I}_{3}}=\displaystyle\iint\limits_{D}{\cos {{\left( {{x}^{2}}+{{y}^{2}} \right)}^{2}}\rd \sigma }$，其中$D=\left\{ \left. \left( x,y \right) \right|{{x}^{2}}+{{y}^{2}}\le 1 \right\}$，则有
+      \pickout{B}
+      \options{${{I}_{1}}>{{I}_{2}}>{{I}_{3}}$}
+        {${{I}_{3}}>{{I}_{2}}>{{I}_{1}}$}
+        {${{I}_{2}}>{{I}_{1}}>{{I}_{3}}$}
+        {${{I}_{3}}>{{I}_{1}}>{{I}_{2}}$}
+    }{%
+      B.
+    }{%
+      $D=\left\{ \left. \left( x,y \right) \right|{{x}^{2}}+{{y}^{2}}\le 1 \right\}\Rightarrow 1\ge \sqrt{{{x}^{2}}+{{y}^{2}}}\ge {{x}^{2}}+{{y}^{2}}\ge {{\left( {{x}^{2}}+{{y}^{2}} \right)}^{2}}>0$，
+
+      而$\cos x$在$\left[ 0,\frac{\pi }{2} \right]$单调递减，于是
+        $$\forall \left( x,y \right)\in D,\cos \left( \sqrt{{{x}^{2}}+{{y}^{2}}} \right)<\cos \left( {{x}^{2}}+{{y}^{2}} \right)<\cos {{\left( {{x}^{2}}+{{y}^{2}} \right)}^{2}}$$
+      由二重积分性质得
+        $$\displaystyle\iint\limits_{D}{\cos \sqrt{{{x}^{2}}+{{y}^{2}}}\rd \sigma }<\displaystyle\iint\limits_{D}{\cos \left( {{x}^{2}}+{{y}^{2}} \right)\rd \sigma }<\displaystyle\iint\limits_{D}{\cos {{\left( {{x}^{2}}+{{y}^{2}} \right)}^{2}}\rd \sigma }$$
+      即${{I}_{3}}>{{I}_{2}}>{{I}_{1}}$.
+    }
+
+  \subsection{对称性及轮换对称性}
+    \Example{%
+      2014-2015-2-期中-选择题-16
+    }{%
+      设$f\left( x,y \right)={{x}^{4}}\ln \left( y+\sqrt{1+{{y}^{2}}} \right)$，且$D=\left\{ \left. \left( x,y \right) \right|\left| x \right|+\left| y \right|\le 2 \right\}$，则$\displaystyle\iint\limits_{D}{f\left( x,y \right)\rd x\rd y}=$
+      \pickout{C}
+      \options{-1}
+        {1}
+        {0}
+        {2}
+    }{%
+      C.
+    }{%
+      显然$f\left( x,-y \right)=-f\left( x,y \right)$，而积分区域关于$x$轴对称，因此$\displaystyle\iint\limits_{D}{f\left( x,y \right)\rd x\rd y}=0$.
+    }
+
+    \Example{%
+      2015-2016-2-期中-选择题-17；2011-2012-2-期末-选择题-11
+    }{%
+      设有空间区域${{\Omega }_{1}}=\left\{ \left. \left( x,y,z \right) \right|{{x}^{2}}+{{y}^{2}}+{{z}^{2}}\le {{R}^{2}},z\ge 0 \right\}$，
+
+      ${{\Omega }_{2}}=\left\{ \left. \left( x,y,z \right) \right|{{x}^{2}}+{{y}^{2}}+{{z}^{2}}\le {{R}^{2}},x\ge 0,y\ge 0,z\ge 0 \right\}$，则有
+      \pickout{C}
+      \options{$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{x\rd v=4\displaystyle\iiint\limits_{{\Omega }_{2}}}{x\rd v}$}
+        {$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{y\rd v=4\displaystyle\iiint\limits_{{\Omega }_{2}}}{y\rd v}$}
+        {$\displaystyle\iiint\limits_{{{\Omega }_{1}}}z\rd v=4\displaystyle\iiint\limits_{{{\Omega }_{2}}}{z\rd v}$}
+        {$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{xyz\rd v=4\displaystyle\iiint\limits_{{{\Omega }}_{2}}}{xyz\rd v}$}
+    }{%
+      C.
+    }{%
+      由${{\Omega }_{1}}$和${{\Omega }_{2}}$的对称性可知$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{z\rd v=4\displaystyle\iiint\limits_{{{\Omega }_{2}}}{z\rd v}}$.
+    }
+
+    \Example{%
+      2012-2013-2-期中-解答题-22
+    }{%
+      设区域$D=\left\{ (x,y)|{{x}^{2}}+{{y}^{2}}\le 4,x\ge 0,y\ge 0 \right\}$，$f(x,y)$为D上的正值连续函数，$a,b$为常数，证明：
+      $\displaystyle\iint\limits_{D}{\dfrac{a\sqrt{f(x)}+b\sqrt{f(y)}}{\sqrt{f(x)}+\sqrt{f(y)}}\rd \sigma }=\dfrac{a+b}{2}\pi $.
+    }{%
+      见解析.
+    }{%
+      由轮换对称性$\displaystyle\iint\limits_{D}{\dfrac{a\sqrt{f(x)}+b\sqrt{f(y)}}{\sqrt{f(x)}+\sqrt{f(y)}}\rd \sigma }=\displaystyle\iint\limits_{D}{\dfrac{a\sqrt{f(y)}+b\sqrt{f(x)}}{\sqrt{f(y)}+\sqrt{f(x)}}\rd \sigma }$，所以
+      \begin{align*}
+        & \displaystyle\iint\limits_{D}{\dfrac{a\sqrt{f(x)}+b\sqrt{f(y)}}{\sqrt{f(x)}+\sqrt{f(y)}}\rd \sigma }=\dfrac{1}{2}\displaystyle\iint\limits_{D}{\dfrac{a\sqrt{f(x)}+b\sqrt{f(y)}+a\sqrt{f(y)}+b\sqrt{f(x)}}{\sqrt{f(x)}+\sqrt{f(y)}}\rd \sigma } \\
+        = & \dfrac{1}{2}\displaystyle\iint\limits_{D}{\dfrac{\left( a+b \right)\left( \sqrt{f(y)}+\sqrt{f(x)} \right)}{\sqrt{f(x)}+\sqrt{f(y)}}\rd \sigma }=\dfrac{1}{2}\displaystyle\iint\limits_{D}{\left( a+b \right)\rd \sigma }
+        =\dfrac{a+b}{2}\sigma
+      \end{align*}
+      其中$\sigma $为$D$区域的面积$\pi $，因此原式$=\dfrac{a+b}{2}\pi $.
+    }
+
+    \Example{%
+      2012-2013-2-期中-选择题-14
+    }{%
+      设${{\Omega }_{1}}:{{x}^{2}}+{{y}^{2}}+{{z}^{2}}\le {{R}^{2}},z\ge 0,{{\Omega }_{2}}:{{x}^{2}}+{{y}^{2}}+{{z}^{2}}\le {{R}^{2}},x\ge 0,y\ge 0,z\ge 0$，则
+      \pickout{C}
+      \options{$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{x\rd x\rd y\rd z}=4\displaystyle\iiint\limits_{}{{\Omega }_{2}}{x\rd x\rd y\rd z}$}
+        {$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{y\rd x\rd y\rd z}=4\displaystyle\iiint\limits_{}{{\Omega }_{2}}{y\rd x\rd y\rd z}$}
+        {$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{z\rd x\rd y\rd z}=4\displaystyle\iiint\limits_{}{{\Omega }_{2}}{z\rd x\rd y\rd z}$}
+        {$\displaystyle\iiint\limits_{{{\Omega }_{1}}}{xyz\rd x\rd y\rd z}=4\displaystyle\iiint\limits_{{{\Omega }_{2}}}{xyz\rd x\rd y\rd z}$}
+    }{%
+      C.
+    }{%
+      由对称性，在${{\Omega }_{1}}$上$x$、$y$、$xyz$的积分都是0，故A、B、D选项错误.
+    }
+
+  \subsection{累次积分的交换积分次序}
+    \Example{%
+      2012-2013-2-期末-选择题-6
+    }{%
+      设区域$D$是由曲线$y=x,x+y=2$及$x=2$围成的平面区域，则$\displaystyle\iint\limits_{D}{f\left( x,y \right)\rd x\rd y}$等于
+    \pickout{C}
+    \options{$\displaystyle\int_{1}^{2}{\rd x}\displaystyle\int_{0}^{2}{f\left( x,y \right)\rd y}$}
+      {$\displaystyle\int_{0}^{1}{\rd x}\displaystyle\int_{x}^{2-x}{f\left( x,y \right)\rd y}$}
+      {$\displaystyle\int_{1}^{2}{\rd y}\displaystyle\int_{2-x}^{x}{f\left( x,y \right)\rd x}$}
+      {$\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{y}^{2-y}{f\left( x,y \right)\rd x}$}
+    }{%
+      C.
+    }{%
+      考查化重积分为累次积分，$\displaystyle\iint\limits_{D}{f\left( x,y \right)\rd x\rd y}=\displaystyle\int_{\text{1}}^{\text{2}}{\rd x}\displaystyle\int_{2-x}^{x}{f\left( x,y \right)\rd y.}$
+    }
+
+    \Example{%
+      2015-2016-2-期中-选择题-19
+    }{%
+      二次积分$\displaystyle\int_{0}^{a}{\rd y}\displaystyle\int_{0}^{y}{{{\re}^{m\left( a-x \right)}}f\left( x \right)\rd x=}$
+      \pickout{D}
+    \options{$\displaystyle\int_{0}^{a}{x{{\re}^{m\left( a-x \right)}}f\left( x \right)\rd x}$}
+      {$\displaystyle\int_{0}^{a}{a{{\re}^{m\left( a-x \right)}}f\left( x \right)\rd x}$}
+      {$\displaystyle\int_{0}^{a}{\left( a-x \right){{\re}^{a\left( m-x \right)}}f\left( x \right)\rd }x$}
+      {$\displaystyle\int_{0}^{a}{\left( a-x \right){{\re}^{m\left( a-x \right)}}f\left( x \right)\rd }x$}
+    }{%
+      D.
+    }{%
+      变换积分次序：$\begin{cases}
+        0\le x\le y \\
+        0\le y\le a \\
+      \end{cases}\to \begin{cases}
+        0\le x\le a \\
+        x\le y\le a \\
+      \end{cases}$，则
+      $$\displaystyle\int_{0}^{a}{\rd y}\displaystyle\int_{0}^{y}{{{{\re}}^{m\left( a-x \right)}}f\left( x \right)\rd x} = \displaystyle\int_{0}^{a}{\rd x}\displaystyle\int_{x}^{a}{{{{\re}}^{m\left( a-x \right)}}f\left( x \right)\rd y} = \displaystyle\int_{0}^{a}{\left( a-x \right){{{\re}}^{m\left( a-x \right)}}f\left( x \right)\rd x}.$$
+    }
+
+    \Example{%
+      2010-2011-2-期末-选择题-8
+    }{%
+      设$f\left( x,y \right)$是连续函数，则$\displaystyle\int_{0}^{a}{\rd x}\displaystyle\int_{0}^{x}{f\left( x,y \right)\rd y}$等于
+      \pickout{B}
+      \options{$\displaystyle\int_{0}^{a}{\rd y}\displaystyle\int_{0}^{y}{f\left( x,y \right)\rd x}$}
+        {$\displaystyle\int_{0}^{a}{\rd y}\displaystyle\int_{y}^{a}{f\left( x,y \right)\rd x}$}
+        {$\displaystyle\int_{0}^{a}{\rd y}\displaystyle\int_{a}^{y}{f\left( x,y \right)\rd x}$}
+        {$\displaystyle\int_{0}^{a}{\rd y}\displaystyle\int_{0}^{a}{f\left( x,y \right)\rd x}$}
+    }{%
+      B.
+    }{%
+      变换积分次序：$\begin{cases}
+        & 0\le x\le a \\
+        & 0\le y\le x \\
+      \end{cases}\to \begin{cases}
+        & y\le x\le a \\
+        & 0\le y\le a \\
+      \end{cases}$，则
+        $\displaystyle\int_{0}^{a}{\rd x}\displaystyle\int_{0}^{x}{f\left( x,y \right)\rd y}=\displaystyle\int_{0}^{a}{\rd y}\displaystyle\int_{y}^{a}{f\left( x,y \right)\rd x}$.
+    }
+
+    \Example{%
+      2013-2014-2-期末(C)-选择题-8
+    }{%
+      交换积分次序$\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{\sqrt{y}}^{\sqrt{2-{{y}^{2}}}}{f\left( x,y \right)\rd x}=$
+      \pickout{B}
+      \options{$\displaystyle\int_{0}^{1}{\rd x}\displaystyle\int_{0}^{{{x}^{2}}}{f\left( x,y \right)\rd y}$}
+        {$\displaystyle\int_{0}^{1}{\rd x}\displaystyle\int_{0}^{{{x}^{2}}}{f\left( x,y \right)\rd y}+\displaystyle\int_{1}^{\sqrt{2}}{\rd x}\displaystyle\int_{0}^{\sqrt{2-{{x}^{2}}}}{f\left( x,y \right)\rd y}$}
+        {$\displaystyle\int_{1}^{\sqrt{2}}{\rd x}\displaystyle\int_{0}^{\sqrt{2-{{x}^{2}}}}f\left( x,y \right)\rd y$}
+        {$\displaystyle\int_{0}^{1}{\rd x}\displaystyle\int_{0}^{{{x}^{2}}}{f\left( x,y \right)\rd y}+\displaystyle\int_{1}^{\sqrt{3}}{\rd x}\displaystyle\int_{0}^{\sqrt{2-{{x}^{2}}}}{f\left( x,y \right)\rd y}$}
+    }{%
+      B.
+    }{%
+      画图，分成两块区域.
+    }
+
+    \Example{%
+      2014-2015-2-期中-填空题-8
+    }{%
+      二次积分$\displaystyle\int_{0}^{1}{\rd x}\displaystyle\int_{0}^{\sqrt{x}}{{{{\re}}^{-\frac{{{y}^{2}}}{2}}}\rd y}$的值等于
+      \fillin{${{\re}^{-\frac{1}{2}}}$}.
+
+      \hfill 2013-2014-2-期末(C)-填空题-4
+
+      \hfill 2012-2013-2-期中-填空题-2
+    }{%
+      ${{\re}^{-\frac{1}{2}}}$.
+    }{%
+      交换积分次序可得
+      \begin{align*}
+        & \displaystyle\int_{0}^{1}{\rd x}\displaystyle\int_{0}^{\sqrt{x}}{{{{\re}}^{-\frac{{{y}^{2}}}{2}}}\rd y}=\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{{{y}^{2}}}^{1}{{{\re}^{-\frac{{{y}^{2}}}{2}}}\rd x} = \displaystyle\int_{0}^{1}{\left( 1-{{y}^{2}} \right){{\re}^{-\frac{{{y}^{2}}}{2}}}\rd y} = \displaystyle\int_{0}^{1}{{{\re}^{-\frac{{{y}^{2}}}{2}}}\rd y}-\displaystyle\int_{0}^{1}{{{y}^{2}}{{\re}^{-\frac{{{y}^{2}}}{2}}}\rd y} \\
+        &  = \displaystyle\int_{0}^{1}{{{\re}^{-\frac{{{y}^{2}}}{2}}}\rd y}-\displaystyle\int_{0}^{1}{y\rd \left( {{\re}^{-\frac{{{y}^{2}}}{2}}} \right)} = \displaystyle\int_{0}^{1}{{{\re}^{-\frac{{{y}^{2}}}{2}}}\rd y}+\left. y{{\re}^{-\frac{{{y}^{2}}}{2}}} \right|_{0}^{1}-\displaystyle\int_{0}^{1}{{{\re}^{-\frac{{{y}^{2}}}{2}}}\rd y} \\
+        = & \left. y{{\re}^{-\frac{{{y}^{2}}}{2}}} \right|_{0}^{1}={{\re}^{-\frac{1}{2}}}.
+      \end{align*}
+    }
+
+    \Example{%
+      2013-2014-2-期末-填空题-5
+    }{%
+      积分$\displaystyle\int_{0}^{2}{\rd x}\displaystyle\int_{x}^{2}{{{\re}^{-{{y}^{2}}}}\rd y}$的值等于
+      \fillin{$\dfrac{1}{2}\left( 1-{{\re}^{-4}} \right)$}.
+    }{%
+      $\dfrac{1}{2}\left( 1-{{\re}^{-4}} \right)$.
+    }{%
+      交换积分次序，得
+      \[ \displaystyle\int_{0}^{2}{\rd x}\displaystyle\int_{x}^{2}{{{\re}^{-{{y}^{2}}}}\rd y}
+      =\displaystyle\int_{0}^{2}{\rd y}\displaystyle\int_{0}^{y}{{{\re}^{-{{y}^{2}}}}\rd x}
+      =\displaystyle\int_{0}^{2}{y{{\re}^{-{{y}^{2}}}}\rd y}
+      =\left. -\dfrac{1}{2}{{\re}^{-{{y}^{2}}}} \right|_{0}^{2}
+      =\dfrac{1}{2}\left( 1-{{\re}^{-4}} \right). \]
+    }
+
+    \Example{%
+      2012-2013-2-期中-选择题-15
+    }{%
+      设函数$f\left( x,y \right)$连续，则二次积分$\displaystyle\int_{\frac{\pi }{2}}^{\pi }{\rd x}\displaystyle\int_{\sin x}^{1}{f(x,y)\rd y}$等于
+      \pickout{B}
+      \options{$\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{\pi +\sin x}^{\pi }{f(x,y)\rd x}$}
+        {$\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{\pi -\arcsin y}^{\pi }{f(x,y)\rd x}$}
+        {$\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{\frac{\pi }{2}}^{\pi +\arcsin x}f(x,y)\rd x$}
+        {$\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{\frac{\pi }{2}}^{\pi -\arcsin x}f(x,y)\rd x$}
+
+      \hfill 2015-2016-2-期中-选择题-16
+    }{%
+      B.
+    }{%
+      考查交换积分次序方法. 注意反正弦函数$f\left( x \right)=\arcsin x$的定义域是$\left[ -1,1 \right]$，值域是$\left[ -\frac{\pi }{2},\frac{\pi }{2} \right]$
+
+      因此当$x\in \left[ 0,\frac{\pi }{2} \right]$时，$x=\arcsin y$；当$x\in \left[ \frac{\pi }{2},\pi  \right]$时，$\pi -x\in \left[ 0,\frac{\pi }{2} \right]$
+
+      于是$x \le \pi \le -\arcsin y$，从而将积分区域变换为
+      $$D:\left\{ \left. \left( x,y \right) \right|\frac{\pi }{2} \le x \le \pi ,\sin x \le y \le 1 \right\} \Leftrightarrow \left\{ \left. \left( x,y \right) \right|0 \le y \le 1,\pi -\arcsin y \le x \le \pi  \right\}.$$
+    }
+
+    \Example{%
+      2014-2015-2-期中-选择题-15
+    }{%
+      设函数$f\left( x,y \right)$连续，则二次积分$\displaystyle\int_{1}^{2}{\rd x\displaystyle\int_{2-x}^{\sqrt{2x-{{x}^{2}}}}{f\left( x,y \right)\rd y}}$等于
+      \pickout{B}
+      \options{$\displaystyle\int_{1}^{2}{\rd y\displaystyle\int_{2-y}^{1+\sqrt{1-{{y}^{2}}}}f\left( x,y \right)\rd x}$}
+        {$\displaystyle\int_{0}^{1}{\rd y\displaystyle\int_{2-y}^{1+\sqrt{1-{{y}^{2}}}}f\left( x,y \right)\rd x}$}
+        {$\displaystyle\int_{1}^{2}{\rd y\displaystyle\int_{2-y}^{\sqrt{2y-{{y}^{2}}}}f\left( x,y \right)\rd x}$}
+        {$\displaystyle\int_{0}^{1}{\rd y\displaystyle\int_{2-y}^{\sqrt{2y-{{y}^{2}}}}f\left( x,y \right)\rd x}$}
+    }{%
+      B.
+    }{%
+      换序
+      $\begin{cases}
+        0\le x\le 1 \\
+        2-x\le y\le \sqrt{2x-{{x}^{2}}} \\
+      \end{cases}\Rightarrow \begin{cases}
+        0\le y\le 1 \\
+        2-y\le x\le 1+\sqrt{1-{{y}^{2}}} \\
+      \end{cases}$
+
+      故$\displaystyle\int_{1}^{2}{\rd x\displaystyle\int_{2-x}^{\sqrt{2x-{{x}^{2}}}}{f\left( x,y \right)\rd y}}=\displaystyle\int_{0}^{1}{\rd y\displaystyle\int_{2-y}^{1+\sqrt{1-{{y}^{2}}}}{f\left( x,y \right)\rd x}}$.
+    }
+
+\type{重积分的计算方法}
+  \subsection{直角坐标系下重积分的计算}
+    \Example{%
+      2015-2016-2-期中-填空题-7
+    }{%
+      设$D=\left\{ \left. \left( x,y \right) \right|\left| x \right|+\left| y \right|\le 1 \right\}$，则二重积分$\displaystyle\iint\limits_{D}{\left| xy \right|\rd x\rd y}$的值等于
+      \fillin{$\dfrac{1}{6}$}.
+    }{%
+      $\dfrac{1}{6}$.
+    }{%
+      设${{D}_{1}}$为$D$在第一象限的区域，则
+      \begin{align*}
+        & \displaystyle\iint\limits_{D}{\left| xy \right|\rd x\rd y}=4\displaystyle\iint\limits_{{{D}_{1}}}{\left| xy \right|\rd x\rd y}=4\displaystyle\iint\limits_{{{D}_{1}}}{xy\rd x\rd y}=4\displaystyle\int_{0}^{1}{\rd x}\displaystyle\int_{0}^{1-x}{xy\rd y} \\
+        = & 2\displaystyle\int_{0}^{1}{x{{\left( 1-x \right)}^{2}}\rd x}=2\displaystyle\int_{0}^{1}{\left( {{x}^{3}}-2{{x}^{2}}+x \right)\rd x}=2\left. \left( \dfrac{{{x}^{4}}}{4}-\dfrac{2{{x}^{3}}}{3}+\dfrac{{{x}^{2}}}{2} \right) \right|_{0}^{1}
+        =\dfrac{1}{6}.
+      \end{align*}
+    }
+
+    \Example{%
+      2012-2013-2-期末-填空题-2
+    }{%
+      设$D$是由直线$y=1,x=2$及$y=x$围成的区域，则$\displaystyle\iint\limits_{D}{xy\rd x\rd y=}$
+      \fillin{$\dfrac{9}{8}$}.
+    }{%
+      $\dfrac{9}{8}$.
+    }{%
+      $\displaystyle\iint\limits_{D}{xy\rd x\rd y} = \displaystyle\int_{1}^{2}{\rd y}\displaystyle\int_{y}^{2}{xy\rd x}=\displaystyle\int_{1}^{2}{\dfrac{y}{2}\left( 4-{{y}^{2}} \right)\rd y}=\dfrac{9}{8}$.
+    }
+
+    \Example{%
+      2014-2015-2-期末-选择题-6
+    }{%
+      设$D$是由曲线$y=x,{{y}^{2}}=x$围成的平面闭区域，则$\displaystyle\iint\limits_{D}{\dfrac{\sin y}{y}\rd x\rd y}$等于
+      \pickout{C}
+      \options{$1+\sin 1$}
+        {$1+\cos 1$}
+        {$1-\sin 1$}
+        {$1-\cos 1$}
+    }{%
+      C.
+    }{%
+      化二重积分为二次积分得到
+      $\displaystyle\iint\limits_{D}{\dfrac{\sin y}{y}\rd x\rd y}$
+      $=\displaystyle\int_{0}^{1}{\displaystyle\int_{{{y}^{2}}}^{y}{\dfrac{\sin y}{y}\rd x\rd y}}$
+      $=\displaystyle\int_{0}^{1}{\left( \sin y-y\sin y \right)\rd y}$
+
+      $= \left. \left( y\cos y-\sin y-\cos y \right) \right|_{0}^{1}$
+      $=1-\sin 1$.
+    }
+
+    \Example{%
+      2013-2014-2-期中-解答题-19
+    }{%
+      设$a,b$为正常数，$D=\left\{ \left. \left( x,y \right) \right|-a\le x\le a,-b\le y\le b \right\}$，计算$I=\displaystyle\iint\limits_{D}{{{\re}^{\max \left\{ {{b}^{2}}{{x}^{2}},{{a}^{2}}{{y}^{2}} \right\}}}\rd x\rd y}$.
+    }{%
+      $\dfrac{4\left( {{\re}^{{{a}^{2}}{{b}^{2}}}}-1 \right)}{ab}$.
+    }{%
+      化简被积函数然后积分即可.
+      \begin{align*}
+        I & =\displaystyle\iint\limits_{{{D}_{1}}}{{{{\re}}^{{{b}^{2}}{{x}^{2}}}}\rd x\rd y}+\displaystyle\iint\limits_{{{D}_{2}}}{{{{\re}}^{{{a}^{2}}{{y}^{2}}}}\rd x\rd y}=4\displaystyle\int_{0}^{a}{\rd x}\displaystyle\int_{0}^{\frac{b}{a}x}{{{\re}^{{{b}^{2}}{{x}^{2}}}}\rd y}+4\displaystyle\int_{0}^{b}{\rd y}\displaystyle\int_{0}^{\frac{b}{a}y}{{{\re}^{{{a}^{2}}{{y}^{2}}}}\rd x} \\
+        = & \dfrac{2}{ab}\left( {{\re}^{{{a}^{2}}{{b}^{2}}}}-1 \right)+\dfrac{2}{ab}\left( {{\re}^{{{a}^{2}}{{b}^{2}}}}-1 \right)=\dfrac{4}{ab}\left( {{\re}^{{{a}^{2}}{{b}^{2}}}}-1 \right).
+      \end{align*}
+    }
+
+    \Example{%
+      2014-2015-2-期中-解答题-20
+    }{%
+      设$\Omega $是由平面$x+y+z=1$与三个坐标平面所围成的空间区域，计算$\displaystyle\iiint\limits_{\Omega }{\left( x+2y+3z \right)\rd x\rd y\rd z}$.
+    }{%
+      $\dfrac{1}{4}$.
+    }{%
+      记重积分为$I$,直接计算即可
+      \begin{align*}
+        I & =\displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{0}^{1-x}{\rd y}}\displaystyle\int_{0}^{1-x-y}{\left( x+2y+3z \right)\rd z}
+        =\displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{0}^{1-x}{\left[ \left( x+2y \right)\left( 1-x-y \right)+\dfrac{3}{2}{{\left( 1-x-y \right)}^{2}} \right]\rd y}} \\
+        = & \displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{0}^{1-x}{\dfrac{1}{2}\left[ -{{y}^{2}}-2y+{{\left( 1-x \right)}^{2}}+2\left( 1-x \right) \right]\rd y}} \\
+        = & \dfrac{1}{2}\displaystyle\int_{0}^{1}{\left[ -\dfrac{1}{3}{{\left( 1-x \right)}^{3}}-{{\left( 1-x \right)}^{2}}+{{\left( 1-x \right)}^{3}}+2{{\left( 1-x \right)}^{2}} \right]\rd x} \\
+        = & \dfrac{1}{2}\displaystyle\int_{0}^{1}{\left[ \dfrac{2}{3}{{\left( 1-x \right)}^{3}}+{{\left( 1-x \right)}^{2}} \right]\rd x}=\dfrac{1}{2}\displaystyle\int_{0}^{1}{\left[ \dfrac{2}{3}{{t}^{3}}+{{t}^{2}} \right]\rd t}
+        =\dfrac{1}{4}.
+      \end{align*}
+    }
+
+    \Example{%
+      2012-2013-2-期末-解答题-16
+    }{%
+      计算$\displaystyle\iint\limits_{D}{\max \left\{ xy,1 \right\}\rd x\rd y}$，其中$\left\{ D=\left. \left( x,y \right) \right|0\le x\le 2,0\le y\le 2 \right\}$.
+    }{%
+      $\dfrac{19}{4}+\ln 2$.
+    }{%
+      曲线$xy=1$将区域$D$分为两个区域${{D}_{1}},{{D}_{2}}$，$\max \left\{ xy,1 \right\}=\begin{cases}
+        & xy,\left( x,y \right)\in {{D}_{1}}, \\
+        & 1,\left( x,y \right)\in {{D}_{2}}, \\
+      \end{cases}$则
+      \begin{align*}
+        & \displaystyle\iint\limits_{D}{\max \left\{ xy,1 \right\}\rd x\rd y}=\displaystyle\iint\limits_{{{D}_{1}}}{xy\rd x\rd y}+\displaystyle\iint\limits_{{{D}_{2}}}{\rd x\rd y}=\displaystyle\iint\limits_{{{D}_{1}}}{xy\rd x\rd y}+\displaystyle\iint\limits_{D}{\rd x\rd y}-\displaystyle\iint\limits_{{{D}_{1}}}{\rd x\rd y} \\
+        = & \displaystyle\int_{\frac{1}{2}}^{2}{\rd x}\displaystyle\int_{\frac{1}{x}}^{2}{xy\rd y}+4-\displaystyle\int_{\frac{1}{2}}^{2}{\rd x}\displaystyle\int_{\frac{1}{x}}^{2}{\rd y}
+        =\dfrac{19}{4}+\ln 2.
+      \end{align*}
+    }
+
+  \subsection{极坐标系下二重积分的计算}
+    \Example{%
+      2012-2013-2-期中-填空题-4
+    }{%
+      设有$D$：${{x}^{2}}\text{+}{{y}^{2}}\le {{a}^{2}}$,则$\displaystyle\iint\limits_{D}{{{\re}^{-{{x}^{2}}-{{y}^{2}}}}\rd x\rd y}=$
+      \fillin{$\pi \left( 1-{{\re}^{-{{a}^{2}}}} \right)$}.
+    }{%
+      $\pi \left( 1-{{\re}^{-{{a}^{2}}}} \right)$.
+    }{%
+    \begin{align*}
+      & \displaystyle\iint\limits_{D}{{{\re}^{-{{x}^{2}}-{{y}^{2}}}}\rd x\rd y}
+      = \displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{a}{\rho {{\re}^{-{{\rho }^{2}}}}\rd \rho }
+      =\dfrac{1}{2}\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{{{a}^{2}}}{{{\re}^{-{{\rho }^{2}}}}\rd \left( {{\rho }^{2}} \right)} \\
+      = & -\dfrac{1}{2}\displaystyle\int_{0}^{2\pi }{{{\re}^{-{{\rho }^{2}}}}}\displaystyle\int_{0}^{{{a}^{2}}}{\rd \theta }
+      = \pi \left( 1-{{\re}^{-{{a}^{2}}}} \right).
+    \end{align*}
+    }
+
+    \Example{%
+      2013-2014-2-期中-填空题-2
+    }{%
+      设$D$是$xOy$平面上圆心在远点、半径为$a(a>0)$的圆域，则$\displaystyle\iint\limits_{D}{\left( a-\sqrt{{{x}^{2}}+{{y}^{2}}} \right)\rd x\rd y}=$
+      \fillin{$\dfrac{{{a}^{3}}\pi }{3}$}.
+    }{%
+      $\dfrac{{{a}^{3}}\pi }{3}$.
+    }{%
+      首先得出积分区域为$D:\left\{ \left. \left( x,y \right) \right|{{x}^{2}}+{{y}^{2}}={{a}^{2}} \right\}$，然后由积分区域及被积函数的特点将重积分转化为极坐标系下的二次积分：
+      $\displaystyle\iint\limits_{D}{\left( a-\sqrt{{{x}^{2}}+{{y}^{2}}} \right)\rd x\rd y}=\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{a}{\left( a-\rho  \right)\rho \rd \rho }=\dfrac{{{a}^{3}}\pi }{3}$.
+    }
+
+    \Example{%
+      2015-2016-2-期中-填空题-10
+    }{%
+      设区域$D:{{x}^{2}}+{{y}^{2}}\le 1$，则二重积分$\displaystyle\iint\limits_{D}{\sqrt[3]{{{x}^{2}}+{{y}^{2}}}\rd x\rd y}$的值等于
+      \fillin{$\dfrac{3}{4}\pi$}.
+
+      \hfill 2014-2015-2-期中-选择题-18
+    }{%
+      $\dfrac{3}{4}\pi$.
+    }{%
+      极坐标变换可得$\displaystyle\iint\limits_{D}{\sqrt[3]{{{x}^{2}}+{{y}^{2}}}\rd x\rd y}=\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{1}{\rho \sqrt[3]{{{\rho }^{2}}}\rd }\rho =2\pi \displaystyle\int_{0}^{1}{{{\rho }^{\frac{5}{3}}}\rd }\rho =\dfrac{3}{4}\pi $.
+    }
+
+    \Example{%
+      2013-2014-2-期中-选择题-11
+    }{%
+      设有闭区域$D=\left\{ \left. \left( x,y \right) \right|{{x}^{2}}+{{y}^{2}}\le 1,x\ge 0 \right\}$，则二重积分$\displaystyle\iint\limits_{D}{\dfrac{1+xy}{1+{{x}^{2}}+{{y}^{2}}}}\rd x\rd y$的值等于
+      \pickout{B}
+      \options{$\dfrac{\pi }{2}$}
+        {$\dfrac{\pi }{2}\ln 2$}
+        {$\dfrac{\pi }{2}\ln 3$}
+        {$\ln 2$}
+    }{%
+      B.
+    }{%
+      极坐标变换可得
+      $$\displaystyle\iint\limits_{D}{\dfrac{1+xy}{1+{{x}^{2}}+{{y}^{2}}}\rd x\rd y}
+      =\displaystyle\int_{-\frac{\pi }{2}}^{\frac{\pi }{2}}{\rd \theta }\displaystyle\int_{0}^{1}{\dfrac{1+{{\rho }^{2}}\cos \theta \sin \theta }{1+{{\rho }^{2}}}\rho \rd \rho }
+      =\displaystyle\int_{0}^{\frac{\pi }{2}}{\rd \theta }\displaystyle\int_{0}^{1}{\left( \dfrac{1}{1+{{\rho }^{2}}}+\dfrac{{{\rho }^{2}}\cos \theta \sin \theta }{1+{{\rho }^{2}}} \right)\rd \left( {{\rho }^{2}} \right)}$$
+      其中
+      $$\displaystyle\int_{0}^{1}{\dfrac{1}{1\text{+}{{\rho }^{2}}}\rd \left( {{\rho }^{2}} \right)}
+      =\ln 2,~
+      \displaystyle\int_{0}^{1}{\dfrac{{{\rho }^{2}}\cos \theta \sin \theta }{1\text{+}{{\rho }^{2}}}\rd \left( {{\rho }^{2}} \right)}
+      =\cos \theta \sin \theta \displaystyle\int_{0}^{1}{\dfrac{{{\rho }^{2}}d\left( {{\rho }^{2}} \right)}{1+{{\rho }^{2}}}}
+      =\left( 1-\ln 2 \right)\cos \theta \sin \theta $$
+      因此原式$=\displaystyle\int_{0}^{\frac{\pi }{2}}{\left[ 1+\left( 1-\ln 2 \right)\cdot \dfrac{\sin 2\theta }{2} \right]\rd \theta }=\dfrac{\pi }{2}\ln 2+\left. \left( 1-\ln 2 \right)\left( -\dfrac{\cos 2\theta }{4} \right) \right|_{0}^{\pi }=\dfrac{\pi }{2}\ln 2$.
+    }
+
+    \Example{%
+      2013-2014-2-期中-选择题-15
+    }{%
+      设函数$f(x,y)$连续，则二次积分$\displaystyle\int_{0}^{1}{\rd y\displaystyle\int_{-\sqrt{1-{{y}^{2}}}}^{1-y}{f\left( x,y \right)\rd x}}$等于
+      \pickout{D}
+      \options{$\displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{0}^{x-1}{f\left( x,y \right)\rd y}}+\displaystyle\int_{-1}^{0}{\rd x\displaystyle\int_{0}^{\sqrt{1-{{x}^{2}}}}{f\left( x,y \right)\rd y}}$}
+        {$\displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{0}^{1-x}{f\left( x,y \right)\rd y}}+\displaystyle\int_{-1}^{0}{\rd x\displaystyle\int_{-\sqrt{1-{{x}^{2}}}}^{0}{f\left( x,y \right)\rd y}}$}
+        {$\displaystyle\int_{0}^{\frac{\pi }{2}}{\rd \theta \displaystyle\int_{0}^{\frac{1}{\cos \theta +\sin \theta }}{f\left( \rho \cos \theta ,\rho \sin \theta  \right)\rd \rho }}+\displaystyle\int_{\frac{\pi }{2}}^{\pi }{\rd \theta \displaystyle\int_{0}^{1}{f\left( \rho \cos \theta ,\rho \sin \theta  \right)\rd \rho }}$}
+        {$\displaystyle\int_{0}^{\frac{\pi }{2}}{\rd \theta \displaystyle\int_{0}^{\frac{1}{\cos \theta +\sin \theta }}{f\left( \rho \cos \theta ,\rho \sin \theta  \right)\rho \rd \rho }}+\displaystyle\int_{\frac{\pi }{2}}^{\pi }{\rd \theta \displaystyle\int_{0}^{1}{f\left( \rho \cos \theta ,\rho \sin \theta  \right)\rho \rd \rho }}$}
+    }{%
+      D.
+    }{%
+      $\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{-\sqrt{1-{{y}^{2}}}}^{1-y}{f\left( x,y \right)\rd x}$
+      $=\displaystyle\iint\limits_{{{D}_{1}}}{f\left( x,y \right)\rd x\rd y}+\displaystyle\iint\limits_{{{D}_{2}}}{f\left( x,y \right)\rd x\rd y}$
+
+      $=\displaystyle\int_{\frac{\pi }{2}}^{\pi }{\rd \theta }\displaystyle\int_{0}^{1}{f\left( \rho \cos \theta ,\rho \sin \theta  \right)\rho \rd \rho }+\displaystyle\iint\limits_{{{D}_{2}}}{f\left( x,y \right)\rd x\rd y}$
+      $\because x<1-y,\therefore \rho \cos \theta <1-\rho \sin \theta$,
+
+      $\therefore \rho <\dfrac{1}{\cos \theta +\sin \theta }$
+      $\therefore \displaystyle\iint\limits_{{{D}_{2}}}{f\left( x,y \right)\rd x\rd y=}\displaystyle\int_{\frac{\pi }{2}}^{\pi }{\rd \theta \displaystyle\int_{0}^{1}{f\left( \rho \cos \theta ,\rho \sin \theta  \right)\rho \rd \rho }}$.
+    }
+
+    \Example{%
+      2010-2011-2-期末-选择题-10
+    }{%
+      设$D$是由圆周${{x}^{2}}+{{y}^{2}}=1$及坐标轴所围成的在第一象限内的闭区域，则$\displaystyle\iint\limits_{D}{\ln \left( 1+{{x}^{2}}+{{y}^{2}} \right)\rd x\rd y}=$
+      \pickout{C}
+    \options{$\dfrac{\pi }{4}\left( \ln 2-1 \right)$}
+      {$\dfrac{\pi }{8}\left( \ln 2-1 \right)$}
+      {$\dfrac{\pi }{4}\left( 2\ln 2-1 \right)$}
+      {$\dfrac{\pi }{8}\left( 2\ln 2-1 \right)$}
+    }{%
+      C.
+    }{%
+      由极坐标变换可得
+      \begin{align*}
+        & \displaystyle\iint\limits_{D}{\ln \left( 1+{{x}^{2}}+{{y}^{2}} \right)\rd x\rd y}=\displaystyle\int_{0}^{\frac{\pi }{2}}{\displaystyle\int_{0}^{1}{\ln \left( 1+{{\rho }^{2}} \right)\rho \rd \rho \rd \theta }}=\displaystyle\int_{0}^{\frac{\pi }{2}}{\displaystyle\int_{0}^{1}{\dfrac{1}{2}\ln \left( 1+{{\rho }^{2}} \right)\rd {{\rho }^{2}}\rd \theta }} \\
+        = & \displaystyle\int_{0}^{\frac{\pi }{2}}{\dfrac{1}{2}\left( 2\ln 2-1 \right)\rd \theta }=\dfrac{\pi }{4}\left( 2\ln 2-1 \right).
+      \end{align*}
+    }
+
+  \subsection{柱、球坐标系下三重积分的计算}
+    \Example{%
+      2014-2015-2-期中-填空题-6
+    }{%
+      将三次积分$I = \displaystyle\int_{0}^{1}{\rd y\displaystyle\int_{-\sqrt{y-{{y}^{2}}}}^{\sqrt{y-{{y}^{2}}}}{\rd x\displaystyle\int_{0}^{\sqrt{3\left( {{x}^{2}}+{{y}^{2}} \right)}}{f\left( \sqrt{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}} \right)\rd z}}}$化为在柱面坐标形式下的三次积分为
+      \fillin{$I=\displaystyle\int_{0}^{\pi }{\rd \theta }\displaystyle\int_{0}^{\sin \theta }{\rd \rho }\displaystyle\int_{0}^{\sqrt{3}\rho }{f\left( \sqrt{{{z}^{2}}+{{\rho }^{2}}} \right)\rho \rd z}$}.
+    }{%
+      $I=\displaystyle\int_{0}^{\pi }{\rd \theta }\displaystyle\int_{0}^{\sin \theta }{\rd \rho }\displaystyle\int_{0}^{\sqrt{3}\rho }{f\left( \sqrt{{{z}^{2}}+{{\rho }^{2}}} \right)\rho \rd z}$.
+    }{%
+      $\begin{cases}
+        {{x}^{2}}+{{y}^{2}}={{\rho }^{2}} \\
+        x=\rho \cos \theta  \\
+        y=\rho \sin \theta  \\
+      \end{cases}$，$\begin{cases}
+        y\in \left[ 0,1 \right]\to \theta \in \left[ 0,\pi  \right] \\
+        x\in \left[ -\sqrt{y-{{y}^{2}}},\sqrt{y-{{y}^{2}}} \right]\to {{x}^{2}}+{{y}^{2}}\le y\to {{\rho }^{2}}\le \rho \sin \theta \to \rho \in \left[ 0,\sin \theta  \right] \\
+        z\in \left[ 0,\sqrt{3\left( {{x}^{2}}+{{y}^{2}} \right)} \right]\to z\in \left [ 0,\sqrt{3}\rho  \right]
+      \end{cases}$.
+    }
+
+    \Example{%
+      2015-2016-2-期中-填空题-8；2012-2013-期中-选择题-11
+    }{%
+      设$\Omega $为平面曲线$\begin{cases}
+        & {{x}^{2}}=2z \\
+        & y=0 \\
+      \end{cases}$绕$z$轴旋转一周形成的曲面与平面$z=8$围成的区域，则三重积分$\displaystyle\iiint\limits_{\Omega }{\left( {{x}^{2}}+{{y}^{2}} \right)\rd v}$的值等于
+      \fillin{$\dfrac{1024\pi }{3}$}.
+    }{%
+      $\dfrac{1024\pi }{3}$.
+    }{%
+      记平面曲线$\begin{cases}
+        & {{x}^{2}}=2z \\
+        & y=0 \\
+      \end{cases}$绕$z$轴旋转一周形成的曲面为$\Sigma :{{x}^{2}}+{{y}^{2}}=2z$
+
+      于是积分区域
+      $\Omega: \left\{ \left. \left( x,y,z \right) \right|\dfrac{1}{2}\left( {{x}^{2}}+{{y}^{2}} \right)z8 \right\}=\left\{ \left. \left( \rho ,\theta ,z \right) \right|\dfrac{1}{2}{{\rho }^{2}}z8,\rho 0,0\theta 2\pi  \right\}$
+      从而积分可计算得
+      \begin{align*}
+        & \displaystyle\iiint\limits_{\Omega }{\left( {{x}^{2}}+{{y}^{2}} \right)\rd x\rd y\rd z}=\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{4}{\rd \rho }\displaystyle\int_{\frac{{{\rho }^{2}}}{2}}^{8}{{{\rho }^{2}}\text{ }\!\!\cdot\!\!\text{ }\rho \rd z}=\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{4}{{{\rho }^{3}}\left( 8-\dfrac{{{\rho }^{2}}}{2} \right)\rd \rho } \\
+        = & \displaystyle\int_{0}^{2\pi }{\left. \left( 2{{\rho }^{4}}-\dfrac{{{\rho }^{6}}}{12} \right) \right|_{0}^{4}\rd \theta }=\dfrac{1024}{3}\pi .
+      \end{align*}
+    }
+
+    \Example{%
+      2014-2015-2-期中-选择题-14
+    }{%
+      设$\Omega $是球面${{x}^{2}}+{{y}^{2}}+{{z}^{2}}=z$所围成的闭区域，则$\displaystyle\iiint\limits_{\Omega }{\sqrt{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}}\rd v=}$
+      \pickout{D}
+      \options{$\dfrac{\pi }{\text{7}}$}
+        {$\dfrac{\pi }{\text{8}}$}
+        {$\dfrac{\pi }{\text{9}}$}
+        {$\dfrac{\pi }{\text{10}}$}
+    }{%
+      D.
+    }{%
+      ${{x}^{2}}+{{y}^{2}}+{{z}^{2}}=z\Rightarrow {{x}^{2}}+{{y}^{2}}+{{\left( z-\dfrac{1}{2} \right)}^{2}}=\dfrac{1}{4}$，在球坐标系中计算得到
+      $$I=\displaystyle\int_{0}^{2\pi }{\rd \phi }\displaystyle\int_{0}^{\frac{\pi }{2}}{\rd \theta }\displaystyle\int_{0}^{\cos \theta }{{{r}^{3}}\sin \theta \rd r}
+      =2\pi \displaystyle\int_{\text{0}}^{\frac{\pi }{\text{2}}}{\dfrac{\text{1}}{\text{4}}{{\cos }^{4}}\theta \sin \theta \rd \theta }
+      =\left. -\dfrac{\pi }{10}{{\cos }^{5}}\theta  \right|_{0}^{\frac{\pi }{2}}=\dfrac{\pi }{10}.$$
+    }
+
+    \Example{%
+      2015-2016-2-期中-选择题-15
+    }{%
+      设$\Omega $为由$z=\sqrt{{{x}^{2}}+{{y}^{2}}}$与$z=1$所围成的区域，则$\displaystyle\iiint\limits_{\Omega }{\left| \sqrt{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}}-1 \right|\rd v=}$
+      \pickout{A}
+      \options{$\dfrac{\pi }{6}\left( \sqrt{2}-1 \right)$}
+        {$\dfrac{\pi }{5}\left( \sqrt{2}-1 \right)$}
+        {$\dfrac{\pi }{4}\left( \sqrt{2}-1 \right)$}
+        {$\dfrac{\pi }{3}\left( \sqrt{2}-1 \right)$}
+    }{%
+      A.
+    }{%
+      积分区域$\Omega :\left\{ \left. \left( x,y,z \right) \right|\sqrt{{{x}^{2}}+{{y}^{2}}} \le z \le 1 \right\} \Leftrightarrow \left\{ \left. \left( r,\varphi ,\theta  \right) \right|r\sin \varphi \le r\cos \varphi \le 1,~0 \le \theta \le 2\pi  \right\}$
+
+      根据被积函数特点按照$r=1$为分界面将$\Omega $分为两块，其中
+
+      ${{\Omega }_{1}}=\left\{ \left( r,\varphi ,\theta  \right) \Big|0 \le r \le 1,~0 \le \varphi \le \dfrac{\pi }{4},~0 \le \theta \le 2\pi \right\}$
+
+      ${{\Omega }_{2}}=\left\{ \left( r,\varphi ,\theta  \right) \Big|1 \le r \le \sec \varphi,~0 \le \varphi \le \dfrac{\pi }{4},~0 \le \theta \le 2\pi \right\}$，
+      于是在球坐标系下计算可得
+      \begin{align*}
+        I = & \displaystyle\iiint\limits_{{{\Omega }_{1}}+{{\Omega }_{2}}}\left| \sqrt{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}}-1 \right|\rd v \\
+        = & \displaystyle\int_{0}^{2\pi }{\rd \theta }\left[ \displaystyle\int_{0}^{\frac{\pi }{4}}{\text{sin}\varphi \rd \varphi }\displaystyle\int_{0}^{1}{\left( 1-r \right){{r}^{2}}\rd r}+\displaystyle\int_{0}^{\frac{\pi }{4}}{\sin \varphi \rd \varphi \displaystyle\int_{1}^{\sec \varphi }{\left( r-1 \right){{r}^{2}}\rd r}} \right] \\
+        = & 2\pi \cdot \left[ \dfrac{1}{12}\displaystyle\int_{0}^{\frac{\pi }{4}}{\sin \varphi \rd \varphi }+\displaystyle\int_{0}^{\frac{\pi }{4}}{\sin \varphi \left( \dfrac{{{\sec }^{4}}\varphi }{4}-\dfrac{{{\sec }^{3}}\varphi }{3}+\dfrac{1}{12} \right)\rd \varphi } \right] \\
+        = & 2\pi \cdot \left[ \dfrac{1}{6}\displaystyle\int_{0}^{\frac{\pi }{4}}{\sin \varphi \rd \varphi }+\displaystyle\int_{\frac{\sqrt{2}}{2}}^{1}{\left( \dfrac{1}{4{{t}^{4}}}-\dfrac{1}{3{{t}^{3}}} \right)\rd t} \right]
+        = 2\pi \cdot \left[ \dfrac{1}{6}\cdot \dfrac{2-\sqrt{2}}{2}+\dfrac{2\sqrt{2}-3}{12} \right]=\dfrac{\pi \left( \sqrt{2}-1 \right)}{6}.
+      \end{align*}
+    }
+
+    \Example{%
+      2015-2016-2-期中-选择题-18
+    }{%
+      积分$I=\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{-\sqrt{y-{{y}^{2}}}}^{\sqrt{y-{{y}^{2}}}}{\rd x}\displaystyle\int_{0}^{\sqrt{3\left( {{x}^{2}}+{{y}^{2}} \right)}}{f\left( \sqrt{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}} \right)\rd z}$写成柱面坐标的形式为
+      \pickout{D}
+      \options{$\displaystyle\int_{0}^{\pi }{\rd \theta }\displaystyle\int_{0}^{\sin \theta }{{{r}^{2}}\rd r}\displaystyle\int_{0}^{\sqrt{3}r}{f\left( \sqrt{{{r}^{2}}+{{z}^{2}}} \right)\rd z}$}
+        {$\displaystyle\int_{0}^{\frac{\pi }{2}}{\rd \theta }\displaystyle\int_{0}^{\sin \theta }{\rd} r\displaystyle\int_{0}^{\sqrt{3}r}{f\left( \sqrt{{{r}^{2}}+{{z}^{2}}} \right)\rd z}$}
+        {$\displaystyle\int_{0}^{\frac{\pi }{2}}{\rd \theta }\displaystyle\int_{0}^{\sin \theta }{r\rd r}\displaystyle\int_{0}^{\sqrt{3}r}{f\left( \sqrt{{{r}^{2}}+{{z}^{2}}} \right)\rd z}$}
+        {$\displaystyle\int_{0}^{\pi }{\rd \theta }\displaystyle\int_{0}^{\sin \theta }{r\rd r}\displaystyle\int_{0}^{\sqrt{3}r}{f\left( \sqrt{{{r}^{2}}+{{z}^{2}}} \right)\rd z}$}
+    }{%
+      D.
+    }{%
+      坐标变换$x=\rho \sin x,y=\rho \cos x$得到
+      $\begin{cases}
+        -\sqrt{y-{{y}^{2}}}\le x\le \sqrt{y-{{y}^{2}}} \\
+        0\le y\le 1 \\
+        0\le z\le \sqrt{3\left( {{x}^{2}}+{{y}^{2}} \right)} \\
+      \end{cases} \Rightarrow \begin{cases}
+        0\le \theta \le \pi  \\
+        0\le r\le \sin \theta  \\
+        0\le z\le \sqrt{3}r \\
+      \end{cases}$
+
+      故$\displaystyle\int_{0}^{1}{\rd y}\displaystyle\int_{-\sqrt{y-{{y}^{2}}}}^{\sqrt{y-{{y}^{2}}}}{\rd x}\displaystyle\int_{0}^{\sqrt{3\left( {{x}^{2}}+{{y}^{2}} \right)}}{f\left( \sqrt{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}} \right)\rd z} = \displaystyle\int_{0}^{\pi }{\rd \theta }\displaystyle\int_{0}^{\sin \theta }{r\rd r}\displaystyle\int_{0}^{\sqrt{3}r}{f\left( \sqrt{{{r}^{2}}+{{z}^{2}}} \right)\rd z}$.
+    }
+
+    \Example{%
+      2014-2015-2-期末-选择题-9
+    }{%
+      设$\Omega $为由曲面${{x}^{2}}+{{y}^{2}}={{z}^{2}}$与$z=a\left( a>0 \right)$围成空间区域，则$\displaystyle\iiint\limits_{\Omega }{\left( {{x}^{2}}+{{y}^{2}} \right)\rd x\rd y\rd z}=$
+      \pickout{A}
+      \options{$\dfrac{\pi }{10}{{a}^{5}}$}
+        {$\dfrac{\pi }{8}{{a}^{5}}$}
+        {$\dfrac{\pi }{10}{{a}^{4}}$}
+        {$\dfrac{\pi }{8}{{a}^{4}}$}
+    }{%
+      A.
+    }{%
+      由柱坐标变换得到
+      $$\displaystyle\iiint\limits_{\Omega }{\left( {{x}^{2}}+{{y}^{2}} \right)\rd x\rd y\rd z}=\displaystyle\int_{0}^{a}{\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{z}{{{r}^{2}}\cdot r\rd r\rd \theta \rd z}}}=2\pi \displaystyle\int_{0}^{a}{\dfrac{{{z}^{4}}}{4}}=2\pi \dfrac{{{a}^{5}}}{20}=\dfrac{\pi }{10}{{a}^{5}}.$$
+    }
+
+    \Example{%
+      2013-2014-2-期末-解答题-16
+    }{%
+      计算$\displaystyle\iiint\limits_{\Omega }{z\rd v}$，其中$\Omega $是由曲面$z=\sqrt{2-{{x}^{2}}-{{y}^{2}}}$及$z={{x}^{2}}+{{y}^{2}}$所围成的闭区域.
+    }{%
+      $\dfrac{\pi }{2}$.
+    }{%
+      柱坐标变换，得
+      \begin{align*}
+      & \displaystyle\iiint\limits_{\Omega }{z\rd v}=\displaystyle\int_{0}^{1}{\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{z}{zr\rd r\rd \theta \rd z}}}+\displaystyle\int_{1}^{\sqrt{2}}{\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{\sqrt{2-{{z}^{2}}}}{zr\rd r\rd \theta \rd z}}} \\
+      = & 2\pi \left( \displaystyle\int_{0}^{1}{\dfrac{{{z}^{3}}}{2}}\rd z+\displaystyle\int_{1}^{\sqrt{2}}{\dfrac{z\left( 2-{{z}^{2}} \right)}{2}\rd z} \right)
+      = \dfrac{\pi }{2}.
+    \end{align*}
+    }
+
+  \subsection{一般坐标系下重积分的计算}
+    \Example{%
+      2013-2014-2-期末-证明题-18
+    }{%
+      设$f\left( t \right)$是连续函数，证明：$\displaystyle\iint\limits_{\left| x \right|+\left| y \right|\le 1}{f\left( x+y \right)\rd x\rd y}=\displaystyle\int_{-1}^{1}{f\left( u \right)\rd u}$.
+    }{%
+      见解析.
+    }{%
+      【法一】记积分区域为$D=\left\{ \left( x,y \right)\left| \left| x \right|+\left| y \right|1 \right. \right\}=\left\{ \left( x,y \right)\left| -1x+y1,-1x-y1 \right. \right\}$，做变量代换
+      $$\begin{cases}
+        u=x+y \\
+        v=x-y \\
+      \end{cases}\Leftrightarrow \begin{cases}
+        x=\dfrac{1}{2}\left( u+v \right) \\
+        y=\dfrac{1}{2}\left( u-v \right) \\
+      \end{cases}$$
+      将$D$映射为$uOv$平面上的正方形区域${D}'\left\{ \left( u,v \right)\left| -1u1,-1v1 \right. \right\}$，该变换的雅可比行列式
+        $$J = \begin{vmatrix}
+         {{{{x}'}}_{u}} & {{{{x}'}}_{v}}  \\
+         {{{{y}'}}_{u}} & {{{{y}'}}_{v}}  \\
+        \end{vmatrix} = \begin{vmatrix}
+           \frac{1}{2} & \frac{1}{2}  \\
+           \frac{1}{2} & -\frac{1}{2}  \\
+        \end{vmatrix} = -\dfrac{1}{2}$$
+      于是
+        $$\displaystyle\iint\limits_{\left| x \right|+\left| y \right|1}{f\left( x+y \right)\rd x\rd y}=\displaystyle\iint\limits_{{{D}'}}{f\left( u \right)\left| J \right|\rd u\rd v}=\dfrac{1}{2}\displaystyle\int_{-1}^{1}{f\left( u \right)\rd u}\displaystyle\int_{-1}^{1}{\rd v}=\displaystyle\int_{-1}^{1}{f\left( u \right)\rd u}$$
+      证毕.
+
+      【法二】以$y$轴为分界线，将$D$分成${{D}_{1}}$和${{D}_{2}}$左右两部分，于是
+        $$\displaystyle\iint\limits_{{{D}_{1}}}{f\left( x+y \right)\rd x\rd y}=\displaystyle\int_{-1}^{0}{\rd x\displaystyle\int_{-1-x}^{1+x}{f\left( x+y \right)\rd y}},\displaystyle\iint\limits_{{{D}_{2}}}{f\left( x+y \right)\rd x\rd y}=\displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{x-1}^{1-x}{f\left( x+y \right)\rd y}}$$
+      令$x+y=t$，则$\rd y=\rd t$，于是
+        \begin{align*}
+        & \displaystyle\int_{-1}^{0}{\rd x\displaystyle\int_{-1-x}^{1+x}{f\left( x+y \right)\rd y}}=\displaystyle\int_{-1}^{0}{\rd x\displaystyle\int_{-1}^{2x+1}{f\left( t \right)\rd t}}=\displaystyle\int_{-1}^{1}{\rd t\displaystyle\int_{\frac{t-1}{2}}^{0}{f\left( t \right)\rd x}}=\dfrac{1}{2}\displaystyle\int_{-1}^{1}{\left( 1-t \right)f\left( t \right)\rd t} \\
+        & \displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{x-1}^{1-x}{f\left( x+y \right)\rd y}}=\displaystyle\int_{0}^{1}{\rd x\displaystyle\int_{2x-1}^{1}{f\left( t \right)\rd t}}=\displaystyle\int_{-1}^{1}{\rd t\displaystyle\int_{0}^{\frac{t+1}{2}}{f\left( t \right)\rd x}}=\dfrac{1}{2}\displaystyle\int_{-1}^{1}{\left( t+1 \right)f\left( t \right)\rd t}
+      \end{align*}
+      从而
+      \begin{align*}
+        & \displaystyle\iint\limits_{\left| x \right|+\left| y \right|\le 1}{f\left( x+y \right)\rd x\rd y}=\displaystyle\iint\limits_{{{D}_{1}}}{f\left( x+y \right)\rd x\rd y}+\displaystyle\iint\limits_{{{D}_{2}}}{f\left( x+y \right)\rd x\rd y} \\
+        = & \dfrac{1}{2}\displaystyle\int_{-1}^{1}{\left( 1-t \right)f\left( t \right)\rd t}+\dfrac{1}{2}\displaystyle\int_{-1}^{1}{\left( t+1 \right)f\left( t \right)\rd t} \\
+        = & \displaystyle\int_{-1}^{1}{f\left( t \right)\rd t}.
+      \end{align*}
+      证毕.
+    }
+
+\type{重积分的应用}
+  \subsection{求曲面面积}
+    \Example{%
+      2015-2016-2-选择题-12；2014-2015-2-期中-填空题-2
+    }{%
+      两个直交圆柱面${{x}^{2}}+{{y}^{2}}={{R}^{2}}$及${{x}^{2}}+{{z}^{2}}={{R}^{2}}$所围立体的表面积为
+      \fillin{$16{{R}^{2}}$}.
+    }{%
+      $16{{R}^{2}}$.
+    }{%
+      设${{A}_{1}}$为曲面$z=\sqrt{{{R}^{2}}-{{x}^{2}}}$相应与区域$D:{{x}^{2}}+{{y}^{2}}\le {{R}^{2}}$上的面积，则所求表面积为$A=4{{A}_{1}}$
+      \begin{align*}
+        & A=4\displaystyle\iint\limits_{D}{\sqrt{1+{{\left( \dfrac{\partial z}{\partial x} \right)}^{2}}+{{\left( \dfrac{\partial z}{\partial y} \right)}^{2}}}\rd x\rd y}=4\displaystyle\iint\limits_{D}{\sqrt{1+{{\left( -\dfrac{x}{\sqrt{{{R}^{2}}-{{x}^{2}}}} \right)}^{2}}+{{0}^{2}}}\rd x\rd y} \\
+        = & 4\displaystyle\iint\limits_{D}{\dfrac{R}{\sqrt{{{R}^{2}}-{{x}^{2}}}}\rd x\rd y}=4R\displaystyle\int_{-R}^{R}{\rd x}\displaystyle\int_{-\sqrt{{{R}^{2}}-x}}^{\sqrt{{{R}^{2}}-x}}{\dfrac{1}{\sqrt{{{R}^{2}}-x}}\rd y=8R\displaystyle\int_{-R}^{R}{\rd x=16{{R}^{2}}.}} \\
+      \end{align*}
+    }
+
+  \subsection{求立体体积}
+    \Example{%
+      2012-2013-2-期中-选择题-17
+    }{%
+      由曲面$z=\sqrt{2-{{x}^{2}}-{{y}^{2}}}$和曲面$z=\sqrt{{{x}^{2}}+{{y}^{2}}}$所围成的立体的体积为
+      \pickout{C}
+      \options{$(\sqrt{2}-1)\pi $}
+        {$\dfrac{4}{3}\pi $}
+        {$\dfrac{4}{3}(\sqrt{2}-1)\pi $}
+        {$\dfrac{5}{3}(\sqrt{2}-1)\pi $}
+    }{%
+      C.
+    }{%
+      $\begin{cases}
+        z=\sqrt{2-{{x}^{2}}-{{y}^{2}}} \\
+        z=\sqrt{{{x}^{2}}+{{y}^{2}}} \\
+      \end{cases}$，$\therefore {{x}^{2}}+{{y}^{2}}=1$为$D$区域，于是
+      $$V=\displaystyle\iint\limits_{D}{\left( \sqrt{2-{{x}^{2}}-{{y}^{2}}}-\sqrt{{{x}^{2}}+{{y}^{2}}} \right)\rd x\rd y}=\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{1}{\left( \sqrt{2-{{\rho }^{2}}}-\rho  \right)\rho \rd \rho }=\dfrac{4}{3}\left( \sqrt{2}-1 \right)\pi.$$
+    }
+
+    \Example{%
+      2012-2013-2-期末-解答题-12
+    }{%
+      计算由曲面$z=6-{{x}^{2}}-{{y}^{2}},z=\sqrt{{{x}^{2}}+{{y}^{2}}}$所围成的立体的体积.
+    }{%
+      $\dfrac{32}{3}\pi $.
+    }{%
+      采用柱坐标，体积
+      $$V=\displaystyle\iiint\limits_{\Omega }{\rd v}=\displaystyle\iiint\limits_{\Omega }{r\rd r\rd \theta \rd z=\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{2}{r\rd r}\displaystyle\int_{r}^{6-{{r}^{2}}}{\rd z}}=2\pi \displaystyle\int_{0}^{2}{\left( 6r-{{r}^{2}}-{{r}^{3}} \right)\rd r}=\dfrac{32}{3}\pi .$$
+    }
+
+    \Example{%
+      2013-2014-2-期末-解答题-17
+    }{%
+      求由曲面$z={{x}^{2}}+{{y}^{2}}$与$z=\sqrt{{{x}^{2}}+{{y}^{2}}}$围成的立体的体积.
+    }{%
+      $\dfrac{\pi }{6}$.
+    }{%
+      投影区域：${{x}^{2}}+{{y}^{2}}\le 1$，体积$=\displaystyle\iint\limits_{{{x}^{2}}+{{y}^{2}}\le 1}{\left[ \sqrt{{{x}^{2}}+{{y}^{2}}}-\left( {{x}^{2}}+{{y}^{2}} \right) \right]\rd x\rd y}=\displaystyle\int_{0}^{2\pi }{\rd \theta }\displaystyle\int_{0}^{1}{\left( \rho -{{\rho }^{2}} \right)\rd \rho =\dfrac{\pi }{6}}$.
+    }
+
+    \Example{%
+      2014-2015-2-期末-解答题-12
+    }{%
+      计算由曲面$2az={{x}^{2}}+{{y}^{2}}+{{z}^{2}}\left( a>0 \right)$及${{x}^{2}}+{{y}^{2}}={{z}^{2}}$所围成的（含有$z$轴的部分）立体的体积.
+    }{%
+      $\dfrac{{{a}^{3}}\pi }{2}$.
+    }{%
+      $2az={{x}^{2}}+{{y}^{2}}+{{z}^{2}}\Rightarrow {{x}^{2}}+{{y}^{2}}+{{\left( z-a \right)}^{2}}={{a}^{2}}$，柱坐标变换得
+      \begin{align*}
+      & \displaystyle\iiint\limits_{D}{dv}=\displaystyle\int_{0}^{a}{\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{z}{r\rd r\rd \theta \rd z}}}+\displaystyle\int_{a}^{2a}{\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{\sqrt{2az-{{z}^{2}}}}{r\rd r\rd \theta \rd z}}} \\
+      = & 2\pi \displaystyle\int_{0}^{a}{\dfrac{{{z}^{2}}}{2}}\rd z+2\pi \displaystyle\int_{a}^{2a}{\dfrac{2az-{{z}^{2}}}{2}}\rd z
+      =\dfrac{{{a}^{3}}\pi }{2}.
+    \end{align*}
+    }
+
+  \subsection{求转动惯量}
+    \Example{%
+      2011-2012-2-期末-解答题-13
+    }{%
+      一均匀物体（密度$\rho $为常数）占有的闭区域$\Omega $由曲面$z={{x}^{2}}+{{y}^{2}}$和平面$z=0,\left| x \right|=a,\left| y \right|=a$所围成，求物体关于$z$轴的转动惯量.
+    }{%
+      $\dfrac{112}{45}{{a}^{6}}\rho $.
+    }{%
+      由转动惯量的定义：$J=\displaystyle\iiint\limits_{\Omega }{\rho {{r}^{2}}\rd v}$，其中$r=\sqrt{{{x}^{2}}+{{y}^{2}}}$. 由极坐标变换可得
+      \begin{align*}
+        & J=\displaystyle\iiint\limits_{\Omega }{\rho {{r}^{2}}\rd v}=\displaystyle\int_{-a}^{a}{\displaystyle\int_{-a}^{a}{\displaystyle\int_{0}^{{{x}^{2}}+{{y}^{2}}}{\left( {{x}^{2}}+{{y}^{2}} \right)\rd z\rd x\rd y}}}=\displaystyle\int_{-a}^{a}{\displaystyle\int_{-a}^{a}{{{\left( {{x}^{2}}+{{y}^{2}} \right)}^{2}}\rd x\rd y}} \\
+        = & \displaystyle\int_{-a}^{a}{\displaystyle\int_{-a}^{a}{\left( {{x}^{4}}+2{{x}^{2}}{{y}^{2}}+{{y}^{4}} \right)\rd x\rd y}}
+        =\dfrac{112}{45}{{a}^{6}}\rho .
+      \end{align*}
+    }
+
+\type{涉及到重积分的综合题}
+  \Example{%
+    2013-2014-2-期中-填空题-6
+  }{%
+    设$f(x)$为连续的函数，$F(t)=\displaystyle\int_{1}^{t}{\rd y\displaystyle\int_{y}^{t}{f(x)\rd x}}$，则${F}'(2)=$
+    \pickout{$f\left( 2 \right)$}.
+  }{%
+    $f\left( 2 \right)$.
+  }{%
+    画出积分区域，观察其特点，交换积分次序可得
+    \[ F\left( t \right)=\displaystyle\int_{1}^{t}{\rd y\displaystyle\int_{y}^{t}{f\left( x \right)\rd x}}=\displaystyle\int_{1}^{t}{f\left( x \right)\rd x\displaystyle\int_{1}^{x}{\rd y}}
+    =\displaystyle\int_{1}^{t}{\left( x-1 \right)f\left( x \right)\rd x} \]
+    所以${F}'\left( t \right)=\left( t-1 \right)f\left( t \right)\Rightarrow {F}'\left( 2 \right)=f\left( 2 \right)$.
+  }
+
+  \Example{%
+    2010-2011-2-期末-选择题-11
+  }{%
+    设$F\left( t \right)=\displaystyle\iiint\limits_{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}\le {{t}^{2}}}{f\left( {{x}^{2}}+{{y}^{2}}+{{z}^{2}} \right)\rd v}$，其中$f$为连续函数，且$f\left( 0 \right)=0,{f}'\left( 0 \right)=1,t>0$，则$\lim\limits_{t \to 0^+} \dfrac{F\left( t \right)}{{{t}^{5}}}$的值为
+    \pickout{B}
+    \options{$\pi $}
+      {$\dfrac{4}{5}\pi $}
+      {$\dfrac{3}{5}\pi $}
+      {$\dfrac{2}{5}\pi $}
+  }{%
+    B.
+  }{%
+    由球坐标变换可得
+    $$F\left( t \right)=\displaystyle\iiint\limits_{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}\le {{t}^{2}}}{f\left( {{x}^{2}}+{{y}^{2}}+{{z}^{2}} \right)\rd v}=\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{t}{f\left( {{r}^{2}} \right){{r}^{2}}\sin \varphi \rd r\rd \varphi \rd \theta }}}=4\pi \displaystyle\int_{0}^{t}{f\left( {{r}^{2}} \right){{r}^{2}}\rd r}$$
+    于是由洛必达法则及变限积分求导公式可得
+    \begin{align*}
+      & \lim\limits_{t \to 0^+} \dfrac{F\left( t \right)}{{{t}^{5}}}=\lim\limits_{t \to 0^+} \dfrac{4\pi \displaystyle\int_{0}^{t}{f\left( {{r}^{2}} \right){{r}^{2}}\rd r}}{{{t}^{5}}}=4\pi \lim\limits_{t \to 0^+} \dfrac{f\left( {{t}^{2}} \right){{t}^{2}}}{5{{t}^{4}}}=\dfrac{4\pi }{5}\lim\limits_{t \to 0^+} \dfrac{f\left( {{t}^{2}} \right)}{{{t}^{2}}} \\
+      = & \dfrac{4\pi }{5}\underset{u\to {{0}^{\text{+}}}}{\mathop{\lim }}\,\dfrac{f\left( u \right)}{u}=\dfrac{4\pi }{5}\underset{u\to {{0}^{\text{+}}}}{\mathop{\lim }}\,\dfrac{f\left( u \right)-f\left( 0 \right)}{u}=\dfrac{4\pi }{5}{f}'\left( 0 \right)
+      =\dfrac{4\pi }{5}.
+    \end{align*}
+  }
+
+  \Example{%
+    2012-2013-2-期末-选择题-9；2014-2015-2-期中-解答题-21
+  }{%
+    设$f\left( x \right)$连续，$f\left( 1 \right)=1$，且$F\left( t \right)=\displaystyle\iiint\limits_{\Omega }{\left[ {{z}^{2}}+f\left( {{x}^{2}}+{{y}^{2}} \right) \right]\rd x\rd y\rd z}$，其中$\Omega :0\le z\le 1,{{x}^{2}}+{{y}^{2}}\le {{t}^{2}}$，则${F}'\left( 1 \right)=$
+    \pickout{A}
+    \options{$\dfrac{8}{3}\pi $}
+      {$\dfrac{7}{3}\pi $}
+      {$\dfrac{6}{3}\pi $}
+      {$\dfrac{5}{3}\pi $}
+  }{%
+    A.
+  }{%
+    由柱坐标变换可得
+    \begin{align*}
+      & F\left( t \right)=\displaystyle\iiint\limits_{\Omega }{{{z}^{2}}+f\left( {{x}^{2}}+{{y}^{2}} \right)\rd x\rd y\rd z}=\displaystyle\int_{0}^{1}{\displaystyle\int_{0}^{2\pi }{\displaystyle\int_{0}^{t}{\left[ {{z}^{2}}+f\left( {{x}^{2}}+{{y}^{2}} \right) \right]r\rd r\rd \theta \rd z}}} \\
+      = & \text{2}\pi \displaystyle\int_{0}^{t}{\left[ \dfrac{\text{1}}{\text{3}}+f\left( {{r}^{2}} \right) \right]r\rd r}=2\pi \cdot \left[ \dfrac{1}{6}{{t}^{2}}+\dfrac{1}{2}\displaystyle\int_{0}^{{{t}^{2}}}{f\left( u \right)\rd u} \right]
+      =\dfrac{\pi }{3}{{t}^{2}}+\pi \displaystyle\int_{0}^{{{t}^{2}}}{f\left( u \right)\rd u}
+    \end{align*}
+    于是由变限积分求导公式可得
+    ${F}'\left( t \right)=\dfrac{2\pi }{3}t+2\pi tf\left( {{t}^{2}} \right)\Rightarrow {F}'\left( 1 \right)=\dfrac{2\pi }{3}+2\pi f\left( 1 \right)=\dfrac{8}{3}\pi $.
+  }
+
+  \Example{%
+    2013-2014-2-期末-选择题-9
+  }{%
+    设函数$f$连续，$F\left( u,v \right)=\displaystyle\iint\limits_{{{D}_{uv}}}{\dfrac{f\left( {{x}^{2}}+{{y}^{2}} \right)}{\sqrt{{{x}^{2}}+{{y}^{2}}}}\rd x\rd y}$，其中${{D}_{uv}}$为图中阴影部分，则$\dfrac{\partial F}{\partial u}=$
+    \pickout{A}
+    \options{$vf\left( u \right)$}
+      {$\dfrac{v}{u}f\left( u \right)$}
+      {$vf\left( {{u}^{2}} \right)$}
+      {$\dfrac{v}{u}f\left( {{u}^{2}} \right)$}
+  }{%
+    A.
+  }{%
+    由极坐标，得$\begin{cases}
+      1\le r\le u \\
+      0\le \theta \le v \\
+    \end{cases}$，故
+    $$F\left( u,v \right)=\displaystyle\iint\limits_{{{D}_{uv}}}{\dfrac{f\left( {{x}^{2}}+{{y}^{2}} \right)}{\sqrt{{{x}^{2}}+{{y}^{2}}}}\rd x\rd y}=\displaystyle\int_{0}^{v}{\rd \theta }\displaystyle\int_{1}^{u}{\dfrac{f\left( {{r}^{2}} \right)}{r}r\rd r}=v\displaystyle\int_{1}^{u}{f\left( {{r}^{2}} \right)\rd r}$$
+    由变限积分求导公式得$\dfrac{\partial F}{\partial u}=vf\left( {{u}^{2}} \right)$.
+  }
+
+  \Example{%
+    2010-2011-2-期末-解答题-15
+  }{%
+    设闭区域$D:{{x}^{2}}+{{y}^{2}}\le y,x\ge 0,f\left( x,y \right)$为$D$上的连续函数，且$f\left( x,y \right)=\sqrt{1-{{x}^{2}}-{{y}^{2}}}-\dfrac{8}{\pi }\displaystyle\iint\limits_{D}{f\left( u,v \right)\rd v\rd u}$，求$f\left( x,y \right)$.
+  }{%
+    $\sqrt{1-{{x}^{2}}-{{y}^{2}}}-\dfrac{2}{3}+\dfrac{8}{9\pi }$.
+  }{%
+    令$A=\displaystyle\iint\limits_{D}{f\left( u,v \right)\rd u\rd v}$，则$f\left( x,y \right)=\sqrt{1-{{x}^{2}}-{{y}^{2}}}-\dfrac{8}{\pi }A$，在$D$上对上式两边积分，有
+    \begin{align*}
+      & \displaystyle\iint\limits_{D}{f\left( x,y \right)\rd x\rd y}=\displaystyle\iint\limits_{D}{\sqrt{1-{{x}^{2}}-{{y}^{2}}}\rd x\rd y}-\dfrac{8}{\pi }A\displaystyle\iint\limits_{D}{\rd x\rd y} \\
+      = & \displaystyle\int_{0}^{\frac{\pi }{2}}{\rd \theta \displaystyle\int_{0}^{\sin \theta }{\sqrt{1-{{r}^{2}}}r\rd r}}-\dfrac{8}{\pi }A\dfrac{\pi }{8}=-\dfrac{1}{3}\displaystyle\int_{0}^{\frac{\pi }{2}}{\left( {{\cos }^{3}}\theta -1 \right)\rd \theta }-A
+      = \dfrac{\pi }{6}-\dfrac{2}{9}-A
+    \end{align*}
+    即$A=\dfrac{\pi }{6}-\dfrac{2}{9}-A$，解得$A=\dfrac{\pi }{12}-\dfrac{1}{9}$，从而$f\left( x,y \right)=\sqrt{1-{{x}^{2}}-{{y}^{2}}}-\dfrac{2}{3}+\dfrac{8}{9\pi }$.
+  }
+
+  \Example{%
+    2014-2015-2-期末-证明题-17
+  }{%
+    设$f\left( x \right)$在$\left[ a,b \right]$上连续，利用二重积分，证明：${{\left( \displaystyle\int_{a}^{b}{f\left( x \right)\rd x} \right)}^{2}}\le \left( b-a \right)\displaystyle\int_{a}^{b}{{{f}^{2}}\left( x \right)}\rd x$，其中$D:a\le x\le b,a\le y\le b$.
+
+    \hfill 2013-2014-2-期末-证明题-18
+
+    \hfill 2010-2011-2-期末-证明题-18
+  }{%
+    见解析.
+  }{%
+    显然${{\left[ f\left( x \right)-f\left( y \right) \right]}^{2}}0$，从而
+    \begin{align*}
+      0 & \le \displaystyle\int_{a}^{b}{\rd x}\displaystyle\int_{a}^{b}{{{\left[ f\left( x \right)-f\left( y \right) \right]}^{2}}\rd y}=\displaystyle\int_{a}^{b}{\rd x\displaystyle\int_{a}^{b}{\left[ {{f}^{2}}\left( x \right)-2f\left( x \right)f\left( y \right)+{{f}^{2}}\left( y \right) \right]}} \\
+      = & 2\left( b-a \right)\displaystyle\int_{a}^{b}{{{f}^{2}}\left( x \right)\rd x-2{{\left[ \displaystyle\int_{a}^{b}{f\left( x \right)\rd x} \right]}^{2}}}
+    \end{align*}
+    移项即得证.
+  }
+
+  \Example{%
+    2014-2015-2-期末-解答题-18
+  }{%
+    设$f\left( u \right)$具有连续的导函数，且$\underset{u\to +\infty }{\mathop{\lim }}\,{f}'\left( u \right)=A$，$D=\left\{ \left. \left( x,y \right) \right|{{x}^{2}}+{{y}^{2}}\le {{R}^{2}},x\ge 0,y\ge 0 \right\},\left( R>0 \right)$.
+
+  (1)求${{I}_{R}}=\displaystyle\iint\limits_{D}{{f}'\left( {{x}^{2}}+{{y}^{2}} \right)\rd x\rd y}$；
+  (2)~$\lim\limits_{R \to +\infty} \dfrac{{{I}_{R}}}{{{R}^{2}}}$.
+  }{%
+    (1)~$\dfrac{\pi }{4}\left[ f\left( {{R}^{2}} \right)-f\left( 0 \right) \right]$；
+    (2)~$\dfrac{\pi }{4}A$。
+  }{%
+    (1)极坐标变换，得
+    $${{I}_{R}}=\displaystyle\iint\limits_{D}{{f}'\left( {{x}^{2}}+{{y}^{2}} \right)\rd x\rd y}=\displaystyle\int_{0}^{\frac{\pi }{2}}{\displaystyle\int_{0}^{R}{{f}'\left( {{r}^{2}} \right)r\rd r\rd \theta }}=\dfrac{\pi }{4}\left. f\left( {{r}^{2}} \right) \right|_{0}^{R}=\dfrac{\pi }{4}\left[ f\left( {{R}^{2}} \right)-f\left( 0 \right) \right].$$
+
+  (2)由(1)中结果，结合洛必达法则知
+    $$\lim\limits_{R \to +\infty} \dfrac{{{I}_{R}}}{{{R}^{2}}}=\dfrac{\pi }{4}\lim\limits_{R \to +\infty} \dfrac{f\left( {{R}^{2}} \right)-f\left( 0 \right)}{{{R}^{2}}}=\dfrac{\pi }{4}\underset{u\to \infty }{\mathop{\lim }}\,\dfrac{f\left( u \right)-f\left( 0 \right)}{u}=\dfrac{\pi }{4}\underset{u\to \infty }{\mathop{\lim }}\,{f}'\left( u \right)=\dfrac{\pi }{4}A.$$
+  }
+
+% \type{含参积分}
+%   无

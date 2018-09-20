@@ -1,0 +1,339 @@
+% !TEX root = ../HTNotes-Demo.tex
+% !TEX program = xelatex
+% 内容开始
+\type{向量及其运算}
+
+  \hspace*{2em}主要包括向量的概念和向量的简单运算，后者包括线性运算——加减，交换、结合、分配，数乘，点积，叉积，混合积等.
+
+  \Example{}{%
+    设$\bm{a},\bm{b},\bm{c}$为三个不共面的非零向量，证明：若向量$\bm{p}$同时垂直于$\bm{a},\bm{b},\bm{c}$，则$\bm{p}=\bm{0}$.
+  }{%
+    见解析.
+  }{%
+    假设$\bm{p}\ne \bm{0}$,~
+    $\because \bm{p}\bot \bm{a}$,~
+    $\bm{p}\bot \bm{b}$,~
+    $\therefore \bm{p}\parallel \bm{a}\times \bm{b}$
+
+    又$\because \bm{p}\bot \bm{c}\Rightarrow \bm{c}\bot \bm{a}\times \bm{b}$
+    $\Rightarrow \left( \bm{a}\times \bm{b} \right)\cdot \bm{c}=\bm{0}$，即$\bm{a},\bm{b},\bm{c}$共面，矛盾.故$\bm{p}=\bm{0}$.
+  }
+
+  \Example{%
+    2013-2014-2-期中-填空题-1
+  }{%
+    设$\bm{a}=\left( 1,2,3 \right),\bm{b}=\left( -1,2,2 \right)$，以$\bm{a},\bm{b}$为邻边的平行四边形的面积为
+    \fillin{$3\sqrt{5}$}.
+  }{%
+    $3\sqrt{5}$.
+  }{%
+    $S=\begin{vmatrix}
+      \bm{i} & \bm{j} & \bm{k}  \\
+      1 & 2 & 3  \\
+      -1 & 2 & 2  \\
+    \end{vmatrix}=3\sqrt{5}$.
+  }
+
+  \Example{%
+    2013-2014-2-期中-填空题-4
+  }{%
+    $\left| \bm{a} \right|=2,\left| \bm{b} \right|=5,\left( \bm{a},\bm{b} \right)=\dfrac{\pi }{3}$，向量$\bm{u}=k\bm{a}+2\bm{b},\bm{v}=\bm{a}-\bm{b}$垂直，则$k=$
+    \fillin{$-40$}.
+  }{%
+    $-40$.
+  }{%
+    $\bm{u}\cdot \bm{v}=k{{\left| \bm{a} \right|}^{2}}+\left( 2-k \right)\bm{a}\cdot \bm{b}-2{{\left| \bm{b} \right|}^{2}}=0\Rightarrow k=-40$.
+  }
+
+  \Example{%
+    2014-2015-2-期中-填空题-1
+  }{%
+    已知不共面的三向量$\bm{a}=\left( 1,0,-1 \right),\bm{b}=\left( 2,3,1 \right),\bm{c}=\left( 0,1,2 \right)$及$\bm{d}=\left( 0,0,3 \right)$，则用$\bm{a},\bm{b},\bm{c}$的线性组合表示的向量$\bm{d}=$
+    \fillin{$2\bm{a}-\bm{b}+3\bm{c}$}.
+  }{%
+    $2\bm{a}-\bm{b}+3\bm{c}$.
+  }{%
+    设$\bm{d}=m\bm{a}+n\bm{b}+p\bm{c}\Rightarrow \begin{cases}
+      m+2n=0  \\
+      3n+p=0  \\
+      -m+n+2p=3  \\
+    \end{cases}\Rightarrow \begin{cases}
+      m=2  \\
+      n=-1  \\
+      p=3  \\
+    \end{cases} \Rightarrow \bm{d}=2\bm{a}-\bm{b}+3\bm{c}$.
+  }
+
+  \Example{%
+    2014-2015-2-期中-填空题-4
+  }{%
+    一向量的终点在点$B\left( 2,-1,7 \right)$,它在$x$轴，$y$轴和$z$轴上的投影依次为$4,-4,7$，则该向量的起点$A$的坐标为
+    \fillin{$\left( 2,3,0 \right)$}.
+  }{%
+    $\left( 2,3,0 \right)$.
+  }{%
+    $\because x=2-4=-2,y=-1-(-4)=3,z=7-7=0$~$\therefore A\left( 2,3,0 \right)$.
+  }
+
+  \Example{%
+    2014-2015-2-期中-填空题-9
+  }{%
+    若向量$\bm{a}\ne 0$，则极限$\underset{x\to 0}{\mathop{\lim }}\,\dfrac{\left| \bm{a}+x\bm{b} \right|-\left| \bm{a}-x\bm{b} \right|}{x} = $
+    \fillin{$\dfrac{2\bm{a}\cdot \bm{b}}{\left| \bm{a} \right|}$}.
+  }{%
+    $\dfrac{2\bm{a}\cdot \bm{b}}{\left| \bm{a} \right|}$.
+  }{%
+    原式$=\underset{x\to 0}{\mathop{\lim }}\,\dfrac{4x\bm{a}\cdot \bm{b}}{x\left( \left| \bm{a}+x\bm{b} \right|+\left| \bm{a}-x\bm{b} \right| \right)}=\dfrac{4\bm{a}\cdot \bm{b}}{2\left| \bm{a} \right|}
+    =\dfrac{2\bm{a}\cdot \bm{b}}{\left| \bm{a} \right|}$.
+  }
+
+  \Example{%
+    2015-2016-2-期末-填空题-3
+  }{%
+    设$\bm{m}=3\bm{i}+5\bm{j}+8\bm{k},\bm{n}=2\bm{i}-4\bm{j}-7\bm{k},\bm{p}=5\bm{i}+\bm{j}-4\bm{k}$，且向量$\bm{a}=4\bm{m}+3\bm{n}-\bm{p}$，则$\bm{a}$在$x$轴上的投影为
+    \fillin{$13$}
+    ，在$y$轴上的分向量为
+    \fillin{$7\bm{j}$}.
+  }{%
+    $13$;~$7\bm{j}$.
+  }{%
+    注意区分“投影”和“投影向量、分向量”的概念，前者是数而后者是向量.
+
+    $\bm{a}=\left( 12+6-5 \right)\bm{i}+\left( 20-12-1 \right)\bm{j}+\left( 32-21+4 \right)\bm{k}=13\bm{i}+7\bm{j}+15\bm{k}$
+
+    $\therefore $在$x$轴上的投影为$13$，在$y$轴上的分向量为$7\bm{j}$.
+  }
+
+  \Example{%
+    2015-2016-2-期末-填空题-6
+  }{%
+    设$\left| \bm{a} \right|=2,\left| \bm{b} \right|=5,\left( \bm{a},\bm{b} \right)=\dfrac{2\pi }{3}$，向量$\bm{m}=\lambda \bm{a}+17\bm{b}$与$\bm{n}=3\bm{a}-\bm{b}$垂直，则$\lambda =$
+    \fillin{$40$}.
+  }{%
+    $40$.
+  }{%
+    $\because \bm{m}\cdot \bm{n}=0\Rightarrow 3\lambda {{\left| \bm{a} \right|}^{2}}+\left( 51-\lambda  \right)\bm{a}\cdot \bm{b}-17{{\left| \bm{b} \right|}^{2}}=0\Rightarrow \lambda =40$.
+  }
+
+\type{三维空间中的面与线}
+  \subsection{直线与平面的概念及计算}
+    \Example{}{%
+      求与两平面$x-4z=3,2x-y-5z=1$的交线平行，且过点$\left( -3,2,5 \right)$的直线方程.
+    }{%
+      $\dfrac{x+3}{4}=\dfrac{y-2}{3}=\dfrac{z-5}{1}$.
+    }{%
+      所求直线的方向向量可取为
+      $\bm{s}=\bm{n}_1 \times \bm{n}_2=\begin{vmatrix}
+        \bm{i} & \bm{j} & \bm{k}  \\
+        1 & 0 & -4  \\
+        2 & -1 & -5
+      \end{vmatrix}=\left( -4,-3,-1 \right)$
+
+      利用点向式可得方程$\dfrac{x+3}{4}=\dfrac{y-2}{3}=\dfrac{z-5}{1}$.
+    }
+
+    \Example{}{%
+      求过点$\left( 2,1,3 \right)$且与直线$\dfrac{x+1}{3}=\dfrac{y-1}{2}=\dfrac{z}{-1}$垂直相交的直线方程.
+    }{%
+      $\dfrac{x-2}{2}=\dfrac{y-1}{-1}=\dfrac{z-3}{4}$.
+    }{%
+      先求二直线交点$P$.过已知点且垂直于已知直线的平面的法向量为$\left( 3,2,-1 \right)$
+
+      故其方程为$3\left( x-2 \right)+2\left( y-1 \right)-\left( z-3 \right)=0$
+
+      把已知直线方程化为参数方程代入可得交点$P\left( \dfrac{2}{7},\dfrac{13}{7},-\dfrac{3}{7} \right)$
+
+      最后利用两点得所求方程为$\dfrac{x-2}{2}=\dfrac{y-1}{-1}=\dfrac{z-3}{4}$.
+    }
+
+    \Example{}{%
+       求直线$\dfrac{x-2}{1}=\dfrac{y-3}{1}=\dfrac{z-4}{2}$与平面$2x+y+z-6=0$的交点.
+    }{%
+      $\left( 1,2,2 \right)$.
+    }{%
+      化直线方程为参数方程
+      $\begin{cases}
+        x=2+t  \\
+        y=3+t  \\
+        z=4+2t  \\
+      \end{cases}$，
+      代入平面方程得$t=-1$，从而确定交点为$\left( 1,2,2 \right)$.
+    }
+
+    \Example{}{%
+       求直线$\begin{cases}
+       x+y-z-1=0  \\
+       x-y+z+1=0  \\
+    \end{cases}$在平面$x+y+z=0$上的投影直线方程.
+    }{%
+      $\begin{cases}
+        y-z-1=0  \\
+        x+y+z=0
+      \end{cases}$.
+    }{%
+      过已知直线的平面束方程
+      $$x+y-z-1+\lambda \left( x-y+z+1 \right)=0\Rightarrow \left( 1+\lambda  \right)x+\left( 1-\lambda  \right)y+\left( -1+\lambda  \right)z+\left( -1+\lambda  \right)=0$$
+      从中选择$\lambda $使其与已知平面垂直$\left( 1+\lambda  \right)\cdot 1+\left( 1-\lambda  \right)\cdot 1+\left( -1+\lambda  \right)\cdot 1=0\Rightarrow \lambda = -1$
+
+      $\therefore \begin{cases}
+        y-z-1=0  \\
+        x+y+z=0
+      \end{cases}$.
+    }
+
+    \Example{}{%
+      设一平面平行于已知直线$\begin{cases}
+        2x-z=0  \\
+        x+y-z+5=0
+      \end{cases}$且垂直于已知平面$7x-y+4z-3=0$，求该平面法线的方向余弦.
+    }{%
+      $\cos \alpha =\dfrac{\sqrt{3}}{50},\cos \beta =\dfrac{5}{\sqrt{50}},\cos \gamma =-\dfrac{4}{\sqrt{50}}$.
+    }{%
+      已知平面的法向量$\bm{n}_1=\left( 7,-1,4 \right)$，求出已知直线的方向向量$\bm{s}=\begin{vmatrix}
+        \bm{i} & \bm{j} & \bm{k}  \\
+        2 & 0 & -1  \\
+        1 & 1 & -1  \\
+      \end{vmatrix}=\left( 1,1,2 \right)$
+
+      取所求平面的法向量$\bm{n}=\bm{s}\times \bm{n}_1=\begin{vmatrix}
+         \bm{i} & \bm{j} & \bm{k}  \\
+         1 & 1 & 2  \\
+         7 & -1 & 4  \\
+      \end{vmatrix}=2\left( 3,5,-4 \right)$
+
+      求得其方向余弦为
+        $\cos \alpha =\dfrac{\sqrt{3}}{50},\cos \beta =\dfrac{5}{\sqrt{50}},\cos \gamma =-\dfrac{4}{\sqrt{50}}$.
+    }
+
+    \Example{}{%
+      求过点${{M}_{0}}\left( 1,1,1 \right)$且与两直线${{L}_{1}}:\begin{cases}
+        y=2x  \\
+        z=x-1  \\
+      \end{cases},{{L}_{2}}:\begin{cases}
+        y=3x-4  \\
+        z=2x-1  \\
+      \end{cases}$都相交的直线.
+    }{%
+      $\begin{cases}
+        3x-y-z-1=0  \\
+        2x-z-1=0  \\
+      \end{cases}$.
+    }{%
+      【法一】先求交点，再写直线方程
+      将两直线方程化为参数方程
+      $$L_1:\begin{cases}
+        x=t  \\
+        y=2t \\
+        z=t-1
+      \end{cases}\,
+      L_2:\begin{cases}
+        x=t  \\
+        y=3t-4 \\
+        z=2t-1
+      \end{cases}$$
+      设交点分别为${{M}_{1}}\left( {{t}_{1}},2{{t}_{1}},{{t}_{1}}-1 \right),{{M}_{2}}\left( {{t}_{2}},3{{t}_{2}}-4,2{{t}_{2}}-1 \right)$
+      ${{M}_{0}},{{M}_{1}},{{M}_{2}}$三点共线
+      $\therefore \overrightarrow{{{M}_{0}}{{M}_{1}}}\parallel \overrightarrow{{{M}_{0}}{{M}_{2}}}$
+
+      $\dfrac{{{t}_{1}}-1}{{{t}_{2}}-1}=\dfrac{2{{t}_{1}}-1}{\left( 3{{t}_{2}}-4 \right)-1}=\dfrac{\left( {{t}_{1}}-1 \right)-1}{\left( 2{{t}_{2}}-1 \right)-1}\Rightarrow {{t}_{1}}=0,{{t}_{2}}=2$
+
+      ${{M}_{1}}\left( 0,0,-1 \right),{{M}_{2}}\left( 2,2,3 \right)\Rightarrow L:\dfrac{x-1}{1}=\dfrac{y-1}{1}=\dfrac{z-1}{2}$.
+
+      【法二】两相交直线确定平面，先求已知直线方向向量，
+      将两直线方程化为参数方程
+      $$L_1:\begin{cases}
+        x=t  \\
+        y=2t \\
+        z=t-1
+      \end{cases}\,
+      L_2:\begin{cases}
+        x=t  \\
+        y=3t-4  \\
+        z=2t-1  \\
+      \end{cases}$$
+      得$\bm{s}_1=\left( 1,2,1 \right),{{L}_{1}}$上点${{M}_{1}}\left( 0,0,-1 \right),$ $\bm{s}_2=\left( 1,3,2 \right),{{L}_{2}}$上点${{M}_{2}}\left( 0,-4,-1 \right)$
+
+      对$L$上任意点$M\left( x,y,z \right),\overrightarrow{{{M}_{1}}M},\overrightarrow{{{M}_{1}}{{M}_{0}}},\bm{s}_1$共面
+
+      $\therefore~\begin{vmatrix}
+        x & y & z+1  \\
+        1 & 1 & 2  \\
+        1 & 2 & 1  \\
+      \end{vmatrix}=0\Rightarrow 3x-y-z-1=0.$同理可得$2x-z-1\text{=}0$，
+      $\therefore \begin{cases}
+         3x-y-z-1=0  \\
+         2x-z-1=0  \\
+      \end{cases}$.
+    }
+
+    \Example{%
+      2014-2015-2-期末-填空题-5
+    }{%
+      过点$P\left( 1,-1,1 \right)$且与直线${{L}_{1}}:\dfrac{x-1}{1}=\dfrac{y}{-2}=\dfrac{z-2}{2}$和${{L}_{2}}:\dfrac{x}{1}=\dfrac{y+2}{1}=\dfrac{z-3}{-3}$平行的平面方程为
+      \fillin{$4x+5y+3z-2=0$}.
+    }{%
+      $4x+5y+3z-2=0$.
+    }{%
+      法向量$\bm{n}=\begin{vmatrix}
+        \bm{i} & \bm{j} & \bm{k}  \\
+        1 & -2 & 2  \\
+        1 & 1 & -3  \\
+      \end{vmatrix}=\left( 4,5,3 \right)\Rightarrow 4\left( x-1 \right)+5\left( y+1 \right)+3\left( z-1 \right)=0$
+      $\Rightarrow 4x+5y+3z-2=0$.
+    }
+
+    \Example{%
+      2013-2014-2-期末-解答题-12
+    }{%
+      求直线$L:\begin{cases}
+       4x-y+3z-1=0  \\
+       x+5y-z+2=0
+      \end{cases}$在平面$2x-y+5z-3=0$上的投影直线.
+    }{%
+      $\begin{cases}
+         7x+14y+5=0  \\
+         2x-y+5z-3=0
+      \end{cases}$.
+    }{%
+      不妨设直线$L$的平面束方程为$4x-y+3z-1+\lambda \left( x+5y-z+2 \right)=0,\lambda \in \mathbb{R}$
+
+      平面的法向量$\bm{n}_1=\left( 2,-1,5 \right)$与平面束方程的法向量$\bm{n}_2=\left( 4+\lambda ,5\lambda -1,3-\lambda  \right)$垂直
+
+      $\therefore \bm{n}_1\cdot \bm{n}_2=0\Rightarrow \lambda =3\Rightarrow \begin{cases}
+         7x+14y+5=0  \\
+         2x-y+5z-3=0  \\
+      \end{cases}$.
+    }
+
+  \subsection{认识曲面与曲线}
+    \Example{}{%
+      试求顶点在原点，含三正半坐标轴的圆锥面.
+    }{%
+      $xy+yz+zx=0$.
+    }{%
+      设圆锥面的旋转轴方向向量为$\bm{s}=\left( m,n,p \right)\Rightarrow m=n=p.$故取$\bm{s}=\left( 1,1,1 \right)$
+
+      旋转轴为$x=y=z$，在圆锥面上任取一点$M\left( x,y,z \right)$
+      $\therefore \dfrac{x+y+z}{\sqrt{3}\cdot \sqrt{{{x}^{2}}+{{y}^{2}}+{{z}^{2}}}}=\dfrac{1}{\sqrt{3}}\Rightarrow xy+yz+zx=0$.
+    }
+
+    \Example{%
+      2013-2014-2-期中-填空题-8
+    }{%
+      两曲面$z={{x}^{2}}+2{{y}^{2}}$，$z=3-2{{x}^{2}}-{{y}^{2}}$的交线$C$在$xOy$面上的投影曲线方程为
+      \fillin{$\begin{cases}
+        {{x}^{2}}+{{y}^{2}}=1  \\
+        z=0
+      \end{cases}$}.
+    }{%
+      $\begin{cases}
+        {{x}^{2}}+{{y}^{2}}=1  \\
+        z=0
+      \end{cases}$.
+    }{%
+      $\because $在$xOy$平面上，$\therefore z=0$. 两方程联立并消掉$z$即得投影曲线方程为
+      $\begin{cases}
+        {{x}^{2}}+{{y}^{2}}=1  \\
+        z=0
+      \end{cases}$.
+    }
